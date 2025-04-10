@@ -569,15 +569,15 @@ Thesis Committee Chair
 \@memberthree, \@memberthreedegree\par
 \@memberthreerank\par
 
-\vspace{46pt minus 4pt}
+% \vspace{46pt minus 4pt}
 
-\noindent\begin{tabular}{ll}
-\makebox[2.5in]{\hrulefill}\\
-\end{tabular}
+% \noindent\begin{tabular}{ll}
+% \makebox[2.5in]{\hrulefill}\\
+% \end{tabular}
 
-\@memberfour, \@memberfourdegree\par
-\@memberfourrank\par
-\end{SingleSpacing}
+% \@memberfour, \@memberfourdegree\par
+% \@memberfourrank\par
+% \end{SingleSpacing}
 
 %\vfil
 %{\baselineskip=36pt

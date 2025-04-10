@@ -1,0 +1,34 @@
+# System files
+.DS_Store
+
+# VS Code
+.history
+.vscode
+
+## Core latex/pdflatex auxiliary files:
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+*.bcf
+*.run.xml
+*.bbl
+*.blg
+
+## Build tool auxiliary files:
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+*.bbl-SAVE-ERROR
+*.bcf-SAVE-ERROR

@@ -38,6 +38,8 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{rotating} % provides sidewaystable and sidewaysfigure
+\usepackage{lipsum}
+% \usepackage[tagged]{accessibility}
 
 % To compile this file from the command line, run "latex thesis", then "biber thesis"
 % (or "bibtex thesis", if the output from latex asks for that instead),
@@ -116,35 +118,35 @@
 
 % Declarations for Front Matter
 
-\title{Title of Culminating Experience}
-\author{First Middle Last Name}
+\title{Predicting Course Transferability: A Comparative Analysis of Fine-Tuned Embedding Models and Traditional Classifiers Using Public Course Data}
+\author{Mark S. Kim}
 \degreesemester{May}
 % Select one of the semesters: December, May, or August.
-\degreeyear{20XX}
+\degreeyear{2025}
 % Enter the year in which you are submitting your thesis.
-\degree{Masters of - Your Degree here -}
+\degree{Master of Science}
 %example: Masters of Science
-\chair{Name of Committee Chair}
+\chair{Hui Yang}
 \chairdegree{Ph.D}
 \chairrank{Professor}
-\cochair{Name of Co-chair}
+\cochair{Arno Puder}
 \cochairdegree{Ph.D}
-\cochairrank{Associate Professor}
-\memberthree{Name of Member Three}
+\cochairrank{Professor}
+\memberthree{Anagha Kulkarni}
 \memberthreedegree{Ph.D}
-\memberthreerank{Associate Professor}
-\memberfour{Name of Member Four}
-\memberfourdegree{Ph.D}
-\memberfourrank{Associate Professor}
-\othermembers{Professor Roger Spam \\
-  Associate Professor Michael Chex}
+\memberthreerank{Professor}
+% \memberfour{Name of Member Four}
+% \memberfourdegree{Ph.D}
+% \memberfourrank{Associate Professor}
+% \othermembers{Professor Roger Spam \\
+%   Associate Professor Michael Chex}
 % For a co-chair who is subordinate to the \chair listed above
 % \cochair{Professor Benedict Francis Pope}
 % For two co-chairs of equal standing (do not use \chair with this one)
 % \cochairs{Professor Richard Francis Sony}{Professor Benedict Francis Pope}
-\numberofmembers{3}
+\numberofmembers{2}
 
-\field{- Your Major: Concentration here - }
+\field{Data Science and Artificial Intelligence}
 % Example: Computer Science: Software Engineering
 % Designated Emphasis -- this is optional, and rare
 % \emphasis{Colloidal Telemetry}
@@ -164,20 +166,20 @@
 
 \begin{frontmatter}
 
-\include{preface}
+    % \include{preface}
 
-% You can delete the \clearpage lines if you don't want these to start on
-% separate pages.
+    % You can delete the \clearpage lines if you don't want these to start on
+    % separate pages.
 
 
-\include{acknowledgments}
+    \include{acknowledgments}
 
-\tableofcontents
-\clearpage
-\listoftables
-\clearpage
-\listoffigures
-\clearpage
+    \tableofcontents
+    \clearpage
+    \listoftables
+    \clearpage
+    \listoffigures
+    \clearpage
 
 \end{frontmatter}
 
