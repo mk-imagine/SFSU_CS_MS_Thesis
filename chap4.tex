@@ -1,65 +1,65 @@
 \chapter{Evaluation and Results}
 
-Provide an introductory paragraph that summarizes what's in this section: a list of runs/experiments intended to test your implementation and ideas. Describe each of these experiments in a few words/a sentence.
+% Provide an introductory paragraph that summarizes what's in this section: a list of runs/experiments intended to test your implementation and ideas. Describe each of these experiments in a few words/a sentence.
 
-\section{Methodology}
-\label{sec:methodology}
+% \section{Methodology}
+% \label{sec:methodology}
 
-Describe the procedures you use to test your system.
+% Describe the procedures you use to test your system.
 
-Performance metrics: describe exactly what metrics you employ to measure performance. It might be elapsed time from instrumentation code you added around the main computational code. Later in the term, it may be something else.
+% Performance metrics: describe exactly what metrics you employ to measure performance. It might be elapsed time from instrumentation code you added around the main computational code. Later in the term, it may be something else.
 
-Experimental design: did you run tests over a set of prescribed problem sizes? If so, what were they?
+% Experimental design: did you run tests over a set of prescribed problem sizes? If so, what were they?
 
-\section{Computational platform and Software Environment}
+% \section{Computational platform and Software Environment}
 
-What machine did you run your tests on? What was the processor, its clock rate (GHz), size of L1/L2/L3 cache, how much memory (DRAM), what OS?
+% What machine did you run your tests on? What was the processor, its clock rate (GHz), size of L1/L2/L3 cache, how much memory (DRAM), what OS?
 
-What compiler did you use, what compilation flags?
+% What compiler did you use, what compilation flags?
 
-\section{Experiment 1}
+% \section{Experiment 1}
 
-Describe the experiment in a few sentences: what question are you trying to answer, what problem sizes/etc did you use (it's ok to make reference back to Sec.~\ref{sec:methodology} so you don't have to repeat a lot of details.
+% Describe the experiment in a few sentences: what question are you trying to answer, what problem sizes/etc did you use (it's ok to make reference back to Sec.~\ref{sec:methodology} so you don't have to repeat a lot of details.
 
-Present the results of your experiment using either tabular forms of information, such as in Table~\ref{tab:MyTable1}, or using charts and graphs as in Fig.~\ref{fig:MyPlot1}.
+% Present the results of your experiment using either tabular forms of information, such as in Table~\ref{tab:MyTable1}, or using charts and graphs as in Fig.~\ref{fig:MyPlot1}.
 
-When creating charts, please think carefully about the information you are trying to present. Also, make use of the best possible tools for generating charts and plots. Some of the best charting tools around are those built into Matplotlib. This thesis template includes a sample Python file that loads a csv file containing data and generates a plot of results, which is shown in Fig.~\ref{fig:MyPlot1}.
+% When creating charts, please think carefully about the information you are trying to present. Also, make use of the best possible tools for generating charts and plots. Some of the best charting tools around are those built into Matplotlib. This thesis template includes a sample Python file that loads a csv file containing data and generates a plot of results, which is shown in Fig.~\ref{fig:MyPlot1}.
 
-\begin{table}[t!]
-    \centering
-    \begin{tabular}{c c c}
-        Problem Size (N) & Ideal runtime (sec) & Actual runtime (sec) \\
-        \hline
-        1 & 1 & 1 \\
-        2 & 0.5 & 0.75 \\
-        4 & 0.25 & 0.56 \\
-        8 & 0.12 & 0.42 \\
-        16 & 0.06 & 0.31
-    \end{tabular}
-    \caption{Comparison of actual and ideal runtimes for different problem sizes. The actual runtime does not equal ideal runtime in this configuration.}
-    \label{tab:MyTable1}
-\end{table}
+% \begin{table}[t!]
+%     \centering
+%     \begin{tabular}{c c c}
+%         Problem Size (N) & Ideal runtime (sec) & Actual runtime (sec) \\
+%         \hline
+%         1 & 1 & 1 \\
+%         2 & 0.5 & 0.75 \\
+%         4 & 0.25 & 0.56 \\
+%         8 & 0.12 & 0.42 \\
+%         16 & 0.06 & 0.31
+%     \end{tabular}
+%     \caption{Comparison of actual and ideal runtimes for different problem sizes. The actual runtime does not equal ideal runtime in this configuration.}
+%     \label{tab:MyTable1}
+% \end{table}
 
-\begin{figure}[ht!]
-    \centering
-    \includegraphics[width=0.8\textwidth]{figures/speedup_plot}
-    \caption{Comparison of actual vs. ideal speedup with increasing problem sizes. In this case, we see the observed speedup is quite different than the ideal speedup. Try changing the vertical axis to log-scaling in the Python script that generates the chart. This figure was produced by the sample \texttt{plot\_speedup.py} file.}
-    \label{fig:MyPlot1}
-\end{figure}
+% \begin{figure}[ht!]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{figures/speedup_plot}
+%     \caption{Comparison of actual vs. ideal speedup with increasing problem sizes. In this case, we see the observed speedup is quite different than the ideal speedup. Try changing the vertical axis to log-scaling in the Python script that generates the chart. This figure was produced by the sample \texttt{plot\_speedup.py} file.}
+%     \label{fig:MyPlot1}
+% \end{figure}
 
-\section{Experiment 2}
+% \section{Experiment 2}
 
-Repeat the writing motif as in Experiment 1 as needed.
+% Repeat the writing motif as in Experiment 1 as needed.
 
-\section{Findings and Discussion}
+% \section{Findings and Discussion}
 
-In this section, please answer the questions posed in the homework assignment writeup on iLearn.
+% In this section, please answer the questions posed in the homework assignment writeup on iLearn.
 
-Also, optionally include any additional insights you gained while doing these performance experiments.
+% Also, optionally include any additional insights you gained while doing these performance experiments.
 
-If this were an actual tech paper, here is where you would summarize the main findings and observations from the experiments: do the experiment results support your hypothesis? Sometimes the answer is a clear Y. Sometimes, the answer is Y for some circumstances, but not all, and it is important to spell this out.
+% If this were an actual tech paper, here is where you would summarize the main findings and observations from the experiments: do the experiment results support your hypothesis? Sometimes the answer is a clear Y. Sometimes, the answer is Y for some circumstances, but not all, and it is important to spell this out.
 
-Sometimes, the experiments turn up unexpected negative results, and it is also important to point out those, as well. Science happens due to both successes and failures, and it is important to document failed experiments so that we can all learn from them.
+% Sometimes, the experiments turn up unexpected negative results, and it is also important to point out those, as well. Science happens due to both successes and failures, and it is important to document failed experiments so that we can all learn from them.
 
 
 
