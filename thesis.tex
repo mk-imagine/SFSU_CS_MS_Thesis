@@ -24,9 +24,8 @@
 
 
 \documentclass{sfsuthesis}
-
 % see https://www.overleaf.com/learn/latex/Articles/Getting_started_with_BibLaTeX for more info
-\usepackage[style=numeric]{biblatex}
+\usepackage[backend=biber,style=numeric]{biblatex}
 \addbibresource{references.bib} % the file containing your citations
 
 % Use the graphix package with dvipdfmx when exporting to HTML to preserve figure dimensions for JPG and PNG file types. 
@@ -64,7 +63,17 @@
 \usepackage{physics}    
 \usepackage{comment}    
 \usepackage{color}      
-\usepackage{listings}   
+\usepackage{listings}
+
+\usepackage{csquotes} % Recommended with biblatex
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+
+\DeclareFieldFormat{url}{\url{#1}}
+\renewcommand*{\biburlsetup}{\Urlmuskip=0mu plus 1mu\relax}
+\setcounter{biburlnumpenalty}{9000}
+\setcounter{biburlucpenalty}{9000}
+\setcounter{biburllcpenalty}{9000}
 
 % for code formatting/coloring
 \definecolor{codegreen}{rgb}{0,0.6,0}
@@ -195,8 +204,10 @@
 \include{chap4}
 
 \printbibheading
+\sloppy
 \printbibliography
+\fussy
 
-\include{appendix}
+% \include{appendix}
 
 \end{document}
