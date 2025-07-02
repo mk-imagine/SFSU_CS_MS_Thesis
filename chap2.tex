@@ -1,251 +1,48 @@
-\chapter{}
+\chapter{Related Works}
 
-\section{Sub-heading}
+The manifest inefficiencies and inequities of manual course articulation, exemplified by the challenges within California's vast system, have prompted a range of research efforts aimed at automating the process~\cite{ma_course_recommendation_2017, PardosCourse2Vec2019, pardos-articulation-2019, JiangPardosMulti2VecEDM2020,XuPardosSubwordEmbeddings2024}. These technological interventions have evolved in sophistication, mirroring the broader advancements in natural language processing (NLP) and machine learning. A critical review of this literature reveals a clear trajectory from simple statistical methods to complex deep learning models, with each stage introducing new capabilities while also exposing new limitations. This evolution illuminates the path toward a more robust and scalable solution.
 
-% Vivamus vitae massa adipiscing est lacinia sodales. Donec metus massa, mollis vel, tempus placerat, vestibulum condimentum, ligula. Nunc lacus metus, posuere eget, lacinia eu, varius quis, libero. Aliquam nonummy adipiscing augue. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim.
+    \subsection{Foundational Approaches: Keyword and Statistical Methods}
+    The earliest attempts at automating course comparison relied on foundational text analysis techniques that, while computationally simple, lack semantic depth. The most basic systems are essentially search engines or databases that depend on exact keyword matching or pre-populated tables of known equivalencies~\cite{shamrock}. These systems are inherently brittle; they cannot recognize semantic variations (e.g., equating ``Introduction to Programming'' with ``Fundamentals of Computer Science I'') and require continuous manual updates to remain relevant~\cite{shiferaw2024}.
 
-% Every table present in the document should be referenced from somewhere within the text. This is an example of a reference to a table: see Tab.~\ref{table:simple} and Tab.~\ref{table:less_simple}.
+    A more advanced statistical method, Term Frequency-Inverse Document Frequency (TF-IDF), improves upon keyword matching by vectorizing documents and weighting terms based on their importance. A term's frequency within a single document (TF) is balanced against its rarity across a collection of documents, or corpus (IDF)~\cite{AIZAWA200345}. This allows the model to assign higher importance to distinctive terms (e.g., ``calculus'') and lower importance to common words (e.g., ``the,'' ``a,'' ``is'')~\cite{AIZAWA200345}. TF-IDF has been a workhorse for information retrieval and has been applied to course similarity tasks~\cite{AIZAWA200345}. However, the fundamental limitation of TF-IDF and other bag-of-words models is their complete lack of semantic understanding. They treat words as discrete, unrelated tokens and cannot grasp that ``calculus'' and ``differentiation'' are related concepts, nor can they distinguish between different meanings of the same word.
 
-% % This is an example of a simple table
-% \begin{table}
-% \centering
-% \begin{tabular}{|c|c|c|}
-%     \hline
-%     Description & yes/no & yes/no\\
-% \hline
-% 1-2-3 & yes & no \\
-% \hline
-% Multiplan & yes & yes \\
-% \hline
-% Wordstar & no & no \\
-% \hline
-% \end{tabular}
-% % \alt{A simple table}
-% \caption{This is an example of a simple table.}
-% \label{table:simple}
-% \end{table}
+    \subsection{Static Semantic Representations}
+    The development of word embeddings represented the first major leap toward a true semantic understanding of course content. Models like Word2Vec and GloVe, trained on vast text corpora, learn to represent words as dense vectors in a high-dimensional space, where words with similar meanings are positioned closer to one another. For example, the vectors for ``car'' and ``automobile'' would be near each other, while being distant from the vector for ``planet.'' This innovation enabled a more nuanced comparison of texts than was possible with TF-IDF. In the context of educational data mining, these techniques have been applied to content-based course recommendation systems, typically by creating a single vector representation for a course description by averaging the vectors of all its constituent words~\cite{pardos10.1145/3330430.3333622}.
 
-% Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem. In porttitor.\par
+    Despite this advancement, these models produce static embeddings. Each word is assigned a single, fixed vector regardless of its context. This is a significant drawback, as it fails to account for polysemy: words with multiple meanings. For instance, the word ``bank'' would have the same vector in the phrases ``river bank'' and ``bank account,'' despite their disparate meanings. Furthermore, the common practice of averaging all word vectors to create a document-level representation is a crude heuristic that can dilute or lose critical semantic information, especially in complex or lengthy descriptions.
 
-% Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Fusce aliquet pede non pede. Suspendisse dapibus lorem pellentesque magna. Integer nulla. Donec blandit feugiat ligula.\par
+    \subsection{Contextual Semantic Representations}
+    The introduction of the transformer architecture, and specifically models like Bidirectional Encoder Representations from Transformers (BERT), revolutionized NLP by enabling the generation of contextual embeddings. In these models, the vector representation of a word is dynamically influenced by the words surrounding it in a sentence~\cite{devlin2019bertpretrainingdeepbidirectional}. This allows the model to disambiguate word meanings and capture a much richer, more accurate semantic representation of the text. Architectures such as Sentence-BERT (SBERT) were subsequently developed to fine-tune these models specifically for the task of producing semantically meaningful embeddings for entire sentences or short paragraphs, which can then be efficiently compared using metrics like cosine similarity~\cite{reimers2019sentencebertsentenceembeddingsusing}.
 
+    The most recent evolution in this domain involves the direct application of large-scale generative models, or Large Language Models (LLMs) like GPT-4 and Gemini, for classification tasks. Through sophisticated prompt engineering and in-context learning, these models can be instructed to perform pairwise comparisons of course descriptions and render a judgment on their equivalency. The preliminary work for this thesis explored this very approach, using Google's Gemini Pro to classify course pairs. While these experiments yielded promising accuracy, they also uncovered significant practical and theoretical limitations. The direct use of LLMs for this task is computationally expensive and inefficient, as it requires repeatedly sending full text descriptions to a model API for every comparison. Performance is acutely sensitive to the exact phrasing of the prompt, necessitating a costly and time-consuming iterative tuning process. Most critically, the decision-making process of an LLM is a ``black box,'' providing a categorical output (e.g. ``equivalent'') without a quantifiable similarity score or confidence level. This opacity makes it difficult to rank potential matches, set decision thresholds, or provide transparent justifications for the model's conclusions. This approach is also ill-suited for handling more complex articulation scenarios, such as one-to-many or many-to-many course mappings.
 
-% % This is an example of a more complex table
-% \begin{table}
-% \centering
-% \begin{tabular}{|ccccc|}
-% \hline
-% \textbf{Mitre} & \textbf{Enchantress} & \textbf{Hagstrom} &
-% \textbf{Atlantica} & \textbf{Martinez} \\
-% \hline
-% Arabic & Spicebush & Sapient & Chaos & Conquer \\
-% Jail & Syndic & Prevent & Ballerina & Canker \\
-% Discovery & Fame & Prognosticate & Corroborate & Bartend \\
-% Marquis & Regal & Accusation & Dichotomy & Soprano \\
-% Indestructible  & Porterhouse & Sofia & Cavalier & Trance \\
-% Leavenworth & Hidden & Benedictine & Vivacious & Utensil \\
-% \hline
-% \end{tabular}
-% \caption{This is an example of a slightly more complex table}
-% \label{table:less_simple}
-% \end{table}
+    \subsection{Enrollment-Based Approaches}
+    It is essential to situate this research within the context of parallel efforts that leverage different data sources. A notable body of work has demonstrated that course similarity and prerequisite relationships can be predicted with high accuracy by analyzing student enrollment data. Models such as \emph{course2vec} learn course embeddings not from their textual descriptions, but from the patterns of which courses students tend to take together~\cite{pardos2018connectionistrecommendationwildutility}. The underlying principle is that courses frequently taken in the same semester or in sequence likely share a functional or topical relationship~\cite{pardos2018connectionistrecommendationwildutility}.
 
-% Donec hendrerit, felis et imperdiet euismod, purus ipsum pretium metus, in lacinia nulla nisl eget sapien. Donec ut est in lectus consequat consequat. Etiam eget dui. Aliquam erat volutpat. Sed at lorem in nunc porta tristique. Proin nec augue. Quisque aliquam tempor magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.\par
+    While this behavioral approach is powerful, its reliance on large-scale, proprietary institutional datasets of student records presents two major obstacles. First, it raises significant data privacy and security concerns, as it involves the analysis of sensitive student information~\cite{slade10.1177/0002764213479366}. Second, it limits the scalability and generalizability of the solution. The model is only applicable at institutions that can provide access to such data, and it cannot be used to compare courses between two institutions that have no history of student transfer between them. This approach is therefore not a universal solution for the broader course articulation problem.
 
-% \begin{figure}
-% %Use the scale parameter to size the image
-% \includegraphics[scale=.45]{figures/Picture2}
+    The evolution of these varied approaches reveals a fundamental trade-off: as models gain greater semantic power, they tend to become more computationally intensive, less interpretable, and more demanding of specialized or private data. The limitations of direct LLM classification (cost, opacity) and enrollment-based methods (data privacy, limited access) point toward the need for a new paradigm. An ideal solution should harness the semantic power of large pre-trained models without inheriting their operational burdens. This suggests that the next logical step is not simply a larger, more complex end-to-end model, but rather a more intelligent, hybrid framework. Such a framework would decouple the task of deep semantic representation from the task of final classification, allowing each component to be optimized for what it does best. This conceptual shift forms the central motivation for the methodology proposed in this thesis.  Table~\ref{tbl:taxonomy} summarizes the primary methods for determining course transferability.
 
-% % here is an alternate way to scale images based on specific sizes
-% %\includegraphics[width=5cm, height=4cm]{Picture1}
-% \caption{Example of a basic figure title}
-% \label{fig:green_thing}
-% \end{figure}
-
-% Every figure in the document should be referenced somewhere within the text.
-% This is an example reference to a figure: see Fig.~\ref{fig:green_thing}.
-
-% Nunc ac magna. Maecenas odio dolor, vulputate vel, auctor ac, accumsan id, felis. Pellentesque cursus sagittis felis. Pellentesque porttitor, velit lacinia egestas auctor, diam eros tempus arcu, nec vulputate augue magna vel risus. Cras non magna vel ante adipiscing rhoncus. Vivamus a mi. Morbi neque. Aliquam erat volutpat. Integer ultrices lobortis eros. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.\par
-
-% Proin semper, ante vitae sollicitudin posuere, metus quam iaculis nibh, vitae scelerisque nunc massa eget pede. Sed velit urna, interdum vel, ultricies vel, faucibus at, quam. Donec elit est, consectetuer eget, consequat quis, tempus quis, wisi. In in nunc. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Donec ullamcorper fringilla eros. Fusce in sapien eu purus dapibus commodo.\par
-
-
-% % This is an example of figure drawn using code
-% \begin{figure}\centering
-% \parbox{.4\textwidth}{\centering
-% \begin{picture}(70,70)
-% \put(0,50){\framebox(20,20){}}
-% \put(10,60){\circle*{7}}
-% \put(50,50){\framebox(20,20){}}
-% \put(60,60){\circle*{7}}
-% \put(20,10){\line(1,0){30}}
-% \put(20,10){\line(-1,1){10}}
-% \put(50,10){\line(1,1){10}}
-% \end{picture}
-% \caption{Donec eu condimentum.}}
-% \hfill
-% \parbox{.4\textwidth}{\centering
-% \begin{picture}(70,70)
-% \put(0,50){\framebox(20,20){}}
-% \put(10,60){\circle*{7}}
-% \put(50,50){\framebox(20,20){}}
-% \put(60,60){\circle*{7}}
-% \put(20,10){\line(1,0){30}}
-% \put(20,10){\line(-1,-1){10}}
-% \put(50,10){\line(1,-1){10}}
-% \end{picture}
-% \caption{Quisque dapibus dignissim.}}
-% \end{figure}
-
-% Nam ac viverra dolor, sed pulvinar justo. Nullam orci est, ultrices non justo vel, euismod aliquet ligula. Cras semper, purus sed pharetra rhoncus, metus mauris ultricies odio, non sodales odio est finibus velit.
-
-% % Block quote example
-% \begin{quote}
-% This is an example of a block quote. Donec id mi at nulla tempor tincidunt a sit amet mi. Vivamus pulvinar dolor felis. Mauris in tellus accumsan, pellentesque lacus eu, aliquet lectus. Suspendisse felis nulla, scelerisque at maximus ut, mollis laoreet nisi. Pellentesque pulvinar libero pharetra dolor blandit pulvinar. Proin dapibus sodales velit ac rhoncus.
-% \end{quote}
-
-% Donec id mi at nulla tempor tincidunt a sit amet mi. Vivamus pulvinar dolor felis. Mauris in tellus accumsan, pellentesque lacus eu, aliquet lectus. Suspendisse felis nulla, scelerisque at maximus ut, mollis laoreet nisi. Pellentesque pulvinar libero pharetra dolor blandit pulvinar. Proin dapibus sodales velit ac rhoncus. Integer lacinia justo et enim porta porta. Praesent odio velit, ultrices interdum tortor in, consectetur bibendum dolor.
-
-% % This is an example of how to use footnotes
-% This is an example of a footnote.\footnote{This is the text that will appear in the footnote} Pellentesque libero lectus, tristique ac, consectetuer sit amet, imperdiet ut, justo. Sed aliquam odio vitae tortor. Proin hendrerit tempus arcu. In hac habitasse platea dictumst. Suspendisse potenti.
-
-
-% \begin{theorem}
-% \tolerance=10000\hbadness=10000
-% This is an example of how to use the theorem environment.
-% \end{theorem}
-
-
-% % Here as another example of a figure that has been drawn progammatically
-% \begin{figure}
-% \parbox{1\textwidth}{\centering
-% \begin{picture}(90,50)
-%   \put(0,0){\circle*{5}}
-%   \put(0,0){\vector(1,1){31.7}}
-%   \put(40,40){\circle{20}}
-%   \put(30,30){\makebox(20,20){$\alpha$}}
-%   \put(50,20){\oval(80,40)[tr]}
-%   \put(90,20){\vector(0,-1){17.5}}
-%   \put(90,0){\circle*{5}}
-% \end{picture}
-% \caption{ Here we see an example of a figure which has been drawn programatically using \LaTeX}}
-% \end{figure}
-
-% \begin{sidewaystable}
-% \centering
-% \begin{tabular}{|ccccc|}
-% \hline
-% \textbf{Mitre} & \textbf{Enchantress} & \textbf{Hagstrom} &
-% \textbf{Atlantica} & \textbf{Martinez} \\
-% \hline
-% Arabic & Spicebush & Sapient & Chaos & Conquer \\
-% Jail & Syndic & Prevent & Ballerina & Canker \\
-% Discovery & Fame & Prognosticate & Corroborate & Bartend \\
-% Marquis & Regal & Accusation & Dichotomy & Soprano \\
-% Indestructible  & Porterhouse & Sofia & Cavalier & Trance \\
-% Leavenworth & Hidden & Benedictine & Vivacious & Utensil \\
-% \hline
-% \end{tabular}
-% \caption{Here we have an example of a table that has been set in landscape}
-% \end{sidewaystable}
-
-
-% \begin{itemize}
-% \item This is an example of a bulleted list.
-% \item Praesent vestibulum mi turpis, vitae ultricies diam porttitor non.
-% \item Morbi sed vulputate nibh, ac iaculis odio.
-% \item Mauris ac risus eget eros ornare.
-% \item Proin quis tellus non velit posuere pulvinar.
-% \item Vestibulum tincidunt tempor hendrerit.
-% \item Praesent ornare imperdiet diam, sit amet laoreet.
-% \end{itemize}
-
-
-% \begin{enumerate}
-% \item This is an example of a numbered list.
-% \item Praesent vestibulum mi turpis, vitae ultricies diam porttitor non.
-% \item Morbi sed vulputate nibh, ac iaculis odio.
-% \item Mauris ac risus eget eros ornare.
-% \item Proin quis tellus non velit posuere pulvinar.
-% \item Vestibulum tincidunt tempor hendrerit.
-% \item Praesent ornare imperdiet diam, sit amet laoreet.
-% \end{enumerate}
-
-
-% \section{Math Examples}
-
-% %% see the AMS math user guide document for more information: https://www.ams.org/arc/tex/amsmath/amsldoc.pdf
-
-
-% Here we see an equation placed within an equation environment\par
-% \begin{equation}
-% cos (2\theta) = {\cos^2}\theta - \sin^2 \theta
-% \end{equation}
-
-% Here we see an equation which has not been placed in an equation environment\par
-% $
-% \lim\limits_{x \to \infty} \exp(-x) = 0
-% $
-
-% Here we have several more math examples\par
-% $
-% k_{n+1} = n^2 + k_n^2 - k_{n-1}
-% $
-
-% $
-% f(n) = n^5 + 4n^2 + 2 |_{n=17}
-% $
-
-% $
-% \frac{n!}{k!(n-k)!} = {n}{k}
-% $
-
-% $\frac{\frac{1}{x}+\frac{1}{y}}{y-z}$
-
-% \begin{equation}
-% \frac{
-%     \begin{array}[b]{r}
-%       \left( x_1 x_2 \right)\\
-%       \times \left( x'_1 x'_2 \right)
-%     \end{array}
-%   }{
-%     \left( y_1y_2y_3y_4 \right)
-%   }
-% \end{equation}
-
-% $\sqrt{\frac{a}{b}}$
-
-% $\sqrt[n]{1+x+x^2+x^3+\dots+x^n}$
-
-% $\sum_{i=1}^{10} t_i$
-
-% $\displaystyle\sum_{i=1}^{10} t_i$
-
-% $P\left(A=2\middle|\frac{A^2}{B}>4\right)$
-
-% Every equation with a number should be referenced from somewhere within the text. Here's an example reference to an equation: see Eq.~\ref{eq:quantum_state}.
-
-% \begin{equation}
-% \begin{aligned} 
-% \label{eq:quantum_state}
-% \ket{\psi} &= \alpha\ket{0} + \beta\ket{1}  \\
-%    \ket{\psi} &= cos{\theta \over 2}\ket{0} + e^{i\phi}sin{\theta \over 2}\ket{1} \\
-%   1 &= \alpha^2 + \beta^2
-% \end{aligned}
-% \end{equation}
-
-% $$
-% X \otimes H = \begin{pmatrix}
-% 0 & 1 \\
-% 1 & 0 \\
-% \end{pmatrix} \otimes \begin{pmatrix}
-% 1/\sqrt{2} & 1/\sqrt{2} \\
-% 1/\sqrt{2} & -1/\sqrt{2} \\
-% \end{pmatrix} = \begin{pmatrix}
-% 0 & 0 & 1/\sqrt{2} & 1/\sqrt{2} \\
-% 0 & 0 & 1/\sqrt{2} & -1/\sqrt{2} \\
-% 1/\sqrt{2} & 1/\sqrt{2} & 0 & 0 \\
-% 1/\sqrt{2} & -1/\sqrt{2} & 0 & 0 \\
-% \end{pmatrix}
-% $$
-
+    \begin{table}[!htb]
+        \centering
+        \setlength{\tabcolsep}{10pt} % Default value: 6pt
+        \renewcommand{\arraystretch}{1.5}  % Provide more space between table rows, if you prefer
+        \caption{Comparative Taxonomy of Course Equivalency Determination Methods}\label{tbl:taxonomy}
+        \resizebox{\columnwidth}{!}{
+            \begin{tabular}{>{\raggedright\arraybackslash}p{2.25cm}>{\raggedright\arraybackslash}p{3cm}>{\raggedright\arraybackslash}p{1.75cm}>{\raggedright\arraybackslash}p{1.9cm}>{\raggedright\arraybackslash}p{3.75cm}>{\raggedright\arraybackslash}p{3.75cm}}
+                \toprule
+                Approach                                       & Key Characteristics                                                   & Data Source(s)              & Semantic Capability & Strengths                                                                                  & Limitations                                                                                                                   \\
+                \midrule
+                Manual Review                                  & Human experts (advisors, faculty) compare syllabi descriptions.       & Course Catalogs, Syllabi    & High (Human-level)  & Nuanced, context-aware, trusted by faculty.                                                & Extremely slow, not scalable, subjective, prone to inconsistency.                                                             \\
+                Keyword/ TF-IDF                                & Bag-of-words representation, statistical term weighting.              & Course Catalogs             & None to Low         & Simple, computationally cheap, easy to implement.                                          & Fails to capture synonyms, context, or true semantic meaning                                                                  \\
+                Static\hspace{3em}Embeddings (Word2Vec/ GloVe) & Pre-trained word vectors, often averaged for document representation. & Course Catalogs             & Medium              & Captures word-level semantics, better than TF-IDF.                                         & Context-insensitive, averaging vectors loses information.                                                                     \\
+                Enrollment-Based (e.g., course2vec)            & Embeddings learned from student co-enrollment patterns.               & Proprietary Student Records & High (Behavioral)   & Captures functional relationships between courses, highly predictive.                      & Requires access to sensitive private data, not generalizable, privacy concerns.                                               \\
+                Direct LLM Classification                      & End-to-end classification using prompt engineering.                   & Course Catalogs             & Very High           & High accuracy potential, understands complex language.                                     & Computationally expensive, ``black box'' opacity, prompt sensitive, no quantifiable similarity score, risk of hallucinations. \\
+                Proposed Method (Embeddings + ML)              & Deep contextual embeddings as features for traditional classifiers.   & Course Catalogs             & Very High           & State-of-the-art accuracy, computationally efficient, quantifiable, uses public data only. & Relies on the quality of the pre-trained embedding model.                                                                     \\
+                \bottomrule
+                % \multicolumn{4}{p{6cm}}{\scriptsize $^{*}$ Huggingface Overall Leaderboard Rank}      \\
+                % \multicolumn{4}{p{6cm}}{\scriptsize $^{\dagger}$ in Millions}
+            \end{tabular}
+        }
+    \end{table}
