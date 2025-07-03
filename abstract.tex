@@ -1,11 +1,8 @@
 % (This file is included by thesis.tex; you do not latex it by itself.)
 \begin{abstract}
+The manual process of determining course equivalency is a significant barrier to student mobility and educational equity, leading to substantial credit loss and delayed graduation that disproportionately harms underrepresented students. Previous automated approaches have been limited by a reliance on sensitive student enrollment records or the operational intractability and opacity of using large language models for direct classification.
 
-% The text of the abstract goes here.  If you need to use a \section
-% command you will need to use \section*, \subsection*, etc. so that
-% you don't get any numbering.  You probably won't be using any of
-% these commands in the abstract anyway.
+This thesis introduces and validates a novel framework that overcomes these challenges by decoupling semantic representation from classification, using only publicly available course catalog data. The methodology leverages deep metric learning to fine-tune contextual embedding models on public course text. These specialized embeddings are then used to construct a novel composite distance vector, which serves as a rich feature set for training traditional machine learning classifiers.
 
-\lipsum[1]
-
+Evaluated on a real-world dataset, the proposed framework achieves state-of-the-art accuracy, with \(F_1\)-scores exceeding 0.99. The result is a computationally efficient, scalable, and privacy-preserving solution that provides institutions with a practical tool to automate course articulation, reduce administrative burden, and foster a more equitable educational ecosystem.
 \end{abstract}

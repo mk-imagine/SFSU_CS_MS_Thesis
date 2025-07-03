@@ -537,7 +537,7 @@ Copyright by \par
 \textbf{\huge Certification of Approval} \par
 \end{center}
 \vspace{14pt minus 4pt}
-I certify that I have read \@title\ by \@author\ and that in my opinion this work meets the criteria for approving a thesis submitted in partial fulfillment of the requirement for the degree \@degree\ at San Francisco State University.
+I certify that I have read \@approvaltitle\ by \@author\ and that in my opinion this work meets the criteria for approving a thesis submitted in partial fulfillment of the requirement for the degree \@degree\ at San Francisco State University.
 % \begin{SingleSpacing}
 
 \vspace*{50pt minus 4pt}

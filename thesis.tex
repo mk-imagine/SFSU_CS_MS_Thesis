@@ -124,10 +124,13 @@
 \graphicspath{ {./figures/} }
 
 \begin{document}
-
+\emergencystretch 5em
 % Declarations for Front Matter
 
-\title{Predicting Course Transferability: A Comparative Analysis of Fine-Tuned Embedding Models and Traditional Classifiers Using Public Course Data}
+\title{Automating Course Articulation\\\vspace*{2mm}\large A Deep Metric Learning Framework Using Public Data}
+\makeatletter
+\newcommand{\@approvaltitle}{Automating Course Articulation: A Deep Metric Learning Framework Using Public Data}
+\makeatother
 % Automating Course Transferability: A Deep Embedding and Traditional Classifier Approach
 \author{Mark S. Kim}
 \degreesemester{May}
@@ -154,7 +157,7 @@
 % \cochair{Professor Benedict Francis Pope}
 % For two co-chairs of equal standing (do not use \chair with this one)
 % \cochairs{Professor Richard Francis Sony}{Professor Benedict Francis Pope}
-\numberofmembers{2}
+\numberofmembers{3}
 
 \field{Data Science and Artificial Intelligence}
 % Example: Computer Science: Software Engineering
@@ -166,32 +169,32 @@
 % \campus{Berkeley}
 
 
-% \maketitle
+\maketitle
 % Delete (or comment out) the \approvalpage line for the final version.
-% \copyrightpage
-% \approvalpage
+\copyrightpage
+\approvalpage
 
 
-% \include{abstract}
+\include{abstract}
 
-% \begin{frontmatter}
+\begin{frontmatter}
 
-%     % \include{preface}
+    % \include{preface}
 
-%     % You can delete the \clearpage lines if you don't want these to start on
-%     % separate pages.
+    % You can delete the \clearpage lines if you don't want these to start on
+    % separate pages.
 
 
-%     \include{acknowledgments}
+    \include{acknowledgments}
 
-%     \tableofcontents
-%     \clearpage
-%     \listoftables
-%     \clearpage
-%     \listoffigures
-%     \clearpage
+    \tableofcontents
+    \clearpage
+    \listoftables
+    \clearpage
+    \listoffigures
+    \clearpage
 
-% \end{frontmatter}
+\end{frontmatter}
 
 % \include{introduction}
 
@@ -201,11 +204,10 @@
 
 \include{chap1}
 \include{chap2}
-% \include{chap3}
+\include{chap3}
 % \include{chap4}
 % \include{chap5}
 
-\printbibheading
 \sloppy
 \printbibliography
 \fussy

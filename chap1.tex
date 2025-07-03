@@ -18,21 +18,19 @@ A clear and troubling feedback loop emerges from this analysis. The fundamentall
 
 \section{Contributions}
 This research makes several key contributions to the fields of educational data mining and natural language processing, offering a practical and powerful solution to the long-standing challenge of course articulation.
-
-\subsection{Primary Contributions}
-\begin{enumerate}
+\begin{itemize}
 \item \textbf{A High-Accuracy, Automated Framework}: This thesis develops and validates a novel framework for determining course equivalency that achieves state-of-the-art accuracy, with \(F_1\)-scores exceeding 0.99 on a challenging real-world dataset. Crucially, it accomplishes this using only publicly available course catalog text, making it broadly applicable.
 \item \textbf{An Innovative Feature Engineering Technique}: It introduces a composite distance vector, \(\Delta_c\), that uniquely combines element-wise embedding differences with cosine similarity. This technique provides a richer input signal for classification and is shown to demonstrably improve the performance of downstream machine learning models, particularly linear classifiers.
 \item \textbf{A Computationally Efficient and Scalable Approach}: The research demonstrates that by decoupling semantic representation from classification, it is possible to harness the power of deep contextual embeddings without the high computational costs, API dependencies, and opaque nature of direct LLM-based classification. This makes the proposed solution more efficient, scalable, and practical for institutional deployment.
 \item \textbf{A Privacy-Preserving Methodology}: By relying exclusively on public course descriptions, the proposed method circumvents the significant privacy, security, and data access challenges associated with techniques that require sensitive student enrollment records. This makes the framework more ethically sound and generalizable across any pair of institutions, regardless of their data-sharing agreements.
-\end{enumerate}
+\end{itemize}
 
-\subsection{Thesis Roadmap}
+\section{Thesis Roadmap}
 The remainder of this thesis is structured to provide a comprehensive account of this research.
-\begin{enumerate}
+\begin{itemize}
 \item \textbf{Chapter 2: Background and Related Work} will provide a detailed in-depth survey of the landscape of student transfer automation and the evolution of technological interventions.
 \item \textbf{Chapter 3: Methodology} will offer a deep dive into the data collection and preparation processes, the specific embedding models evaluated, the construction of the feature vectors, and the theoretical underpinnings of the machine learning classifiers employed.
 \item \textbf{Chapter 4: Experimental Setup and Results} will detail the experimental design, the datasets used for training and validation, and a comprehensive analysis of the classification performance, including ablation studies and model comparisons.
 \item \textbf{Chapter 5: Discussion and Future Work} will interpret the results in a broader context, discuss the limitations of the current study, and outline promising avenues for future research, including the development of a full-scale course recommendation system and the exploration of fine-tuning techniques.
 \item \textbf{Chapter 6: Conclusion} will summarize the key findings of the thesis and reiterate the significance of its contributions to both academic research and the practical administration of higher education.
-\end{enumerate}
+\end{itemize}
