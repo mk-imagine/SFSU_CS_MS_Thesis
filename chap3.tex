@@ -61,7 +61,8 @@ A central hypothesis of this research is that a generic, pre-trained deep embedd
 
 \subsection{Model Selection}
 The selection of an appropriate embedding model is a critical first step that influences the entire downstream pipeline. Rather than committing to a single model, this research began with a broad preliminary analysis of a variety of open-source embedding models to identify strong candidates for a more in-depth, comparative study. The initial models reviewed, summarized in Table~\ref{tbl:emb_models}, spanned a wide range of parameter sizes and characteristics.
-\begin{table}[!htb]
+\begin{table}[!tb]
+    \captionsetup{skip=5pt}
     \centering
     % \renewcommand{\arraystretch}{1.2}  % Provide more space between table rows, if you prefer
     \caption{Initial Embedding Model Review}
@@ -152,8 +153,8 @@ This entire fine-tuning framework (\verb|BatchHardTripletLoss|, \verb|AdamW|, an
 Upon completion of the model selection and fine-tuning processes, the next stage of the methodology involves using the selected models to transform the entire text corpus into structured numerical formats suitable for a comparative analysis of downstream machine learning classifiers.
 
 This process was executed by loading each selected embedding model and operating it in inference mode. The ``Formatted Course Info'' text for each course in the training and test sets was individually fed into each model to generate a fixed length embedding vector. This procedure was performed for the models summarized in Table~\ref{tbl:emb}.
-\begin{table}[!hbt]
-    \footnotesize
+\begin{table}[!bt]
+    \captionsetup{skip=5pt}
     \caption{Embedding Models \& PCA Explained Variance}
     \centering
     \resizebox{\columnwidth}{!}{

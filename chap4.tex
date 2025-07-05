@@ -13,7 +13,8 @@ The entire experimental pipeline was implemented in Python, with Jupyter Noteboo
 
 \subsection{Datasets}
 The evolutionary methodology described in Chapter~\ref{ch:3} was developed and validated using two distinct datasets, each serving a critical purpose at different stages of the research. The use of a smaller, initial dataset for prototyping followed by a larger, more comprehensive corpus for final evaluation is a core component of the experimental design. Table~\ref{tbl:datasets} provides a comparative summary of the key characteristics of both datasets used in this research.
-\begin{table}[!htb]
+\begin{table}[!tb]
+    \captionsetup{skip=5pt}
     \centering
     \caption{Summary of Datasets Used in Evaluation}
     \label{tbl:datasets}
@@ -35,7 +36,6 @@ The evolutionary methodology described in Chapter~\ref{ch:3} was developed and v
     \end{tabular}
     }
 \end{table}
-
 \subsubsection{Initial Dataset}
 The first dataset, hereafter referred to as the Initial Dataset, was a manually curated corpus used for the preliminary investigations in Stages 1 and 2 of the evaluation framework. This dataset was constructed from five lower-division courses at San Francisco State University and their established articulation agreements from 63 other California public colleges, sourced via the ASSIST repository. It was used to establish the initial performance baseline with the direct LLM classification approach and to prototype the decoupled pipeline. The final evaluation set for these preliminary stages consisted of a balanced, stratified random sample of 400 course pairs drawn from a larger set of over 11,000 generated pairs.
 
@@ -55,6 +55,124 @@ The \(F_1\)-Score, the harmonic mean of Precision and Recall (\(2\cdot\frac{Prec
 
 \subsubsection{Efficiency Metric}
 Beyond classification efficacy, the practical viability of each pipeline was assessed by measuring its computational efficiency. Both Training Time and Inference Time were systematically captured during the hyperparameter tuning process using the detailed statistics provided by \verb|scikit-learn| \!\!'s \verb|GridSearchCV| utility. Training time reflects the resources required to fit a model configuration, offering insight into the cost of experimentation. Inference time, reported by \verb|GridSearchCV| as \verb|score_time|, measures the time required for a trained model to make predictions on new data. For the use case of this research, inference time is considered the more critical efficiency metric, as it directly impacts the system's real-world responsiveness and scalability in a production environment. Finally, for the specific task of monitoring model improvement during the fine-tuning process (Stage 3), a specialized metric, Average Precision based on cosine similarity, was employed by the \verb|BinaryClassificationEvaluator| to select the best-performing model checkpoint.
+
+\section{Direct LLM Classification}
+The initial phase of this research sought to establish a performance baseline by evaluating the feasibility of using a Large Language Model for end-to-end course equivalency classification. The experiments were conducted using the Initial Dataset, a balanced 400-pair sample, and leveraged Google's Gemini Pro v1.0 as the reasoning engine. The evaluation was designed to test two key conditions: the impact of input data type (full raw text vs.\ extracted topics) and the effect of different classification schemes (binary, 3-way, and 4-way) on the model's performance and behavior.
+
+The classification results were encouraging, with the model achieving a peak accuracy of 90.5\% in the binary task using raw text. A primary finding from this phase was that using the full, unprocessed raw text consistently yielded superior results compared to using only the extracted structured topics. This performance gap is likely attributable to the challenges inherent in the data extraction step itself. The process of deducing structured topics from unstructured text proved to be the most time-consuming and difficult aspect of this initial approach, requiring two to four times more time than the classification task and exhibiting a high sensitivity to prompt wording—a finding that aligns with previous studies on prompt engineering by Sclar et al., Errica et al., Chen et al., Cheung, and Gerych et al.~\cite{Sclar2023QuantifyingLM,Errica2024WhatDI,Chen2024LLMAA,Cheung2024ARC,Gerych2024WhoKT}. Although Gemini demonstrated a general capability to understand the context of the course descriptions, its limitations in flawlessly deducing course topics appear to have introduced enough noise to degrade the performance of the topics-based classification.
+
+An analysis of the confusion matrices, presented in Figure~\ref{fig:cm} reveals a consistent and telling behavioral pattern: the model exhibits a strong conservative bias. Across all scenarios, the ``not equivalent'' class showed higher recall than precision, while the ``equivalent'' class showed higher precision than recall. For example, in the binary raw text evaluation, the model produced 34 false negatives but only 4 false positives. This indicates that the model is far more likely to misclassify a truly equivalent course as ``not equivalent'' than it is to incorrectly approve a non-equivalent pair. This conservative tendency suggests the LLM operates with a high internal threshold for declaring equivalency, preferring to err on the side of caution.
+\begin{figure}[tb]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[scale=0.41,trim={3mm 20mm 7mm 0},clip]{LLMeval_binary_raw_text_cm.pdf}
+        \caption{Binary Raw Text}
+        \label{fig:sub_brt}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[scale=0.41,trim={3mm 20mm 7mm 0},clip]{LLMeval_binary_topics_cm.pdf}
+        \caption{Binary Topics}
+        \label{fig:sub_brt}
+    \end{subfigure}
+
+    \vspace{2mm}
+
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[scale=0.41,trim={3mm 20mm 7mm 0},clip]{LLMeval_3way_raw_text_cm.pdf}
+        \caption{3-way Raw Text}
+        \label{fig:sub_brt}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[scale=0.41,trim={3mm 20mm 7mm 0},clip]{LLMeval_3way_topics_cm.pdf}
+        \caption{3-way Topics}
+        \label{fig:sub_brt}
+    \end{subfigure}
+
+    \vspace{2mm}
+
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[scale=0.41,trim={3mm 20mm 7mm 0},clip]{LLMeval_4way_raw_text_cm.pdf}
+        \caption{4-way Raw Text}
+        \label{fig:sub_brt}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[scale=0.41,trim={3mm 20mm 7mm 0},clip]{LLMeval_4way_topics_cm.pdf}
+        \caption{4-way Topics}
+        \label{fig:sub_brt}
+    \end{subfigure}
+    \vspace{-2em}
+    \caption{LLM Classification Confusion Matrices}
+    % {\footnotesize Clockwise from bottom left: 4-class raw text, 3-class raw text, binary raw text, binary
+    %     structured topics, 3-class structured topics, and 4-class structured topics.\\\footnotemark[1]ins: insufficient description}
+    \label{fig:cm}
+\end{figure}
+
+The introduction of the ``unsure'' and ``insufficient data'' categories was designed to simulate how a human advisor might handle ambiguity. While there is no ground truth for these labels, their value lies in the model's ability to isolate cases that require further manual review. This is particularly relevant for courses that may have significant topical overlap but different learning outcomes, or for descriptions that are too sparse to allow for a definitive decision. For instance, in the 4-way raw text evaluation, the model flagged 46 pairs as ``unsure'' and 12 as having ``insufficient'' information, effectively separating these ambiguous cases from the main classification flow.  Table~\ref{tbl:llm_results_summary} provides a comprehensive summary of the performance metrics for all six experimental conditions.
+\begin{table}[!tb]
+    \captionsetup{skip=5pt}
+    \centering
+    \caption{Performance Summary of Direct LLM Classification}
+    \label{tbl:llm_results_summary}
+    \begin{tabular}{lccccc}
+        \toprule
+        & \textbf{Classification} & & & & \\
+        \textbf{Input Data} & \textbf{Task} & \textbf{Accuracy} & \textbf{F1-Score*} & \textbf{Precision*} & \textbf{Recall*} \\
+        \midrule
+        \multirow{3}{*}{Raw Text} & Binary & 0.9050 & 0.8973 & 0.9765 & 0.8300 \\
+        & 3-way & 0.8750 & 0.8877 & 0.9818 & 0.8100 \\
+        & 4-way & 0.8100 & 0.8596 & 0.9808 & 0.7650 \\
+        \midrule
+        \multirow{3}{*}{Topics} & Binary & 0.8100 & 0.7654 & 1.0000 & 0.6200 \\
+        & 3-way & 0.7775 & 0.7795 & 0.9847 & 0.6450 \\
+        & 4-way & 0.7225 & 0.7531 & 0.9839 & 0.6100 \\
+        \bottomrule
+        \multicolumn{6}{p{0.9\textwidth}}{\scriptsize * F1-Score, Precision, and Recall are reported for the positive class (``Equivalent'').} \\
+    \end{tabular}
+\end{table}
+
+To contextualize the performance of Gemini Pro, a comparative analysis was conducted against a suite of other prominent open-source LLMs (see Table~\ref{tbl:cls} for a summary of their specifications and performance). The results of this benchmark revealed that Gemini Pro v1.0 outperformed all other models tested. While most models were able to complete the task, their performance varied significantly. The strongest competitor was Anthracite Magnum v1 72B, which achieved a respectable accuracy of 85.25\%, but still falling short of Gemini's 90.5\%.
+\begin{table*}[tb]
+    \captionsetup{skip=5pt}
+    \caption{Model Specifications and Performance}
+    \label{tbl:cls}
+    \centering
+    \resizebox{\columnwidth}{!}{
+    \begin{tabular}{lccccccc}
+        \toprule
+        &  & \textbf{Context} &  &  &
+                     &      &      \\
+        \textbf{Model Name}             & \textbf{Parameters*} & \textbf{Length} & \textbf{Support} & \textbf{Accuracy} &
+        \textbf{Precision}              & \textbf{Recall}      & \(\mathbf{F_1}\)\textbf{-score}                                                                                                \\
+        \midrule
+        Google Gemini Pro 1.0           & Unknown              & 32,768                  & 400              & \textbf{0.9050}   & 0.9765 & \textbf{0.8300} & \textbf{0.8973} \\
+        Meta Llama 3.1 8B Instruct      & 8                    & 128,000                 & 208 (52\%)       & 0.6250            & 1.0000 & 0.3500          & 0.5185          \\
+        Microsoft Phi 3 Medium Instruct & 14                   & 128,000                 & 400              & 0.7100            & 1.0000 & 0.4200          & 0.5915          \\
+        Google Gemma 2 27b              & 27.2                 & 8,000                   & N/A              & N/A               & N/A    & N/A             & N/A             \\
+        Meta Llama 3.1 70B Instruct     & 70                   & 128,000                 & 400              & 0.7350            & 1.0000 & 0.4700          & 0.6395          \\
+        Qwen 2 72B Instruct             & 72.7                 & 131,072                 & 400              & 0.7650            & 1.0000 & 0.5300          & 0.6928          \\
+        Anthracite Magnum v1 72B        & 72.7                 & 32,768                  & 400              & 0.8525            & 1.0000 & 0.7050          & 0.8270          \\
+        CalmeRys 78B Orpo v0.1          & 78                   & 32,768                  & 400              & 0.7175            & 1.0000 & 0.4350          & 0.6063          \\
+        Mixtral 8x22B Instruct v0.1     & 141                  & 65,536                  & 400              & 0.6450            & 1.0000 & 0.2900          & 0.4496          \\
+        Meta Llama 3.1 405B Instruct**  & 405                  & 128,000                 & 400              & 0.7775            & 1.0000 & 0.5550          & 0.7138          \\
+        \bottomrule
+        \multicolumn{8}{l}{\footnotesize *in Billions}                                                                                                                       \\
+        \multicolumn{8}{l}{\footnotesize **INT4 Quantized Model}
+    \end{tabular}
+    }
+\end{table*}
+
+This benchmark also highlighted significant operational challenges. Several models struggled to reliably produce valid output. For example, Google's Gemma 2 27B consistently generated unintelligible or irrelevant responses, preventing the collection of any meaningful performance data. Similarly, Meta's Llama 3.1 8B Instruct model was only able to respond correctly to approximately 52\% of the prompts, making it too unreliable for practical use. A surprising insight from this analysis was the lack of a strong correlation between model size and performance on this task. It is important to note, however, that the prompts used in this evaluation were originally designed and optimized for Gemini. This lack of prompt specificity for the other models may have contributed to their lower accuracy and, in some cases, their inability to respond appropriately.
+
+This initial study confirmed that direct LLM classification can achieve high accuracy but is sensitive to input quality and exhibits a conservative bias. More importantly, it validated the fundamental limitations of the approach, its computational cost, lack of a quantifiable similarity score, and ``black box'' nature, that motivated the development of the decoupled pipeline. The following sections will now present the results of this more advanced framework, beginning with a critical validation of its most novel component: the composite distance vector.
 
 \section{Composite Distance Vector Validation}
 
