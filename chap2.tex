@@ -15,7 +15,7 @@ Despite this advancement, these models produce static embeddings. Each word is a
 \section{Contextual Semantic Representations}
 The introduction of the transformer architecture, and specifically models like Bidirectional Encoder Representations from Transformers (BERT), revolutionized NLP by enabling the generation of contextual embeddings. In these models, the vector representation of a word is dynamically influenced by the words surrounding it in a sentence~\cite{devlin2019bertpretrainingdeepbidirectional}. This allows the model to disambiguate word meanings and capture a much richer, more accurate semantic representation of the text. Architectures such as Sentence-BERT (SBERT) were subsequently developed to fine-tune these models specifically for the task of producing semantically meaningful embeddings for entire sentences or short paragraphs, which can then be efficiently compared using metrics like cosine similarity~\cite{reimers-2019-sentence-bert}.
 
- %%%%% NEED TO FLESH OUT %%%%%%%%%
+%%%%%%%%%%%%%%%% NEED TO FLESH OUT %%%%%%%%%%%%%%%%
 \section{Direct LLM Classification}
 A more recent evolution in this domain involves the direct application of large-scale generative models, or Large Language Models (LLMs) like GPT-4 and Gemini, for classification tasks. The preliminary work for this thesis explored this very approach. Through sophisticated prompt engineering and in-context learning, these models can be instructed to perform pairwise comparisons of course descriptions and render a judgment on their equivalency.  
 
@@ -27,8 +27,8 @@ It is essential to situate this research within the context of parallel efforts 
 While this behavioral approach is powerful, its reliance on large-scale, proprietary institutional datasets of student records presents two major obstacles. First, it raises significant data privacy and security concerns, as it involves the analysis of sensitive student information~\cite{slade10.1177/0002764213479366}. Second, it limits the scalability and generalizability of the solution. The model is only applicable at institutions that can provide access to such data, and it cannot be used to compare courses between two institutions that have no history of student transfer between them. This approach is therefore not a universal solution for the broader course articulation problem.
 
 The evolution of these varied approaches reveals a fundamental trade-off: as models gain greater semantic power, they tend to become more computationally intensive, less interpretable, and more demanding of specialized or private data. The limitations of direct LLM classification (cost, opacity) and enrollment-based methods (data privacy, limited access) point toward the need for a new paradigm. An ideal solution should harness the semantic power of large pre-trained models without inheriting their operational burdens. This suggests that the next logical step is not simply a larger, more complex end-to-end model, but rather a more intelligent, hybrid framework. Such a framework would decouple the task of deep semantic representation from the task of final classification, allowing each component to be optimized for what it does best. This conceptual shift forms the central motivation for the methodology proposed in this thesis.  Table~\ref{tbl:taxonomy} summarizes the primary methods for determining course transferability.
-
-\begin{table}[!htb]
+\begin{table}[tb]
+    \captionsetup{skip=5pt}
     \centering
     \setlength{\tabcolsep}{10pt} % Default value: 6pt
     \renewcommand{\arraystretch}{1.5}  % Provide more space between table rows, if you prefer

@@ -18,7 +18,14 @@ The initial dataset consisted of 228 equivalent course pairs based on the articu
 \subsection{Model Selection and Prompt Engineering}
 An initial review of various LLMs was conducted to assess their ability to reliably generate structured data from the raw course descriptions. While many open-source and proprietary models were tested, Google's PaLM2 and its successor, Gemini Pro v1.0, were ultimately selected for this phase of the research. This decision was based on their accessibility via a free-tier API and, most importantly, their consistent ability to produce well-formatted, structured data from the unprocessed text.
 
-A systematic, iterative prompt engineering process was employed to develop effective prompts for both the extraction of structured data (like course topics) and the final equivalency classification. This process involved starting with simple prompts and gradually refining them based on established design principles from natural language processing research and community guides. The final prompts for data extraction were highly structured, consisting of five parts: a preamble summarizing the task, the raw course data, specific formatting instructions, a JSON model schema defining the desired output, and a postamble with additional clarifying instructions . Despite this careful refinement, the structured data extraction process, particularly for deducing course topics, remained a significant challenge and was prone to occasional contextual errors.
+A systematic, iterative prompt engineering process, illustrated by Figure~\ref{fig:prompt_engineering_process}, was employed to develop effective prompts for both the extraction of structured data (like course topics) and the final equivalency classification. This process involved starting with simple prompts and gradually refining them based on established design principles from natural language processing research and community guides~\cite{ye2024promptengineeringpromptengineer,ppp,peg}. The final prompts for data extraction were highly structured, consisting of five parts: a preamble summarizing the task, the raw course data, specific formatting instructions, a JSON model schema defining the desired output, and a postamble with additional clarifying instructions. Despite this careful refinement, the structured data extraction process, particularly for deducing course topics, remained a significant challenge and was prone to occasional contextual errors.
+\begin{figure}[tb]
+    \captionsetup{skip=5pt}
+    \centering
+    \includegraphics[scale=1,trim={0 0 0 0},clip]{pef.pdf}
+    \caption{Prompt Engineering Process}
+    \label{fig:prompt_engineering_process}
+\end{figure}
 
 \subsection{Classification and Evaluation Findings}
 The core of this initial research phase involved pairwise course assessments using Gemini Pro with the previously developed prompts. The evaluation was structured to explore different classification scenarios to gain a comprehensive understanding of the model's capabilities:
