@@ -63,6 +63,7 @@ The classification results were encouraging, with the model achieving a peak acc
 
 An analysis of the confusion matrices, presented in Figure~\ref{fig:cm} reveals a consistent and telling behavioral pattern: the model exhibits a strong conservative bias. Across all scenarios, the ``not equivalent'' class showed higher recall than precision, while the ``equivalent'' class showed higher precision than recall. For example, in the binary raw text evaluation, the model produced 34 false negatives but only 4 false positives. This indicates that the model is far more likely to misclassify a truly equivalent course as ``not equivalent'' than it is to incorrectly approve a non-equivalent pair. This conservative tendency suggests the LLM operates with a high internal threshold for declaring equivalency, preferring to err on the side of caution.
 \begin{figure}[tb]
+    \captionsetup{skip=5pt}
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
@@ -109,7 +110,6 @@ An analysis of the confusion matrices, presented in Figure~\ref{fig:cm} reveals 
         \caption{4-way Topics}
         \label{fig:sub_brt}
     \end{subfigure}
-    \vspace{-2em}
     \caption{LLM Classification Confusion Matrices}
     % {\footnotesize Clockwise from bottom left: 4-class raw text, 3-class raw text, binary raw text, binary
     %     structured topics, 3-class structured topics, and 4-class structured topics.\\\footnotemark[1]ins: insufficient description}
@@ -175,13 +175,105 @@ This benchmark also highlighted significant operational challenges. Several mode
 This initial study confirmed that direct LLM classification can achieve high accuracy but is sensitive to input quality and exhibits a conservative bias. More importantly, it validated the fundamental limitations of the approach, its computational cost, lack of a quantifiable similarity score, and ``black box'' nature, that motivated the development of the decoupled pipeline. The following sections will now present the results of this more advanced framework, beginning with a critical validation of its most novel component: the composite distance vector.
 
 \section{Composite Distance Vector Validation}
+A foundational contribution of this research is the design of the composite distance vector, \(\Delta_c\), which serves as the input for all downstream classifiers. As detailed in the methodology, this vector was designed to provide a richer feature set than a single similarity score alone by combining granular, dimension-specific (local) information with a holistic, global similarity metric . This section presents the results of a critical ablation study designed to validate this hypothesis and quantify the impact of the global cosine similarity term on classifier performance.
 
-\section{Off-the-Shelf Embedding Models}
+The experimental setup for this validation involved training the full suite of classifiers on two different versions of the feature set. The first used the complete composite distance vector (\(\Delta_c\)), which includes both the element-wise differences and the cosine similarity score. The second used an ablated vector (\(\Delta_l\)) containing only the element-wise differences. By comparing the performance across these two conditions, it is possible to isolate and measure the contribution of the global similarity feature.
 
-\section{Fine-Tuned Embeddings Models}
+The results of this ablation study revealed a stark and significant dichotomy between the behavior of linear and non-linear models. For all linear models evaluated—Logistic Regression, Ridge Regression, Lasso, and Linear Discriminant Analysis (LDA), the inclusion of the cosine similarity term resulted in a dramatic and statistically significant improvement in classification performance. For example, using the off-the-shelf BGE embeddings with no dimensionality reduction, the F1-score for the Logistic Regression classifier surged from 0.686 to 0.901 with the addition of the single cosine similarity feature. This massive performance lift demonstrates that for these simpler models, which are constrained to learning linear decision boundaries, the explicit global similarity feature provides critical information that they are unable to derive from the local element-wise differences alone.
+
+In stark contrast, the more complex non-linear models, \(k\)-Nearest Neighbors (KNN), Support Vector Machine (SVM), and Random Forest (RF), were not significantly influenced by the inclusion or omission of the cosine similarity term. Their performance remained exceptionally high in both conditions. For instance, the \(F_1\)-score for the SVM classifier was virtually unchanged, registering 0.9988 without the term and 0.9983 with it. This suggests that these more powerful models, which can learn complex, non-linear interactions between features, are capable of effectively reconstructing the global similarity information directly from the high-dimensional local difference vector.
+
+The conclusion from this ablation study is clear and decisive. The composite distance vector, \(\Delta_c\), is demonstrably the superior feature representation. It provides a critical performance boost to simpler, baseline models while causing no harm to the performance of more sophisticated, non-linear models. Therefore, based on this empirical validation, the full composite distance vector was adopted as the standard feature set for all subsequent experiments presented in this thesis.
+
+\section{Fine-Tuning a Model}
+This section details the empirical investigation into enhancing the performance of pre-trained embedding models by fine-tuning them on the domain-specific PPM Corpus. The central hypothesis, as stated in Section~\ref{ch:3.3}, is that adapting a general-purpose model to the specific linguistic nuances of course catalog text will yield a more discriminative feature representation for the downstream course equivalency task. This process, a form of deep metric learning, aims to restructure the embedding space such that the geometric distance between vectors directly corresponds to semantic similarity. Such an approach is particularly relevant for scenarios with high intra-class variance and low inter-class variance, a common characteristic of specialized domains where fine distinctions are paramount. This section outlines the rigorous experimental design, presents the empirical results, and provides a detailed analysis that culminates in the selection of a single, optimized model for subsequent evaluation.
+
+\subsection{Evaluation Framework}
+To identify the optimal fine-tuning configuration, a systematic evaluation was designed and executed, exploring a matrix of key hyperparameters. The experimental runs were orchestrated via a series of shell scripts that automated the submission of training jobs with different configurations. This framework was designed to methodically test the impact of different loss functions and learning rate schedules on model performance.  
+\begin{itemize}
+    \item \textbf{Base Models}: The experiments focused on fine-tuning the most promising small model identified in the initial screening (Section~\ref{ch:3.3}): \verb|BAAI/bge-small-en-v1.5| (BGE). This model was selected to represent high-performing small architecture.
+    \item \textbf{Loss Functions}: A critical component of metric learning is the choice of the loss function, which defines the optimization objective. This study evaluated four distinct online triplet mining strategies, each implemented as a loss function within the sentence-transformers library. The selection of a loss function directly influences which training examples are considered most informative, impacting both convergence speed and final model performance. The evaluated functions were:  
+    \begin{itemize}
+        \item \textbf{BatchAllTripletLoss (atl)}: Computes the loss over all valid triplets within a mini-batch, offering a comprehensive but potentially diluted learning signal.
+        \item \textbf{BatchSemiHardTripletLoss (shtl)}: Considers only semi-hard triplets, where the negative sample is more distant than the positive but still violates the margin. This is a common strategy that balances stability and learning effectiveness.
+        \item \textbf{BatchHardTripletLoss (htl)}: Focuses on the hardest triplets in each batch, providing a strong but potentially unstable learning signal by using the most challenging examples.  
+        \item \textbf{BatchHardSoftMarginTripletLoss (hsmtl)}: A variation of \verb|BatchHardTripletLoss| that does not require a fixed margin parameter, simplifying hyperparameter tuning.
+    \end{itemize}
+    \item \textbf{Learning Rate Schedulers}: The learning rate schedule governs how the learning rate is adjusted during training, a critical factor for navigating complex loss landscapes and avoiding premature convergence. Three distinct schedules, with parameters defined in the training script, were evaluated.
+    \begin{itemize}
+        \item \textbf{linear (lr\_linear)}: A standard linear decay of the learning rate from its initial value to zero over the course of training.
+        \item \textbf{cosine\_with\_restarts (cr\_v1)}: A cosine annealing schedule with 6 restart cycles and an early stopping patience of 21 epochs.
+        \item \textbf{cosine\_with\_restarts (cr\_v2)}: A more aggressive cosine annealing schedule with 10 restart cycles and a reduced early stopping patience of 15 epochs.
+    \end{itemize}
+\end{itemize}
+The dynamic behavior of these schedulers, particularly the periodic resets of the cosine annealing schedules, is visualized in the training logs, confirming their implementation as designed (Image 1).
+
+\subsection{Implementation Details}
+The fine-tuning experiments were conducted with a high degree of methodological rigor, leveraging a sophisticated distributed training environment and custom tools to ensure robustness and reproducibility. The computationally intensive nature of fine-tuning transformer models necessitated the use of a high-performance computing (HPC) environment. All experiments were executed on the POLARIS HPC cluster at San Francisco State University. The SLURM submission script specifies a distributed data-parallel (DDP) strategy using \verb|torchrun| with a configuration of \verb|nproc_per_node=4|, distributing the workload across four NVIDIA A100 GPUs on a single node. This setup significantly accelerated the training process, making the comprehensive grid search feasible.
+
+The choice of a data batching strategy is intrinsically linked to the mechanics of the loss function. The batch-based triplet loss functions perform ``online'' mining, meaning they construct informative (anchor, positive, negative) triplets on-the-fly from the samples present within each training mini-batch. For a valid triplet to be formed, the batch must contain at least two examples from the same class, enabling the selection of a distinct anchor and positive sample. Standard random sampling does not guarantee this condition, which can lead to inefficient training where many anchors in a batch cannot form valid triplets. To address this, the \verb|GroupByLabelBatchSampler| class was employed, as specified in the training script. This sampler, a feature of the \verb|sentence-transformers| library, ensures that each mini-batch is constructed by grouping multiple samples with the same label. This guarantees that every batch contains the necessary class diversity to form valid and informative triplets for all anchors, maximizing the utility of each training step.  
+
+To manage the long-running, distributed training jobs, a set of custom \verb|TrainerCallback| classes were implemented. The \verb|DistributedStoppingCallback| is particularly significant as it demonstrates a sophisticated approach to process control in a distributed setting. This callback integrates two crucial features: early stopping based on a patience parameter (i.e., halting training if the validation metric does not improve for a set number of evaluations) and a hard time limit (\verb|max_duration|) to ensure jobs do not exceed their allocated time on the HPC cluster. The callback is designed to perform these checks on the main process (rank 0) during the evaluation phase and then broadcast a stop signal to all other worker processes. This architecture prevents the common issue of hanging processes in distributed training and ensures a graceful, synchronized termination of the job, underscoring the methodological robustness of the experimental setup.
+
+The performance of the model during the fine-tuning process was monitored at the end of each epoch using the \verb|BinaryClassificationEvaluator| from the \verb|sentence-transformers| library. The metric used to identify and save the best-performing model checkpoint was the \(F_1\)-score on a binary classification task, specifically \verb|eval_binary classification evaluator_cosine_f1|. This represents a deliberate and important design choice. By training the model to optimize a triplet loss objective while evaluating its performance on a binary pair classification task, the framework directly measures the model's aptitude for the ultimate downstream task. This prevents overfitting to the specific mechanics of the triplet loss and provides a more honest assessment of the model's ability to generalize.
+
+\subsection{Empirical Results of Fine-Tuning Configurations}
+The systematic evaluation of the twelve fine-tuning configurations (four loss functions crossed with three learning rate schedules) on the BGE base model produced a rich set of performance data. The training progress was logged and visualized, allowing for both qualitative and quantitative analysis of the different strategies.
+
+\subsubsection{Visualization of Training Dynamics}
+Figure~\ref{fig:binaryf1} presents the validation \(F_1\)-score, calculated on the binary classification evaluation task, as a function of the global training step for each of the twelve experimental runs. This visualization provides a clear, qualitative comparison of the learning dynamics associated with each configuration.
+\begin{figure}[tb]
+    \captionsetup{skip=5pt}
+    \centering
+    \includegraphics[scale=0.15,trim={0 0 0 0},clip]{Binary Classification Eval fine-tuning.png}
+    \caption{Validation \(F_1\)-Score}
+    % {\footnotesize Clockwise from bottom left: 4-class raw text, 3-class raw text, binary raw text, binary
+    %     structured topics, 3-class structured topics, and 4-class structured topics.\\\footnotemark[1]ins: insufficient description}
+    \label{fig:binaryf1}
+\end{figure}
+
+A visual inspection of the learning curves reveals several distinct patterns. The configurations utilizing \verb|BatchHardSoftMarginTripletLoss| seem to consistently demonstrate superior performance.  They exhibit some of the steepest learning curves, indicating faster convergence, and reach some of the highest peak \(F_1\)-scores, surpassing all loss function types.  The \verb|BatchHardTripletLoss| family of functions seem to perform similarly, albeit slightly worse. \verb|AllTripletLoss| configurations display the steepest learning curves, but show a performance collapse much earlier and at much lower \(F_1\)-score peaks than any of the other functions.  Finally, the \verb|BatchSemiHardTripletLoss| configurations exhibit the slowest learning curves, and do not seem to seem to reach the highest peak scores on average.  Nonetheless, it appears that its more erratic behavior near its plateau can produce results that surpass all other functions.  These visual trends strongly suggest that the choice of triplet mining strategy is a major factor in determining the training speed and final performance of the fine-tuned model for this task.
+
+\subsubsection{Quantitative Performance Summary}
+To provide a more precise and formal comparison, the exact peak validation \(F_1\)-scores achieved by each configuration are summarized in Table~\ref{tab:finetune_f1_scores}. This table distills the dynamic information from the learning curves into a single, quantitative metric for each experimental condition, enabling a direct and data-driven selection of the optimal configuration.
+\begin{table}[tb]
+    \captionsetup{skip=5pt}
+    \centering
+    \caption{Peak Validation F1-Score of Fine-Tuning Configurations on BGE Model}
+    \label{tab:finetune_f1_scores}
+    \resizebox{\columnwidth}{!}{
+        \begin{tabular}{l c c c}
+        \toprule
+        \textbf{Loss Function} & \textbf{Linear Scheduler} & \textbf{Cosine Restarts v1} & \textbf{Cosine Restarts v2} \\
+        \midrule
+        \texttt{BatchAllTripletLoss} (atl) & 0.8076 & 0.8078 & 0.8082 \\
+        \texttt{BatchHardSoftMarginTripletLoss} (hsmtl) & 0.8094 & 0.8099 & 0.8098 \\
+        \texttt{BatchHardTripletLoss} (htl) & 0.8093 & 0.8097 & 0.8096 \\
+        \texttt{BatchSemiHardTripletLoss} (shtl) & 0.8088 & \textbf{0.8104} & 0.8088 \\
+        \bottomrule
+        \end{tabular}
+    }
+\end{table}
+The quantitative data presented in Table~\ref{tab:finetune_f1_scores} reveals a nuanced outcome that adds precision to the qualitative analysis of the learning curves. While the \verb|BatchHardTripletLoss| and \verb|BatchHardSoftMarginTripletLoss| configurations consistently achieved high scores across all schedulers, the single best-performing configuration was the combination of \verb|BatchSemiHardTripletLoss| and the \verb|cr_v1| learning rate schedule, which achieved the highest peak validation \(F_1\)-score of 0.8104. This result suggests that while aggressive hard-negative mining provides a strong and reliable performance floor, a more moderate semi-hard mining strategy, when paired with an appropriate cosine annealing schedule, can find a slightly better optimum for this specific task.
+
+\section{Classifier Evaluation}
 
 \section{Dimensionality Reduction}
 
 \section{Comparative Analysis}
 
 \section{Summary}
+
+% shtl  cr2  0.808837656099904
+% atl   cr1  0.8077551464982029
+% atl   lin  0.8075537605064949
+% shtl  cr1  0.8104033970276009
+% hsmtl cr1  0.8099173553719007
+% hsmtl cr2  0.8098371265235681
+% shtl  lin  0.8087513340448239
+% hsmtl lin  0.809419973833406
+% atl   cr2  0.8082042330351299
+% htl   cr1  0.8096584729171198
+% htl   lin  0.8092648977816442
+% htl   cr2  0.8096166341780376
+
