@@ -1,0 +1,126 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{physics}    
+\usepackage{comment}    
+\usepackage{color}      
+\usepackage{listings}
+\usepackage{graphicx}
+
+\usepackage{csquotes} % Recommended with biblatex
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+
+% Biblatex setup for citations
+\usepackage[style=numeric, sorting=none, backend=biber]{biblatex}
+\addbibresource{../references.bib}
+
+\graphicspath{ {../figures/} }
+
+\title{Automating Course Articulation: A Deep Metric Learning Framework Using Public Data}
+\author{Presenter: Mark S. Kim}
+\date{\textbf{Duration:} 30-45 minutes}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+    \item \textbf{Introduction: The Problem with Student Transfer} (\textasciitilde5-7 mins)
+    \begin{itemize}
+        \item \textit{Title Slide:} Title, Author, Advisors, University, Date.
+        \item \textit{The "Transfer Maze":} The current process of determining course equivalency is a manual, inefficient, and intractable barrier for students \cite{pardos2019}.
+        \item \textit{The High Cost to Students \& Institutions:} This leads to significant credit loss (avg. 43\%) \cite{gao2017}, delayed graduation, increased financial burden \cite{collegeopportunity2017}, and lower student persistence rates \cite{porter1999}.
+        \item \textit{A Critical Equity Issue:} These barriers disproportionately harm low-income and underrepresented students \cite{ace2025}, who are more likely to rely on transfer pathways. Recent transfer growth has been driven by Black and Hispanic students \cite{nscnews2023}.
+        \item \textit{The Goal \& My Contribution:} To design and validate a novel computational framework that automates course articulation using only public data, creating a solution that is:
+        \begin{itemize}
+            \item Accurate \& Scalable
+            \item Computationally Efficient
+            \item Privacy-Preserving
+        \end{itemize}
+        \item \textit{Agenda:} A brief overview of the presentation structure.
+    \end{itemize}
+
+    \item \textbf{Background \& Related Work} (\textasciitilde3-5 mins)
+    \begin{itemize}
+        \item \textit{The Landscape of Automation:} A brief look at the evolution of automated approaches.
+        \item \textit{Previous Approaches \& Their Limitations:}
+        \begin{itemize}
+            \item \textit{Keyword/Statistical (TF-IDF):} Simple but lacks true semantic understanding \cite{AIZAWA200345}.
+            \item \textit{Enrollment-Based (course2vec):} Effective but relies on sensitive, private student records, raising significant privacy and generalizability concerns \cite{PardosCourse2Vec2019, slade10.1177/0002764213479366}.
+            \item \textit{Direct LLM Classification:} High accuracy potential but operationally challenging due to cost, opacity ("black box"), and prompt sensitivity \cite{Errica2024WhatDI, Sclar2023QuantifyingLM}.
+        \end{itemize}
+        \item \textit{The Research Gap:} A clear need for a framework that harnesses the semantic power of modern models without their operational burdens or privacy issues.
+    \end{itemize}
+
+    \item \textbf{A Decoupled Framework for Articulation} (\textasciitilde8-10 mins)
+    \begin{itemize}
+        \item \textit{High-Level Architecture:} Visual diagram illustrating the full pipeline from raw text to classification.
+        \item \textit{Core Principle: Decoupling Representation from Classification}.
+        \item \textit{Step 1: Deep Contextual Embeddings:} Convert raw course catalog text into rich, high-dimensional vectors using transformer models \cite{devlin2019bertpretrainingdeepbidirectional}.
+        
+        \item \textit{Step 2: The Composite Distance Vector ($\Delta_{c}$):} Our novel feature engineering technique.
+        \begin{itemize}
+            \item Combines granular, dimension-specific differences (local information) with a holistic cosine similarity score (global information).
+            \item Formula: $\Delta_{c} = (a_{1}-b_{1},...,a_{k}-b_{k}, \frac{A \cdot B}{\|A\|\|B\|})$.
+        \end{itemize}
+        \item \textit{Step 3: Domain-Specific Fine-Tuning:} Applying deep metric learning to adapt a generic model to the specific language of academia.
+        \begin{itemize}
+            \item Objective: Train the model using a Triplet Loss function to create a more discriminative embedding space \cite{Schroff_2015_CVPR, hermans2017defensetripletlossperson}.
+        \end{itemize}
+        \item \textit{Step 4: Downstream Classification:} Feed the engineered $\Delta_{c}$ vectors into efficient, traditional ML classifiers (e.g., SVM, Random Forest) for final prediction.
+    \end{itemize}
+    
+    \item \textbf{Experimental Setup \& Results} (\textasciitilde8-10 mins)
+    \begin{itemize}
+        \item \textit{Data \& Evaluation:} Using the real-world PPM Corpus, partitioned into non-overlapping training and test sets. Primary metric is the $F_1$-Score.
+        \item \textit{Finding 1: Domain-Specific Fine-Tuning is Critical.}
+        \begin{itemize}
+            \item Our fine-tuned model (bge-ft) achieved the highest mean test score and lowest variance.
+            \item It was \textit{statistically significantly} superior to all off-the-shelf models, including those orders of magnitude larger.
+            \item \textbf{Key Insight:} For specialized domains, targeted adaptation is more effective than sheer model scale.
+        \end{itemize}
+        \item \textit{Finding 2: Final Classifier Performance.}
+        \begin{itemize}
+            \item All finalist models achieved exceptionally high accuracy ($F_1$-scores > 0.99).
+            \item \textit{Support Vector Machine (SVM):} Statistically the most accurate and consistent model.
+            \item \textit{Random Forest \& XGBoost:} Nearly as accurate but an order of magnitude faster and more efficient at inference time.
+            \item \textbf{Key Insight:} A clear trade-off exists between peak accuracy and operational efficiency.
+        \end{itemize}
+    \end{itemize}
+    
+    \item \textbf{Qualitative Analysis: Beyond the Metrics} (\textasciitilde4-6 mins)
+    \begin{itemize}
+        \item \textit{Why Do Errors Still Occur?} Aggregate metrics can hide systematic failures \cite{gauthier2022}.
+        \item \textit{Shared Misclassifications:} A high overlap of errors across all models (211 common errors) points to challenges in the data, not the models.
+        \item \textit{Root Cause Analysis (Examples):}
+        \begin{itemize}
+            \item \textit{False Negatives:} Caused by semantic divergence (equivalent courses with very different descriptions) or minimalist descriptions. The model correctly sees no textual similarity; the ground-truth label is the issue.
+            \item \textit{False Positives:} Caused by high topical overlap without true equivalence (e.g., sequential physics courses).
+        \end{itemize}
+        \item \textit{The Primary Bottleneck:} The limiting factor for performance has shifted from being \textbf{model-centric} to \textbf{data-centric}.
+    \end{itemize}
+
+    \item \textbf{Conclusion} (\textasciitilde2-3 mins)
+    \begin{itemize}
+        \item \textit{Limitations:} Briefly acknowledge boundaries (performance capped by data quality, model generalizability, handling of complex articulations \cite{pardos-articulation-2019}).
+        \item \textit{Future Work:} Highlight key directions (data-centric AI, building a recommendation engine, graph-based methods for complex rules).
+        \item \textit{Summary of Contributions:}
+        \begin{itemize}
+            \item Developed a novel, accurate, and scalable framework for automating course articulation.
+            \item Proved that domain-specific fine-tuning outperforms sheer model scale for this task.
+            \item Delivered a practical, privacy-preserving tool to reduce administrative burden and foster educational equity.
+        \end{itemize}
+    \end{itemize}
+    
+    \item \textbf{Thank You \& Questions} (\textasciitilde10-20 mins Q\&A)
+    \begin{itemize}
+        \item Final slide with contact information/acknowledgments.
+    \end{itemize}
+
+\end{enumerate}
+
+\printbibliography
+
+\end{document}

@@ -1,0 +1,1066 @@
+\documentclass[aspectratio=169,10pt]{beamer}
+\usetheme{Madrid}
+\usecolortheme{default}
+
+% \setbeameroption{hide notes} % Only slides
+%\setbeameroption{show only notes} % Only notes
+\setbeameroption{show notes on second screen=right} % Both
+
+%------------------------------------------------------------
+% Required packages
+%------------------------------------------------------------
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{physics}    
+\usepackage{comment}    
+\usepackage{color}      
+\usepackage{listings}
+\usepackage{csquotes}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{lmodern}
+
+\graphicspath{ {../figures/} }
+
+% Current section
+% \AtBeginSection[ ]
+% {
+% \begin{frame}{Outline}
+%     \tableofcontents[currentsection]
+% \end{frame}
+% }
+
+%------------------------------------------------------------
+% Bibliography setup (using biblatex)
+% Assumes 'references.bib' is in the parent directory
+%------------------------------------------------------------
+\usepackage[style=numeric,backend=biber]{biblatex}
+\addbibresource{../references.bib}
+% \renewcommand*{\bibfont}{\small}
+
+%------------------------------------------------------------
+% Title page information
+%------------------------------------------------------------
+\title[Automating Course Articulation]{Automating Course Articulation:\\A Deep Metric Learning Framework Using Public Data}
+\author{Mark S. Kim}
+\institute[SFSU]{San Francisco State University \\ Department of Data Science and Artificial Intelligence}
+\date{\today}
+% First draft started 7-8-2025
+
+%------------------------------------------------------------
+% Presentation slides
+%------------------------------------------------------------
+\begin{document}
+
+\section{Introduction}
+% The Title Slide (Slide 1.1)
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% The Transfer Maze (Slide 1.2)
+\begin{frame}
+    \frametitle{The Problem: The Transfer Maze}
+    
+    \begin{columns}[T] % Splits the frame into columns
+        
+        \begin{column}{0.6\textwidth} % Left column for text
+            \begin{itemize}
+                \item The process for determining course equivalency, or \textbf{articulation}, is a formidable, largely manual process that creates significant barriers for students~\cite{pardos2019}.
+                
+                \item In California's public system alone, articulation officers at \textbf{149 individual campuses} manually negotiate and update agreements~\cite{assistfaq, ppic, calstate, cccco}.
+                
+                \item This task of ``bleak combinatorics'' is inefficient, slow, and inherently intractable, struggling to keep pace with the needs of a vast and mobile student body~\cite{pardos2019}.
+                
+                \item This is not a niche issue; transferring between institutions has become a normative part of the modern student's academic journey~\cite{publicagenda2025}.
+            \end{itemize}
+        \end{column}
+        
+        \begin{column}{0.4\textwidth} % Right column for a graphic
+            % --- SUGGESTED GRAPHIC ---
+            % A diagram here would be highly effective.
+            % Consider a graphic that visually represents the
+            % "combinatorial explosion" of articulation agreements.
+            %
+            % For example:
+            % - On the left: A large number of circles representing Community Colleges.
+            % - On the right: A smaller number of squares representing CSU/UC campuses.
+            % - A tangled web of lines connecting them, illustrating the
+            %   complexity of one-to-one manual agreements.
+            % - Title it "The Combinatorics of Articulation".
+            
+            \centering
+            \includegraphics[width=\textwidth]{placeholder.png} % Placeholder for the graphic
+            
+        \end{column}
+        
+    \end{columns}
+\end{frame}
+
+% The High Cost to Students & Institutions (Slide 1.3)
+\begin{frame}
+    \frametitle{The High Cost to Students \& Institutions}
+    
+    \begin{alertblock}{Consequences of an Inefficient System}
+        The administrative friction of the transfer process creates a cascade of negative consequences that fall almost entirely on students.
+    \end{alertblock}
+    
+    \begin{columns}[T]
+        \begin{column}{0.6\textwidth}
+            \begin{itemize}
+                \item \textbf{Significant Credit Loss:} On average, transfer students lose an estimated \textbf{43\%} of their earned academic credits, often forcing them to repeat courses~\cite{gao2017, publicagenda2025}.
+                
+                \item \textbf{Increased Time-to-Degree:} Lost credits invariably delay graduation, postponing entry into the workforce and increasing overall educational time~\cite{gao2017}.
+                
+                \item \textbf{Greater Financial Burden:} Repeating courses increases total tuition costs and can exhaust a student's eligibility for financial aid, paradoxically making a cost-saving measure more expensive~\cite{gao2017, collegeopportunity2017}.
+                
+                \item \textbf{Reduced Student Persistence:} The frustration of the process impacts student morale and contributes to lower graduation rates for transfer students compared to their non-transfer peers~\cite{porter1999}.
+            \end{itemize}
+        \end{column}
+        
+        \begin{column}{0.4\textwidth}
+            % --- SUGGESTED GRAPHIC ---
+            % An infographic would be very powerful here.
+            % You could create a simple visual with three key stats:
+            %
+            % 1. A large "43%" with an icon of a diploma tearing.
+            %    Label: "CREDITS LOST"
+            %
+            % 2. A large clock or calendar icon with an arrow showing time increasing.
+            %    Label: "DELAYED GRADUATION"
+            %
+            % 3. A large money bag icon with a minus sign.
+            %    Label: "INCREASED COST"
+            
+            \centering
+            \includegraphics[width=\textwidth]{placeholder.png} % Placeholder for the graphic
+            
+        \end{column}
+    \end{columns}
+    
+\end{frame}
+
+% A Critical Equity Issue (Slide 1.4)
+\begin{frame}
+    \fontsize{9}{9}\selectfont
+    \frametitle{A Critical Equity Issue}
+    
+    \begin{alertblock}{This is not just an administrative problem; it's an equity problem.}
+        The barriers imposed by an inefficient articulation system fall most heavily on the very students institutions are striving to support~\cite{ace2025}.
+    \end{alertblock}
+
+    \vspace{1em}
+    
+    \begin{columns}[T]
+        % <#-> % This uncovers the columns sequentially (# is the sequence number)
+        
+        \begin{column}{0.6\textwidth}
+            \begin{itemize}
+                \item Low-income students and students from historically underrepresented racial and ethnic groups are more likely to begin their journey at community colleges and rely on transfer pathways~\cite{ace2025}.
+                
+                \item Recent growth in transfer enrollment has been driven disproportionately by Black and Hispanic students~\cite{nscnews2023}.
+                
+                \item This creates a \textbf{troubling feedback loop}: manual articulation causes credit loss, which imposes burdens that undermine institutional goals of closing equity gaps~\cite{ace2025,nscnews2023}.
+                
+                \item Therefore, automating course articulation is not merely an operational optimization; it is a \textbf{necessary intervention} to foster a more equitable educational ecosystem~\cite{collegeopportunity2017}.
+                
+            \end{itemize}
+        \end{column}
+    
+        \begin{column}{0.4\textwidth}
+            % --- SUGGESTED GRAPHIC ---
+            % A circular flow diagram illustrating the "feedback loop"
+            % would be very effective here.
+            %
+            % It could have 3-4 steps:
+            % 1. "Manual Articulation Barriers"
+            % 2. "Credit Loss & Delays"
+            % 3. "Increased Financial & Academic Burden"
+            % 4. "Disproportionate Impact on Underrepresented Students"
+            %
+            % Arrows would connect them in a circle, showing how the
+            % system reinforces inequity.
+            
+            \centering
+            \includegraphics[width=\textwidth]{placeholder.png} % Placeholder for the graphic
+            
+        \end{column}
+    \end{columns}
+
+\end{frame}
+
+% The Goal & My Contribution (Slide 1.5)
+\begin{frame}
+    \fontsize{9}{9}\selectfont
+    \frametitle{The Goal \& My Contribution}
+    
+    \begin{columns}[T]
+        \begin{column}{0.45\textwidth}
+            \begin{block}{The Goal}
+                To develop and validate a novel computational framework that automates course articulation using only publicly available data.
+                \vspace{1em}
+                
+                The resulting system must be:
+                \begin{itemize}
+                    \item<2-> Accurate \& Scalable
+                    \item<3-> Computationally Efficient
+                    \item<4-> Inherently Privacy-Preserving
+                \end{itemize}
+            \end{block}
+        \end{column}
+        
+        \begin{column}{0.45\textwidth}
+            \begin{block}{Primary Contributions}
+                \begin{enumerate}
+                    \item<2-> \textbf{A Highly Accurate Framework:} Develop a complete, end-to-end pipeline that achieves state-of-the-art accuracy on real-world data.
+                    \item<3-> \textbf{An Innovative Feature Vector:} Design a novel composite distance vector that improves classification by combining local and global semantic information.
+                    \item<4-> \textbf{An Efficient \& Private Approach:} Create a solution that avoids the high costs and privacy concerns of prior methods by decoupling representation from classification.
+                \end{enumerate}
+            \end{block}
+        \end{column}
+    \end{columns}
+    
+    % --- SUGGESTED GRAPHIC ---
+    % A simple diagram at the bottom of the slide could unify the concepts.
+    % For example:
+    % [Public Course Catalogs] -> [My Framework] -> [Accurate & Equitable Articulation]
+    % This visually reinforces the input, your process, and the desired outcome.
+    \begin{figure}
+        \centering
+        \includegraphics[height=2.3cm]{placeholder.png} % Placeholder for the graphic
+    \end{figure}
+    
+\end{frame}
+
+% Agenda (Slide 1.6)
+\begin{frame}
+    \frametitle{Agenda}
+    \tableofcontents
+\end{frame}
+
+\section{Background \& Related Work}
+
+% The Landscape of Automation (Slide 2.1)
+\begin{frame}
+    \frametitle{The Landscape of Automation}
+    
+    Prior attempts at automation have evolved, with each generation introducing new capabilities while also exposing new limitations.
+    
+    \fontsize{9}{9}\selectfont
+    \begin{columns}[T]
+        \begin{column}{0.45\textwidth}
+            \begin{block}{Keyword \& Statistical (TF-IDF)}
+                \begin{itemize}
+                    \item \textbf{Idea:} Weight terms based on statistical importance~\cite{AIZAWA200345}.
+                    \item \textbf{Limitation:} No semantic understanding; cannot grasp synonyms or context.
+                \end{itemize}
+            \end{block}
+            
+            \begin{block}{Enrollment-Based (course2vec)}
+                \begin{itemize}
+                    \item \textbf{Idea:} Learn course similarity from student co-enrollment patterns~\cite{PardosCourse2Vec2019}.
+                    \item \textbf{Limitation:} Requires sensitive student data, raising major privacy and generalizability issues~\cite{slade10.1177/0002764213479366}.
+                \end{itemize}
+            \end{block}
+        \end{column}
+
+        \begin{column}{0.45\textwidth}
+            \begin{block}{Contextual Embeddings (BERT)}
+                \begin{itemize}
+                    \item \textbf{Idea:} Generate vector representations of text that understand context~\cite{devlin2019bertpretrainingdeepbidirectional, reimers-2019-sentence-bert}.
+                    \item \textbf{Limitation:} When used for direct classification, can be a "black box".
+                \end{itemize}
+            \end{block}
+            
+            \begin{block}{Direct LLM Classification}
+                 \begin{itemize}
+                    \item \textbf{Idea:} Use a large language model (e.g., GPT-4) as an end-to-end classifier.
+                    \item \textbf{Limitation:} High computational cost, opaque reasoning, and sensitive to prompt phrasing~\cite{Errica2024WhatDI}.
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+    
+    % --- SUGGESTED GRAPHIC ---
+    % A timeline graphic at the bottom could effectively show this evolution.
+    % It could flow from left (TF-IDF) to right (Direct LLM), with each
+    % point on the timeline highlighting the key limitation that the next
+    % method attempts to solve. Alternatively, you could adapt
+    % Table 2.1 from your thesis into a more visual format here.
+    
+\end{frame}
+
+% The Research Gap (Slide 2.2)
+\begin{frame}
+    \frametitle{The Research Gap}
+    
+    A review of prior work reveals a fundamental trade-off: as models gain semantic power, they tend to become more computationally intensive, less interpretable, or more demanding of specialized or private data.
+    
+    \begin{alertblock}{The Opportunity}
+        The limitations of direct LLM classification (cost, opacity) and enrollment-based methods (privacy, limited access) point toward a gap in the existing research for a new paradigm~\cite{pardos-articulation-2019, slade10.1177/0002764213479366}.
+        \vspace{1em}
+        
+        \textbf{An effective solution must harness the semantic power of large models without inheriting their operational burdens.}
+    \end{alertblock}
+
+    \vspace{0.5em}
+    
+    % --- SUGGESTED GRAPHIC ---
+    % A 2x2 matrix or a similar chart would be very effective here.
+    %
+    % - X-axis: "Computational Cost / Data Privacy Risk" (Low to High)
+    % - Y-axis: "Semantic Power" (Low to High)
+    %
+    % You could place the different methods in the quadrants:
+    % - Bottom-Left (Low/Low): TF-IDF
+    % - Top-Right (High/High): Enrollment-Based Methods, Direct LLM
+    %
+    % This would visually create an empty space in the
+    % Top-Left quadrant (High Semantic Power, Low Cost/Risk),
+    % which you can label "The Research Gap" or "Our Goal".
+    
+    \centering
+    \includegraphics[scale=0.15]{placeholder.png} % Placeholder for the graphic
+
+\end{frame}
+
+\section{A Decoupled Framework for Articulation}
+
+\begin{frame}
+    \frametitle{Agenda}
+    \tableofcontents[currentsection]
+\end{frame}
+
+% High-Level Architecture (Slide 3.1)
+\begin{frame}
+    \frametitle{A Decoupled Framework: High-Level Architecture}
+    
+    Our framework's core principle is to \textbf{decouple rich semantic representation from the final classification task}. This creates a more efficient, scalable, and transparent system.
+    
+    \vspace{1em}
+    
+    % --- SUGGESTED GRAPHIC ---
+    % A large, clear flowchart is essential for this slide. It should
+    % dominate the frame and visually walk the audience through your entire
+    % process. The flow should be:
+    %
+    % 1. Start with two boxes: "Course A Text" and "Course B Text".
+    %
+    % 2. Arrow to a box: "Deep Embedding Model". Show that this produces
+    %    "Vector A" and "Vector B".
+    %
+    % 3. Arrow to a box: "Feature Engineering". Label this process as
+    %    creating the "Composite Distance Vector (\Delta_c)".
+    %
+    % 4. Arrow to a box: "Traditional ML Classifier (e.g., SVM)".
+    %
+    % 5. Arrow to the final output: "Prediction: Equivalent / Not Equivalent".
+    %
+    % This diagram will be the clearest way to explain your entire methodology.
+    
+    \begin{figure}
+        \centering
+        \includegraphics[scale=0.25]{placeholder.png}
+    \end{figure}
+    
+\end{frame}
+
+% Core Principle: Decoupling Representation from Classification (Slide 3.2)
+\begin{frame}
+    \frametitle{Core Principle: Decoupling Representation from Classification}
+
+    By separating the process into two stages, we gain the semantic power of deep learning while avoiding the high operational costs of end-to-end LLM classification~\cite{Errica2024WhatDI} and the privacy risks of enrollment-based methods~\cite{slade10.1177/0002764213479366}.
+    
+    \fontsize{9}{9}\selectfont
+    \begin{columns}[T]
+        \begin{column}{0.45\textwidth}
+            \begin{block}{Stage 1: Semantic Representation}
+                The computationally intensive work of understanding language is done \textbf{once, offline}.
+                
+                \begin{itemize}
+                    \item A deep embedding model converts raw course text into a structured, reusable semantic vector.
+                    \item This captures the nuanced meaning and context of the course description.
+                \end{itemize}
+            \end{block}
+        \end{column}
+        
+        \begin{column}{0.45\textwidth}
+            \begin{block}{Stage 2: Pairwise Classification}
+                The classification of course pairs becomes \textbf{computationally cheap and fast}.
+                
+                \begin{itemize}
+                    \item A traditional machine learning model simply compares the pre-computed vectors.
+                    \item This allows for rapid, on-demand comparison of any two courses in the database.
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+    
+    \vspace{0.5em}
+    
+    \begin{alertblock}{The Benefit: The Best of Both Worlds}
+        We leverage the power of transformers for deep semantic understanding without incurring their high inference costs for every comparison, creating a highly scalable system.
+    \end{alertblock}
+    
+    % --- SUGGESTED GRAPHIC ---
+    % A simple diagram could show Stage 1 (a complex neural network icon
+    % labeled "Offline/Intensive") producing a vector, which is then
+    % fed into Stage 2 (a simple decision boundary icon labeled "Online/Fast").
+    
+\end{frame}
+
+% Step 1: Deep Contextual Embeddings (Slide 3.3)
+\begin{frame}
+    \frametitle{Step 1: Deep Contextual Embeddings}
+
+    The first step is to convert unstructured course catalog text into a structured, semantically rich vector using a pre-trained transformer model~\cite{devlin2019bertpretrainingdeepbidirectional, reimers-2019-sentence-bert}.
+    
+    \fontsize{9}{9}\selectfont
+    %%%%%% side by side?
+    \begin{block}{Input: Normalized Course Document}
+        For each course, we create a single, consistent input string by concatenating four key fields:
+        \begin{itemize}
+            \item Department Name \& Course Number
+            \item Course Title
+            \item Full Course Description
+        \end{itemize}
+    \end{block}
+
+    \begin{block}{Output: A Semantic Vector}
+        The model produces a high-dimensional vector (e.g., 384 dimensions) for each course. This vector represents the course's location in a "semantic space," where similar courses are positioned closer together.
+    \end{block}
+    
+    % --- SUGGESTED GRAPHIC ---
+    % A visual diagram of this process would be very effective.
+    %
+    % - On the left: A box with example "Input" text.
+    % - Center: An icon for the "Transformer Model".
+    % - On the right: A representation of the "Output Vector"
+    %   (e.g., [0.12, -0.45, ...]).
+    %
+    % This provides a simple, clear visual of the transformation
+    % from unstructured text to a structured vector.
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.1\textwidth]{placeholder.png}
+    \end{figure}
+
+\end{frame}
+
+% Step 2: The Composite Distance Vector (Slide 3.4)
+\begin{frame}
+    \fontsize{9}{9}\selectfont
+    \frametitle{Step 2: Our Novel Feature Vector (\(\Delta_c\))}
+
+    To classify course pairs, we need features that represent the \textit{relationship} between them. We designed a novel \textbf{composite distance vector (\(\Delta_c\))} to provide the classifier with a richer, more discriminative feature set.
+
+    \fontsize{9}{9}\selectfont
+    \begin{columns}[T]
+        \begin{column}{0.51\textwidth}
+            \begin{block}{Combining Local \& Global Information}
+                The vector combines two distinct types of information:
+                \begin{itemize}
+                    \item \textbf{Local Disparities:} The granular, dimension-by-dimension difference between the two course vectors.
+                    \item \textbf{Global Alignment:} A single, holistic score of their overall similarity in the semantic space.
+                \end{itemize}
+            \end{block}
+            
+            \begin{alertblock}{The Formula}
+                For two \(k\)-dimensional course vectors, \(A\) and \(B\), the composite vector \(\Delta_c\) is constructed by concatenating their element-wise difference with their cosine similarity:
+                \[ \Delta_{c} = \left( a_{1}-b_{1}, \dots, a_{k}-b_{k}, \frac{A \cdot B}{\parallel A \parallel\parallel B\parallel} \right) \]
+            \end{alertblock}
+
+        \end{column}
+
+        \begin{column}{0.4\textwidth}
+            % --- SUGGESTED GRAPHIC ---
+            % A diagram illustrating the construction of the vector
+            % would be highly effective here.
+            %
+            % It could show two input vectors (Vector A, Vector B)
+            % at the top.
+            %
+            % One path shows them going into an "Element-wise
+            % Difference" operation, producing the first part of
+            % the final vector.
+            %
+            % Another path shows them going into a "Cosine Similarity"
+            % operation, producing the final single element.
+            %
+            % Both results are then shown being concatenated into the
+            % final "Composite Distance Vector (\Delta_c)".
+            \centering
+            \includegraphics[width=\textwidth]{placeholder.png} % Placeholder for the graphic
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% Step 3: Domain-Specific Fine-Tuning (Slide 3.5)
+\begin{frame}
+    \frametitle{Step 3: Domain-Specific Fine-Tuning}
+    
+    General-purpose models lack the specialized "vocabulary" for academic text. To create a more discriminative embedding space, we fine-tune a pre-trained model on our course data using \textbf{deep metric learning}.
+    
+    \fontsize{9}{9}\selectfont
+    \begin{columns}[T]
+        \begin{column}{0.55\textwidth}
+            \begin{alertblock}{Learning Objective: The Triplet Loss}
+                We train the model using a \textbf{Triplet Loss} function, which teaches the model to understand nuanced similarity by operating on triplets of courses~\cite{Schroff_2015_CVPR, hermans2017defensetripletlossperson}:
+                \begin{itemize}
+                    \item An \textbf{Anchor} course (\(A\))
+                    \item A \textbf{Positive}, equivalent course (\(P\))
+                    \item A \textbf{Negative}, non-equivalent course (\(N\))
+                \end{itemize}
+                
+                \vspace{0.5em}
+                The goal is to adjust the embedding space such that the distance between the Anchor and Positive is smaller than the distance between the Anchor and Negative, enforced by a margin (\(\alpha\)):
+                
+                \[ L(A, P, N) = \max\left(d(A, P) - d(A, N) + \alpha, 0\right) \]
+            \end{alertblock}
+        \end{column}
+        
+        \begin{column}{0.4\textwidth}
+            % --- SUGGESTED GRAPHIC ---
+            % A visual diagram explaining the Triplet Loss objective would be ideal here.
+            %
+            % It should show three points in a 2D space: "Anchor," "Positive," and "Negative."
+            %
+            % Use arrows to illustrate the core idea:
+            % 1. An arrow pulling the Anchor and Positive closer together (minimizing d(A,P)).
+            % 2. An arrow pushing the Anchor and Negative further apart (maximizing d(A,N)).
+            %
+            % A final state could show that d(A,P) + margin < d(A,N), visually representing
+            % the desired outcome of the training.
+            
+            \centering
+            \includegraphics[width=\textwidth]{placeholder.png} % Placeholder for the graphic
+            
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% Step 4: Downstream Classification (Slide 3.6)
+\begin{frame}
+    \frametitle{Step 4: Downstream Classification}
+    
+    The final step is to feed the engineered composite distance vectors (\(\Delta_c\)) into efficient, traditional machine learning classifiers for the final equivalency prediction. This decoupled approach allows for rapid, on-demand comparisons.
+    
+    \fontsize{9}{9}\selectfont
+    \begin{columns}[T]
+        \begin{column}{0.8\textwidth}
+            \begin{block}{Classifier Evaluation}
+                We evaluated a comprehensive suite of models. The top finalists were:
+                \begin{itemize}
+                    \item Support Vector Machine (SVM)
+                    \item Random Forest (RF)
+                    \item XGBoost
+                    \item K-Nearest Neighbors (KNN)
+                \end{itemize}
+            \end{block}
+            
+            \vspace{-2mm}
+
+            \begin{alertblock}{Key Finding: Accuracy vs. Efficiency}
+                A clear trade-off emerged from our analysis:
+                \begin{itemize}
+                    \item \textbf{Maximum Accuracy:} SVM proved to be the most accurate and consistent model statistically.
+                    \item \textbf{Optimal Efficiency:} Random Forest and XGBoost were an order of magnitude faster at inference time, making them ideal for scalable, real-world deployment.
+                \end{itemize}
+            \end{alertblock}
+        \end{column}
+        
+        \begin{column}{0.15\textwidth}
+            % --- SUGGESTED GRAPHIC ---
+            % A scatter plot visualizing the trade-off between
+            % accuracy and inference time would be highly effective.
+            %
+            % - Y-axis: "F1-Score (Accuracy)"
+            % - X-axis: "Inference Time (seconds)"
+            %
+            % Plot the performance of the final classifiers (SVM, RF, XGBoost, KNN).
+            % This would visually echo Figure 4.3 from the thesis, showing
+            % that RF and XGBoost are clustered on the left (fast) with high
+            % accuracy, while SVM is slightly to the right (slower) with
+            % the highest accuracy.
+            
+            \centering
+            \includegraphics[width=\textwidth]{placeholder.png} % Placeholder for Figure 4.3
+            
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\section{Experimental Setup \& Results}
+
+% Data & Evaluation (Slide 4.1)
+\begin{frame}
+    \frametitle{Data \& Evaluation}
+    \fontsize{9}{9}\selectfont
+    
+    The framework was trained and validated on a real-world dataset to ensure the results are robust and generalizable.
+    
+    \fontsize{8}{7}\selectfont
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{block}{The PPM Corpus}
+                The definitive experiments were conducted on a large corpus provided by the \textbf{Program Pathways Mapper (PPM)}:
+                \begin{itemize}
+                    \item \textbf{Source:} Real-world data from California's public colleges.
+                    \item \textbf{Ground Truth:} Course equivalency is defined by the Course Identification Numbering System (C-ID).
+                    \item \textbf{Scale:} The final, cleaned corpus consists of \textbf{2,157 courses} across 157 distinct C-ID classes.
+                \end{itemize}
+            \end{block}
+            
+            \vspace{-2mm}
+            
+            \begin{alertblock}{Rigorous Evaluation Protocol}
+                \begin{itemize}
+                    \item \textbf{Partitioning:} A stratified \(50/50\) split was used to create non-overlapping training and test sets, ensuring all classes were represented in both.
+                    \item \textbf{Primary Metric:} The \textbf{\(F_1\)-Score} was used as the primary metric to balance the trade-off between precision and recall.
+                \end{itemize}
+            \end{alertblock}
+        \end{column}
+        
+        \begin{column}{0.5\textwidth}
+            % --- SUGGESTED GRAPHIC ---
+            % A simplified version of Table 4.1 from the thesis would be
+            % very effective here to summarize the dataset.
+            %
+            % You could create a clean, modern-looking table with key stats:
+            %
+            % | Characteristic | PPM Corpus                     |
+            % |----------------|--------------------------------|
+            % | Source         | Program Pathways Mapper (PPM)  |
+            % | Ground Truth   | C-ID Codes                     |
+            % | Final Size     | 2,157 Courses (157 Classes)    |
+            % | Partitioning   | Stratified 50/50 Train/Test    |
+            %
+            % This provides a quick, visual summary of the data foundation.
+            
+            \centering
+            \includegraphics[width=\textwidth]{placeholder.png} % Placeholder for Table 4.1
+            
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% Finding 1: Domain-Specific Fine-Tuning is Critical (Slide 4.2)
+\begin{frame}
+    \frametitle{Finding 1: Domain-Specific Fine-Tuning is Critical}
+    
+    Our experiments show that adapting a generic model to the specific language of academia is more effective than relying on sheer model scale.
+
+    \fontsize{9}{9}\selectfont
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{block}{\small Superior Performance}
+                \begin{itemize}
+                    \item The fine-tuned model (\textbf{bge-ft}) achieved the highest mean \(F_1\)-score and the lowest variance on the held-out test data.
+                    \item A one-way ANOVA and subsequent Games-Howell post-hoc test confirmed that our fine-tuned model was \textbf{statistically superior} to all off-the-shelf models evaluated.
+                    \item This includes models that were orders of magnitude larger, demonstrating that targeted adaptation is more effective than scale for this specialized task.
+                \end{itemize}
+            \end{block}
+            
+            \begin{alertblock}{\small Key Insight}
+                For specialized domains, creating a bespoke embedding space through fine-tuning is crucial. It teaches the model the specific semantics and nuances required to make fine-grained distinctions that general-purpose models miss.
+            \end{alertblock}
+        \end{column}
+        
+        \begin{column}{0.5\textwidth}
+            % --- SUGGESTED GRAPHIC ---
+            % A plot showing the validation F1-score over the training
+            % process would be very effective here.
+            %
+            % This would visually echo Figure 4.2 from the thesis,
+            % showing the learning dynamics and how the fine-tuned
+            % model's performance improves and stabilizes.
+            %
+            % Title: "Validation F1-Score During Fine-Tuning"
+            
+            \centering
+            \includegraphics[width=\textwidth]{placeholder.png} % Placeholder for Figure 4.2
+            
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% Finding 2: Final Classifier Performance (Slide 4.3)
+\begin{frame}
+    \frametitle{Finding 2: Final Classifier Performance}
+    \fontsize{9}{9}\selectfont
+    
+    The final evaluation, conducted on the held-out test data, measured the efficacy and efficiency of the top-performing classifiers.
+    
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Exceptional Performance Across the Board}
+                All finalist models (SVM, RF, XGBoost, KNN) achieved exceptionally high and stable performance, with mean \(F_1\)-scores approaching or exceeding \textbf{0.97}.
+            \end{block}
+
+            \begin{alertblock}{The Accuracy vs. Efficiency Trade-Off}
+                Our analysis revealed a classic performance trade-off, leading to context-dependent recommendations:
+                \begin{itemize}
+                    \item \textbf{For Maximum Accuracy:} The \textbf{Support Vector Machine (SVM)} was the statistical winner, proving to be the most accurate and consistent classifier.
+                    
+                    \item \textbf{For Optimal Efficiency:} \textbf{Random Forest (RF) and XGBoost} were nearly as accurate but an order of magnitude faster and more predictable at inference time, making them practical choices for a scalable, low-latency system.
+                \end{itemize}
+            \end{alertblock}
+        \end{column}
+        
+        \begin{column}{0.45\textwidth}
+            % --- SUGGESTED GRAPHIC ---
+            % A scatter plot visualizing the trade-off between
+            % accuracy and inference time would be highly effective.
+            %
+            % This would visually echo Figure 4.3 from the thesis.
+            %
+            % - Y-axis: "F1-Score (Accuracy)"
+            % - X-axis: "Inference Time (seconds) [Log Scale]"
+            %
+            % This plot would clearly show that RF and XGBoost are
+            % clustered on the far left (very fast), while SVM is
+            % slightly to the right (slower) but at the very top
+            % in terms of F1-score.
+            
+            \centering
+            \includegraphics[width=\textwidth]{placeholder.png} % Placeholder for Figure 4.3
+            
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\section{Qualitative Analysis: Beyond the Metrics}
+
+% Why Do Errors Still Occur? (Slide 5.1)
+\begin{frame}
+    \frametitle{Qualitative Analysis: Why Do Errors Still Occur?}
+    
+    With such high accuracy, it's crucial to ask why the system isn't perfect. A purely numerical analysis can be misleading, as aggregate scores can hide systematic failure modes~\cite{gauthier2022}.
+
+    \fontsize{9}{9}\selectfont
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Shared Misclassifications Across Models}
+                Our analysis revealed a high degree of error overlap across all evaluated embedding models, from the smallest to the largest.
+                \begin{itemize}
+                    \item A core set of \textbf{211 course pairs} were misclassified by \textbf{every single model}.
+                    \item This high count of shared errors points to challenges inherent in the source data itself, not idiosyncratic model weaknesses.
+                \end{itemize}
+            \end{block}
+            
+            \begin{alertblock}{The Primary Bottleneck is Now Data-Centric}
+                The limiting factor for achieving near-perfect automation is no longer the sophistication of the model. The bottleneck has shifted from being \textbf{model-centric to data-centric}. The model fails when the source data is ambiguous, inconsistent, or lacks a clear textual signal.
+            \end{alertblock}
+        \end{column}
+        
+        \begin{column}{0.45\textwidth}
+            % --- SUGGESTED GRAPHIC ---
+            % The Venn diagram from Figure 4.5 of the thesis would be
+            % the perfect graphic for this slide.
+            %
+            % It visually demonstrates the high degree of overlap in
+            % misclassified pairs between all five embedding models,
+            % with the large number "211" in the central intersection.
+            %
+            % This provides powerful, immediate evidence for the key
+            % message: the errors are systematic and rooted in the data.
+            
+            \centering
+            \includegraphics[width=\textwidth]{placeholder.png} % Placeholder for Figure 4.5
+            
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% Shared Misclassifications (Slide 5.2)
+\begin{frame}
+    \frametitle{Shared Misclassifications: A Data-Centric Problem}
+    
+    To diagnose the source of errors, we analyzed their overlap across all embedding models—from the large, general-purpose models to our small, fine-tuned specialist. The results provide strong evidence that the errors are systematic.
+
+    \fontsize{9}{9}\selectfont
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{block}{The Finding: Models Agree on What's Hard}
+                A significant portion of failures are not random but are systematic products of the course catalog data itself.
+                \begin{itemize}
+                    \item A large number of misclassified course pairs were common to all model combinations.
+                    \item This indicates that these "hard" examples consistently challenge a wide range of semantic models.
+                    \item Such errors often arise from annotation artifacts, inherent ambiguity in the source text, or insufficient information to support a clear classification.
+                \end{itemize}
+            \end{block}
+
+            \begin{alertblock}{Interpretation}
+               These shared failures strongly suggest that the errors stem from the data itself, not the models. The models are correctly reporting that the texts are not a good match; the issue lies with the ground-truth expectation.
+            \end{alertblock}
+        \end{column}
+        
+        \begin{column}{0.45\textwidth}
+            % --- SUGGESTED GRAPHIC ---
+            % The intersection bar chart from Figure 4.6 of the thesis
+            % would be the perfect graphic for this slide.
+            %
+            % It shows the high counts of shared errors across all
+            % model combinations, reinforcing the message that the
+            % failures are systematic.
+            %
+            % Title: "Number of Common Misclassified Pairs"
+            
+            \centering
+            \includegraphics[width=\textwidth]{placeholder.png} % Placeholder for Figure 4.6
+            
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% Root Cause Analysis (Examples) (Slide 5.3)
+\begin{frame}
+    \frametitle{Root Cause Analysis: Common Error Patterns}
+    
+    A manual case-based review of the "hard" examples reveals that most errors fall into predictable categories caused by issues in the source data.
+    
+    \fontsize{9}{9}\selectfont
+    \begin{columns}[T]
+        \begin{column}{0.475\textwidth}
+            \begin{block}{False Negatives (Missed Equivalencies)}
+                A False Negative occurs when the system fails to identify a true equivalence. These are primarily caused by:
+                \begin{itemize}
+                    \item \textbf{Semantic Divergence:} Officially equivalent courses are described with vastly different terminology or pedagogical focus. The model correctly assesses the texts as dissimilar; the failure lies in the inconsistent source data.
+                    
+                    \item \textbf{Minimalist Descriptions:} One or both course descriptions in a pair are too sparse or incomplete to provide enough textual signal for the model to establish a match.
+                \end{itemize}
+            \end{block}
+        \end{column}
+        
+        \begin{column}{0.475\textwidth}
+            \begin{block}{False Positives (Incorrect Equivalencies)}
+                A False Positive occurs when two non-equivalent courses are incorrectly approved. These are primarily caused by:
+                \begin{itemize}
+                    \item \textbf{Topical Overlap:} Courses cover the same broad subject but differ critically in academic level or their position in a sequence (e.g., Physics I vs. Physics II).
+                    
+                    \item \textbf{Vague Descriptions:} Descriptions use generic language, lacking the specific detail needed for differentiation. This is a known challenge in short-text semantic similarity~\cite{app13063911}.
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+    
+    % --- SUGGESTED GRAPHIC ---
+    % A table showing a side-by-side comparison of course descriptions for a specific
+    % False Negative would be a very powerful illustration here.
+    %
+    % For example, use the "Semantic Divergence" case from the thesis (CDEV-100):
+    %
+    % | Course A (Foothill College) | Course B (Cerritos College) |
+    % |-----------------------------|-----------------------------|
+    % | "...examines developmental milestones from conception through adolescence..." | "...examines diversity and inclusion, anti-bias curriculum, and social justice..." |
+    % | **Result: False Negative (Model correctly sees texts as different)** |
+    %
+    % This provides a concrete example of the data-centric problem.
+    \begin{figure}
+        \centering
+        \includegraphics[height=2cm]{placeholder.png}
+    \end{figure}
+
+\end{frame}
+
+% The Primary Bottleneck (Slide 5.4)
+\begin{frame}
+    \frametitle{Conclusion of Analysis: The Primary Bottleneck}
+    
+    The qualitative analysis leads to a critical insight regarding the future of automated articulation.
+    
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            
+            \begin{alertblock}{The Bottleneck has Shifted from Model-Centric to Data-Centric}
+                With an optimized pipeline, the limiting factor is no longer the model's architecture or semantic capability.
+                \begin{itemize}
+                    \item The model is performing correctly; it accurately reports when two texts are not semantically similar.
+                    \item The remaining errors are artifacts of the source data itself: inconsistent descriptions, vague language, and information gaps.
+                    \item Therefore, the most promising path to further improvement lies not in novel architectures, but in methodologies that directly address the quality and consistency of the input data~\cite{gauthier2022}.
+                \end{itemize}
+            \end{alertblock}
+            
+        \end{column}
+        
+        \begin{column}{0.45\textwidth}
+            
+            % --- SUGGESTED GRAPHIC ---
+            % A visual metaphor diagram would be very effective here to
+            % illustrate the shift in focus.
+            %
+            % It could be a simple flowchart:
+            %
+            % [Model Optimization] --(Green Checkmark)--> [Data Quality]
+            %
+            % The arrow itself could be shaped like a bottleneck, narrowing
+            % as it approaches "Data Quality" to show it's the new constraint.
+            % This visually reinforces that the modeling part is largely solved
+            % and data is the new challenge.
+            
+            \centering
+            \includegraphics[width=0.8\textwidth]{placeholder.png}
+            
+        \end{column}
+    \end{columns}
+    
+\end{frame}
+
+\section{Conclusion}
+
+% Limitations (Slide 6.1)
+\begin{frame}
+    \frametitle{Limitations}
+    
+    While the proposed framework represents a significant advance, it is essential to acknowledge the boundaries of the current study.
+    
+    \begin{block}{Key Limitations}
+        \begin{itemize}
+            \item \textbf{Performance is Capped by Data Quality:} The system's performance is fundamentally limited by the quality and content of the public course descriptions. It cannot infer information that is absent from vague, minimalist, or inconsistent source texts.
+            
+            \item \textbf{Generalizability of the Fine-Tuned Model:} The specialized \textit{bge-ft} model was tuned on data from California's public colleges. Its performance may not be as high "out-of-the-box" in other contexts (e.g., private or non-US institutions) without re-tuning on local data.
+            
+            \item \textbf{Handling of Complex Articulation Rules:} The framework simplifies articulation into a binary classification of course pairs and does not natively handle complex one-to-many or many-to-many agreements, a challenge that persists for many automated systems~\cite{pardos-articulation-2019}.
+        \end{itemize}
+    \end{block}
+    
+\end{frame}
+
+% Future Work (Slide 6.2)
+\begin{frame}
+    \frametitle{Future Work}
+    
+    The findings and limitations of this study give rise to several promising avenues for future research that build upon this work.
+
+    \fontsize{9}{9}\selectfont
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Data-Centric AI Strategies}
+                Since data quality is the primary bottleneck, future work should focus on:
+                \begin{itemize}
+                    \item Developing an interactive, \textbf{human-in-the-loop} system for expert review of ambiguous pairs.
+                    \item Exploring dynamic data augmentation, such as requesting a full syllabus when classification confidence is low.
+                \end{itemize}
+            \end{block}
+            
+            \begin{block}{Expanding Framework Capabilities}
+                 \begin{itemize}
+                    \item Evolving the framework into a full-scale \textbf{course recommendation engine} with a conversational interface.
+                    \item Investigating graph-based methods (e.g., GNNs) to identify and model complex one-to-many articulation rules.
+                \end{itemize}
+            \end{block}
+        \end{column}
+        
+        \begin{column}{0.5\textwidth}
+            % --- SUGGESTED GRAPHIC ---
+            % A roadmap or flowchart graphic would be effective here.
+            % It could start with "Current Framework" and branch out
+            % into the different future work directions:
+            %
+            % - Branch 1: "Data-Centric AI"
+            % - Branch 2: "Recommendation Engine"
+            % - Branch 3: "Advanced Modeling"
+            %
+            % This would visually organize the future research paths.
+            
+            \centering
+            \includegraphics[width=0.8\textwidth]{placeholder.png}
+            
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% Summary of Contributions (Slide 6.3)
+\begin{frame}
+    \frametitle{Summary of Contributions}
+    
+    This research confronted the challenge of manual course articulation by designing, developing, and validating a novel computational framework.
+    
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{alertblock}{Primary Contributions}
+                \begin{enumerate}
+                    \item \textbf{A Novel, Accurate, and Scalable Framework:} We developed an end-to-end pipeline that successfully automates course articulation using only public data, achieving state-of-the-art accuracy.
+                    
+                    \item \textbf{Proof that Adaptation Outperforms Scale:} We proved that for this specialized domain, fine-tuning a smaller model for semantic nuance is statistically superior to relying on sheer model scale.
+                    
+                    \item \textbf{A Practical Tool for Educational Equity:} We delivered a practical, computationally efficient, and privacy-preserving tool that can reduce administrative burden and help mitigate the systemic inequities faced by transfer students.
+                \end{enumerate}
+            \end{alertblock}
+        \end{column}
+        
+        \begin{column}{0.5\textwidth}
+            % --- SUGGESTED GRAPHIC ---
+            % A high-level impact diagram would work well here.
+            % It could visually summarize the transformation:
+            %
+            % [The Problem: Manual & Inequitable Process]
+            %              |
+            %              V
+            % [Our Framework: Automated & Data-Driven]
+            %              |
+            %              V
+            % [The Outcome: Efficient & Equitable System]
+            %
+            % This provides a simple, memorable summary of the thesis's value.
+            
+            \centering
+            \includegraphics[width=0.7\textwidth]{placeholder.png}
+            
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\section{Wrap Up}
+
+% Thank You & Questions (Slide 7.1)
+\begin{frame}
+    \frametitle{} % No title for a clean look
+    \vfill % Vertically center the content
+    \centering
+    {\Huge \textbf{Thank You!!!}}\\
+    \vspace{5em}
+    {\Huge \textbf{Questions?}}
+    \vfill
+\end{frame}
+
+% Contact & Acknowledgments (Slide 7.2)
+\begin{frame}
+    \frametitle{Contact \& Acknowledgments}
+    \fontsize{9}{9}\selectfont
+    
+    \begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+            \begin{block}{Contact Information}
+                \textbf{Mark S. Kim}
+                \begin{itemize}
+                    \item \href{mailto:mkim22@mail.sfsu.edu}{mkim22@mail.sfsu.edu}
+                    % \item \href{https://www.linkedin.com/in/your-profile}{linkedin.com/in/your-profile}
+                    % \item \href{https://github.com/your-repo/project-name}{github.com/your-repo/project-name}
+                \end{itemize}
+            \end{block}
+        \end{column}
+        
+        \begin{column}{0.55\textwidth}
+            \begin{block}{Acknowledgments}
+                I would like to express my deepest appreciation to:
+                \begin{itemize}
+                    \item My advisors, Professors \textbf{Hui Yang}, \textbf{Arno Puder}, and \textbf{Anagha Kulkarni}, for their invaluable guidance and support.
+                    \item Professor \textbf{Tao He}, for the crucial suggestion to incorporate a global similarity metric into the feature vector.
+                    \item The \textbf{Program Pathways Mapper (PPM)} team for providing the foundational data for this work.
+                    \item The \textbf{SFSU Academic Technology Systems Team} for their support and the use of the POLARIS High-Performance Computing cluster.
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% This frame generates the bibliography at the end of the presentation.
+\begin{frame}[allowframebreaks]
+    \frametitle{References}
+    \printbibliography
+\end{frame}
+
+\end{document}
