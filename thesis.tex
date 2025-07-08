@@ -23,7 +23,7 @@
 % Authors may also rearrange the order of contents and add additional chapters using the mark-up examples provided
 
 
-\documentclass{sfsuthesis}
+\documentclass[draft]{sfsuthesis}
 % see https://www.overleaf.com/learn/latex/Articles/Getting_started_with_BibLaTeX for more info
 \usepackage[backend=biber,style=numeric]{biblatex}
 \addbibresource{references.bib} % the file containing your citations
@@ -127,7 +127,7 @@
 \graphicspath{ {./figures/} }
 
 \begin{document}
-\emergencystretch 5em
+% \emergencystretch 5em
 % Declarations for Front Matter
 
 \title{Automating Course Articulation\\\vspace*{2mm}\large A Deep Metric Learning Framework Using Public Data}
@@ -209,7 +209,7 @@
 \include{chap2}
 \include{chap3}
 \include{chap4}
-% \include{chap5}
+\include{chap5}
 
 \sloppy
 \printbibliography
