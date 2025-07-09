@@ -509,45 +509,38 @@
 %     \end{columns}
 % \end{frame}
 
-% Step 4: Downstream Classification (Slide 3.6)
-\begin{frame}
-    \frametitle{Step 4: Downstream Classification}
+% % Step 4: Downstream Classification (Slide 3.6)
+% \begin{frame}
+%     \frametitle{Step 4: Downstream Classification}
     
-    The final step is to feed the engineered composite distance vectors (\(\Delta_c\)) into a traditional machine learning model to produce the final equivalency prediction.
+%     The final step is to feed the engineered composite distance vectors (\(\Delta_c\)) into a traditional machine learning model to produce the final equivalency prediction.
     
-    \begin{columns}[T]
-        \begin{column}{0.5\textwidth}
-            \begin{block}{Systematic Model Evaluation}
-                To identify the most effective algorithm for this task, we systematically evaluated a comprehensive suite of models, including representatives from major algorithmic families:
-                \begin{itemize}
-                    \item Linear Models (e.g., Logistic Regression)
-                    \item Kernel-Based Models (e.g., SVM)
-                    \item Instance-Based Models (e.g., KNN)
-                    \item Ensemble Models (e.g., Random Forest)
-                    \item Gradient Boosting (e.g., XGBoost)
-                \end{itemize}
-            \end{block}
-        \end{column}
+%     \begin{columns}[T]
+%         \begin{column}{0.57\textwidth}
+%             \hfill\vspace{3mm}
+%             \begin{block}{Systematic Model Evaluation}
+%                 To identify the most effective algorithm for this task, we systematically evaluated a comprehensive suite of models, including representatives from major algorithmic families:
+%                 \begin{itemize}
+%                     \item Linear Models (e.g., Logistic Regression)
+%                     \item Kernel-Based Models (e.g., SVM)
+%                     \item Instance-Based Models (e.g., KNN)
+%                     \item Ensemble Models (e.g., Random Forest)
+%                     \item Gradient Boosting (e.g., XGBoost)
+%                 \end{itemize}
+%             \end{block}
+%         \end{column}
         
-        \begin{column}{0.5\textwidth}
-            % --- SUGGESTED GRAPHIC ---
-            % A simple flowchart is ideal here to show the process.
-            % It would visually represent this specific step:
-            %
-            % [Composite Distance Vector (\Delta_c)] -> [ML Classifier] -> [Prediction: Equivalent / Not Equivalent]
-            %
-            % This clearly illustrates the input, process, and output
-            % of this methodological step.
-            \centering
-            \includegraphics[width=\textwidth]{placeholder.png}
-        \end{column}
-    \end{columns}
+%         \begin{column}{0.38\textwidth}
+%             \centering
+%             \includegraphics[width=\textwidth]{downstream_classification.pdf}
+%         \end{column}
+%     \end{columns}
 
-    \note[item]{The goal here was to find the best possible classifier for our specific feature vectors. By testing models from different families, we could probe the data for things like linear separability, complex non-linear decision boundaries, and feature interactions.}
-    \note[item]{The graphic on the right shows the simple version of this process: our feature vector goes in, the classifier makes a judgment, and a binary prediction comes out.}
-    \note[item]{The specific results of this competitive evaluation—that is, which models performed best—will be discussed in the upcoming Results section.}
+%     \note[item]{The goal here was to find the best possible classifier for our specific feature vectors. By testing models from different families, we could probe the data for things like linear separability, complex non-linear decision boundaries, and feature interactions.}
+%     \note[item]{The graphic on the right shows the simple version of this process: our feature vector goes in, the classifier makes a judgment, and a binary prediction comes out.}
+%     \note[item]{The specific results of this competitive evaluation—that is, which models performed best—will be discussed in the upcoming Results section.}
     
-\end{frame}
+% \end{frame}
 
 % \section{Experimental Setup \& Results}
 % \begin{frame}
@@ -581,46 +574,6 @@
 %         \bottomrule
 %     \end{tabularx}
 
-% \end{frame}
-
-% % Finding 1: Domain-Specific Fine-Tuning is Critical (Slide 4.2)
-% \begin{frame}
-%     \frametitle{Finding 1: Domain-Specific Fine-Tuning is Critical}
-    
-%     Our experiments show that adapting a generic model to the specific language of academia is more effective than relying on sheer model scale.
-
-%     \fontsize{9}{9}\selectfont
-%     \begin{columns}[T]
-%         \begin{column}{0.5\textwidth}
-%             \begin{block}{\small Superior Performance}
-%                 \begin{itemize}
-%                     \item The fine-tuned model (\textbf{bge-ft}) achieved the highest mean \(F_1\)-score and the lowest variance on the held-out test data.
-%                     \item A one-way ANOVA and subsequent Games-Howell post-hoc test confirmed that our fine-tuned model was \textbf{statistically superior} to all off-the-shelf models evaluated.
-%                     \item This includes models that were orders of magnitude larger, demonstrating that targeted adaptation is more effective than scale for this specialized task.
-%                 \end{itemize}
-%             \end{block}
-            
-%             \begin{alertblock}{\small Key Insight}
-%                 For specialized domains, creating a bespoke embedding space through fine-tuning is crucial. It teaches the model the specific semantics and nuances required to make fine-grained distinctions that general-purpose models miss.
-%             \end{alertblock}
-%         \end{column}
-        
-%         \begin{column}{0.5\textwidth}
-%             % --- SUGGESTED GRAPHIC ---
-%             % A plot showing the validation F1-score over the training
-%             % process would be very effective here.
-%             %
-%             % This would visually echo Figure 4.2 from the thesis,
-%             % showing the learning dynamics and how the fine-tuned
-%             % model's performance improves and stabilizes.
-%             %
-%             % Title: "Validation F1-Score During Fine-Tuning"
-            
-%             \centering
-%             \includegraphics[width=\textwidth]{Binary Classification Eval fine-tuning.png} % Placeholder for Figure 4.2
-            
-%         \end{column}
-%     \end{columns}
 % \end{frame}
 
 % % Finding 1: The Process & Rationale (Slide 4.2.1)
@@ -702,121 +655,145 @@
 %     \note[item]{This is a key insight not just for this project, but for anyone working on NLP problems in specialized domains: targeted adaptation is crucial.}
 % \end{frame}
 
-% Finding 2: Final Classifier Performance (Slide 4.3)
-\begin{frame}
-    \frametitle{Finding 2: Final Classifier Performance}
-    \fontsize{9}{9}\selectfont
+% % Finding 2: All Finalists Perform Exceptionally Well (Slide 4.3.1)
+% \begin{frame}
+%     \frametitle{Finding 2: All Finalists Perform Exceptionally Well}
     
-    The final evaluation, conducted on the held-out test data, measured the efficacy and efficiency of the top-performing classifiers.
+%     The first key result from the classifier evaluation is that our feature engineering and fine-tuning were highly effective, leading to exceptional performance across all finalist models.
     
-    \begin{columns}[T]
-        \begin{column}{0.5\textwidth}
-            \begin{block}{Exceptional Performance Across the Board}
-                All finalist models (SVM, RF, XGBoost, KNN) achieved exceptionally high and stable performance, with mean \(F_1\)-scores approaching or exceeding \textbf{0.97}.
-            \end{block}
-
-            \begin{alertblock}{The Accuracy vs. Efficiency Trade-Off}
-                Our analysis revealed a classic performance trade-off, leading to context-dependent recommendations:
-                \begin{itemize}
-                    \item \textbf{For Maximum Accuracy:} The \textbf{Support Vector Machine (SVM)} was the statistical winner, proving to be the most accurate and consistent classifier.
-                    
-                    \item \textbf{For Optimal Efficiency:} \textbf{Random Forest (RF) and XGBoost} were nearly as accurate but an order of magnitude faster and more predictable at inference time, making them practical choices for a scalable, low-latency system.
-                \end{itemize}
-            \end{alertblock}
-        \end{column}
+%     \begin{columns}[T]
+%         \begin{column}{0.35\textwidth}
+%             \begin{block}{High \& Stable Performance}
+%                 \begin{itemize}
+%                     \item All four finalist classifiers (SVM, RF, XGBoost, KNN) achieved high and stable F1-scores.
+%                     \item As the boxplot shows, the distributions are tightly clustered with mean scores approaching or exceeding \textbf{0.97}.
+%                     \item This demonstrates the robustness of the upstream feature representation.
+%                 \end{itemize}
+%             \end{block}
+%         \end{column}
         
-        \begin{column}{0.45\textwidth}
+%         \begin{column}{0.6\textwidth}
             
-            \centering
-            \includegraphics[width=\textwidth]{placeholder.png} % Placeholder for Figure 4.3
+%             \centering
+%             \includegraphics[width=\textwidth]{classifier_f1score_boxplot_test.pdf} % Placeholder for Figure 4.4
             
-        \end{column}
-    \end{columns}
-\end{frame}
+%         \end{column}
+%     \end{columns}
+    
+%     \note[item]{The main message here is that our framework is successful. The features we created are so discriminative that any of the top-tier classifiers we chose for the final stage did an excellent job.}
+%     \note[item]{This boxplot visualizes the F1-score distributions from our cross-validation on the test set. You can see how tightly grouped they are, all centered well above 0.97.}
+%     \note[item]{This high baseline performance is a testament to the quality of the fine-tuned embeddings and the composite distance vector.}
+    
+% \end{frame}
 
-\section{Qualitative Analysis: Beyond the Metrics}
+% % Finding 2: The Accuracy vs. Efficiency Trade-Off (Slide 4.3.2)
+% \begin{frame}
+%     \frametitle{The Trade-Off: Peak Accuracy vs. Operational Efficiency}
+    
+%     While all models performed well, a deeper analysis reveals a classic trade-off, leading to context-dependent recommendations for deployment.
+    
+%     \begin{columns}[T]
+%         \begin{column}{0.35\textwidth}
+%             \begin{alertblock}{Key Finding}
+%                 \begin{itemize}
+%                     \item \textbf{For Maximum Accuracy:} The \textbf{Support Vector Machine (SVM)} was the statistical winner, proving to be the most accurate and consistent classifier.
+                    
+%                     \item \textbf{For Optimal Efficiency:} \textbf{Random Forest (RF) and XGBoost} were nearly as accurate but an order of magnitude faster and more predictable at inference time.
+%                 \end{itemize}
+%             \end{alertblock}
+%         \end{column}
+        
+%         \begin{column}{0.6\textwidth}
+            
+%             \centering
+%             \includegraphics[width=\textwidth]{Model_Score_vs_Time_Costs.pdf} % Placeholder for Figure 4.3
+            
+%         \end{column}
+%     \end{columns}
+    
+%     \note[item]{So, if all the models are good, which one should we choose? This scatterplot answers that question by showing accuracy versus inference speed.}
+%     \note[item]{On the right, you can see that RF and XGBoost are incredibly fast, which is critical for a scalable, real-world system with many users.}
+%     \note[item]{However, SVM, while slower, is statistically the most accurate. The choice depends on the deployment context: if you need the absolute highest accuracy, you choose SVM. If you need speed and scalability, you choose Random Forest or XGBoost.}
+    
+% \end{frame}
+
+% \section{Qualitative Analysis: Beyond the Metrics}
+% \begin{frame}
+%     \frametitle{Agenda}
+%     \tableofcontents[currentsection]
+% \end{frame}
 
 % % Why Do Errors Still Occur? (Slide 5.1)
 % \begin{frame}
 %     \frametitle{Qualitative Analysis: Why Do Errors Still Occur?}
     
-%     With such high accuracy, it's crucial to ask why the system isn't perfect. A purely numerical analysis can be misleading, as aggregate scores can hide systematic failure modes~\cite{gauthier2022}.
+%     High-level metrics don't tell the full story; a purely numerical analysis can be misleading~\cite{gauthier2022}.
 
-%     \fontsize{9}{9}\selectfont
 %     \begin{columns}[T]
-%         \begin{column}{0.5\textwidth}
-%             \begin{block}{Shared Misclassifications Across Models}
-%                 Our analysis revealed a high degree of error overlap across all evaluated embedding models, from the smallest to the largest.
+%         \begin{column}{0.35\textwidth}
+%             \begin{alertblock}{Finding: The Bottleneck is Data, Not the Model}
+%                 Our analysis revealed that most errors are not random, but are systematic issues rooted in the source data itself.
 %                 \begin{itemize}
-%                     \item A core set of \textbf{211 course pairs} were misclassified by \textbf{every single model}.
-%                     \item This high count of shared errors points to challenges inherent in the source data itself, not idiosyncratic model weaknesses.
+%                     \item A core set of \textbf{211 "hard" pairs} were misclassified by \textit{every single model} we evaluated.
+%                     \item This proves the primary bottleneck for performance has shifted from being model-centric to \textbf{data-centric}.
 %                 \end{itemize}
-%             \end{block}
-            
-%             \begin{alertblock}{The Primary Bottleneck is Now Data-Centric}
-%                 The limiting factor for achieving near-perfect automation is no longer the sophistication of the model. The bottleneck has shifted from being \textbf{model-centric to data-centric}. The model fails when the source data is ambiguous, inconsistent, or lacks a clear textual signal.
 %             \end{alertblock}
 %         \end{column}
         
-%         \begin{column}{0.45\textwidth}
-%             % --- SUGGESTED GRAPHIC ---
-%             % The Venn diagram from Figure 4.5 of the thesis would be
-%             % the perfect graphic for this slide.
-%             %
-%             % It visually demonstrates the high degree of overlap in
-%             % misclassified pairs between all five embedding models,
-%             % with the large number "211" in the central intersection.
-%             %
-%             % This provides powerful, immediate evidence for the key
-%             % message: the errors are systematic and rooted in the data.
+%         \begin{column}{0.5\textwidth}
             
 %             \centering
-%             \includegraphics[width=\textwidth]{placeholder.png} % Placeholder for Figure 4.5
+%             \includegraphics[width=\textwidth]{venn_with_totals_evaldata.png} % Placeholder for Figure 4.5
             
 %         \end{column}
 %     \end{columns}
-% \end{frame}
-
-% % Shared Misclassifications (Slide 5.2)
-% \begin{frame}
-%     \frametitle{Shared Misclassifications: A Data-Centric Problem}
     
-%     To diagnose the source of errors, we analyzed their overlap across all embedding models—from the large, general-purpose models to our small, fine-tuned specialist. The results provide strong evidence that the errors are systematic.
-
-%     \fontsize{9}{9}\selectfont
-%     \begin{columns}[T]
-%         \begin{column}{0.5\textwidth}
-%             \begin{block}{The Finding: Models Agree on What's Hard}
-%                 A significant portion of failures are not random but are systematic products of the course catalog data itself.
-%                 \begin{itemize}
-%                     \item A large number of misclassified course pairs were common to all model combinations.
-%                     \item This indicates that these "hard" examples consistently challenge a wide range of semantic models.
-%                     \item Such errors often arise from annotation artifacts, inherent ambiguity in the source text, or insufficient information to support a clear classification.
-%                 \end{itemize}
-%             \end{block}
-
-%             \begin{alertblock}{Interpretation}
-%                These shared failures strongly suggest that the errors stem from the data itself, not the models. The models are correctly reporting that the texts are not a good match; the issue lies with the ground-truth expectation.
-%             \end{alertblock}
-%         \end{column}
-        
-%         \begin{column}{0.45\textwidth}
-%             % --- SUGGESTED GRAPHIC ---
-%             % The intersection bar chart from Figure 4.6 of the thesis
-%             % would be the perfect graphic for this slide.
-%             %
-%             % It shows the high counts of shared errors across all
-%             % model combinations, reinforcing the message that the
-%             % failures are systematic.
-%             %
-%             % Title: "Number of Common Misclassified Pairs"
-            
-%             \centering
-%             \includegraphics[width=\textwidth]{placeholder.png} % Placeholder for Figure 4.6
-            
-%         \end{column}
-%     \end{columns}
+%     \note[item]{The high degree of error overlap shown in the Venn diagram is critical. It shows that diverse models---from small specialists to large generalists---all failed on the exact same set of "hard" examples.}
+%     \note[item]{This tells us the problem isn't idiosyncratic model weaknesses. The errors are systematic, pointing to inherent challenges in the source data itself.}
+%     \note[item]{Therefore, the limiting factor is no longer model sophistication. The model often fails because the source data is ambiguous, inconsistent, or lacks a clear textual signal to support the ground-truth label.}
+    
 % \end{frame}
+
+% Shared Misclassifications (Slide 5.2)
+\begin{frame}
+    \frametitle{Shared Misclassifications: A Data-Centric Problem}
+    
+    To diagnose the source of errors, we analyzed their overlap across all embedding models—from the large, general-purpose models to our small, fine-tuned specialist. The results provide strong evidence that the errors are systematic.
+
+    \fontsize{9}{9}\selectfont
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{block}{The Finding: Models Agree on What's Hard}
+                A significant portion of failures are not random but are systematic products of the course catalog data itself.
+                \begin{itemize}
+                    \item A large number of misclassified course pairs were common to all model combinations.
+                    \item This indicates that these "hard" examples consistently challenge a wide range of semantic models.
+                    \item Such errors often arise from annotation artifacts, inherent ambiguity in the source text, or insufficient information to support a clear classification.
+                \end{itemize}
+            \end{block}
+
+            \begin{alertblock}{Interpretation}
+               These shared failures strongly suggest that the errors stem from the data itself, not the models. The models are correctly reporting that the texts are not a good match; the issue lies with the ground-truth expectation.
+            \end{alertblock}
+        \end{column}
+        
+        \begin{column}{0.45\textwidth}
+            % --- SUGGESTED GRAPHIC ---
+            % The intersection bar chart from Figure 4.6 of the thesis
+            % would be the perfect graphic for this slide.
+            %
+            % It shows the high counts of shared errors across all
+            % model combinations, reinforcing the message that the
+            % failures are systematic.
+            %
+            % Title: "Number of Common Misclassified Pairs"
+            
+            \centering
+            \includegraphics[width=\textwidth]{placeholder.png} % Placeholder for Figure 4.6
+            
+        \end{column}
+    \end{columns}
+\end{frame}
 
 % % Root Cause Analysis (Examples) (Slide 5.3)
 % \begin{frame}
