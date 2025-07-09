@@ -478,141 +478,144 @@
 %     \end{columns}
 % \end{frame}
 
-% Step 3: Domain-Specific Fine-Tuning (Slide 3.5)
-\begin{frame}
-    \frametitle{Step 3: Domain-Specific Fine-Tuning}
+% % Step 3: Domain-Specific Fine-Tuning (Slide 3.5)
+% \begin{frame}
+%     \frametitle{Step 3: Domain-Specific Fine-Tuning}
     
-    General-purpose models lack the specialized "vocabulary" for academic text. To create a more discriminative embedding space, we fine-tune a pre-trained model on our course data using \textbf{deep metric learning}.
+%     General-purpose models lack the specialized ``vocabulary'' for academic text. To create a more discriminative embedding space, we fine-tune a pre-trained model on our course data using \textbf{deep metric learning}.
     
-    \fontsize{9}{9}\selectfont
-    \begin{columns}[T]
-        \begin{column}{0.55\textwidth}
-            \begin{alertblock}{Learning Objective: The Triplet Loss}
-                We train the model using a \textbf{Triplet Loss} function, which teaches the model to understand nuanced similarity by operating on triplets of courses~\cite{Schroff_2015_CVPR, hermans2017defensetripletlossperson}:
-                \begin{itemize}
-                    \item An \textbf{Anchor} course (\(A\))
-                    \item A \textbf{Positive}, equivalent course (\(P\))
-                    \item A \textbf{Negative}, non-equivalent course (\(N\))
-                \end{itemize}
+%     \fontsize{9}{9}\selectfont
+%     \begin{columns}[T]
+%         \begin{column}{0.55\textwidth}
+%             \begin{alertblock}{Learning Objective: The Triplet Loss}
+%                 We train the model using a \textbf{Triplet Loss} function, which teaches the model to understand nuanced similarity by operating on triplets of courses~\cite{Schroff_2015_CVPR, hermans2017defensetripletlossperson}:
+%                 \begin{itemize}
+%                     \item An \textbf{Anchor} course (\(A\))
+%                     \item A \textbf{Positive}, equivalent course (\(P\))
+%                     \item A \textbf{Negative}, non-equivalent course (\(N\))
+%                 \end{itemize}
                 
-                \vspace{0.5em}
-                The goal is to adjust the embedding space such that the distance between the Anchor and Positive is smaller than the distance between the Anchor and Negative, enforced by a margin (\(\alpha\)):
+%                 \vspace{0.5em}
+%                 The goal is to adjust the embedding space such that the distance between the Anchor and Positive is smaller than the distance between the Anchor and Negative, enforced by a margin (\(\alpha\)):
                 
-                \[ L(A, P, N) = \max\left(d(A, P) - d(A, N) + \alpha, 0\right) \]
-            \end{alertblock}
-        \end{column}
+%                 \[ L(A, P, N) = \max\left(d(A, P) - d(A, N) + \alpha, 0\right) \]
+%             \end{alertblock}
+%         \end{column}
         
-        \begin{column}{0.4\textwidth}
-            \centering
-            \includegraphics[width=0.8\textwidth]{tripletloss_viz_vertical.pdf} % Placeholder for the graphic
-        \end{column}
-    \end{columns}
-\end{frame}
+%         \begin{column}{0.4\textwidth}
+%             \centering
+%             \includegraphics[width=0.8\textwidth]{tripletloss_viz_vertical.pdf} % Placeholder for the graphic
+%         \end{column}
+%     \end{columns}
+% \end{frame}
 
 % % Step 4: Downstream Classification (Slide 3.6)
 % \begin{frame}
 %     \frametitle{Step 4: Downstream Classification}
     
-%     The final step is to feed the engineered composite distance vectors (\(\Delta_c\)) into efficient, traditional machine learning classifiers for the final equivalency prediction. This decoupled approach allows for rapid, on-demand comparisons.
-    
-%     \fontsize{9}{9}\selectfont
 %     \begin{columns}[T]
-%         \begin{column}{0.8\textwidth}
-%             \begin{block}{Classifier Evaluation}
-%                 We evaluated a comprehensive suite of models. The top finalists were:
-%                 \begin{itemize}
-%                     \item Support Vector Machine (SVM)
-%                     \item Random Forest (RF)
+%         \begin{column}{0.35\textwidth}
+%             \hfill\vspace{3mm}
+%             \begin{itemize}
+%                 \item \textbf{Finalists:}
+%                     \begin{itemize}
+%                     \item KNN
+%                     \item SVM
+%                     \item Random Forest
 %                     \item XGBoost
-%                     \item K-Nearest Neighbors (KNN)
 %                 \end{itemize}
-%             \end{block}
-            
-%             \vspace{-2mm}
-
-%             \begin{alertblock}{Key Finding: Accuracy vs. Efficiency}
-%                 A clear trade-off emerged from our analysis:
+%                 \vspace{0.5em}
+%                 \item \textbf{Key Finding:}\\A clear trade-off emerged
 %                 \begin{itemize}
-%                     \item \textbf{Maximum Accuracy:} SVM proved to be the most accurate and consistent model statistically.
-%                     \item \textbf{Optimal Efficiency:} Random Forest and XGBoost were an order of magnitude faster at inference time, making them ideal for scalable, real-world deployment.
+%                     \item \textbf{Most Accurate:}\\\quad SVM
+%                     \item \textbf{Most Efficient:}\\\quad Random Forest\\\quad XGBoost
 %                 \end{itemize}
-%             \end{alertblock}
+%             \end{itemize}
+%             % \begin{alertblock}{Classifier Performance}\hfill
+%             %     \begin{itemize}
+%             %         \item \textbf{Finalists:}
+%             %         \begin{itemize}
+%             %             \item KNN
+%             %             \item SVM
+%             %             \item Random Forest
+%             %             \item XGBoost
+%             %         \end{itemize}
+%             %         \vspace{0.5em}
+%             %         \item \textbf{Key Finding:}\\A clear trade-off emerged
+%             %         \begin{itemize}
+%             %             \item \textbf{Most Accurate:}\\\quad SVM
+%             %             \item \textbf{Most Efficient:}\\\quad Random Forest\\\quad XGBoost
+%             %         \end{itemize}
+%             %     \end{itemize}\hfill\vspace{-0.75em}
+%             % \end{alertblock}
 %         \end{column}
         
-%         \begin{column}{0.15\textwidth}
-%             % --- SUGGESTED GRAPHIC ---
-%             % A scatter plot visualizing the trade-off between
-%             % accuracy and inference time would be highly effective.
-%             %
-%             % - Y-axis: "F1-Score (Accuracy)"
-%             % - X-axis: "Inference Time (seconds)"
-%             %
-%             % Plot the performance of the final classifiers (SVM, RF, XGBoost, KNN).
-%             % This would visually echo Figure 4.3 from the thesis, showing
-%             % that RF and XGBoost are clustered on the left (fast) with high
-%             % accuracy, while SVM is slightly to the right (slower) with
-%             % the highest accuracy.
-            
+%         \begin{column}{0.6\textwidth}
 %             \centering
-%             \includegraphics[width=\textwidth]{placeholder.png} % Placeholder for Figure 4.3
-            
+%             \includegraphics[width=\textwidth]{Model_Score_vs_Time_Costs.pdf} % Placeholder for Figure 4.3
 %         \end{column}
 %     \end{columns}
+
+%     \note[item]{This slide shows the final stage of the pipeline, where we take the engineered feature vectors and feed them into the top four finalist classifiers to get a final prediction.}
+%     \note[item]{This visualizes the trade-off between model accuracy on the x-axis, and time cost on a logarithmic y-axis. The left plot is for training time, while the right plot for inference time is the most critical for a real-world system.}
+%     \note[item]{Looking at the inference plot on the right, you can see that while all four models are highly accurate—clustered together with F1-scores over 0.97---their speeds are vastly different.}
+%     \note[item]{Random Forest and XGBoost are more tightly clustered close to the bottom, showing they are more \textbf{\underbar{consistently}} faster than SVM and KNN. This consistent speed advantage during inference with almost no loss in accuracy makes them the ideal choice for a scalable, low-latency production system.}
+%     \note[item]{However, the Support Vector Machine (SVM) is at the very top of the accuracy scale. A formal statistical analysis confirmed it was the most accurate and consistent model, making it the choice where peak performance is the absolute priority.}
 % \end{frame}
 
 % \section{Experimental Setup \& Results}
 
-% % Data & Evaluation (Slide 4.1)
-% \begin{frame}
-%     \frametitle{Data \& Evaluation}
-%     \fontsize{9}{9}\selectfont
+% Data & Evaluation (Slide 4.1)
+\begin{frame}
+    \frametitle{Data \& Evaluation}
+    \fontsize{9}{9}\selectfont
     
-%     The framework was trained and validated on a real-world dataset to ensure the results are robust and generalizable.
+    The framework was trained and validated on a real-world dataset to ensure the results are robust and generalizable.
     
-%     \fontsize{8}{7}\selectfont
-%     \begin{columns}[T]
-%         \begin{column}{0.5\textwidth}
-%             \begin{block}{The PPM Corpus}
-%                 The definitive experiments were conducted on a large corpus provided by the \textbf{Program Pathways Mapper (PPM)}:
-%                 \begin{itemize}
-%                     \item \textbf{Source:} Real-world data from California's public colleges.
-%                     \item \textbf{Ground Truth:} Course equivalency is defined by the Course Identification Numbering System (C-ID).
-%                     \item \textbf{Scale:} The final, cleaned corpus consists of \textbf{2,157 courses} across 157 distinct C-ID classes.
-%                 \end{itemize}
-%             \end{block}
+    \fontsize{8}{7}\selectfont
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{block}{The PPM Corpus}
+                The definitive experiments were conducted on a large corpus provided by the \textbf{Program Pathways Mapper (PPM)}:
+                \begin{itemize}
+                    \item \textbf{Source:} Real-world data from California's public colleges.
+                    \item \textbf{Ground Truth:} Course equivalency is defined by the Course Identification Numbering System (C-ID).
+                    \item \textbf{Scale:} The final, cleaned corpus consists of \textbf{2,157 courses} across 157 distinct C-ID classes.
+                \end{itemize}
+            \end{block}
             
-%             \vspace{-2mm}
+            \vspace{-2mm}
             
-%             \begin{alertblock}{Rigorous Evaluation Protocol}
-%                 \begin{itemize}
-%                     \item \textbf{Partitioning:} A stratified \(50/50\) split was used to create non-overlapping training and test sets, ensuring all classes were represented in both.
-%                     \item \textbf{Primary Metric:} The \textbf{\(F_1\)-Score} was used as the primary metric to balance the trade-off between precision and recall.
-%                 \end{itemize}
-%             \end{alertblock}
-%         \end{column}
+            \begin{alertblock}{Rigorous Evaluation Protocol}
+                \begin{itemize}
+                    \item \textbf{Partitioning:} A stratified \(50/50\) split was used to create non-overlapping training and test sets, ensuring all classes were represented in both.
+                    \item \textbf{Primary Metric:} The \textbf{\(F_1\)-Score} was used as the primary metric to balance the trade-off between precision and recall.
+                \end{itemize}
+            \end{alertblock}
+        \end{column}
         
-%         \begin{column}{0.5\textwidth}
-%             % --- SUGGESTED GRAPHIC ---
-%             % A simplified version of Table 4.1 from the thesis would be
-%             % very effective here to summarize the dataset.
-%             %
-%             % You could create a clean, modern-looking table with key stats:
-%             %
-%             % | Characteristic | PPM Corpus                     |
-%             % |----------------|--------------------------------|
-%             % | Source         | Program Pathways Mapper (PPM)  |
-%             % | Ground Truth   | C-ID Codes                     |
-%             % | Final Size     | 2,157 Courses (157 Classes)    |
-%             % | Partitioning   | Stratified 50/50 Train/Test    |
-%             %
-%             % This provides a quick, visual summary of the data foundation.
+        \begin{column}{0.5\textwidth}
+            % --- SUGGESTED GRAPHIC ---
+            % A simplified version of Table 4.1 from the thesis would be
+            % very effective here to summarize the dataset.
+            %
+            % You could create a clean, modern-looking table with key stats:
+            %
+            % | Characteristic | PPM Corpus                     |
+            % |----------------|--------------------------------|
+            % | Source         | Program Pathways Mapper (PPM)  |
+            % | Ground Truth   | C-ID Codes                     |
+            % | Final Size     | 2,157 Courses (157 Classes)    |
+            % | Partitioning   | Stratified 50/50 Train/Test    |
+            %
+            % This provides a quick, visual summary of the data foundation.
             
-%             \centering
-%             \includegraphics[width=\textwidth]{placeholder.png} % Placeholder for Table 4.1
+            \centering
+            \includegraphics[width=\textwidth]{placeholder.png} % Placeholder for Table 4.1
             
-%         \end{column}
-%     \end{columns}
-% \end{frame}
+        \end{column}
+    \end{columns}
+\end{frame}
 
 % % Finding 1: Domain-Specific Fine-Tuning is Critical (Slide 4.2)
 % \begin{frame}
