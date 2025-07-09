@@ -32,3 +32,6 @@
 *.pdfsync
 *.bbl-SAVE-ERROR
 *.bcf-SAVE-ERROR
+
+## Adobe Stock Images
+AdobeStock_*

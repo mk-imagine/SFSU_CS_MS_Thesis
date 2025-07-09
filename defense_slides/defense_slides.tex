@@ -27,6 +27,8 @@
 
 \graphicspath{ {../figures/} }
 
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric}
+
 % Current section
 % \AtBeginSection[ ]
 % {
@@ -380,52 +382,52 @@
 % \end{frame}
 
 % Core Principle: Decoupling Representation from Classification (Slide 3.2)
-\begin{frame}
-    \frametitle{Core Principle: Decoupling Representation from Classification}
+% \begin{frame}
+%     \frametitle{Core Principle: Decoupling Representation from Classification}
 
-    By separating the process into two stages, we gain the semantic power of deep learning while avoiding the high operational costs of end-to-end LLM classification~\cite{Errica2024WhatDI} and the privacy risks of enrollment-based methods~\cite{slade10.1177/0002764213479366}.
+%     By separating the process into two stages, we gain the semantic power of deep learning while avoiding the high operational costs of end-to-end LLM classification~\cite{Errica2024WhatDI} and the privacy risks of enrollment-based methods~\cite{slade10.1177/0002764213479366}.
     
-    \fontsize{9}{9}\selectfont
-    \begin{columns}[T]
-        \begin{column}{0.45\textwidth}
-            \begin{block}{Stage 1: Semantic Representation}
-                The computationally intensive work of understanding language is done \textbf{once, offline}.
-                
-                \begin{itemize}
-                    \item A deep embedding model converts raw course text into a structured, reusable semantic vector.
-                    \item This captures the nuanced meaning and context of the course description.
-                \end{itemize}
-            \end{block}
-        \end{column}
+%     \vfill % Center the graphic vertically on the slide
+%     \centering
+    
+%     % --- TikZ Implementation of the Flowchart ---
+%     % NOTE: Ensure \usetikzlibrary{arrows.meta, positioning, shapes.geometric} is in your preamble
+%     \begin{tikzpicture}[
+%         node distance=1cm,
+%         % Define styles for the elements
+%         stage/.style={rectangle, 
+%                       draw, 
+%                       rounded corners,
+%                       fill=blue!10, 
+%                       text width=6cm, 
+%                       minimum height=3.5cm, 
+%                       align=center},
+%         arrow/.style={-Stealth, ultra thick, draw=gray!80}
+%     ]
+%         % Place the nodes for each stage
+%         \node (stage1) [stage] {
+%             \textbf{Stage 1: Semantic Representation} \\
+%             \textit{(Heavy, Offline Task)}
+%             \\[2ex]
+%             A deep embedding model converts raw course text into structured, reusable semantic vectors.
+%         };
         
-        \begin{column}{0.45\textwidth}
-            \begin{block}{Stage 2: Pairwise Classification}
-                The classification of course pairs becomes \textbf{computationally cheap and fast}.
-                
-                \begin{itemize}
-                    \item A traditional machine learning model simply compares the pre-computed vectors.
-                    \item This allows for rapid, on-demand comparison of any two courses in the database.
-                \end{itemize}
-            \end{block}
-        \end{column}
-    \end{columns}
+%         \node (stage2) [stage, right=of stage1] {
+%             \textbf{Stage 2: Pairwise Classification} \\
+%             \textit{(Lightweight, Fast Task)}
+%             \\[2ex]
+%             A traditional ML model performs rapid, on-demand comparisons of the pre-computed vectors.
+%         };
+        
+%         % Draw the arrow connecting the stages
+%         \draw [arrow] (stage1.east) -- (stage2.west);
+        
+%     \end{tikzpicture}
     
-    \vspace{0.5em}
+%     \vfill
     
-    \centering
-    \begin{minipage}{0.95\textwidth}
-        \begin{alertblock}{The Benefit: The Best of Both Worlds}
-            We leverage the power of transformers for deep semantic understanding without incurring their high inference costs for every comparison, creating a highly scalable system.
-        \end{alertblock}
-    \end{minipage}
-    
-    
-    % --- SUGGESTED GRAPHIC ---
-    % A simple diagram could show Stage 1 (a complex neural network icon
-    % labeled "Offline/Intensive") producing a vector, which is then
-    % fed into Stage 2 (a simple decision boundary icon labeled "Online/Fast").
-    
-\end{frame}
+%     \note{This is the most important concept in the framework. We do the heavy lifting of understanding language only once, offline. This lets us do the actual classification of pairs incredibly quickly and efficiently. This two-stage process is what gives us the best of both worlds: the semantic power of deep learning without the high operational costs for every comparison, which is what makes the system so scalable and practical.}
+% \end{frame}
 
 % % Step 1: Deep Contextual Embeddings (Slide 3.3)
 % \begin{frame}
@@ -433,35 +435,14 @@
 
 %     The first step is to convert unstructured course catalog text into a structured, semantically rich vector using a pre-trained transformer model~\cite{devlin2019bertpretrainingdeepbidirectional, reimers-2019-sentence-bert}.
     
-%     \fontsize{9}{9}\selectfont
-%     %%%%%% side by side?
-%     \begin{block}{Input: Normalized Course Document}
-%         For each course, we create a single, consistent input string by concatenating four key fields:
-%         \begin{itemize}
-%             \item Department Name \& Course Number
-%             \item Course Title
-%             \item Full Course Description
-%         \end{itemize}
-%     \end{block}
+%     \vfill
 
-%     \begin{block}{Output: A Semantic Vector}
-%         The model produces a high-dimensional vector (e.g., 384 dimensions) for each course. This vector represents the course's location in a "semantic space," where similar courses are positioned closer together.
-%     \end{block}
-    
-%     % --- SUGGESTED GRAPHIC ---
-%     % A visual diagram of this process would be very effective.
-%     %
-%     % - On the left: A box with example "Input" text.
-%     % - Center: An icon for the "Transformer Model".
-%     % - On the right: A representation of the "Output Vector"
-%     %   (e.g., [0.12, -0.45, ...]).
-%     %
-%     % This provides a simple, clear visual of the transformation
-%     % from unstructured text to a structured vector.
 %     \begin{figure}
 %         \centering
-%         \includegraphics[width=0.1\textwidth]{placeholder.png}
+%         \includegraphics[width=\textwidth]{text_to_vector.pdf}
 %     \end{figure}
+
+%     \note{The key here is that we're turning unstructured text into a structured, mathematical object—a vector. We use a pre-trained transformer model for this, specifically models from the Sentence-BERT family~\cite{devlin2019bertpretrainingdeepbidirectional, reimers-2019-sentence-bert}. The resulting vector captures the actual meaning of the course, so similar courses will have vectors that are closer together in this high-dimensional space.}
 
 % \end{frame}
 
@@ -474,11 +455,11 @@
 
 %     \fontsize{9}{9}\selectfont
 %     \begin{columns}[T]
-%         \begin{column}{0.51\textwidth}
+%         \begin{column}{0.55\textwidth}
 %             \begin{block}{Combining Local \& Global Information}
 %                 The vector combines two distinct types of information:
 %                 \begin{itemize}
-%                     \item \textbf{Local Disparities:} The granular, dimension-by-dimension difference between the two course vectors.
+%                     \item \textbf{Local Disparities:} The granular, element-wise difference between the two course vectors.
 %                     \item \textbf{Global Alignment:} A single, holistic score of their overall similarity in the semantic space.
 %                 \end{itemize}
 %             \end{block}
@@ -487,75 +468,46 @@
 %                 For two \(k\)-dimensional course vectors, \(A\) and \(B\), the composite vector \(\Delta_c\) is constructed by concatenating their element-wise difference with their cosine similarity:
 %                 \[ \Delta_{c} = \left( a_{1}-b_{1}, \dots, a_{k}-b_{k}, \frac{A \cdot B}{\parallel A \parallel\parallel B\parallel} \right) \]
 %             \end{alertblock}
-
 %         \end{column}
 
 %         \begin{column}{0.4\textwidth}
-%             % --- SUGGESTED GRAPHIC ---
-%             % A diagram illustrating the construction of the vector
-%             % would be highly effective here.
-%             %
-%             % It could show two input vectors (Vector A, Vector B)
-%             % at the top.
-%             %
-%             % One path shows them going into an "Element-wise
-%             % Difference" operation, producing the first part of
-%             % the final vector.
-%             %
-%             % Another path shows them going into a "Cosine Similarity"
-%             % operation, producing the final single element.
-%             %
-%             % Both results are then shown being concatenated into the
-%             % final "Composite Distance Vector (\Delta_c)".
+%             \hfill\\\vspace{0.5em}
 %             \centering
-%             \includegraphics[width=\textwidth]{placeholder.png} % Placeholder for the graphic
+%             \includegraphics[width=0.9\textwidth]{composite_distance_vector_generation.pdf} % Placeholder for the graphic
 %         \end{column}
 %     \end{columns}
 % \end{frame}
 
-% % Step 3: Domain-Specific Fine-Tuning (Slide 3.5)
-% \begin{frame}
-%     \frametitle{Step 3: Domain-Specific Fine-Tuning}
+% Step 3: Domain-Specific Fine-Tuning (Slide 3.5)
+\begin{frame}
+    \frametitle{Step 3: Domain-Specific Fine-Tuning}
     
-%     General-purpose models lack the specialized "vocabulary" for academic text. To create a more discriminative embedding space, we fine-tune a pre-trained model on our course data using \textbf{deep metric learning}.
+    General-purpose models lack the specialized "vocabulary" for academic text. To create a more discriminative embedding space, we fine-tune a pre-trained model on our course data using \textbf{deep metric learning}.
     
-%     \fontsize{9}{9}\selectfont
-%     \begin{columns}[T]
-%         \begin{column}{0.55\textwidth}
-%             \begin{alertblock}{Learning Objective: The Triplet Loss}
-%                 We train the model using a \textbf{Triplet Loss} function, which teaches the model to understand nuanced similarity by operating on triplets of courses~\cite{Schroff_2015_CVPR, hermans2017defensetripletlossperson}:
-%                 \begin{itemize}
-%                     \item An \textbf{Anchor} course (\(A\))
-%                     \item A \textbf{Positive}, equivalent course (\(P\))
-%                     \item A \textbf{Negative}, non-equivalent course (\(N\))
-%                 \end{itemize}
+    \fontsize{9}{9}\selectfont
+    \begin{columns}[T]
+        \begin{column}{0.55\textwidth}
+            \begin{alertblock}{Learning Objective: The Triplet Loss}
+                We train the model using a \textbf{Triplet Loss} function, which teaches the model to understand nuanced similarity by operating on triplets of courses~\cite{Schroff_2015_CVPR, hermans2017defensetripletlossperson}:
+                \begin{itemize}
+                    \item An \textbf{Anchor} course (\(A\))
+                    \item A \textbf{Positive}, equivalent course (\(P\))
+                    \item A \textbf{Negative}, non-equivalent course (\(N\))
+                \end{itemize}
                 
-%                 \vspace{0.5em}
-%                 The goal is to adjust the embedding space such that the distance between the Anchor and Positive is smaller than the distance between the Anchor and Negative, enforced by a margin (\(\alpha\)):
+                \vspace{0.5em}
+                The goal is to adjust the embedding space such that the distance between the Anchor and Positive is smaller than the distance between the Anchor and Negative, enforced by a margin (\(\alpha\)):
                 
-%                 \[ L(A, P, N) = \max\left(d(A, P) - d(A, N) + \alpha, 0\right) \]
-%             \end{alertblock}
-%         \end{column}
+                \[ L(A, P, N) = \max\left(d(A, P) - d(A, N) + \alpha, 0\right) \]
+            \end{alertblock}
+        \end{column}
         
-%         \begin{column}{0.4\textwidth}
-%             % --- SUGGESTED GRAPHIC ---
-%             % A visual diagram explaining the Triplet Loss objective would be ideal here.
-%             %
-%             % It should show three points in a 2D space: "Anchor," "Positive," and "Negative."
-%             %
-%             % Use arrows to illustrate the core idea:
-%             % 1. An arrow pulling the Anchor and Positive closer together (minimizing d(A,P)).
-%             % 2. An arrow pushing the Anchor and Negative further apart (maximizing d(A,N)).
-%             %
-%             % A final state could show that d(A,P) + margin < d(A,N), visually representing
-%             % the desired outcome of the training.
-            
-%             \centering
-%             \includegraphics[width=\textwidth]{placeholder.png} % Placeholder for the graphic
-            
-%         \end{column}
-%     \end{columns}
-% \end{frame}
+        \begin{column}{0.4\textwidth}
+            \centering
+            \includegraphics[width=0.8\textwidth]{tripletloss_viz_vertical.pdf} % Placeholder for the graphic
+        \end{column}
+    \end{columns}
+\end{frame}
 
 % % Step 4: Downstream Classification (Slide 3.6)
 % \begin{frame}
