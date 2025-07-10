@@ -2,103 +2,203 @@
 
 % --- PACKAGES ---
 \usepackage[margin=1in]{geometry}
-\usepackage{booktabs} % For professional-looking tables
 \usepackage{amsmath}  % For math symbols like \Delta
+\usepackage{booktabs} % For professional-looking tables
 \usepackage{hyperref} % For clickable links (optional)
 
 % --- DOCUMENT INFORMATION ---
-\title{Automating Course Articulation: A Deep Metric Learning Framework Using Public Data \\ \vspace{0.5em} \large \textit{Thesis Outline \& Terminology Guide}}
+\title{Automating Course Articulation: A Deep Metric Learning Framework Using Public Data \\ \vspace{0.5em} \large \textit{Unified Outline \& Terminology Guide}}
 \author{Mark S. Kim}
 \date{May 2025}
 
 \begin{document}
 
 \maketitle
-
 \hrule
 \vspace{2em}
 
 % =====================================================================
 % SECTION: THESIS OUTLINE
 % =====================================================================
-\section*{Thesis Outline}
+\section*{Thesis Outline: Expanded Version}
 
 \subsection*{Abstract}
 \begin{itemize}
-    \item \textbf{Problem:} The manual process of determining course equivalency is a major obstacle for student mobility and educational equity, causing credit loss and graduation delays that disproportionately affect underrepresented students.
-    \item \textbf{Limitations of Previous Work:} Past automated methods have been hampered by their dependence on sensitive student data or the impracticality and opacity of using large language models (LLMs) for direct classification.
-    \item \textbf{Proposed Solution:} This thesis introduces a novel framework that uses only public course catalog data, separating semantic representation from classification.
-    \item \textbf{Methodology:} The approach uses deep metric learning to fine-tune embedding models on course text. These specialized embeddings are used to create a composite distance vector, which then serves as a feature set for traditional machine learning classifiers.
-    \item \textbf{Results:} The framework achieves state-of-the-art accuracy, with F1-scores over 0.99.
-    \item \textbf{Conclusion:} The result is a computationally efficient, scalable, and privacy-preserving tool to automate course articulation, reduce administrative burden, and promote a more equitable educational system.
+    \item \textbf{Problem:} The manual process of course equivalency determination acts as a significant barrier to student mobility and educational equity. This leads to substantial credit loss and delayed graduation, which disproportionately harms underrepresented students.
+    \item \textbf{Limitations of Previous Work:} Past automated methods have been limited by a reliance on sensitive student enrollment records or the operational intractability and opacity of using large language models (LLMs) for direct classification.
+    \item \textbf{Proposed Solution:} The thesis introduces and validates a novel framework that decouples semantic representation from classification. It uses only publicly available course catalog data, making it a privacy-preserving solution.
+    \item \textbf{Methodology:} The framework leverages deep metric learning to fine-tune contextual embedding models on public course text. These specialized embeddings are then used to construct a novel composite distance vector, which serves as a rich feature set for training traditional machine learning classifiers.
+    \item \textbf{Results:} When evaluated on a real-world dataset, the proposed framework achieves state-of-the-art accuracy, with $F_{1}$-scores exceeding 0.99.
+    \item \textbf{Conclusion:} The final result is a computationally efficient, scalable, and privacy-preserving tool for institutions to automate course articulation, reduce administrative burden, and foster a more equitable educational ecosystem.
 \end{itemize}
 
 \subsection*{Chapter 1: Introduction}
-\subsubsection*{1.1 The California Context}
 \begin{itemize}
-    \item California's three-tiered public higher education system (UC, CSU, CCC) is the largest in the U.S.
-    \item The course articulation process, facilitated by the ASSIST repository, is a manual, inefficient, and intractable task.
-\end{itemize}
-\subsubsection*{1.2 The National Problem of Student Transfer}
-\begin{itemize}
-    \item Transferring institutions is a common part of the modern student journey.
-    \item Transfer enrollment is resurgent post-pandemic, with growth driven by diverse and returning student populations.
-\end{itemize}
-\subsubsection*{1.3 Consequences for Students: Inefficiency and Inequity}
-\begin{itemize}
-    \item \textbf{Credit Loss:} Transfer students lose a significant percentage of their credits.
-    \item \textbf{Financial and Academic Setbacks:} Credit loss increases time-to-degree and cost, while negatively impacting student persistence.
-    \item \textbf{Educational Equity:} Low-income and underrepresented minority students are disproportionately harmed by these systemic barriers.
-\end{itemize}
-\subsubsection*{1.4 Thesis Contribution and Roadmap}
-\begin{itemize}
-    \item \textbf{Contribution:} This thesis develops a computational framework to automate course articulation using deep metric learning on public data.
-    \item \textbf{Roadmap:} The thesis is organized into chapters covering background, methodology, results, and discussion.
+    \item \textbf{1.1 The California Context: A Critical Case Study}
+    \begin{itemize}
+        \item California's public higher education system is the largest in the U.S., comprising 149 colleges and universities serving nearly 2.9 million students.
+        \item A foundational principle is student mobility, particularly the pathway from a two-year community college to a four-year university.
+        \item The Articulation System Stimulating Interinstitutional Student Transfer (ASSIST) is the state's official repository for articulation agreements, but it is fundamentally a display for agreements that are negotiated manually.
+        \item This manual process is inefficient, slow, and intractable due to the sheer number of institutions.
+    \end{itemize}
+    \item \textbf{1.2 The National Problem of Student Transfer}
+    \begin{itemize}
+        \item Transferring between institutions is a normative part of the modern student's academic journey.
+        \item In the fall of 2023, transfer enrollment constituted 13.2\% of all continuing and returning undergraduates.
+        \item Transfer enrollment has seen a post-pandemic resurgence, growing by 5.3\% from Fall 2022 to Fall 2023.
+        \item Over half of all returning learners re-enroll at a new institution, highlighting the critical role of the transfer system.
+    \end{itemize}
+    \item \textbf{1.3 Consequences for Students: Inefficiency and Inequity}
+    \begin{itemize}
+        \item \textbf{Credit Loss:} A 2017 U.S. Government Accountability Office (GAO) report estimated that transfer students lost an average of 43\% of their credits. More than half of all transfer students lose some credits.
+        \item \textbf{Financial and Academic Setbacks:} Credit loss increases the time-to-degree, delays entry into the workforce, and increases the total tuition burden.
+        \item \textbf{Educational Equity:} Low-income students and students from historically underrepresented racial and ethnic groups are more likely to rely on transfer pathways. Recent growth in transfer enrollment has been driven disproportionately by Black and Hispanic students. The barriers imposed by an inefficient system disproportionately harm these student populations.
+    \end{itemize}
+    \item \textbf{1.4 Thesis Contribution and Roadmap}
+    \begin{itemize}
+        \item This thesis confronts the problem by developing a novel computational framework to automate course articulation.
+        \item It leverages deep metric learning on publicly available course catalog text, introducing a privacy-preserving and scalable method.
+        \item Primary contributions include the development of a highly accurate framework, an innovative feature engineering technique, and a computationally efficient approach that avoids the issues of previous methods.
+    \end{itemize}
 \end{itemize}
 
 \subsection*{Chapter 2: Background and Related Work}
 \begin{itemize}
-    \item \textbf{2.1 Keyword and Statistical Methods:} Early attempts (e.g., TF-IDF) lacked true semantic understanding.
-    \item \textbf{2.2 Static Semantic Representations:} Models like Word2Vec and GloVe were an improvement but are context-insensitive.
-    \item \textbf{2.3 Contextual Semantic Representations:} Transformer models like BERT generate richer, contextual embeddings.
-    \item \textbf{2.4 Direct LLM Classification:} Promising accuracy but limited by cost, opacity, and prompt sensitivity.
-    \item \textbf{2.5 Enrollment-Based Approaches:} Methods like course2vec are powerful but rely on private data and lack generalizability.
-    \item \textbf{2.6 Research Gap:} A need exists for a hybrid framework that decouples semantic representation from classification.
+    \item \textbf{2.1 Keyword and Statistical Methods (e.g., TF-IDF)}
+    \begin{itemize}
+        \item These methods are computationally simple but lack semantic depth.
+        \item Their fundamental limitation is a complete lack of semantic understanding; they cannot grasp that "calculus" and "differentiation" are related concepts.
+    \end{itemize}
+    \item \textbf{2.2 Static Semantic Representations (e.g., Word2Vec, GloVe)}
+    \begin{itemize}
+        \item These models represent a leap toward semantic understanding by representing words as dense vectors.
+        \item However, they produce a single, fixed vector for each word regardless of context, failing to account for polysemy (e.g., "bank" in "river bank" vs. "bank account").
+    \end{itemize}
+    \item \textbf{2.3 Contextual Semantic Representations (e.g., BERT, SBERT)}
+    \begin{itemize}
+        \item The transformer architecture, particularly models like Bidirectional Encoder Representations from Transformers (BERT), revolutionized NLP by enabling contextual embeddings.
+        \item Architectures like Sentence-BERT (SBERT) were developed to produce semantically meaningful embeddings for entire sentences or paragraphs that can be efficiently compared.
+    \end{itemize}
+    \item \textbf{2.4 Direct LLM Classification}
+    \begin{itemize}
+        \item Preliminary work for this thesis explored using LLMs like GPT-4 and Gemini directly for classification.
+        \item This approach was found to be computationally expensive, highly sensitive to prompt phrasing, and opaque ("black box"), providing no quantifiable similarity score.
+    \end{itemize}
+    \item \textbf{2.5 Enrollment-Based Approaches (e.g., course2vec)}
+    \begin{itemize}
+        \item These models predict course similarity by analyzing student co-enrollment patterns. The model `course2vec` learns embeddings from the patterns of courses students take together.
+        \item This approach is constrained by its reliance on large-scale, proprietary institutional data, which raises significant privacy concerns and limits its generalizability. It cannot be used to compare courses between two institutions with no prior history of student transfer.
+    \end{itemize}
+    \item \textbf{2.6 Research Gap}
+    \begin{itemize}
+        \item The limitations of existing methods point toward a need for an intelligent, hybrid framework that decouples deep semantic representation from final classification. This conceptual gap forms the central motivation for the proposed methodology.
+    \end{itemize}
 \end{itemize}
 
 \subsection*{Chapter 3: Methodology}
 \begin{itemize}
-    \item \textbf{3.1 Phase 1: Direct LLM Classification:} An exploratory phase using Google's Gemini Pro to establish a baseline.
-    \item \textbf{3.2 Phase 2: The Decoupled Pipeline Framework:}
+    \item \textbf{3.1 Phase 1: Direct LLM Classification Approach}
     \begin{itemize}
-        \item \textbf{PPM Corpus:} A large dataset from the Program Pathways Mapper (PPM) with 2,157 courses.
-        \item \textbf{Feature Engineering:} A novel \textbf{Composite Distance Vector ($\Delta_{c}$)} combines element-wise difference and cosine similarity.
+        \item An exploratory phase to establish a performance baseline using a small, manually curated dataset.
+        \item The dataset was constructed from 5 required lower-division Computer Science courses at San Francisco State University (SFSU) and their articulated equivalents across 63 different California public colleges.
+        \item From this, a final stratified random sample of 400 pairs (200 equivalent, 200 non-equivalent) was created for the evaluation set.
+        \item Google's PaLM2 and its successor, Gemini Pro v1.0, were selected for this phase.
     \end{itemize}
-    \item \textbf{3.3 Model Architecture and Training:}
+    \item \textbf{3.2 Phase 2: The Decoupled Pipeline Framework}
     \begin{itemize}
-        \item \textbf{Embedding Models:} Selection of BGE, GIST, NVE, and SFR for analysis.
-        \item \textbf{Fine-Tuning:} Deep metric learning with triplet loss functions to create a domain-specific model.
-        \item \textbf{Downstream Classifiers:} Evaluation of KNN, SVM, Random Forest (RF), and XGBoost.
+        \item \textbf{PPM Corpus and Data Preparation:} A larger dataset was procured from the Program Pathways Mapper (PPM), initially containing 2,217 courses. After filtering to ensure robust partitioning, the final corpus contained 2,157 courses across 157 distinct C-ID classes. The dataset was partitioned into a stratified 50/50 train/test split.
+        \item \textbf{Input Document Normalization:} A consistent input document was created by concatenating four fields for each course: department name, department course number, course title, and the full course description.
+        \item \textbf{Feature Engineering: Composite Distance Vector ($\Delta_{c}$):} A novel composite feature vector, $\Delta_{c}$, was designed to represent the relationship between two courses. It is constructed by concatenating the element-wise difference of two course embedding vectors (A and B) with their cosine similarity:
+        \begin{equation*}
+            \Delta_{c}=(a_{1}-b_{1},...,a_{k}-b_{k},\frac{A\cdot B}{\|A\|\|B\|})
+        \end{equation*}
+        \item This design provides the classifier with both granular, dimension-specific (local) disparities and a single, normalized measure of overall (global) alignment.
     \end{itemize}
-    \item \textbf{3.4 Evaluation Framework:} A multi-stage evaluation using F1-score for efficacy and timing for efficiency.
-    \item \textbf{3.5 Misclassification Analysis:} A qualitative diagnosis to find root causes of errors, distinguishing between model-specific and data-inherent issues.
+    \item \textbf{3.3 Model Architecture and Training}
+    \begin{itemize}
+        \item \textbf{Embedding Model Selection:} Based on a preliminary analysis, three models were selected for the primary analysis: BAAI/bge-small-en-v1.5 (BGE), avsolatorio/GIST-Embedding-v0 (GIST), and nvidia/NV-Embed-v2 (NVE). Salesforce/SFR-Embedding-2\_R (SFR) was added at a later stage.
+        \item \textbf{Metric Learning with Triplet Loss:} The BGE model was fine-tuned using a metric learning approach. The goal of Triplet Loss is to train the embedding function $f(x)$ such that the distance between an anchor (A) and a positive (P) is smaller than the distance to a negative (N) by a margin, $\alpha$.
+        \begin{equation*}
+            L(A, P, N) = \max(d(f(A), f(P)) - d(f(A), f(N)) + \alpha, 0)
+        \end{equation*}
+        \item Four primary batch-based triplet loss implementations were evaluated: BatchAllTripletLoss, BatchSemiHardTripletLoss, BatchHardTripletLoss, and BatchHardSoftMarginTripletLoss.
+        \item \textbf{Optimization Protocol:} The training used the AdamW optimizer paired with the CosineAnnealingWarmRestarts learning rate schedule.
+        \item \textbf{Downstream Classifiers:} Four models were selected for the final, in-depth analysis due to their strong performance: K-Nearest Neighbors (KNN), Support Vector Machine (SVM), Random Forest (RF), and XGBoost.
+    \end{itemize}
+    \item \textbf{3.4 Evaluation Framework and Metrics}
+    \begin{itemize}
+        \item A multi-stage evaluation funnel was designed, moving from a broad review to a focused analysis on the PPM Corpus.
+        \item During fine-tuning, the \texttt{BinaryClassificationEvaluator} from the \texttt{sentence-transformers} library was used to monitor embedding quality.
+        \item The $F_{1}$-Score, the harmonic mean of Precision and Recall, is used as the primary metric for reporting final classification performance.
+    \end{itemize}
+    \item \textbf{3.5 Misclassification Analysis Methodology}
+    \begin{itemize}
+        \item A qualitative diagnosis was designed to move beyond aggregate scores and understand the root causes of model failures.
+        \item This involved a two-pronged methodology:
+        \begin{enumerate}
+            \item Analyzing shared misclassifications across all models to identify systematic, data-inherent errors.
+            \item A granular, qualitative case-based review of specific false positive and false negative examples.
+        \end{enumerate}
+    \end{itemize}
 \end{itemize}
 
 \subsection*{Chapter 4: Experimental Setup and Results}
 \begin{itemize}
-    \item \textbf{4.2 Baseline Performance:} Direct LLM classification achieved 90.5\% accuracy but had practical limitations.
-    \item \textbf{4.3 Core Component Validation:} An ablation study confirmed the superiority of the Composite Distance Vector.
-    \item \textbf{4.4 Domain-Specific Fine-Tuning:} The fine-tuned \textbf{BGE-ft} model was statistically superior to all off-the-shelf models.
-    \item \textbf{4.5 Downstream Classifier Performance:} SVM was the most accurate, while RF and XGBoost were far more efficient.
-    \item \textbf{4.6 Qualitative Diagnosis:} The majority of remaining errors were systematic and stemmed from data quality issues (e.g., semantic divergence, vague descriptions, labeling errors).
+    \item \textbf{4.2 Baseline Performance: Direct LLM Classification}
+    \begin{itemize}
+        \item Experiments on the Initial Dataset using Google's Gemini Pro v1.0 achieved a peak accuracy of 90.5\% when using full, unprocessed raw text as input.
+        \item Analysis of confusion matrices revealed a consistent conservative bias, where the model was far more likely to produce a false negative than a false positive.
+    \end{itemize}
+    \item \textbf{4.3 Core Component Validation: The Composite Distance Vector}
+    \begin{itemize}
+        \item An ablation study showed that the performance of linear models, like Logistic Regression, improved dramatically with the inclusion of the cosine similarity term (the $F_{1}$-score surged from 0.686 to 0.901).
+        \item More complex, non-linear models (KNN, SVM, RF) were not significantly affected, suggesting they are capable of inferring the global relationship from the local difference vector alone.
+    \end{itemize}
+    \item \textbf{4.4 Domain-Specific Adaptation: Embedding Model Fine-Tuning}
+    \begin{itemize}
+        \item The single best-performing fine-tuning configuration was the combination of \texttt{BatchSemiHardTripletLoss} with the \texttt{cr\_v1} cosine annealing schedule, which achieved the highest peak validation $F_{1}$-score of 0.8104.
+        \item \textbf{Statistical Validation:} The fine-tuned model (\texttt{bge-ft}) was proven to be statistically superior to its competitors. A one-way Analysis of Variance (ANOVA) confirmed a significant difference between model groups ($F=6.2856$, $p<0.001$). A subsequent Games-Howell post-hoc test showed that \texttt{bge-ft} demonstrated a statistically significant improvement over its base model, \texttt{bge}, with a mean $F_{1}$-score increase of 0.0109 ($p<.001$).
+    \end{itemize}
+    \item \textbf{4.5 Final Stage Evaluation: Downstream Classifier Performance}
+    \begin{itemize}
+        \item \textbf{Efficacy vs. Efficiency:} While all four finalist models achieved high accuracy, Random Forest and XGBoost were superior in efficiency. Their inference times are clustered under 0.1 seconds, an order of magnitude faster and more predictable than KNN and SVM.
+        \item \textbf{Test Data Performance:} On the held-out test data, the Support Vector Machine (SVM) model achieved both the highest mean $F_{1}$-score ($\mu=0.975973$) and the lowest standard deviation ($\sigma=0.009120$), making it the most accurate and consistent performer.
+        \item \textbf{Statistical Analysis:} An ANOVA confirmed a significant difference among the classifiers ($F(3,316)=3.1293$, $p=0.02596$). A Games-Howell post-hoc test revealed that the SVM classifier performed statistically significantly better than both Random Forest and XGBoost ($p=0.0229$).
+    \end{itemize}
+    \item \textbf{4.6 Qualitative Diagnosis: Misclassification Analysis}
+    \begin{itemize}
+        \item \textbf{Shared Misclassifications:} A high degree of overlap in errors was found across models, providing strong evidence of systematic, data-inherent issues. A total of 211 distinct course pairs were misclassified by every single embedding model evaluated.
+        \item \textbf{False Positives (FPs):} A primary cause is high topical overlap without true equivalence. An example is the pair of sequential physics courses PHYS-4D and PHYS-4A from Foothill College, which cover modern and classical mechanics, respectively.
+        \item \textbf{False Negatives (FNs):} A primary cause is semantic divergence in descriptions, where officially equivalent courses are described with vastly different terminology. An example is a pair of CDEV-100 courses, one described with language from developmental psychology ("milestones") and the other with language from social justice pedagogy ("anti-bias curriculum"). In some cases, errors were traced to data quality issues, such as a course labeled SOCI-125 (statistics) having a description for an LGBTQ+ studies class.
+    \end{itemize}
 \end{itemize}
 
 \subsection*{Chapter 5: Discussion, Future Work, and Conclusion}
 \begin{itemize}
-    \item \textbf{5.1 Discussion:} The framework is vindicated, the impact of fine-tuning is critical, and the bottleneck has shifted from model-centric to data-centric problems.
-    \item \textbf{5.2 Limitations:} Performance is capped by data quality; the fine-tuned model's generalizability needs testing; the scope of "equivalency" is limited to text; complex articulations are not natively handled.
-    \item \textbf{5.3 Future Work:} Focus on data-centric strategies (human-in-the-loop), expand the framework into a recommendation engine, and explore more advanced modeling techniques.
-    \item \textbf{5.4 Conclusion:} The thesis delivers a practical, scalable, and privacy-preserving tool that contributes to a more equitable and efficient educational ecosystem.
+    \item \textbf{5.1 Discussion of Results}
+    \begin{itemize}
+        \item The proposed decoupled pipeline successfully addresses the privacy, scalability, and interpretability challenges of prior approaches.
+        \item The statistical superiority of the fine-tuned \texttt{bge-ft} model, even over much larger models, provides powerful evidence that for specialized domains, targeted adaptation is more effective than sheer scale.
+        \item The primary bottleneck for achieving near-perfect automation has now shifted from being model-centric to data-centric.
+    \end{itemize}
+    \item \textbf{5.2 Limitations of the Current Study}
+    \begin{itemize}
+        \item The framework's performance is fundamentally capped by the quality and content of the public course descriptions.
+        \item The fine-tuned \texttt{bge-ft} model is specialized for California's public college system and may not generalize to other systems without re-tuning.
+        \item The framework simplifies articulation into a binary classification and does not natively handle complex one-to-many or many-to-many articulation rules.
+    \end{itemize}
+    \item \textbf{5.3 Future Work}
+    \begin{itemize}
+        \item The most critical future work involves data-centric strategies, such as developing an interactive, human-in-the-loop system for expert review.
+        \item Active development is underway to evolve the framework into a full-scale course recommendation engine with a conversational interface.
+        \item Future research could explore using graph neural networks to identify one-to-many and many-to-many relationships.
+    \end{itemize}
+    \item \textbf{5.4 Conclusion}
+    \begin{itemize}
+        \item This thesis confronted the challenge of manual course articulation by designing, developing, and validating a novel computational framework using only publicly available data.
+        \item The work's primary contribution is a privacy-preserving, scalable, and computationally efficient pipeline achieved through two key innovations: the application of deep metric learning to create a bespoke embedding model, and the design of a novel composite distance vector.
+        \item The result is a practical tool that can help institutions reduce administrative workload and foster a more transparent and equitable educational ecosystem.
+    \end{itemize}
 \end{itemize}
 
 \newpage
@@ -115,7 +215,8 @@ These are the core deep learning models used for generating semantic representat
 \centering
 \begin{tabular}{@{}lll@{}}
 \toprule
-\textbf{Abbreviated Name} & \textbf{Full Name}                 & \textbf{Entity Type} \\ \midrule
+\textbf{Abbreviated} &                                       &          \\ 
+\textbf{Name} & \textbf{Full Name}                                      & \textbf{Entity Type}         \\ \midrule
 \textbf{BGE}              & BAAI/bge-small-en-v1.5           & Embedding Model      \\
 \textbf{GIST}             & avsolatorio/GIST-Embedding-v0      & Embedding Model      \\
 \textbf{NVE}              & nvidia/NV-Embed-v2                 & Embedding Model      \\
@@ -130,7 +231,8 @@ These are the traditional machine learning algorithms used in the downstream cla
 \centering
 \begin{tabular}{@{}lll@{}}
 \toprule
-\textbf{Abbreviated Name} & \textbf{Full Name}                      & \textbf{Entity Type} \\ \midrule
+\textbf{Abbreviated} &                                       &          \\ 
+\textbf{Name} & \textbf{Full Name}                                      & \textbf{Entity Type}         \\ \midrule
 \textbf{KNN}              & K-Nearest Neighbors                     & ML Classifier        \\
 \textbf{SVM}              & Support Vector Machine                  & ML Classifier        \\
 \textbf{RF}               & Random Forest                           & ML Classifier        \\
@@ -143,13 +245,15 @@ These are the traditional machine learning algorithms used in the downstream cla
 \end{tabular}
 \end{table}
 
+\newpage
 \subsection*{Established Models \& Architectures}
 These are foundational models and architectures with widely recognized names that will retain their original capitalization for consistency with existing literature.
 \begin{table}[h!]
 \centering
-\begin{tabular}{@{}p{0.23\textwidth}p{0.44\textwidth}p{0.27\textwidth}@{}}
+\begin{tabular}{@{}lp{0.52\textwidth}p{0.28\textwidth}@{}}
 \toprule
-\textbf{Abbreviated Name} & \textbf{Full Name}                                      & \textbf{Entity Type}         \\ \midrule
+\textbf{Abbreviated} &                                       &          \\ 
+\textbf{Name} & \textbf{Full Name}                                      & \textbf{Entity Type}         \\ \midrule
 \textbf{Word2Vec}         & Word2Vec                                                & Static Embedding Model     \\
 \textbf{GloVe}            & Global Vectors for Word Representation                  & Static Embedding Model     \\
 \textbf{course2vec}       & course2vec                                              & Enrollment-Based Model     \\
@@ -166,9 +270,10 @@ These are foundational models and architectures with widely recognized names tha
 These are other key technical components of the methodology. They are generally referred to by their full name to maintain clarity.
 \begin{table}[h!]
 \centering
-\begin{tabular}{@{}p{0.23\textwidth}p{0.44\textwidth}p{0.27\textwidth}@{}}
+\begin{tabular}{@{}lp{0.52\textwidth}p{0.28\textwidth}@{}}
 \toprule
-\textbf{Abbreviated Name} & \textbf{Full Name}                                      & \textbf{Entity Type}           \\ \midrule
+\textbf{Abbreviated} &                                       &          \\ 
+\textbf{Name} & \textbf{Full Name}                                      & \textbf{Entity Type}         \\ \midrule
 (N/A)                     & BatchAllTripletLoss                                     & Loss Function                \\
 (N/A)                     & BatchSemiHardTripletLoss                                & Loss Function                \\
 (N/A)                     & BatchHardTripletLoss                                    & Loss Function                \\
