@@ -1,0 +1,1453 @@
+**** Index (618, 1622) ****
+CID: ECE-230
+Cerritos College
+CD-124 Teaching in a Diverse Society
+Introduces the appropriate use of assessment and observation tools and strategies to document young childrenÕ
+s development and learning. The use of findings to inform and plan learning environments and experiences are
+emphasized. Recording strategies, rating systems, portfolios, and multiple assessment tools will be
+discussed, along with strategies for collaboration with families and professionals. 
+Transfer Credit: CSU
+ --------
+CID: ECE-230
+Oxnard College
+ECE-R107 Teaching in a Diverse Society
+This course examines the impact of various societal influences on the development of children's social identity. Students encounter that diversity is a major cultural trait of the United States, and recognize that schools reflect the societal makeup of our country. The course includes an identification of the main differences and similarities among various cultural groups and those of the mainstream culture.
+ --------
+FALSE NEGATIVE
+
+**** Index (30, 1712) ****
+CID: PHYS-210
+Evergreen Valley College
+PHYS-004B General Physics
+This course is one of a three-semester series in calculus-based general physics, serving students majoring in engineering, chemistry, physics, mathematics and other sciences. It emphasizes conceptual aspects of electricity, magnetism, circuits, and Maxwell's equations, and requires quantitative analysis of real world situations.
+ --------
+CID: PHYS-200
+Foothill College
+PHYS-4C General Physics (Calculus)
+Thermodynamics; mechanical, acoustical, and electromagnetic waves; optics. Lecture and lab hours indicated are per week. This course includes 5 lecture hours and 3 lab hours per week.
+ --------
+FALSE POSITIVE
+
+**** Index (696, 784) ****
+CID: BUS-120
+Cabrillo College
+BUS-18 Business Law
+Introduces the United States justice system, covering and relating criminal, civil, employment, torts and contract laws to business operations. History and nature of law, court systems, administrative agencies, crimes, cyber law, the formation and operation of contracts, corporate organization structures, ethical decisions and corporate responsibility and antitrust laws will be covered. May be offered in a Distance-Learning Format.
+ --------
+CID: BUS-125
+Long Beach City College
+LAW-18 Fundamental of Business Law
+Formerly LAW 18A. This course is designed to explore the overall fundamental understanding of business law today. It examines the scope of how contracts and tort law affect the civil legal process as well as the nature of our current business environment.  It is appropriate for students who wish to pursue a career in the business field.
+ --------
+FALSE POSITIVE
+
+**** Index (618, 1547) ****
+CID: ECE-230
+Cerritos College
+CD-124 Teaching in a Diverse Society
+Introduces the appropriate use of assessment and observation tools and strategies to document young childrenÕ
+s development and learning. The use of findings to inform and plan learning environments and experiences are
+emphasized. Recording strategies, rating systems, portfolios, and multiple assessment tools will be
+discussed, along with strategies for collaboration with families and professionals. 
+Transfer Credit: CSU
+ --------
+CID: ECE-230
+Chabot College
+ECD-79 Teaching in a Diverse Society
+Examines the historical and current perspectives on diversity and inclusion and the impact of various systemic societal influences on children's development, learning and school experiences. Critical examination of societal and personal attitudes and beliefs, values, assumptions and biases about culture, race, language, identity, family structures, ability, socio-economic status and other issues influenced by systemic oppression. Strategies for  developmentally, culturally, and linguistically appropriate anti-bias curriculum will be explored as well as approaches to promote inclusive and anti-racist classroom communities. Includes self-reflection on the influence of teachers' own culture and life experiences on teaching and interactions with children and families. Issues related to social identity, stereotypes, and bias will be explored; learn to recognize and confront barriers that interfere with one�s ability to work effectively with diverse populations of children and families. Ethnic/cultural groups referenced within course from the United States of America, including African American, Asian American, Chicano/Latino, European American, Indigenous People of the Americas and Americans of Middle Eastern origin.
+ --------
+FALSE NEGATIVE
+
+**** Index (516, 752) ****
+CID: CDEV-100
+Foothill College
+CHLD-2 CHILD DEVELOPMENT: MIDDLE CHILDHOOD TO ADOLESCENCE
+Development of the child from middle childhood through adolescence. This introductory course examines the major physical, psychosocial, and cognitive/language developmental milestones for children, both typical and atypical, from middle childhood through adolescence. Emphasis on interactions between maturational processes and environmental factors. While studying developmental theory and investigative research methodologies, students will observe children, evaluate individual differences and analyze characteristics of development at various stages. Lecture hours indicated are per week. This course includes 4 lecture hours per week.
+ --------
+CID: CDEV-100
+Cerritos College
+CD-110 Child Development
+Examines the historical and current perspectives on diversity and inclusion and the impact of systemic societal influences on childrenÕs development, learning, and school experiences. Strategies for developmentally, culturally, and linguistically appropriate anti-bias curriculum will be explored as well as approaches to promote inclusive and anti-racist classroom communities. Includes self-reflection on the influence of teachersÕ own culture and life experiences on teaching and interactions with children and families.
+Transfer Credit: CSU; UC
+ --------
+FALSE NEGATIVE
+
+**** Index (752, 2081) ****
+CID: CDEV-100
+Cerritos College
+CD-110 Child Development
+Examines the historical and current perspectives on diversity and inclusion and the impact of systemic societal influences on childrenÕs development, learning, and school experiences. Strategies for developmentally, culturally, and linguistically appropriate anti-bias curriculum will be explored as well as approaches to promote inclusive and anti-racist classroom communities. Includes self-reflection on the influence of teachersÕ own culture and life experiences on teaching and interactions with children and families.
+Transfer Credit: CSU; UC
+ --------
+CID: CDEV-100
+Imperial Valley College
+CDEV-104 Child Growth and Development
+This course examines the progression of development in the physical, cognitive, language, social, and emotional domains, and identifies developmental milestones for children, from conception through adolescence.  Emphasis on interactions between biological processes and environmental factors.  Based on developmental theory and investigative research methodologies, students will observe children, evaluate individual differences and analyze characteristics of development at various stages.  (Same as PSY 104)  (C-ID: CDEV 100)
+ --------
+FALSE NEGATIVE
+
+**** Index (618, 2049) ****
+CID: ECE-230
+Cerritos College
+CD-124 Teaching in a Diverse Society
+Introduces the appropriate use of assessment and observation tools and strategies to document young childrenÕ
+s development and learning. The use of findings to inform and plan learning environments and experiences are
+emphasized. Recording strategies, rating systems, portfolios, and multiple assessment tools will be
+discussed, along with strategies for collaboration with families and professionals. 
+Transfer Credit: CSU
+ --------
+CID: ECE-230
+Imperial Valley College
+CDEV-107 Teaching in a Diverse Society
+Examination of the development of social identities in diverse societies including theoretical and practical implications of oppression and privilege as they apply to young children, families, programs, classrooms and teaching.  Various classroom strategies will be explored emphasizing culturally and linguistically appropriate anti-bias approaches supporting all children in becoming competent members of a diverse society.  Course includes self-examination and reflection on issues related to social identity, stereotypes and bias, social and educational access, media and schooling.  (C-ID: ECE 230)
+ --------
+FALSE NEGATIVE
+
+**** Index (752, 2065) ****
+CID: CDEV-100
+Cerritos College
+CD-110 Child Development
+Examines the historical and current perspectives on diversity and inclusion and the impact of systemic societal influences on childrenÕs development, learning, and school experiences. Strategies for developmentally, culturally, and linguistically appropriate anti-bias curriculum will be explored as well as approaches to promote inclusive and anti-racist classroom communities. Includes self-reflection on the influence of teachersÕ own culture and life experiences on teaching and interactions with children and families.
+Transfer Credit: CSU; UC
+ --------
+CID: CDEV-100
+Reedley College
+ECE-2 Child Growth and Development
+This course examines the progression of development in the physical, cognitive, social, and emotional domains and identifies developmental milestones for children from conception through adolescence. Emphasis is placed on interactions between biological processes and environmental factors. Students will observe children, evaluate individual differences, and analyze characteristics of development at various stages according to developmental theories. ADVISORIES: English 1A or 1AH. (A, CSU-GE, UC, I) (C-ID CDEV 100)
+ --------
+FALSE NEGATIVE
+
+**** Index (575, 752) ****
+CID: CDEV-100
+Bakersfield College
+CHDV-B21 Child Growth and Development: Birth Through Adolescence
+This introductory course examines the major physical, psychosocial, and cognitive/language developmental milestones for children, both typical and atypical, from conception through adolescence. There will be an emphasis on interactions between maturational processes and environmental factors. While studying developmental theory and investigative research methodologies, students will observe children, evaluate individual differences and analyze characteristics of development at various stages. C-ID: CDEV 100
+ --------
+CID: CDEV-100
+Cerritos College
+CD-110 Child Development
+Examines the historical and current perspectives on diversity and inclusion and the impact of systemic societal influences on childrenÕs development, learning, and school experiences. Strategies for developmentally, culturally, and linguistically appropriate anti-bias curriculum will be explored as well as approaches to promote inclusive and anti-racist classroom communities. Includes self-reflection on the influence of teachersÕ own culture and life experiences on teaching and interactions with children and families.
+Transfer Credit: CSU; UC
+ --------
+FALSE NEGATIVE
+
+**** Index (567, 618) ****
+CID: ECE-230
+Foothill College
+CHLD-51A AFFIRMING DIVERSITY IN EDUCATION
+This course will examine the development of social identities in diverse societies, including theoretical and practical implications affecting young children, families, programs, teaching, education and schooling. Culturally relevant and linguistically appropriate anti-bias approaches supporting all children in becoming competent members of a diverse society. Course involves self-reflection of one's own understanding of educational principles in integrating anti-goals in order to better inform teaching practices and/or program development. Lecture hours incidcated are per week. This course includes 4 lecture hours per week.
+ --------
+CID: ECE-230
+Cerritos College
+CD-124 Teaching in a Diverse Society
+Introduces the appropriate use of assessment and observation tools and strategies to document young childrenÕ
+s development and learning. The use of findings to inform and plan learning environments and experiences are
+emphasized. Recording strategies, rating systems, portfolios, and multiple assessment tools will be
+discussed, along with strategies for collaboration with families and professionals. 
+Transfer Credit: CSU
+ --------
+FALSE NEGATIVE
+
+**** Index (752, 1846) ****
+CID: CDEV-100
+Cerritos College
+CD-110 Child Development
+Examines the historical and current perspectives on diversity and inclusion and the impact of systemic societal influences on childrenÕs development, learning, and school experiences. Strategies for developmentally, culturally, and linguistically appropriate anti-bias curriculum will be explored as well as approaches to promote inclusive and anti-racist classroom communities. Includes self-reflection on the influence of teachersÕ own culture and life experiences on teaching and interactions with children and families.
+Transfer Credit: CSU; UC
+ --------
+CID: CDEV-100
+Cuesta College
+ECE-201 Child Growth and Development
+Examines the major physical, cognitive, social and emotional developmental milestones for children from conception through adolescence. Emphasizes interactions between maturational processes and environmental factors. Provides students with an opportunity to observe children, evaluate individual differences, and analyze characteristics of development at various stages according to developmental theories. Required for teachers in all early childhood education programs as a part of the 12 units for the Child Development Permit and licensing requirements for the State of California. Transfer: CSU; UC.
+ --------
+FALSE NEGATIVE
+
+**** Index (752, 818) ****
+CID: CDEV-100
+Cerritos College
+CD-110 Child Development
+Examines the historical and current perspectives on diversity and inclusion and the impact of systemic societal influences on childrenÕs development, learning, and school experiences. Strategies for developmentally, culturally, and linguistically appropriate anti-bias curriculum will be explored as well as approaches to promote inclusive and anti-racist classroom communities. Includes self-reflection on the influence of teachersÕ own culture and life experiences on teaching and interactions with children and families.
+Transfer Credit: CSU; UC
+ --------
+CID: CDEV-100
+Cypress College
+PSY-145 C Child Psychology
+This course explores the physical, cognitive, communicative/linguistic, and socio-emotional development of the child from conception through adolescence across diverse cultures with an emphasis on the learning process. Education and teaching issues related to children are highlighted. (UC/CSU, AA GE, CSU GE, IGETC, CDEV 100)
+ --------
+FALSE NEGATIVE
+
+**** Index (618, 1956) ****
+CID: ECE-230
+Cerritos College
+CD-124 Teaching in a Diverse Society
+Introduces the appropriate use of assessment and observation tools and strategies to document young childrenÕ
+s development and learning. The use of findings to inform and plan learning environments and experiences are
+emphasized. Recording strategies, rating systems, portfolios, and multiple assessment tools will be
+discussed, along with strategies for collaboration with families and professionals. 
+Transfer Credit: CSU
+ --------
+CID: ECE-230
+Moorpark College
+CD-M05 Teaching in a Diverse Society
+Prerequisites: None
+Class Hours: 3 lecture
+C-ID: ECE 230
+Explores personal prejudices and biases through a self-reflection process that
+addresses principles of equity in the areas of culture, diverse abilities, family
+life, gender, and socio-economic status. Uses the self-reflection process to
+better inform teaching practices and/or program development by creating an
+awareness of the teacher's own understanding of developmentally appropriate
+practice in integrating anti-bias goals and embracing a celebratory approach
+to diversity. Identifies culturally responsive and linguistically appropriate antibias approaches that support all children in becoming competent members
+of a diverse society and examines the development of social identities in
+diverse populations, including theoretical and practical implications affecting
+young children, families, programs, teaching, education, and schooling.
+(Formerly CD M36.) Applies to Associate Degree. Transfer credit: CSU; UC
+ --------
+FALSE NEGATIVE
+
+**** Index (618, 2115) ****
+CID: ECE-230
+Cerritos College
+CD-124 Teaching in a Diverse Society
+Introduces the appropriate use of assessment and observation tools and strategies to document young childrenÕ
+s development and learning. The use of findings to inform and plan learning environments and experiences are
+emphasized. Recording strategies, rating systems, portfolios, and multiple assessment tools will be
+discussed, along with strategies for collaboration with families and professionals. 
+Transfer Credit: CSU
+ --------
+CID: ECE-230
+Long Beach City College
+CDECE-61 Teaching in a Diverse Society D3
+This course examines the relationship of culture, language, family structure, ability, socioeconomic status and other issues on the formation of the young child’s concept of self and the learning process.  Emphasis is on practical early childhood classroom applications for diverse populations, including the integration of cultures, generations, genders, and races into the classroom, facilitation of second language acquisition, and practical teaching strategies for implementing an anti-bias curriculum. Course includes self examination and reflection on issues related to social identity, stereotypes and bias, social and educational access, media and schooling.
+ --------
+FALSE NEGATIVE
+
+**** Index (752, 2159) ****
+CID: CDEV-100
+Cerritos College
+CD-110 Child Development
+Examines the historical and current perspectives on diversity and inclusion and the impact of systemic societal influences on childrenÕs development, learning, and school experiences. Strategies for developmentally, culturally, and linguistically appropriate anti-bias curriculum will be explored as well as approaches to promote inclusive and anti-racist classroom communities. Includes self-reflection on the influence of teachersÕ own culture and life experiences on teaching and interactions with children and families.
+Transfer Credit: CSU; UC
+ --------
+CID: CDEV-100
+Moorpark College
+CD-M02 Human Development: Infancy through Adolescence
+Prerequisites: None
+Class Hours: 3 lecture
+C-ID: CDEV 100
+Examines major developmental milestones for children, both typical and
+atypical, from conception through adolescence in the areas of physical,
+psychosocial, and cognitive/language, emphasizing interactions between
+maturational processes and environmental factors. Studies developmental
+theory and reinforces investigative research methodologies by observing
+children, evaluating differences, and analyzing characteristics of development
+at various stages. Applies to Associate Degree. Transfer credit: CSU; UC (CD
+M02 and PSY M07 combined; maximum credit, one course)
+ --------
+FALSE NEGATIVE
+
+**** Index (275, 618) ****
+CID: ECE-230
+Porterville College
+CHDV-P117 Teaching in a Diverse Society
+Prerequisite: None. Total lecture 54 hours. Examines the historical and current perspectives on diversity and inclusion and the impact of systemic societal influences on children's development, learning, and school experiences. Strategies for developmentally, culturally, and linguistically appropriate anti-bias curriculum will be explored as well as approaches to promote inclusive and anti-racist classroom communities. Includes self-reflection on the influence of teachers' own culture and life experiences on teaching and interactions with children and families. C-ID ECE 230 (A/CSU/UC)
+ --------
+CID: ECE-230
+Cerritos College
+CD-124 Teaching in a Diverse Society
+Introduces the appropriate use of assessment and observation tools and strategies to document young childrenÕ
+s development and learning. The use of findings to inform and plan learning environments and experiences are
+emphasized. Recording strategies, rating systems, portfolios, and multiple assessment tools will be
+discussed, along with strategies for collaboration with families and professionals. 
+Transfer Credit: CSU
+ --------
+FALSE NEGATIVE
+
+**** Index (752, 1741) ****
+CID: CDEV-100
+Cerritos College
+CD-110 Child Development
+Examines the historical and current perspectives on diversity and inclusion and the impact of systemic societal influences on childrenÕs development, learning, and school experiences. Strategies for developmentally, culturally, and linguistically appropriate anti-bias curriculum will be explored as well as approaches to promote inclusive and anti-racist classroom communities. Includes self-reflection on the influence of teachersÕ own culture and life experiences on teaching and interactions with children and families.
+Transfer Credit: CSU; UC
+ --------
+CID: CDEV-100
+Palomar College
+CHDV-100 Child Growth and Development
+Introductory course that examines the major physical, psychosocial, and cognitive/language developmental milestones for children, both typical and atypical, from conception through adolescence. There will be an emphasis on interactions between maturational processes and environmental factors. While studying developmental theory and investigative research methodologies, students will observe children, evaluate individual differences and analyze characteristics of development at various stages.
+ --------
+FALSE NEGATIVE
+
+**** Index (274, 752) ****
+CID: CDEV-100
+Fullerton College
+CDES-120 F Child Development
+54 hours lecture per term. This course is designed to study the entire scope of developmental theories addressing physical, intellectual, moral, social and emotional development. Periods of development from prenatal through adolescence are presented in a chronological sequence. Research methodologies are discussed as students are expected to think critically about theory and research. Interaction of heredity, environment and maturation is explored. Students will observe children, evaluate individual differences and analyze characteristics of development using inclusive viewpoints. (CAP Aligned) (Degree Credit) (CSU) (UC Credit Limitation CDES 120 F and CDES 200 F combined: maximum credit, one course) AA GE, CSU GE
+ --------
+CID: CDEV-100
+Cerritos College
+CD-110 Child Development
+Examines the historical and current perspectives on diversity and inclusion and the impact of systemic societal influences on childrenÕs development, learning, and school experiences. Strategies for developmentally, culturally, and linguistically appropriate anti-bias curriculum will be explored as well as approaches to promote inclusive and anti-racist classroom communities. Includes self-reflection on the influence of teachersÕ own culture and life experiences on teaching and interactions with children and families.
+Transfer Credit: CSU; UC
+ --------
+FALSE NEGATIVE
+
+**** Index (66, 1587) ****
+CID: PHYS-110
+Cuesta College
+PHYS-205B General Physics
+Presents the principles of geometric optics, physical optics, static and dynamic electricity and magnetism, introductory DC and AC circuit theory, modern physics topics (relativity, particles and waves, atomic structure, radioactivity and nuclear reactions) using trigonometry. Prerequisite: PHYS 205A or equivalent. Transfer: CSU; UC. (Formerly PHYS5B)
+ --------
+CID: PHYS-215
+Oxnard College
+PHYS-R133 Physics for Scientists and Engineers 3
+This course is an introduction to wave motion (with emphasis placed on the study of sound and electromagnetic wave phenomena), geometrical and wave optics, and selected elementary topics on special relativity and quantum mechanics. Central topics include mechanical and electromagnetic waves; geometric optics; interference and diffraction; relativistic kinematics and dynamics; and elementary quantum theory with atomic structure. Although the course emphasizes conceptual understanding, students also learn to apply mathematical techniques such as vector calculus, Fourier analysis, numerical approximations, and multi-variable integration to the solution of problems. The laboratory provides students with opportunities to learn and apply the scientific method through investigations of the phenomena discussed in lecture. The course is appropriate for students majoring in the physical sciences, engineering, mathematics, computer science, and related fields.
+ --------
+FALSE POSITIVE
+
+**** Index (914, 915) ****
+CID: ENGL-160
+East Los Angeles College
+ENGLISH-205 English Literature I
+In this course, students read, discuss, and analyze major works of English literature from the Anglo-Saxon period to the late eighteenth century, to develop an understanding and appreciation of the poetry, fiction, and drama of these literary periods and to express that appreciation in a critical analysis.
+-----------------------------------------------------------------------------------
+Note:
+This course may have sections that include a low cost (LTC) or no cost textbook (ZTC). Check the current catalog for the section number(s). You can search for classes in the ELAC and LACCD Schedule of Classes under “Class Search Type” as “Zero Textbook Cost” or “Low-Cost Textbook Classes.”
+ --------
+CID: ENGL-165
+East Los Angeles College
+ENGLISH-206 English Literature II
+This course surveys British Literature from the late 18th century emergence of the Romantics, such as Blake, Wordsworth, Coleridge, Byron, Shelley, and Keats; through the Victorian Era, writers such as Browning, Tennyson, Austen, Stevenson, Wilde, and Shaw; and into the early twentieth century, the rise of Modernism and after, writers such as Conrad, Eliot, Yeats, Woolf, Joyce, and Beckett.
+-----------------------------------------------------------------------------------
+Note:
+This course may have sections that include a low cost (LTC) or no cost textbook (ZTC). Check the current catalog for the section number(s). You can search for classes in the ELAC and LACCD Schedule of Classes under “Class Search Type” as “Zero Textbook Cost” or “Low-Cost Textbook Classes.”
+ --------
+FALSE POSITIVE
+
+**** Index (914, 1234) ****
+CID: ENGL-160
+East Los Angeles College
+ENGLISH-205 English Literature I
+In this course, students read, discuss, and analyze major works of English literature from the Anglo-Saxon period to the late eighteenth century, to develop an understanding and appreciation of the poetry, fiction, and drama of these literary periods and to express that appreciation in a critical analysis.
+-----------------------------------------------------------------------------------
+Note:
+This course may have sections that include a low cost (LTC) or no cost textbook (ZTC). Check the current catalog for the section number(s). You can search for classes in the ELAC and LACCD Schedule of Classes under “Class Search Type” as “Zero Textbook Cost” or “Low-Cost Textbook Classes.”
+ --------
+CID: ENGL-165
+Cypress College
+ENGL-212 C English Literature since 1760
+The course is an introduction to the major periods and movements, major authors, and major forms from 1760 to the present. It considers literary trends and historical backgrounds from the Romantic, Victorian, Modern, and Postmodern eras. It covers fiction, poetry, drama, and prose from such authors as Wollstonecraft, Blake, Wordsworth, Coleridge, Byron, Shelley, Keats, Browning, Dickens, Wilde, Joyce, Hopkins, Yeats, Eliot, Woolf, and Beckett. (UC/CSU, AA GE, CSU GE, IGETC)
+ --------
+FALSE POSITIVE
+
+**** Index (46, 618) ****
+CID: ECE-230
+Santa Barbara City College
+ECE-132 Teaching in a Diverse Society
+Examines processes involved in human relations, as related to differences, and how these processes impact teaching, learning and interactions with young children and families. Self-examination, reflection and integration of practices to promote equity and how to best support children as they gain a sense of identity and become confident members of a diverse society.
+ --------
+CID: ECE-230
+Cerritos College
+CD-124 Teaching in a Diverse Society
+Introduces the appropriate use of assessment and observation tools and strategies to document young childrenÕ
+s development and learning. The use of findings to inform and plan learning environments and experiences are
+emphasized. Recording strategies, rating systems, portfolios, and multiple assessment tools will be
+discussed, along with strategies for collaboration with families and professionals. 
+Transfer Credit: CSU
+ --------
+FALSE NEGATIVE
+
+**** Index (79, 372) ****
+CID: GEOG-111
+Cerritos College
+GEOG-101L Physical Geography Laboratory
+This laboratory/field study is designed to supplement GEOG 101.  It introduces the global physical world, its dynamics and spatial relationships.  The physical environment is presented as an integration of the atmosphere, hydrosphere, lithosphere, and biosphere.  Furthermore, this course will introduce the physical processes that have shaped the earth, including weather and climate, plate tectonics, hydrological cycle, weathering, and glaciation. 
+
+Transfer Credit:  CSU; UC
+ --------
+CID: GEOG-110
+El Camino College
+GEOG-1 Physical Elements
+This course describes and explains the physical elements of geography. The topics include maps, earth-sun relationships, elements of weather and climate, vegetation patterns, soil types, plate tectonics, volcanism, tectonic activity and related landforms, weathering and mass wasting, and the landforms created by running water, glaciers, waves and wind.
+ --------
+FALSE POSITIVE
+
+**** Index (456, 1215) ****
+CID: PHYS-200
+Pasadena City College
+PHYS-001D GENERAL PHYSICS
+Prerequisite:  PHYS 001C and MATH 005C.
+
+Calculus-based study of introductory modern physics, including the theory of relativity, basic principles of quantum mechanics, elementary atomic, molecular, solid state, nuclear, and particle physics.  Total of 72 hours lecture and 72 hours laboratory.
+
+ Transfer Credit:  CSU; UC credit limitations.  See counselor. C-ID: PHYS SEQ 200S (with PHYS 001A, 001B, 001C)
+
+ Grade Mode:  L, A, P
+ --------
+CID: PHYS-205
+Moorpark College
+PHYS-M20A Mechanics Solids and Fluids
+Introduces the basic principles of the mechanics of solids and fluids. Uses calculus to develop the subject matter. Covers kinematics, Newtonian mechanics including rotational dynamics, work, energy, fluid statics and dynamics, and simple harmonic motion. Prerequisites: MATH M25A. Recommended Prep: PHYS M10A or high school physics, and MATH M25B or concurrent enrollment. Transfer credit: CSU; UC. C-ID: PHYS 205. CAN: PHYS 8 (PH 20A = 20AL).
+ --------
+FALSE POSITIVE
+
+**** Index (1242, 1474) ****
+CID: ENGL-100
+El Camino College
+ENGL-1A Reading and Composition
+This course is designed to strengthen the students' ability to read with understanding and discernment, to discuss assigned readings intelligently, and to write clearly. Emphasis will be placed on the ability to write an essay in which each paragraph relates to a controlling idea, has an introduction and conclusion, and contains primary and secondary support. College-level reading material will be assigned to provide the stimulus for class discussion and writing assignments, including a required research paper.
+ --------
+CID: ENGL-105
+Moorpark College
+ENGL-M01CH Honors: Critical Thinking and Composition
+Develops advanced skills in critical thinking, reading, and writing. Focuses primarily on the analysis and evaluation of non-fiction works to develop logical reasoning as well as analytical and argumentative writing skills. Honors work challenges students to be more analytical and creative through expanded assignments, real-world applications and enrichment opportunities. Course Credit Limitations: Students cannot complete both ENGL M01C and ENGL M01CH. Credit will be awarded only for the first course completed with a grade of “C” or better or "P". MC Honors Program requires a letter grade. Prerequisites: ENGL M01A or ENGL M01AH with a grade of B or higher. Transfer credit: CSU; UC. C-ID: ENGL 105.
+ --------
+FALSE POSITIVE
+
+**** Index (189, 1429) ****
+CID: MUS-110
+Long Beach City College
+MUSIC-6 Introduction to Music Theory
+This course is a complete introduction to music fundamentals and basic musicianship. Traditional topics are covered such as notation, meter, scales, intervals, triads, and chords. This class is designed for both music majors and non-music majors.
+ --------
+CID: MUS-120
+Moorpark College
+MUS-M02A Music Theory I
+Incorporates, through guided composition and analysis, the following concepts: rhythm and meter; basic properties of sound; intervals; diatonic scales and triads; diatonic chords, basic cadential formulas and phrase structure; dominant seventh; figured bass symbols; and non-harmonic tones. Develops skills in handwritten notation. Corequisites: MUS M02AL. Recommended Prep: MUS M01 recommended as preparation if experience with music notation is minimal. Transfer credit: CSU; UC.
+ --------
+FALSE POSITIVE
+
+**** Index (322, 1689) ****
+CID: PHYS-105
+San Jose City College
+PHYS-002A Algebra/Trigonometry-Based Physics I
+Students will study basic principles: vectors, Newton's laws of motion, work, and the conservation principles of energy, momentum, elasticity, and thermodynamics. Also covered in this course will be gravitation, fluids, waves, and simple harmonic motion. This is the first of a two-semester course in general physics for students not needing calculus-based physics.
+ --------
+CID: PHYS-205
+San Jose City College
+PHYS-004A General Physics
+Students are introduced to the general principles of mechanics at an elementary level. Specific topics include kinematics, Newton's laws of motion, work and energy, momentum, rotation, simple harmonic motion, universal gravitation, and fluids. Elementary applications of these principles are introduced using a problem solving approach. This course is one of three courses in calculus-based general physics classes for majors in physics, chemistry, engineering, mathematics or other sciences.
+ --------
+FALSE POSITIVE
+
+**** Index (62, 1215) ****
+CID: PHYS-140
+Berkeley City College
+PHYS-10 Introduction to Physics
+Elementary study of major topics of physics: Motion, forces, gravity, matter, energy, momentum, rotation, oscillation, sound, heat, thermodynamics, electromagnetism, light, quantum physics, atoms, nuclei, and relativity. Not open for credit to students who have completed or are currently enrolled in PHYS 2A-2B, 3A-3B, or 4A-4B-4C.
+ --------
+CID: PHYS-205
+Moorpark College
+PHYS-M20A Mechanics Solids and Fluids
+Introduces the basic principles of the mechanics of solids and fluids. Uses calculus to develop the subject matter. Covers kinematics, Newtonian mechanics including rotational dynamics, work, energy, fluid statics and dynamics, and simple harmonic motion. Prerequisites: MATH M25A. Recommended Prep: PHYS M10A or high school physics, and MATH M25B or concurrent enrollment. Transfer credit: CSU; UC. C-ID: PHYS 205. CAN: PHYS 8 (PH 20A = 20AL).
+ --------
+FALSE POSITIVE
+
+**** Index (66, 2138) ****
+CID: PHYS-110
+Cuesta College
+PHYS-205B General Physics
+Presents the principles of geometric optics, physical optics, static and dynamic electricity and magnetism, introductory DC and AC circuit theory, modern physics topics (relativity, particles and waves, atomic structure, radioactivity and nuclear reactions) using trigonometry. Prerequisite: PHYS 205A or equivalent. Transfer: CSU; UC. (Formerly PHYS5B)
+ --------
+CID: PHYS-210
+Fullerton College
+PHYS-222 F General Physics II
+Prerequisite: PHYS 221 F and MATH 152 F or MATH 152HF, with a grade of C or better. 54 hours lecture and 54 hours lab per term. This course covers electrostatics, electric and magnetic fields, simple DC and AC circuits, and Maxwell's equations in integral form. The lab provides students with hands-on experience working with the subject material. Required for majors in physics and engineering. Recommended for majors in all the other physical sciences. (Degree Credit) (CSU) (UC Credit Limitation) AA GE, CSU GE, IGETC
+ --------
+FALSE POSITIVE
+
+**** Index (1430, 1440) ****
+CID: GEOG-111
+Long Beach City College
+PGEOG-1L Physical Geography Lab
+Physical Geography Laboratory emphasizes the practical application of concepts presented in PGEOG1 Physical Geography. Physical Geography Lab introduces the student to the tools and methods used in Physical Geography and related disciplines. Emphasis is given to Earth-sun relationships, atmosphere-hydrosphere interactions, lithospheric processes and materials, integration of climate, soils and biome  spatial patterns, map interpretation, and geographic grid systems.
+ --------
+CID: GEOG-115
+Gavilan College
+GEOG-1 Physical Geography
+An introductory study of the basic physical elements of geography including climate, land forms, soils, water, and natural vegetation, The laboratory will include the tools and methods of geographers. (C-ID: GEOG 115).
+ --------
+FALSE POSITIVE
+
+**** Index (525, 527) ****
+CID: MUS-125
+Pasadena City College
+MUSC-002A MUSICIANSHIP I
+Corequisite:  MUSC 001A.
+
+
+Application and development of the materials of MUSC 001A through sight-singing, ear training, and dictation. Topics include rhythm, major and minor scales, intervals, triads, and simple diatonic melodies. Total of 54 hours laboratory.
+
+ Transfer Credit: CSU; UC. *C-ID: MUS 125
+
+ Grade Mode:  L, A, P
+ --------
+CID: MUS-155
+Skyline College
+MUS.-114 Musicianship IV
+Incorporates and builds on concepts introduced in MUS. 113. Further development of ear training and sight singing skills. Topics include: advanced chromaticism including modulation to distantly-related keys, diatonic modes, non-diatonic and synthetic scales, pitch sets and tone rows, irregular beat division, polyrhythms, asymmetrical meters, mixed meters.
+ --------
+FALSE POSITIVE
+
+**** Index (320, 449) ****
+CID: MUS-180
+Pasadena City College
+MUSC-057E Jazz Guitar Ensemble
+Prerequisite:  Retention based on successful audition.
+
+
+Theory, history, rehearsal and performance of compositions and arrangements for jazz guitar ensemble.  Development of reading, technical and interpretive skills.   Required  instructional trips.   Recommended  completion of MUSC 111A-B.  For  guitarists, bassists and drummers.  Maximum credit  4 units, 1 unit each semester.   Maximum of 4 enrollments  in the  Chamber Ensemble Family:  MUSC 038C, 044, 057AEI, 070ABCDE, 082, 133E.  Total of 54 hours lecture and 18 hours laboratory. This course may be scheduled using the &ldquo;To Be Arranged&rdquo; (TBA) scheduling format.
+
+ Transfer Credit: CSU; UC. *C-ID: MUS 180
+
+ Grade Mode:  L, A
+ --------
+CID: MUS-160
+Pasadena City College
+MUSC-009B INDIVIDUAL INSTRUCTION II (CLASSICAL)
+Prerequisite:  MUSC 009A.
+Corequisite:  MUSC 010 and one of the following, appropriate for the student's study path: MUSC 043, 059, 060, 061, 062, 063, 064, 065, 066, 082.
+
+
+Designed for the intermediate level classical music major, this course consists of twelve 45-minute private lessons with an instructor on the Applied Music staff, participation in a weekly music recital class, and an end-of-semester jury performance. Building on the foundations already established, emphasis is on representative intermediate repertoire, continued technique development, and introduction to appropriate style and interpretation.  Recommended  enrollment in a chamber ensemble class. Total of 18 hours lecture and 99 hours laboratory. This course may be scheduled using the &ldquo;To Be Arranged&rdquo; (TBA) scheduling format.
+
+ Transfer credit: CSU; UC. *C-ID: MUS 160
+
+ Grade Mode:  L, A
+ --------
+FALSE POSITIVE
+
+**** Index (1570, 2015) ****
+CID: PHYS-200
+Mission College
+PHY-004B Engineering Physics-Electricity and Magnetism
+This lecture/laboratory course is the second in the calculus-based engineering physics series. The course continues the concept of field theory and develops the concepts of Maxwell's equations. Topics include: Coulomb's Law, Gauss' Law, Electric Potential,
+Biot-Savart Law, Ampere's Law, and Faraday's Law. Kirchoff's Laws and AC circuits
+are introduced. Solutions to numerical and theoretical problems are emphasized at the
+calculus level.
+ --------
+CID: PHYS-100
+Palomar College
+PHYS-121 General Physics
+A second semester continuation of PHYS 120. The fundamental principles of optics, electricity, magnetism, and modern physics.
+ --------
+FALSE POSITIVE
+
+**** Index (66, 1570) ****
+CID: PHYS-110
+Cuesta College
+PHYS-205B General Physics
+Presents the principles of geometric optics, physical optics, static and dynamic electricity and magnetism, introductory DC and AC circuit theory, modern physics topics (relativity, particles and waves, atomic structure, radioactivity and nuclear reactions) using trigonometry. Prerequisite: PHYS 205A or equivalent. Transfer: CSU; UC. (Formerly PHYS5B)
+ --------
+CID: PHYS-200
+Mission College
+PHY-004B Engineering Physics-Electricity and Magnetism
+This lecture/laboratory course is the second in the calculus-based engineering physics series. The course continues the concept of field theory and develops the concepts of Maxwell's equations. Topics include: Coulomb's Law, Gauss' Law, Electric Potential,
+Biot-Savart Law, Ampere's Law, and Faraday's Law. Kirchoff's Laws and AC circuits
+are introduced. Solutions to numerical and theoretical problems are emphasized at the
+calculus level.
+ --------
+FALSE POSITIVE
+
+**** Index (211, 225) ****
+CID: CHEM-110
+Evergreen Valley College
+CHEM-001A General Chemistry
+This is the first course in general chemistry with lab, for science and pre-professional majors.  It covers basic chemical principles: nomenclature, atomic structure, quantum theory, molecular structure and bonding, periodic properties, chemical reactions, stoichiometry, thermochemistry, states of matter, gas laws, solutions, oxidation-reductions, and molecular equilibrium. The role that chemistry plays in everyday life, industry, and human welfare is emphasized.
+ --------
+CID: CHEM-120
+Santa Barbara City College
+CHEM-155 General Chemistry I
+First semester of a two-semester General Chemistry course sequence. Includes laboratory. Topics include the structure of atoms and molecules, stoichiometry, types of chemical bonding and chemical reactions, gas laws, molecular structure, acid-base chemistry, and thermodynamics. Laboratory focuses on collection and interpretation of data, and includes spectroscopy. Required for science, engineering and pre-dental and pre-medical majors.
+ --------
+FALSE POSITIVE
+
+**** Index (1138, 2145) ****
+CID: PHYS-105
+Skyline College
+PHYS-210 General Physics I
+The first course of a two-course sequence of algebra/trigonometry-based physics. Designed for students majoring in certain fields of letters and science, and required of those planning to enter medicine, dentistry, pharmacy, optometry, agriculture or forestry. Covers mechanics, fluids, waves and thermodynamics. The laboratory portion covers measurement and analysis of phenomena discussed in lecture. NOTE: Depending on the transfer institution, different STEM majors may require students to complete PHYS 210 and PHYS 211. Please note that PHYS 211 has a MATH 242 or 252 pre-requisite, so we highly recommend meeting with an academic counselor to discuss requirements.
+ --------
+CID: PHYS-100
+Las Positas College
+PHYS-2A Introduction to Physics I
+Introduction to the major principles of classical mechanics using pre-calculus mathematics. Includes Newtonian mechanics, energy, gravitation, fluids, thermodynamics, oscillations, and waves. Prerequisite: MATH 39 with a minimum grade of C. 54 hours lecture, 54 hours laboratory. AA/AS GE. Transfer: CSU, UC*; CSU GE: B1, B3; IGETC: 5A, 5C; C-ID# PHYS 100 S (if taken with PHYS 2B), PHYS 105. * PHYS 2A, 2B or PHYS 1A, 1B, 1C, 1D combined: maximum UC credit, one series.
+ --------
+FALSE POSITIVE
+
+**** Index (193, 1119) ****
+CID: GEOL-120
+Fullerton College
+ESC-101LF Earth Science Survey Lab
+Corequisite: ESC 101 F with a grade of C or better. 54 hours lab per term. This course enhances topics covered in the ESC 101 F lecture course. Included are exercises in identifying minerals and rocks, reading topographic maps, analyzing earthquakes, interpreting coastal processes, forecasting weather, and recognizing the stars and planets. Field trips may be taken. (CSU) (UC Credit Limitation; no credit for ESC 101LF if taken after college level class in astronomy, meteorology, geology or oceanography) (Degree Credit) CSU GE, IGETC
+ --------
+CID: GEOL-100
+Cypress College
+GEOL-101 C Physical Geology Laboratory
+This course includes the identification of minerals and rocks; understanding of topographic maps, geological maps and aerial photographs; interpretation of rocks, structures, and geologic processes and their relationship to plate tectonics. A field trip may be required. (UC/CSU, AA GE, CSU GE, IGETC, C-ID: GEOL 100L))
+ --------
+FALSE POSITIVE
+
+**** Index (2072, 2088) ****
+CID: PSY-110
+Ventura College
+PSY-V01 Introduction to Psychology
+This course provides an overview of the scientific study of psychology in the areas of neuroscience, sensation and perception, states of consciousness, learning and memory, intellect and cognition, language, lifespan development and the influences of heredity and environment on behavior, motivation, sexuality, emotion, personality, stress and coping, psychological disorders, psychotherapy, and social relations.
+ --------
+CID: PSY-150
+Cabrillo College
+PSYCH-4 Introduction to Biological Psychology
+Introduces the scientific study of the biological bases of behavior and its fundamental role in the neurosciences. Physiological, hormonal, and neurochemical mechanisms, and brain-behavior relationships underlying the psychological phenomena of sensation, perception, regulatory processes, emotion, learning, memory, and psychological disorders will be addressed. The course also notes historical scientific contributions and current research principles for studying brain-behavior relationships and mental processes. Ethical standards for human and animal research are discussed in the context of both invasive and non-invasive experimental research.
+ --------
+FALSE POSITIVE
+
+**** Index (804, 1088) ****
+CID: MUS-145
+Cypress College
+MUS-204 C Musicianship III
+This course applies and develops the rhythmic, melodic, and harmonic materials of Music Theory III through ear training, sight singing, analysis, and dictation. (CSU, C-ID:MUS 145)
+ --------
+CID: MUS-110
+Foothill College
+MUS-10 MUSIC FUNDAMENTALS
+Beginning theory course, in which the basic elements of musicianship and harmony are explored through lecture, listening, and written assignments. Rudiments of music such as pitch, rhythm, harmony, style, and form will be examined as rock and roll is analyzed through classical music theory. Lecture and lab hours indicated are per week. This course includes 4 lecture hours and 1 lab hour per week.
+ --------
+FALSE POSITIVE
+
+**** Index (1516, 1673) ****
+CID: COMP-132
+Cuesta College
+CIS-232 Fundamentals of Computer Science II
+Continues fundamentals of computer programming with emphasis on the use of abstract data types such as tables, stacks, queues, and lists. Uses procedural and object oriented methods to develop software solutions. Presents classic algorithmic techniques such as searching, sorting, and recursion. Prerequisites: CIS 231. Transfer: CSU; UC (Formerly CIS32)
+ --------
+CID: COMP-122
+Chabot College
+CSCI-15 Object-Oriented Programming Methods
+Object-oriented programming methods employed to design, program, test and document intermediate level problems. Includes strings and string objects, multidimensional arrays, pointers, dynamic allocation, classes, overloaded functions, inheritance and polymorphism, introduction to linked lists. Designed to satisfy Association of Computing Machinery (ACM) guidelines for CS I as required for Computer Science and related transfer majors.
+ --------
+FALSE POSITIVE
+
+**** Index (521, 1677) ****
+CID: COMM-140
+Cerritos College
+COMM-132 Fundamentals of Small Group Communication
+As an introduction to the fundamentals of group discussion, this course explores small group communication theories to examine group development; leadership in groups; group communication norms, and processes with emphasis on problem-solving, decision-making, and conflict-reduction techniques. Students will learn a variety of techniques to prepare and deliver group presentations.
+ --------
+CID: COMM-110
+Saddleback College
+COMM-1 Communication Fundamentals
+Understand and use the processes of communication in making personal and social decisions in everyday life, including an understanding of problems and propositions; organization and development of ideas; evidence; methods of research, criticism and evaluation. Presentation of ideas in informative and persuasive contexts. Platform speaking experience will be required (formerly SP 1).
+ --------
+FALSE POSITIVE
+
+**** Index (740, 1608) ****
+CID: ECE-130
+Skyline College
+ECE.-211 Early Childhood Education Curriculum
+Developmentally appropriate curriculum and environments for children birth through age eight. Students will use knowledge of children?s development, theories of learning and development, and examples from various models of developmentally appropriate practice to plan environments and curriculum in all content areas to support children?s development and learning integrated throughout indoor and outdoor settings.
+ --------
+CID: ECE-210
+Palomar College
+CHDV-201 Practicum in Early Childhood Education
+Students will practice and demonstrate developmentally appropriate early childhood program planning and teaching competencies under the supervision of Palomar College ECE Lab School or a designated site with a mentor teacher approved by the California Early Childhood Mentor Program, upon placement by the Child Development department. Students will utilize practical classroom experiences to make connections between theory and practice, develop professional behaviors, and build a comprehensive understanding of children and families. Child centered, play-oriented approaches to teaching, learning, and assessment; and knowledge of curriculum content areas will be emphasized as student teachers design, implement and evaluate experiences that promote positive development and learning for all young children.
+ --------
+FALSE POSITIVE
+
+**** Index (2088, 2194) ****
+CID: PSY-150
+Cabrillo College
+PSYCH-4 Introduction to Biological Psychology
+Introduces the scientific study of the biological bases of behavior and its fundamental role in the neurosciences. Physiological, hormonal, and neurochemical mechanisms, and brain-behavior relationships underlying the psychological phenomena of sensation, perception, regulatory processes, emotion, learning, memory, and psychological disorders will be addressed. The course also notes historical scientific contributions and current research principles for studying brain-behavior relationships and mental processes. Ethical standards for human and animal research are discussed in the context of both invasive and non-invasive experimental research.
+ --------
+CID: PSY-110
+Oxnard College
+PSY-R101 General Psychology
+Psychology is the scientific study of behavior and mental processes. This course will introduce students to major psychological theories and concepts, methods, and research findings in psychology. The course will cover the biological bases of behavior, perception, cognition and consciousness, learning, memory, emotion, motivation, development, personality, social psychology, applied psychology, and psychological disorders and therapeutic approaches. In addition, the course will examine the impact of diversity on psychological research, theory and application, including (but not limited to): age, race, ethnicity, culture, gender, socio-economic status, disability, and sexual orientation." Credit will not be awarded for both the honors and regular versions of a course. Credit will be awarded only for the first course completed with a grade of C or better or "P."
+ --------
+FALSE POSITIVE
+
+**** Index (194, 818) ****
+CID: PSY-180
+Fullerton College
+PSY-139 F Developmental Psychology: Life Cycle
+54 hours lecture per term. This course explores the entire lifespan, including infancy, childhood, adolescence, adulthood, old age, and death. Students will study and evaluate psychological, sociological, and biological theories and facts related to human development. Physical development, social and emotional development, intellectual and cognitive development, and moral development are among the topics covered. Students will study and evaluate research methodologies and the many factors thought to influence healthy development. (Degree Credit) (CSU) (UC) AA GE, CSU GE, IGETC
+ --------
+CID: CDEV-100
+Cypress College
+PSY-145 C Child Psychology
+This course explores the physical, cognitive, communicative/linguistic, and socio-emotional development of the child from conception through adolescence across diverse cultures with an emphasis on the learning process. Education and teaching issues related to children are highlighted. (UC/CSU, AA GE, CSU GE, IGETC, CDEV 100)
+ --------
+FALSE POSITIVE
+
+**** Index (938, 2170) ****
+CID: PSY-110
+Long Beach City College
+PSYCH-1 Introduction to Psychology
+This course is an introduction to the scientific study of behavior and mental processes. It will cover critical thinking and the scientific method, biopsychology, sensation and perception, consciousness and thinking, lifespan development, learning and memory, emotion and stress, psychological disorders and therapy, personality, and social psychology.
+ --------
+CID: PSY-120
+Chabot College
+PSY-6 Abnormal Psychology
+An overview of the field of abnormal psychology.  Introduces students to the major classifications of mental health disorders from the perspective of symptoms and behavior, causes, diagnosis and treatment.  Examines historical, socio-cultural and contemporary understanding of mental illness.  Includes disorders of mood, anxiety, psychosis, substance abuse, personality and other disorders in adults and children.
+ --------
+FALSE POSITIVE
+
+**** Index (65, 456) ****
+CID: PHYS-210
+Cuesta College
+PHYS-208B Principles of Physics II
+Presents the principles of wave motion, sound, geometric and physical optics, static and dynamic electricity and magnetism, D.C. and A.C. circuit theory and electromagnetic waves using calculus. Prerequisite: PHYS 208A and MATH 265B or equivalent. Transfer: CSU; UC. (Formerly PHYS8B)
+ --------
+CID: PHYS-200
+Pasadena City College
+PHYS-001D GENERAL PHYSICS
+Prerequisite:  PHYS 001C and MATH 005C.
+
+Calculus-based study of introductory modern physics, including the theory of relativity, basic principles of quantum mechanics, elementary atomic, molecular, solid state, nuclear, and particle physics.  Total of 72 hours lecture and 72 hours laboratory.
+
+ Transfer Credit:  CSU; UC credit limitations.  See counselor. C-ID: PHYS SEQ 200S (with PHYS 001A, 001B, 001C)
+
+ Grade Mode:  L, A, P
+ --------
+FALSE POSITIVE
+
+**** Index (62, 498) ****
+CID: PHYS-140
+Berkeley City College
+PHYS-10 Introduction to Physics
+Elementary study of major topics of physics: Motion, forces, gravity, matter, energy, momentum, rotation, oscillation, sound, heat, thermodynamics, electromagnetism, light, quantum physics, atoms, nuclei, and relativity. Not open for credit to students who have completed or are currently enrolled in PHYS 2A-2B, 3A-3B, or 4A-4B-4C.
+ --------
+CID: PHYS-140
+Skyline College
+CHEM-114 Survey of Chemistry and Physics
+A conceptual survey of physical science (physics and chemistry) intended for non-science majors at the General Education level. A general discussion of the scientific method and techniques will be followed by physics, chemistry, and integrated topics. The laboratory portion will cover a hands-on exploration of phenomena discussed in lecture. The physics component of the course will discuss motion, force, energy, electricity and magnetism, waves and light. The chemistry component of the course will focus on chemicals and reactions common in everyday life. Concepts relating to the nature and interactions of atoms, ions, and molecules will be presented. Students will also learn to use and evaluate information presented on product labels, in advertisement, and available through the internet. Also listed as PHYS 114.
+ --------
+FALSE NEGATIVE
+
+**** Index (945, 1080) ****
+CID: MUS-180
+Cypress College
+MUS-287 C Vocal Jazz Ensemble
+This course focuses on the rehearsal and performance of traditional and contemporary vocal jazz repertoire accompanied by a small instrumental ensemble. Some emphasis will be placed upon vocal improvisation in the jazz style. The ensemble will perform in concerts and may also participate in jazz and choral music festivals. Student compositions and arrangements are encouraged. Three hours rehearsal and one and one quarter hours laboratory per week. May be taken for credit 4 times. (UC/CSU)
+ --------
+CID: MUS-160
+Moorpark College
+MUS-M30G Applied Music Instruction - Voice
+Provides individualized study of the appropriate techniques and repertoire for voice through private instruction. Emphasizes the progressive development of skills needed for solo performance. May be taken a maximum of four (4) times. Prerequisites: Performance at college level, with audition based on repertoire standards established by the Music Department. Corequisites: Students must be enrolled in a music theory course and the accompanying lab course (MUS M02A and MUS M02AL) or (MUS M02B and MUS M02BL) or (MUS M02C and MUS M02CL) or (MUS M02D and MUS M02DL); Students must be enrolled in an ensemble course (MUS M10, MUS M12, MUS M18, MUS M21, MUS M23, MUS M34) OR advanced ensemble course (MUS M100, MUS M120, MUS M180, MUS M210, MUS M230, MUS M134); Students seeking to transfer as a vocal performance major are highly encouraged to participate in MUS M13A, MUS M13B, MUS M13C, and MUS M13D. Transfer credit: CSU; UC. C-ID: MUS 160.
+ --------
+FALSE POSITIVE
+
+**** Index (420, 715) ****
+CID: PSY-110
+Foothill College
+PSYC-1 General Psychology
+An exploration of the major perspectives, concepts, and theories in psychology and the factors that influence human behavior. Topics include: research methodology, biological psychology, perception, sleep and dreaming, learning, cognitive processes, developmental psychology, motivation and emotion, sexuality and gender, stress and health, social psychology, theories of personality, psychological disorders and psychological therapies. Lecture hours indicated are per week. This course includes 5 lecture hours per week.
+ --------
+CID: PSY-115
+Cuesta College
+PSYC-233 Personality and Adjustment
+Presents the scientific study of personality with an applied focus on how psychological science is used for personal growth and adjustment to life experiences. The course surveys different psychological perspectives and theoretical foundations of personality development and change, with consideration of the influence of personal relationships, culture, gender, ethnicity, historical context, and socio-economic status. Advisory: PSYC 201. Transfer: CSU; UC. (Formerly PSYCH33)
+ --------
+FALSE POSITIVE
+
+**** Index (1786, 2041) ****
+CID: PHYS-215
+Reedley College
+PHYS-4C Physics for Scientists and Engineers
+The topics covered in this course include: electromagnetic waves, optics, modern physics, condensed matter and nuclear physics. (A, CSU-GE, UC, I) (C-ID PHYS 215) (C-ID PHYS 200S: PHYS 4A + PHYS 4B + PHYS 4C)
+ --------
+CID: PHYS-110
+Cabrillo College
+PHYS-2B Physics for Life Sciences II
+Covers electromagnetism, optics, relativity, and the atom primarily for life science students. Spring semester only. Some of the class hours for this course may be scheduled as To Be Arranged (TBA). See the Schedule of Classes for the details about this course offering.
+ --------
+FALSE POSITIVE
+
+**** Index (984, 1333) ****
+CID: THTR-192
+Chabot College
+THTR-48A College Theater Technical: Introduction
+Participation in scheduled productions as crew members and/or constructing its technical elements. Development of skills in the various technical areas involved in the presentation of a theatrical production.
+ --------
+CID: THTR-174
+San Joaquin Delta College
+DRAMA-23A Stage Costume: Costume Construction I
+This course is study in costume construction and the basic techniques needed to create simple garments for the stage. Emphasis is placed on hand and machine sewing as well as recognizing essential elements found in traditional patterning and finished garments. These skills will provide the student with the necessary knowledge to implement hands-on activities in support of theatrical productions. (UC, CSU, C-ID THTR 174)
+ --------
+FALSE POSITIVE
+
+**** Index (1568, 1587) ****
+CID: PHYS-210
+Mission College
+PHY-004B Engineering Physics-Electricity and Magnetism
+This lecture/laboratory course is the second in the calculus-based engineering physics series. The course continues the concept of field theory and develops the concepts of Maxwell's equations. Topics include: Coulomb's Law, Gauss' Law, Electric Potential,
+Biot-Savart Law, Ampere's Law, and Faraday's Law. Kirchoff's Laws and AC circuits
+are introduced. Solutions to numerical and theoretical problems are emphasized at the
+calculus level.
+ --------
+CID: PHYS-215
+Oxnard College
+PHYS-R133 Physics for Scientists and Engineers 3
+This course is an introduction to wave motion (with emphasis placed on the study of sound and electromagnetic wave phenomena), geometrical and wave optics, and selected elementary topics on special relativity and quantum mechanics. Central topics include mechanical and electromagnetic waves; geometric optics; interference and diffraction; relativistic kinematics and dynamics; and elementary quantum theory with atomic structure. Although the course emphasizes conceptual understanding, students also learn to apply mathematical techniques such as vector calculus, Fourier analysis, numerical approximations, and multi-variable integration to the solution of problems. The laboratory provides students with opportunities to learn and apply the scientific method through investigations of the phenomena discussed in lecture. The course is appropriate for students majoring in the physical sciences, engineering, mathematics, computer science, and related fields.
+ --------
+FALSE POSITIVE
+
+**** Index (1987, 2137) ****
+CID: PHYS-205
+Imperial Valley College
+PHYS-200 General Physics I
+This course is designed to give an understanding of the fundamental principles of physics in the area of mechanics.
+ --------
+CID: PHYS-215
+Fullerton College
+PHYS-223 F General Physics III
+Prerequisite: PHYS 222 F with a grade of C or better. 54 hours lecture and 54 hours lab per term. This course covers the topics of thermodynamics, mechanical and electromagnetic waves, geometrical and physical optics, special relativity, and an introduction to quantum mechanics including wave-particle duality, the uncertainty principle, the atom, and the nucleus. The laboratory provides students with hands-on experience working with the subject material. PHYS 221 F, 222 F, and 223 F are a calculus-based three-semester survey of introductory physics. Required of majors in physics and most majors in engineering. Recommended for majors in all the other physical sciences. (Degree Credit) (CSU) (UC Credit Limitation) AA GE, CSU GE, IGETC
+ --------
+FALSE POSITIVE
+
+**** Index (272, 2194) ****
+CID: PSY-120
+Las Positas College
+PSYC-6 Abnormal Psychology
+An introduction to mental health and the major mental health disorders in adults and children; includes anxiety, mood, personality, sexual, and psychotic disorders. The course will include the study of the major psychological, biological, and sociocultural models of mental health disorders and their treatment. 54 hours lecture. AA/AS GE. Transfer: CSU, UC; CSU GE: D9; IGETC: 4I; C-ID# PSY 120.
+ --------
+CID: PSY-110
+Oxnard College
+PSY-R101 General Psychology
+Psychology is the scientific study of behavior and mental processes. This course will introduce students to major psychological theories and concepts, methods, and research findings in psychology. The course will cover the biological bases of behavior, perception, cognition and consciousness, learning, memory, emotion, motivation, development, personality, social psychology, applied psychology, and psychological disorders and therapeutic approaches. In addition, the course will examine the impact of diversity on psychological research, theory and application, including (but not limited to): age, race, ethnicity, culture, gender, socio-economic status, disability, and sexual orientation." Credit will not be awarded for both the honors and regular versions of a course. Credit will be awarded only for the first course completed with a grade of C or better or "P."
+ --------
+FALSE POSITIVE
+
+**** Index (1039, 1512) ****
+CID: ENGL-120
+Pasadena City College
+ENGL-001B Reading and Composition
+Prerequisite:  One of the following: (1) ENGL 001A or ENGL 001AH or ENGL 001AS; (2) score of 3 on Advanced Test given by the College Entrance Examination Board.
+
+Writing of argumentative and persuasive essays about literary works. Critical analysis, interpretation, and evaluation of literary works. Elements  and principles of literature as exemplified in major literary forms.   No credit  if taken after ENGL 001BH.  Total of 72 hours lecture.
+
+ Transfer Credit:  CSU; UC. *C-ID: ENGL 120
+
+ Grade Mode:  L, A, P
+ --------
+CID: ENGL-105
+Cabrillo College
+ENGL-2MC Composition and Critical Thinking: Multicultural Emphasis
+Develops writing and reading skills for logical reasoning and argumentation with a multicultural emphasis. Satisfies the IGETC and CSU critical thinking (ENGL 2) requirements and Cabrillo multicultural requirement. Students write a minimum of 6,000 words. May be offered in a Distance-Learning Format.
+ --------
+FALSE POSITIVE
+
+**** Index (44, 380) ****
+CID: ECE-210
+Santa Barbara City College
+ECE-104 Foundations of ECE II
+Offered only in the Spring semester. Design, implementation and evaluation of developmentally appropriate curriculum for young children, birth to age 8. Research on brain development, language development, and cognition is integral. Professional skills of resume writing, accessing community resources for families and providing group times/experiences are developed. Coursework combined with a minimum of 45 days of student teaching, with each shift lasting 3 hours in an ECE lab setting. Prerequisite: ECE 102 and ECE 103 and ECE 108 and ECE 120 or PSY 140
+ --------
+CID: ECE-130
+Bakersfield College
+CHDV-B36 Developmentally Appropriate Curriculum
+This course presents an overview of knowledge and skills related to providing appropriate curriculum and environments for young children. Students will examine a teacher's role in supporting development and learning for all young children. This course provides strategies for developmentally-appropriate practice based on observation and assessments across the curriculum. C-ID: ECE 130
+ --------
+FALSE POSITIVE
+
+**** Index (1196, 1538) ****
+CID: PHYS-200
+Santa Barbara City College
+PHYS-123 Heat, Light and Modern Physics
+Offered only in the Spring semester. For Engineering and Physical Science students. Mechanical waves, thermodynamic processes and systems, kinetic theory, light and modern physics.
+ --------
+CID: PHYS-210
+Cabrillo College
+PHYS-4B Physics for Scientists and Engineers II
+Covers electricity and magnetism for scientists and engineers. This is the second course in the calculus-based physics sequence. Students enrolled in the Honors Transfer Program may count this course towards the "Honors Scholar" designation with an Honors Contract. Fall semester and alternating summers. Some of the class hours for this course may be scheduled as To Be Arranged (TBA). See the Schedule of Classes for the details about this course offering.
+ --------
+FALSE POSITIVE
+
+**** Index (149, 297) ****
+CID: ENGL-100
+Santa Barbara City College
+ENG-110 Composition and Reading
+Practice in expository composition based on critical reading of various academic texts and one book-length work. Develop skills in writing effectively, reading carefully, and thinking clearly.
+ --------
+CID: ENGL-105
+Reedley College
+ENGL-3H Honors Critical Reading and Writing
+Designed to develop critical thinking, researching, reading, and writing skills beyond the level achieved in English 1A/1AH, English 3H will focus on the development of logical reasoning and analytical and argumentative writing skills based primarily on works of non-fiction. Students will analyze classical and contemporary essays and synthesize critical research. As an Honor's section, this class will employ enhanced teaching methods such as seminar approach and assignments calling for a higher level of critical thinking and a deeper level of research. Students will write a minimum of 6,000 words during the course of the semester. . (A, CSU-GE, UC, I) (C-ID ENGL 105)
+ --------
+FALSE POSITIVE
+
+**** Index (721, 1653) ****
+CID: JOUR-120
+Skyline College
+JOUR-121 Advanced Writing & Reporting for the Media
+Prepares students for the converging worlds of print, broadcast, and online journalism. Focus on advanced reporting skills and convergence journalism, including conveying stories through more than text. Students supplement written stories with audio, photos, and video; creating interactive graphics; beat blogging; utilizing social media, and cultivating data journalism skills.
+ --------
+CID: JOUR-130
+Long Beach City College
+JOURN-80 Multimedia Newsroom: News
+Formerly JOURN 80AD.  In the Multimedia Newsroom, students will produce material for a variety of electronic media outlets and the printed Viking newspaper. Students will gather news about Long Beach City College for stories, photos, videos, blogs, artwork, tweets, postings, informational graphics and other products under deadline pressures. The course will involve field work on campus to cover news about Long Beach City College.
+ --------
+FALSE POSITIVE
+
+**** Index (272, 2088) ****
+CID: PSY-120
+Las Positas College
+PSYC-6 Abnormal Psychology
+An introduction to mental health and the major mental health disorders in adults and children; includes anxiety, mood, personality, sexual, and psychotic disorders. The course will include the study of the major psychological, biological, and sociocultural models of mental health disorders and their treatment. 54 hours lecture. AA/AS GE. Transfer: CSU, UC; CSU GE: D9; IGETC: 4I; C-ID# PSY 120.
+ --------
+CID: PSY-150
+Cabrillo College
+PSYCH-4 Introduction to Biological Psychology
+Introduces the scientific study of the biological bases of behavior and its fundamental role in the neurosciences. Physiological, hormonal, and neurochemical mechanisms, and brain-behavior relationships underlying the psychological phenomena of sensation, perception, regulatory processes, emotion, learning, memory, and psychological disorders will be addressed. The course also notes historical scientific contributions and current research principles for studying brain-behavior relationships and mental processes. Ethical standards for human and animal research are discussed in the context of both invasive and non-invasive experimental research.
+ --------
+FALSE POSITIVE
+
+**** Index (1001, 1151) ****
+CID: JOUR-110
+Las Positas College
+JAMS-11 Introduction to Reporting and Newswriting
+An introduction to gathering, synthesizing/ organizing, and writing news in journalistic style across multiple platforms. Includes role of the journalist, analysis of exemplary journalistic models, and related legal and ethical issues. Students will report and write based on their original interviews and research to produce news content. Experiences may include covering speeches, meetings, and other events, writing under deadline and use of AP Style.
+ --------
+CID: JOUR-131
+Fullerton College
+JOUR-223 F Beginning News Media Production
+Prerequisite: JOUR 222 F with a grade of "C" or better. 36 hours lecture and 54 hours lab per term. This course expands news media production. Students will learn skills in multimedia reporting, editing, page design, photojournalism, editing and proofreading. Students will participate in the production of The Hornet newspaper and Hornet Online. (CSU) (Degree Credit).
+ --------
+FALSE POSITIVE
+
+**** Index (93, 872) ****
+CID: AJ-110
+College of the Canyons
+ADMJUS-101 Introduction To Administration Of Justice
+Introduces the history, philosophy and practical aspects of the U.S. Criminal Justice System, including related subsystems, concepts, terms and theories of law enforcement, the judiciary and correctional systems. UC credit limitation: ADMJUS-101 and 110 combined, maximum credit one course.
+ --------
+CID: AJ-122
+Reedley College
+CRIM-4 Principles and Procedures of the Justice System
+This course analyzes criminal law and its relationship to court proceedings in the United States. The class introduces students to concepts such as: procedural rules, jurisdiction, classification and elements of crimes. It also focuses on the legal issues and constitutional interpretations involving extradition, arrest, search and seizure laws, admissions and confessions, and other directives provided to law enforcement agencies.   (A, CSU) (C-ID AJ 122)
+ --------
+FALSE POSITIVE
+
+**** Index (1196, 1222) ****
+CID: PHYS-200
+Santa Barbara City College
+PHYS-123 Heat, Light and Modern Physics
+Offered only in the Spring semester. For Engineering and Physical Science students. Mechanical waves, thermodynamic processes and systems, kinetic theory, light and modern physics.
+ --------
+CID: PHYS-105
+Gavilan College
+PHYS-2A General Physics I
+An introduction to the principles of physics using algebra and trigonometry. Topics include kinematics in one and two dimensions, vectors, equilibrium and non-equilibrium applications of Newton's Laws, work and energy, momentum, rotational kinematics and dynamics, simple harmonic motion, elasticity, thermal physics, thermodynamics, and waves. (C-ID: PHYS 105), (C-ID: PHYS 100S: Phys 2A + Phys 2B) PREREQUISITE: MATH 8A ADVISORY: Eligible for English 250 and English 260.
+ --------
+FALSE POSITIVE
+
+**** Index (1651, 2086) ****
+CID: ECE-120
+San Joaquin Delta College
+CDEV-31A Principles and Practices of Teaching Young Children
+This course is an examination of the underlying theoretical principles of developmentally appropriate practices applied to programs, environments, emphasizing the key role of relationships, constructive adult-child interactions, and teaching strategies in supporting physical, social, creative and intellectual development for all children. This course includes a review of historical roots of early childhood education programs and the evolution of the professional practices promoting advocacy, ethics and professional identity. (CSU, C-ID ECE 120)
+ --------
+CID: ECE-130
+Cabrillo College
+ECE-53 Introduction to Curriculum for the Young Child
+Focuses on knowledge and skills for creating developmentally appropriate curriculum and environments for children through age 6 emphasizing essential role of play and sensory learning. Examines teacher's role in the development of language and literacy, social and emotional skills, creativity, math, and science. May be offered in Spanish or in a Bilingual Format.
+ --------
+FALSE POSITIVE
+
+**** Index (163, 652) ****
+CID: ARTS-210
+Saddleback College
+ART-50 Painting I
+Introduction to the basic elements, principles and practices of painting. Focus on exploration of painting materials, perceptual skills, paint mixing, color theory, and methods of applying paint. Creative responses to representational subject matter will be emphasized. Emphasizes portfolio development for employment as an artist or related worker. Theory and studio work in the application of esthetic principles to the design and painting of useful and decorative objects and spaces. Students are limited to a combined total of four enrollments in ART 50, 51, 52, and 250.
+ --------
+CID: ARTS-110
+Mission College
+ART-031A Beginning Drawing
+This is a beginning drawing course for students with no previous drawing experience. Students work from observation, directed toward realistic rendering of objects through line, shading, pictorial composition and perspective.
+ --------
+FALSE POSITIVE
+
+**** Index (33, 1278) ****
+CID: GEOL-100
+Santa Barbara City College
+ERTH-111 Dynamic Earth - Physical Geology
+Introduction to the physical development of the Earth. Emphasis on earth materials (rocks and minerals), hydrologic processes, tectonic process (plate tectonics, earthquakes, mountain building and volcanism) and structures (folds, faults). Current theories on structure and evolution of the earth are discussed. Designed for both non-science majors and earth science majors. Required of all Geology majors.
+ --------
+CID: GEOL-110
+Moorpark College
+GEOL-M03L Earth History Lab
+Provides hands-on experience identifying fossils, minerals, and rocks. Introduces geologic time, relative age relations in rocks, construction of paleogeographic maps, interpretation of geologic maps and cross sections, and fossil evidence of evolutionary trends throughout geologic time.
+ --------
+FALSE POSITIVE
+
+**** Index (1198, 2041) ****
+CID: PHYS-205
+Santa Barbara City College
+PHYS-121 Mechanics of Solids and Fluids
+For Engineering and Physical Science students. Statics and dynamics of particles and rigid bodies, Newton's Laws of Motion, conservation principles, rotational motion, simple harmonic motion, wave motion and sound, and introduction to hydrostatics and hydrodynamics.
+ --------
+CID: PHYS-110
+Cabrillo College
+PHYS-2B Physics for Life Sciences II
+Covers electromagnetism, optics, relativity, and the atom primarily for life science students. Spring semester only. Some of the class hours for this course may be scheduled as To Be Arranged (TBA). See the Schedule of Classes for the details about this course offering.
+ --------
+FALSE POSITIVE
+
+**** Index (150, 298) ****
+CID: ENGL-120
+Los Medanos College
+ENGL-230 Thinking and Writing Critically about Literature
+This course continues the development of students�� college-level skills in reading, critical thinking, writing, and research, focusing on critically analyzing and writing about poetry, drama, fiction, and literary non-fiction texts. Essays written for the course (6,000 words minimum) draw from the readings and secondary sources to present carefully reasoned arguments.   May not be repeated.
+ --------
+CID: ENGL-100
+Foothill College
+ENGL-1S Integrated Composition and Reading
+Integrated reading and writing pathway that scaffolds instruction in freshman composition outcomes over two quarters, ENGL 1S and 1T respectively. Over this two quarter stretch, students read college-level texts and write a total of 8,000 words, comprised of a minimum of eight compositions (of which at least five must be out-of-class and at least two must be in-class) to practice the techniques of critical reading, critical thinking, and written communication. Reading focused primarily on works of non-fiction prose, including published and student writing, chosen to represent a broad spectrum of opinions and ideas, writing styles, and cultural experiences. Lecture hours indicated are per week. This course includes 4 lecture hours per week.
+ --------
+FALSE POSITIVE
+
+**** Index (1345, 1517) ****
+CID: COMP-152
+Cabrillo College
+CS-23 Discrete Mathematics
+Presents discrete mathematical systems including methods of proof that shape the foundations of computer science. Includes propositional logic, set and number theory, Boolean Algebra, deductive and inductive proof, functions and relations, combinatorics, discrete probability, graph theory and network models, and efficiency of algorithms. Math majors should enroll in MATH 23 (identical to CS 23). May be offered in a Distance-Learning Format.
+ --------
+CID: COMP-132
+Cuesta College
+CIS-233 Fundamentals of Computer Science III
+Introduces advanced concepts including: theory, generic programming implementation, applications, and analysis of associated algorithms including lists, stacks, queues, hash tables, trees, and graphs. Recursion, iteration, searching, and sorting algorithms and analysis. Prerequisite: CIS 232 Corequisite: CIS 241 Transfer: CSU; UC (For UC, both CIS 232 and 233 must be completed in order to receive transfer units). (Formerly CIS33)
+ --------
+FALSE POSITIVE
+
+**** Index (440, 925) ****
+CID: AJ-120
+Moorpark College
+CJ-M02 Concepts of Criminal Law
+Prerequisites: None
+Recommended Prep: CJ M01 or CJ M01H, and ENGL M01A or ENGL M01AH
+Class Hours: 3 lecture
+C-ID: AJ 120
+Introduces the historical development and philosophy of law. Reviews
+constitutional provisions, definitions and classifications of crimes and their
+application to the criminal justice system. Examines concepts of the law
+as a social force. Explores crimes against persons, property and the state
+as social, religious and historical ideology. Defines common and statutory
+law and the nature of acceptable evidence and defenses to crimes. Employs
+legal research and review of case law methodology to introduce students to
+criminal law. Applies to Associate Degree. Transfer credit: CSU; UC
+ --------
+CID: AJ-110
+Cuesta College
+CJ-202 Introduction to Criminal Justice
+Explores the history, theory, organization, practices, interrelationship and societal impact of the criminal justice system. Studies the origin, development and application of crime causation theories. Transfer: CSU; UC. (Formerly CJ2)
+ --------
+FALSE POSITIVE
+
+**** Index (1149, 1653) ****
+CID: JOUR-110
+Santa Barbara City College
+JOUR-101 Reporting/Writing I
+Introduction to gathering, organizing and writing news in journalistic style across multiple platforms. Includes role of the journalist and related legal and ethical issues. Students report and write based on original interviews and research to produce news content. Experiences may include covering speeches, meetings and other events, writing under deadline and using AP Style.
+ --------
+CID: JOUR-130
+Long Beach City College
+JOURN-80 Multimedia Newsroom: News
+Formerly JOURN 80AD.  In the Multimedia Newsroom, students will produce material for a variety of electronic media outlets and the printed Viking newspaper. Students will gather news about Long Beach City College for stories, photos, videos, blogs, artwork, tweets, postings, informational graphics and other products under deadline pressures. The course will involve field work on campus to cover news about Long Beach City College.
+ --------
+FALSE POSITIVE
+
+**** Index (836, 1553) ****
+CID: SPAN-210
+Foothill College
+SPAN-6 INTERMEDIATE SPANISH III
+Extensive reading and discussion of texts dealing with the literature, arts, geography, history and culture of the Spanish-speaking world, with emphasis on literature and art. Practice of advanced grammatical structures, and expansion of abstract vocabulary, and idiomatic usage. Writing and reading assignments based upon topics discussed in class. Lecture hours indicated are per week. This course includes 5 lecture hours per week.
+ --------
+CID: SPAN-110
+Chabot College
+SPA-1B Elementary Spanish
+Further study of Spanish-speaking cultures of the world featuring the acquisition of the four language skills (listening, speaking, reading, and writing) of Spanish begun in Spanish 1A. Following an immersion instruction format, the class is entirely taught in the target world language of the selected course. May not receive credit if SPA 1B1 and/or 1B2 have been completed.
+ --------
+FALSE POSITIVE
+
+**** Index (866, 1080) ****
+CID: MUS-180
+Chabot College
+MUSP-45 Chamber Choir
+Select mixed ensemble of 16 to 20 voices performing chamber choral music of all periods and styles. Designed for the advanced singer performing new repertoire each semester. Enrollment subject to a standardized audition demonstrating musical ability and technical proficiency at a level suitable to the course level.
+ --------
+CID: MUS-160
+Moorpark College
+MUS-M30G Applied Music Instruction - Voice
+Provides individualized study of the appropriate techniques and repertoire for voice through private instruction. Emphasizes the progressive development of skills needed for solo performance. May be taken a maximum of four (4) times. Prerequisites: Performance at college level, with audition based on repertoire standards established by the Music Department. Corequisites: Students must be enrolled in a music theory course and the accompanying lab course (MUS M02A and MUS M02AL) or (MUS M02B and MUS M02BL) or (MUS M02C and MUS M02CL) or (MUS M02D and MUS M02DL); Students must be enrolled in an ensemble course (MUS M10, MUS M12, MUS M18, MUS M21, MUS M23, MUS M34) OR advanced ensemble course (MUS M100, MUS M120, MUS M180, MUS M210, MUS M230, MUS M134); Students seeking to transfer as a vocal performance major are highly encouraged to participate in MUS M13A, MUS M13B, MUS M13C, and MUS M13D. Transfer credit: CSU; UC. C-ID: MUS 160.
+ --------
+FALSE POSITIVE
+
+**** Index (1046, 1831) ****
+CID: ENGL-200
+San Joaquin Delta College
+ENG-49A Introduction to Creative Writing
+This course is offered to the student interested in exploring creative writing in any genre, including fiction and non-fiction: short stories, novels, poetry, songs, plays, musicals, screenplays, television scripts, children's books, autobiographies and memoirs, biographies, magazine and newspaper articles, features, reviews, and columns. Emphasis is placed on the conception and development of ideas, process of creative writing, elements and formats of specific genres of writing, benefits of practice in several genres, artistry employed by successful, established, and published authors, and constructive group criticism of work submitted for the course. (UC, CSU, C-ID ENGL 200)
+ --------
+CID: ENGL-120
+Las Positas College
+ENG-4 Critical Thinking and Writing About Literature
+Develops critical thinking, reading, and writing skills as they apply to the analysis of fiction, poetry and drama; literary criticism; and related non-fiction from diverse cultural sources and perspectives. Emphasis on the techniques and principles of effective written argument as they apply to literature. Some research required. Prerequisite: ENG 1A with a minimum grade of C. 54 hours lecture. AA/AS GE. Transfer: CSU, UC; CSU GE: A3, C2; IGETC: 1B, 3B; C-ID# ENGL 120.
+ --------
+FALSE POSITIVE
+
+**** Index (1068, 1471) ****
+CID: ENGL-100
+San Jose City College
+ENGL-001A English Composition
+Students will learn the skills necessary for writing college level compositions. Students learn expository writing, critical reading, and research techniques. Students will also learn to write academic essays including a documented research paper in conventional format using MLA style. English 001A is the first transfer level English course.
+ --------
+CID: ENGL-105
+Moorpark College
+ENGL-M01C Critical Thinking and Composition
+Develops advanced skills in critical thinking, reading, and writing. Focuses primarily on the analysis and evaluation of non-fiction works to develop logical reasoning as well as analytical and argumentative writing skills. Course Credit Limitations: Students cannot complete both ENGL M01C and ENGL M01CH. Credit will be awarded only for the first course completed with a grade of “C” or better or "P". MC Honors Program requires a letter grade. Prerequisites: ENGL M01A or ENGL M01AH. Transfer credit: CSU; UC. C-ID: ENGL 105.
+ --------
+FALSE POSITIVE
+
+**** Index (81, 1975) ****
+CID: GEOG-155
+Santa Barbara City College
+GEOG-171 Introduction to Geographic Information Systems and Maps
+Techniques, tools and theories used to examine geographic information. Includes the structure, uses, and basic operations of a Geographic Information System (GIS). Cartography and cartographic design are incorporated, as well as overviews of aerial photography, remote sensing, and global positioning systems. Includes uses of GIS software in business, urban planning, resource management and scientific research. Course same as ERTH 171.
+ --------
+CID: GEOG-110
+Chabot College
+GEO-1 Introduction to Physical Geography
+Earth's natural environments, with emphasis on spatial characteristics, change over time, interactions between environmental components, and human-environment interactions.  Physical processes, techniques, and tools by which Earth's climates, soils, vegetation, water resources, and land forms are linked into integrated global patterns.  Effect of natural environments on human activities and how humans modify environments.  Field trips may be 
+included.
+ --------
+FALSE POSITIVE
+
+**** Index (109, 1718) ****
+CID: ENGL-160
+Fullerton College
+ENGL-211 F British Literature to 1800
+Prerequisite: ENGL 100 F or ENGL 100HF or ENGL 101 F or ENGL 110 F, with a grade of C or better. Advisory: ENGL 102 F or ENGL 102HF. 54 hours lecture per term. This course is a survey of British literature from the Middle Ages to 1800 and emphasizes literary trends and historical backgrounds, as well as the development of English. The course includes readings by such writers as the Pearl Poet, Chaucer, Shakespeare, Lanyer, Donne, Milton, Behn, Swift, and Pope. Texts will be considered from diverse perspectives. (CSU) (UC) (Degree Credit) AA GE, CSU GE, IGETC
+ --------
+CID: ENGL-165
+Mission College
+ENG-005B English Lierature from 19th Century to Present
+This course is a chronological survey of the second half of English literature, beginning with the Romantic Period of the nineteenth century and continuing to the present.
+ --------
+FALSE POSITIVE
+
+**** Index (738, 1417) ****
+CID: ARTS-205
+Foothill College
+ART-4C Drawing III
+An intermediate-level representational drawing course concentrating on observation and depiction of volume, texture and linear perspective in a variety of drawing media. Lecture and lab hours indicated are per week. This course includes 3 lecture hours and 3 lab hours per week.
+ --------
+CID: ARTS-100
+Saddleback College
+ART-40 Two-Dimensional Design
+Introduction to the concepts, applications, and processes of two-dimensional art through historical and contemporary contexts. An exploration of the basic elements of composition: line, shape, texture, value, color and spatial illusion. Application of those elements using the principles of design: balance, unity, rhythm, pattern & contrast. Development of visual vocabulary and individual aesthetic through lecture presentations, studio projects, problem solving, written assignments and research. Field trips required to meet course objectives.
+ --------
+FALSE POSITIVE
+
+**** Index (1013, 1513) ****
+CID: BUS-140
+Oxnard College
+CIS-R100 Introduction to Computer Information Systems
+This course is a comprehensive introduction to computer technology and information systems and their relationship to business and society. Students will be introduced to computer terminology, computer systems, hardware, software, the Internet and World Wide Web, communications and networking, programming languages, information systems, data structures, database management, enterprise computing, computer security, ethics, and privacy, careers in the computer industry, as well as the impact of computers on business and society as a whole.
+ --------
+CID: COMP-142
+Cuesta College
+CIS-240 Microcomputer Architecture and Programming
+Presents basic microprocessor concepts including internal architecture, memory, addressing, and control through the use of assembly language. Prerequisite: CIS 217 or CIS 231. Transfer: CSU; UC. (Formerly CIS40)
+ --------
+FALSE POSITIVE
+
+**** Index (1199, 2039) ****
+CID: PHYS-210
+Santa Barbara City College
+PHYS-122 Electricity and Magnetism
+Offered only in the Fall semester. For Engineering and Physical Science students. Electrostatics, Coulomb's Law, Gauss' Law, capacitors and dielectrics, DC circuits, Ohm's Law, magnetism, and electromagnetism, Ampere's Law, Faraday's Law, alternating current theory, electrical oscillators, electromagnetic radiation and electromagnetic waves.
+ --------
+CID: PHYS-100
+Cabrillo College
+PHYS-2A General Physics I
+Covers mechanics, thermodynamics and waves primarily for life science students. Fall semester only. Some of the class hours for this course may be scheduled as To Be Arranged (TBA). See the Schedule of Classes for the details about this course offering.
+ --------
+FALSE POSITIVE
+
+**** Index (1355, 1411) ****
+CID: COMM-130
+Los Medanos College
+SPCH-130 Interpersonal Communications
+This course provides the student an opportunity to learn and apply, in daily life, practical principles of interpersonal communication. Content will stress psychological, social, and cultural factors which affect human interaction. It is designed to assist students in improving their own interpersonal communication skills. Attention will be given to perception, interpersonal dynamics, listening, conflict resolution, relationship development and stages, and verbal and nonverbal communication. May not be repeated.
+ --------
+CID: COMM-150
+Cabrillo College
+COMM-12 Intercultural Communication
+Provides an understanding of the dynamics of intercultural communication with application to American culture, subcultures and different cultures of the world. Emphasizes culture shock, self awareness, perception, values, world views, verbal and nonverbal communication competency and ways to become a more cross-culturally sensitive and diverse communicator. May be offered in a Distance-Learning Format.
+ --------
+FALSE POSITIVE
+
+**** Index (213, 548) ****
+CID: THTR-151
+San Joaquin Delta College
+DRAMA-31 Acting I: Introduction to Acting
+This course is an introduction to the basic principles, techniques and concepts used in acting.  Various acting methods are practiced such as effective communication, collaboration and analysis with attention to historical and cultural context.  (UC, CSU, C-ID THTR 151)
+ --------
+CID: THTR-191
+Los Angeles City College
+THEATER-294-1 Rehearsal and Performances I
+Students perform a role (or roles) in a public performance of a play in the Theatre Academy season integrating principles and techniques of acting, character analysis, voice, and movement. Students will be introduced to rehearsal disciplines and professional work habits during the preparation for public performance and will experience audience response to their acting skills.
+
+Co-Requisite Course needs to be THEATER 272
+ --------
+FALSE POSITIVE
+
+**** Index (533, 1839) ****
+CID: MUS-180
+Fullerton College
+MUS-281 F Concert Choir
+Prerequisite: Audition. 18 hours lecture, 36 hours lab and 18 hours arranged lab per term in additional rehearsals, studio recordings, and concerts. This course covers standard choral literature which will be rehearsed and performed with an emphasis on early western music of the Renaissance and Baroque periods. Course may be taken four times for credit. (CSU) (UC) (Degree Credit)
+ --------
+CID: MUS-100
+Chabot College
+MUSL-1 Introduction to Music
+In this course significant works of human imagination and intellect are studied as students encounter a wide range of music from the Medieval period to American music of the 20th and 21st century, including American jazz. This course is designed to enable students to understand music as an art form within its historical context, primarily in Western Europe and the United States. Students will approach music as a form of expression that reflects personal creativity as well as social, political, religious, and cultural change. Further study includes the relationship of music to other forms of human expression, including art, architecture, philosophy, religion, and politics. Students will experience music through recordings, online video performances, and attendance at three concerts outside of the classroom.
+ --------
+FALSE POSITIVE
+
+**** Index (532, 870) ****
+CID: MUS-145
+Skyline College
+MUS.-113 Musicianship III
+Incorporates and builds on concepts introduced in MUS. 112. Further development of ear training and sight singing skills. Topics include: triplets/duplets, syncopations, chromatic alterations, and modulation to closely-related keys.
+ --------
+CID: MUS-110
+Imperial Valley College
+MUS-100 Intro to Music Foundations
+An introduction to basic concepts of music. The development of the skills and knowledge needed to read music, to hear music, and to use some instrument (including the voice) with skill.  (C-ID: MUS 110)
+ --------
+FALSE POSITIVE
+
+**** Index (1500, 1955) ****
+CID: GEOG-130
+Oxnard College
+GEOG-R103 Introduction to Weather and Climate
+An introduction to the Earth's atmosphere, weather prediction, climate change, and the methods employed in analyzing and understanding weather phenomena are investigated in this course. Global changes in climate patterns, human influence on the atmosphere, and the impact of weather events are examined. Advised course preparation READ R095 or ESL R095 and ENGL R097 or ENGL R100 or eligibility for ENGL R101.
+ --------
+CID: GEOG-111
+Chabot College
+GEO-1L Introduction to Physical Geography Laboratory
+Application of the concepts, techniques, tools, and materials of physical geography.  Practical exercises, experiments, observations, data analyses, and computer applications/simulations which augment understanding of geographic processes, interrelationships, spatial patterns and distributions.  Use of maps, remotely-sensed imagery, and geographic information systems.  Includes locational reference systems, time-space relationships, weather, climate, soils, vegetation, and landforms.  Field trips/field projects may be included.
+ --------
+FALSE POSITIVE
+
+**** Index (2051, 2062) ****
+CID: ECE-130
+Moorpark College
+CD-M14 Introduction to Curriculum
+Prerequisites: None
+Recommended Prep: CD M02 and CD M11
+Class Hours: 3 lecture
+C-ID: ECE 130
+Presents an overview of knowledge and skills related to providing
+developmentally appropriate curriculum and environments for young
+children from birth through age eight. Explores teaching strategies and
+curriculum development based on theoretical frameworks, observation,
+and assessment. Emphasizes the teacher’s role in supporting development
+and learning across the curriculum, including all content areas. Applies to
+Associate Degree. Transfer credit: CSU
+ --------
+CID: ECE-200
+Imperial Valley College
+CDEV-106 Observation and Assessment
+This course focuses on the appropriate use of assessment and observation tools and strategies to document young children's development, growth, and learning.  Includes the use of findings to inform and plan learning environments, curriculum, and experiences.  Recording strategies, rating systems, portfolios, and multiple assessment methods/tools will be discussed along with strategies for collaboration with families and professionals.   (C-ID: ECE 200)
+ --------
+FALSE POSITIVE
+
+**** Index (1099, 1590) ****
+CID: PSY-205
+Cypress College
+PSY-202 C Research Methods in Psychology
+This course encompasses the conceptual, ethical and technical aspects of designing and implementing research in the cognitive, behavioral and social sciences. Concepts are presented for proper application of the scientific method to psychological and social research using quantitative and qualitative techniques. The use of current technology to acquire, process, and analyze data is integrated throughout the course. Emphasis is placed on proper communication and presentation of completed research. (UC/CSU, CSU GE, IGETC, C-ID: PSY 205B)
+ --------
+CID: SOCI-125
+Cypress College
+SOC-161HC Honors Probability and Statistics - Social Sciences
+Prerequisite: Successful completion of Pre-Statistics or Intermediate Algebra or equivalent with a grade of C or better. Term hours: 72 lecture. This honors course provides an introduction to fundamental statistical concepts relevant to the social sciences but applicable to all disciplines. A conceptual approach is used to introduce students to topics of descriptive and inferential statistics including sampling, probability, central tendency, variability, correlation, regression, point estimation, interval estimation, and hypothesis testing. Also introduced are non-parametric statistics, such as chi-square, and parametric statistics, such as t-tests and ANOVA. The course includes applications of technology for statistical analysis including the interpretation of the relevance of the statistical findings. Applications use data from the behavioral and social sciences of psychology, sociology, anthropology, geography, economics, political science and the life sciences, health sciences, and education. This course is open to all students who meet the prerequisite, and it is required for psychology majors. This course is strongly recommended for all social sciences majors. Students who receive credit for this course may not receive credit for MATH 120 C or MATH 120PC. Duplicate credit not granted for SOC 161 C, PSY 161 C or PSY 161HC. (UC Credit Limitation/CSU, AA GE, CSU GE, IGETC,C-ID: MATH 110 and SOCI 125)
+ --------
+FALSE POSITIVE
+
+**** Index (114, 1631) ****
+CID: ENGL-105
+Fullerton College
+ENGL-103 F Critical Reasoning and Writing
+Prerequisite: ENGL 100 F or ENGL 100HF or ENGL 101 F or ENGL 110 F, with a grade of C or better. 72 hours lecture per term. This course is designed to develop critical thinking, reading, and writing skills beyond the level achieved in ENGL 100 F. The course will focus on the development of logical reasoning and analytical and argumentative writing skills as well as information literacy. This course fulfills the reading requirement for graduation. (CSU) (UC) (Degree Credit) AA GE, CSU GE, IGETC
+ --------
+CID: ENGL-120
+Cabrillo College
+ENGL-1B Composition and Literature
+Introduces literature through reading, writing, and discussion to develop critical and analytical skills; satisfies Humanities and Fine Arts requirement for UC/CSU. Students write a minimum of 6,000 words, focusing on literary interpretation and research. May be offered in a Distance-Learning Format.
+ --------
+FALSE POSITIVE
+
+**** Index (1487, 1493) ****
+CID: GEOG-160
+Cypress College
+GEOG-202 C Field Geography - Physical
+Each separate offering of this course will occur in a unique location, studying unique circumstances and conditions in the field. Each course will employ its own combination of technical equipment, scientific instruments, and geotechniques. All courses will study the basic conceptual materials, with modifications associated with the location and the specific conditions encountered at each season. Field trip cost not to exceed $40.00 (UC/CSU, C-ID:GEOG 160)
+ --------
+CID: GEOG-160
+Palomar College
+GEOG-195 Regional Field Studies in Geography
+Extended field studies of the geography of selected regions. Emphasis upon field observation and interpretation of climate, meteorology, vegetation, soils, and landforms.
+ --------
+FALSE NEGATIVE
+
+**** Index (1139, 2150) ****
+CID: SOCI-160
+Santa Barbara City College
+SOC-106 Sociology of Deviance
+Examination of deviance and social control in contemporary society, using the sociological perspective. Focuses on the social processes involved in the construction of deviance, and its functions and impacts on individuals and society. Covers interpersonal and family violence; mental disorders; deviant sexuality; drug and alcohol use; and property, white-collar and organized crime.
+ --------
+CID: SOCI-160
+Fullerton College
+SOC-292 F Introduction to Criminology
+54 hours lecture per term. This course is a study of theories of crimes and criminal behavior, including an explanation of crime, its causes, and how crime is measured. Major sociological and social science theories will be explored surrounding the issues of crime and criminal behavior. (CSU) (UC) (Degree Credit) AA GE, CSU GE, IGETC
+ --------
+FALSE NEGATIVE
+
+**** Index (526, 729) ****
+CID: MUS-180
+Skyline College
+MUS.-470.4 Concert Choir IV
+Performance of choral music for accompanied and/or unaccompanied choir at the advanced intermediate level. The choir may perform alone or in conjunction with other musical organizations on and off campus. Performance is required.
+ --------
+CID: MUS-160
+Gavilan College
+MUS-11A Applied Music, Piano
+Individual studio instruction in piano for the development of performance skills.  Each week students will take individual lessons and complete an on-campus practice appropriate for the number of units taken.  Additionally, each semester students will perform at least once for a juried performance for a faculty committee as a final exam. Designed for Music majors who are able to perform at college level. May be taken for a maximum total of 2 units. (C-ID: MUS 160) ADVISORY: Concurrent enrollment in MUS 3A, MUS 3B, MUS 3C or MUS 3D.
+ --------
+FALSE POSITIVE
+
+**** Index (125, 1046) ****
+CID: ENGL-110
+Moorpark College
+ENGL-M01B Literature: Critical Thinking and Composition
+Develops critical thinking and writing skills in close textual analysis of issues and themes in fiction, poetry, and drama as well as in non-fictional literature and literary criticism. Reviews deductive and inductive reasoning, recognition and avoidance of logical fallacies, and relationships between language and meaning while emphasizing detailed critical analysis. Course Credit Limitations: Students cannot complete both ENGL M01B and ENGL M01BH. Credit will be awarded only for the first course completed with a grade of “C” or better or "P". MC Honors Program requires a letter grade. Prerequisites: ENGL M01A or M01AH. Transfer credit: CSU; UC. Field trips may be required. CAN: ENGL 4. ENGL M01A + ENGL M01B = CAN ENGL SEQ A.
+ --------
+CID: ENGL-200
+San Joaquin Delta College
+ENG-49A Introduction to Creative Writing
+This course is offered to the student interested in exploring creative writing in any genre, including fiction and non-fiction: short stories, novels, poetry, songs, plays, musicals, screenplays, television scripts, children's books, autobiographies and memoirs, biographies, magazine and newspaper articles, features, reviews, and columns. Emphasis is placed on the conception and development of ideas, process of creative writing, elements and formats of specific genres of writing, benefits of practice in several genres, artistry employed by successful, established, and published authors, and constructive group criticism of work submitted for the course. (UC, CSU, C-ID ENGL 200)
+ --------
+FALSE POSITIVE
+
+**** Index (1175, 1594) ****
+CID: SOCI-120
+Las Positas College
+SOC-13 Research Methods
+This course orients students to the methods of data collection and analysis used by sociologists. Instruction includes an overview of sociological theory, instruction on experimental methods, surveys, interviews, field research, participant observation, demographic methods, and comparative historical approaches. Prerequisite: SOC 1 with a minimum grade of C. Strongly Recommended: MATH 40 with a minimum grade of C. 54 hours lecture, 54 hours laboratory. AA/AS GE. Transfer: CSU, UC; CSU GE: D0; IGETC: 4J; C-ID# SOCI 120.
+ --------
+CID: SOCI-125
+Cypress College
+PSY-161HC Honors Probability and Statistics - Social Sciences
+Prerequisite: Successful completion of Pre-Statistics or Intermediate Algebra or equivalent with a C or better. Term hours: 72 lecture. This honors course provides an introduction to fundamental statistical concepts relevant to the social sciences but applicable to all disciplines. A conceptual approach is used to introduce students to topics of descriptive and inferential statistics including sampling, probability, central tendency, variability, correlation, regression, point estimation, interval estimation, and hypothesis testing. Also introduced are non-parametric statistics, such as chi-square, and parametric statistics, such as t-tests and ANOVA. The course includes applications of technology for statistical analysis including the interpretation of the relevance of the statistical findings. Applications use data from the behavioral and social sciences of psychology, sociology, anthropology, geography, economics, political science and the life sciences, health sciences, and education. This course is open to all students who meet the prerequisite, and it is required for psychology majors. This course is strongly recommended for all social sciences majors. Students who receive credit for this course may not receive credit for MATH 120 C or MATH 120PC. Duplicate credit not granted for PSY 161HC, SOC 161 C, or SOC 161HC. (UC Credit Limitation/CSU, AA GE, CSU GE, IGETC,C-ID: MATH 110 and SOCI 125)
+ --------
+FALSE POSITIVE
+
+**** Index (1433, 2164) ****
+CID: SOCI-140
+Cypress College
+SOC-225 C Sociology of Women
+This course covers an identification and analysis of the status of women in American society. Sociological issues pertinent to the conditions of women are examined, such as the social construction of gender, feminism, women's health, sexuality, relationships, employment, and familial roles. (UC/CSU, CSU GE, C-ID: SOCI 140, IGETC)
+ --------
+CID: SOCI-130
+Oxnard College
+SOC-R106 Contemporary Family in American Society
+This course will introduce students to sociological concepts and issues within contemporary family sociology. The intersections between the family and other social institutions as well as diversity of families will be central foundations for this course. Issues of privilege and inequality will be explored, along with social justice as it pertains to families. Using sociological analysis we will examine family as an institution, including historical and recent changes, present nature and the socio-cultural and economic forces shaping these changes.
+ --------
+FALSE POSITIVE
+
+**** Index (977, 2015) ****
+CID: PHYS-140
+Cypress College
+PHSC-104 C Physical Science for Teachers
+Prerequisite: Successful completion of Elementary Algebra or MATH 110 C or MATH 110PC or equivalent.
+Term hours: 54 lecture and 54 laboratory. This activity-based course introduces students to basic principles of physics and chemistry with emphasis on their practical importance and application in the real world. Some of the topics include: matter, physical and chemical properties, energy, motion, light, atomic structure, bonding, solutions and chemical reactions. This course is intended for students who want to become elementary school teachers. Duplicate credit not granted for CHEM 104 C. (CSU, AA GE, CSU GE, IGETC, C-ID: CHEM 140 and PHYS 140)
+ --------
+CID: PHYS-100
+Palomar College
+PHYS-121 General Physics
+A second semester continuation of PHYS 120. The fundamental principles of optics, electricity, magnetism, and modern physics.
+ --------
+FALSE POSITIVE
+
+**** Index (719, 1304) ****
+CID: MUS-150
+East Los Angeles College
+MUSIC-203 Harmony III
+This course continues the study of advanced chromatic harmony, including chromatic mediants, tall chords, altered chords, and enharmonic and chromatic modulation. Also included are twentieth century techniques such as modal harmony, Impressionism, tone rows, set theory, polytonality, pandiatonicism, and advanced meter/rhythm.
+ --------
+CID: MUS-100
+Cuesta College
+MUS-235 Music Appreciation:  Classical Music
+Surveys classical art music in western civilization. Topics studied include but are not limited to elements of music, basic musical forms, music periods, styles, and the role of music and musicians in the western world. Transfer: CSU; UC. (Formerly MUS35)
+ --------
+FALSE POSITIVE
+
+**** Index (1019, 1093) ****
+CID: MUS-150
+Los Angeles City College
+MUSIC-203 Harmony III
+The student writes and analyzes advanced chromatic harmony using augmented chords, linear chromatic chords, Neapolitan chords, augmented-sixth chords, chromatic mediants, tall chords, altered chords, and enharmonic and chromatic modulation. The student also writes and analyzes jazz and modal harmony as well as twentieth century techniques including Impressionism, tone rows, set theory, polytonality/pandiatonicism, and advanced meter/rhythm.
+
+Co-Requisite needs to be MUSIC 213
+ --------
+CID: MUS-100
+Los Angeles City College
+MUSIC-111 Music Appreciation I
+The student learns about masterpieces of Western music from the Middle Ages to the present day with an emphasis on perceptive listening. Topics include the elements of music, musical forms, music periods, styles, and the role of music and musicians in the Western world.
+ --------
+FALSE POSITIVE
+
+**** Index (1769, 2194) ****
+CID: PSY-170
+Palomar College
+PSYC-120 Social Psycology
+Considers individual human behavior in relation to the social environment. The power of the situation, other individuals, and the social group will be examined.  Emphasized topics include: aggression, prejudice and stereotypes, interpersonal attraction, attitudes and attitude change, conformity, group phenomena, gender roles, cultural norms, person perception, and social cognition.
+ --------
+CID: PSY-110
+Oxnard College
+PSY-R101 General Psychology
+Psychology is the scientific study of behavior and mental processes. This course will introduce students to major psychological theories and concepts, methods, and research findings in psychology. The course will cover the biological bases of behavior, perception, cognition and consciousness, learning, memory, emotion, motivation, development, personality, social psychology, applied psychology, and psychological disorders and therapeutic approaches. In addition, the course will examine the impact of diversity on psychological research, theory and application, including (but not limited to): age, race, ethnicity, culture, gender, socio-economic status, disability, and sexual orientation." Credit will not be awarded for both the honors and regular versions of a course. Credit will be awarded only for the first course completed with a grade of C or better or "P."
+ --------
+FALSE POSITIVE
+
+**** Index (915, 1561) ****
+CID: ENGL-165
+East Los Angeles College
+ENGLISH-206 English Literature II
+This course surveys British Literature from the late 18th century emergence of the Romantics, such as Blake, Wordsworth, Coleridge, Byron, Shelley, and Keats; through the Victorian Era, writers such as Browning, Tennyson, Austen, Stevenson, Wilde, and Shaw; and into the early twentieth century, the rise of Modernism and after, writers such as Conrad, Eliot, Yeats, Woolf, Joyce, and Beckett.
+-----------------------------------------------------------------------------------
+Note:
+This course may have sections that include a low cost (LTC) or no cost textbook (ZTC). Check the current catalog for the section number(s). You can search for classes in the ELAC and LACCD Schedule of Classes under “Class Search Type” as “Zero Textbook Cost” or “Low-Cost Textbook Classes.”
+ --------
+CID: COMM-170
+Saddleback College
+COMM-30 Introduction to Oral Interpretation
+Survey of prose, poetry, and drama. Focuses on the analysis and criticism of literature, examines various interpretive theories within the context of the period written. Students will present and perform literary selections (formerly SP 30). Students are limited to a combined total of four enrollments in COMM/SP/TA 30 and COMM/SP/TA 32.
+ --------
+FALSE POSITIVE
+
+**** Index (608, 682) ****
+CID: AJ-220
+Palomar College
+AJ-131 Juvenile Justice
+The organization, functions, and jurisdiction of juvenile agencies; the processing and detention of juveniles; juvenile case disposition; and juvenile statutes and court procedures. Includes youth subcultures and delinquency and the varied philosophies underlying their existence.
+ --------
+CID: AJ-122
+Gavilan College
+AJ-12 Criminal Procedures
+Legal processes from pre-arrest, arrest through trial, sentencing and correctional procedures; a review of the history of case and common law; conceptual interpretations of law as reflected in court decisions; a study of case law methodology and case research as the decisions impact upon the procedures of the justice system. (C-ID: AJ 122) ADVISORY: AJ 10; Eligible for English 250 and English 260.
+ --------
+FALSE POSITIVE
