@@ -284,7 +284,12 @@ This is an inspection of the top 5 most misclassified courses across all classif
 
 \begin{longtable}{ >{\baselineskip=12pt}c >{\baselineskip=12pt}p{0.9\textwidth} }
 \captionsetup{skip=5pt}
-\caption{Most Misclassified Courses (Training)}\label{tab:fp_overlap}\\
+\caption{Most Misclassified Courses (Training)}\label{tab:fp_overlap_training}\\
+\toprule
+\textbf{\textbf{Rank}} & \textbf{\textbf{Course}} \\
+\midrule
+\endfirsthead
+\caption[]{Most Misclassified Courses (Training)}\\
 \toprule
 \textbf{\textbf{Rank}} & \textbf{\textbf{Course}} \\
 \midrule
@@ -318,7 +323,12 @@ Mathematics-physics interrelationships, classical Newtonian mechanics. Lecture a
 
 \begin{longtable}{ >{\baselineskip=12pt}c >{\baselineskip=12pt}p{0.9\textwidth} }
 \captionsetup{skip=5pt}
-\caption{Most Misclassified Courses (Test)}\label{tab:fp_overlap}\\
+\caption{Most Misclassified Courses (Test)}\label{tab:fp_overlap_test}\\
+\toprule
+\textbf{\textbf{Rank}} & \textbf{\textbf{Course}} \\
+\midrule
+\endfirsthead
+\caption[]{Most Misclassified Courses (Test)}\\
 \toprule
 \textbf{\textbf{Rank}} & \textbf{\textbf{Course}} \\
 \midrule
@@ -355,12 +365,17 @@ This course is an introduction to choral ensemble singing. Emphasis is on vocal 
 \bottomrule
 \end{longtable}
 
-\section{False Positive: Topical Overlap}\label{app:topicoverlap}
+\section{False Positives: Topical Overlap}\label{app:topicoverlap}
 This error occurs when courses cover the same broad subject but differ in critical dimensions such as academic level or their position in a curricular sequence. The model correctly identifies high semantic similarity but fails to capture the nuanced distinctions (e.g., Part I vs. Part II) that make the courses non-equivalent for articulation.
 
 \begin{longtable}{ >{\baselineskip=12pt}p{0.45\textwidth} >{\baselineskip=12pt}p{0.45\textwidth} }
 \captionsetup{skip=5pt}
-\caption{FP Examples: Topical Overlap}\label{tab:fp_overlap}\\
+\caption{FP Examples: Topical Overlap}\label{tab:fp_overlap_topic}\\
+\bottomrule\toprule
+\textbf{\textbf{Course A}} & \textbf{\textbf{Course B}} \\
+\bottomrule\toprule
+\endfirsthead
+\caption[]{FP Examples: Topical Overlap}\\
 \bottomrule\toprule
 \textbf{\textbf{Course A}} & \textbf{\textbf{Course B}} \\
 \bottomrule\toprule
@@ -382,12 +397,17 @@ This course provides an overview of the scientific study of psychology in the ar
 \bottomrule\toprule
 \end{longtable}
 
-\section{False Positive: Ambiguous or Vague}\label{app:fpvague}
+\section{False Positives: Ambiguous or Vague}\label{app:fpvague}
 This error occurs when course descriptions are too brief or use generic, high-level language. This lack of specific detail increases ambiguity and can cause the model to identify semantic similarity between courses that are functionally distinct.
 
 \begin{longtable}{ >{\baselineskip=12pt}p{0.45\textwidth}  >{\baselineskip=12pt}p{0.45\textwidth} }
 \captionsetup{skip=5pt}
 \caption{FP Examples: Ambiguous or Vague}\label{tab:fp_vague}\\
+\bottomrule\toprule
+\textbf{Course A} & \textbf{Course B} \\
+\bottomrule\toprule
+\endfirsthead
+\caption[]{FP Examples: Ambiguous or Vague}\\
 \bottomrule\toprule
 \textbf{Course A} & \textbf{Course B} \\
 \bottomrule\toprule
@@ -404,12 +424,17 @@ As an introduction to the fundamentals of group discussion, this course explores
 \bottomrule\toprule
 \end{longtable}
 
-\section{False Negative: Semantic Divergence}\label{app:semdiv}
+\section{False Negatives: Semantic Divergence}\label{app:semdiv}
 This error occurs when two officially equivalent courses (i.e., sharing a C-ID) are described using vastly different terminology or pedagogical focus. The model correctly assesses the texts as semantically dissimilar; the failure lies in the inconsistency of the source data, where the ground truth asserts an equivalence that is not clearly supported by the text.
 
 \begin{longtable}{ >{\baselineskip=12pt}p{0.45\textwidth}  >{\baselineskip=12pt}p{0.45\textwidth} }
 \captionsetup{skip=5pt}
 \caption{FN Examples: Semantic Divergence}\label{tab:fn_divergence}\\
+\bottomrule\toprule
+\textbf{\textbf{Course A}} & \textbf{Course B} \\
+\bottomrule\toprule
+\endfirsthead
+\caption[]{FN Examples: Semantic Divergence}\\
 \bottomrule\toprule
 \textbf{\textbf{Course A}} & \textbf{Course B} \\
 \bottomrule\toprule
@@ -431,12 +456,17 @@ Examination of deviance and social control in contemporary society, using the so
 \bottomrule\toprule
 \end{longtable}
 
-\section{False Negative: Incomplete or Vague}\label{app:fnvague}
+\section{False Negatives: Incomplete or Vague}\label{app:fnvague}
 This error arises when one or both course descriptions in an equivalent pair are too sparse or generic to provide sufficient textual signal for the model to establish a confident match. Unlike semantic divergence where both descriptions are detailed but different, here the issue is a lack of substantive, comparable information.
 
 \begin{longtable}{ >{\baselineskip=12pt}p{0.45\textwidth}  >{\baselineskip=12pt}p{0.45\textwidth} }
 \captionsetup{skip=5pt}
 \caption{FN Examples: Incomplete or Vague}\label{tab:fn_incomplete}\\
+\bottomrule\toprule
+\textbf{Course A} & \textbf{Course B} \\
+\bottomrule\toprule
+\endfirsthead
+\caption[]{FN Examples: Incomplete or Vague}\\
 \bottomrule\toprule
 \textbf{Course A} & \textbf{Course B} \\
 \bottomrule\toprule
@@ -453,12 +483,17 @@ This course is designed to give an understanding of the fundamental principles o
 \bottomrule\toprule
 \end{longtable}
 
-\section{False Negative: Labeling Errors}\label{app:labelerror}
+\section{False Negatives: Data or Labeling Errors}\label{app:labelerror}
 This error arises when othere is a data entry error or the label is incorrect.
 
 \begin{longtable}{ >{\baselineskip=12pt}p{0.45\textwidth}  >{\baselineskip=12pt}p{0.45\textwidth} }
 \captionsetup{skip=5pt}
-\caption{FN Examples: Data Entry or Labeling Error}\label{tab:fn_incomplete}\\
+\caption{FN Examples: Data Entry or Labeling Error}\label{tab:fn_entry}\\
+\bottomrule\toprule
+\textbf{Course A} & \textbf{Course B} \\
+\bottomrule\toprule
+\endfirsthead
+\caption[]{FN Examples: Data Entry or Labeling Error}\\
 \bottomrule\toprule
 \textbf{Course A} & \textbf{Course B} \\
 \bottomrule\toprule
