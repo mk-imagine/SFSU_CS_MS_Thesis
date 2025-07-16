@@ -51,14 +51,14 @@ An analysis of the confusion matrices, presented in Figure~\ref{fig:cm}, reveals
         \centering
         \includegraphics[scale=0.395,trim={3mm 20mm 7mm 0},clip]{LLMeval_binary_raw_text_cm.pdf}
         \caption{Binary Raw Text}
-        \label{fig:sub_brt}
+        \label{fig:sub_braw}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.497\textwidth}
         \centering
         \includegraphics[scale=0.42,trim={3mm 20mm 7mm 0},clip]{LLMeval_binary_topics_cm.pdf}
         \caption{Binary Topics}
-        \label{fig:sub_brt}
+        \label{fig:sub_btopics}
     \end{subfigure}
 
     \vspace{2mm}
@@ -67,14 +67,14 @@ An analysis of the confusion matrices, presented in Figure~\ref{fig:cm}, reveals
         \centering
         \includegraphics[scale=0.42,trim={3mm 20mm 7mm 0},clip]{LLMeval_3way_raw_text_cm.pdf}
         \caption{3-way Raw Text}
-        \label{fig:sub_brt}
+        \label{fig:sub_br3w}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.497\textwidth}
         \centering
         \includegraphics[scale=0.42,trim={3mm 20mm 7mm 0},clip]{LLMeval_3way_topics_cm.pdf}
         \caption{3-way Topics}
-        \label{fig:sub_brt}
+        \label{fig:sub_bt3w}
     \end{subfigure}
 
     \vspace{2mm}
@@ -83,14 +83,14 @@ An analysis of the confusion matrices, presented in Figure~\ref{fig:cm}, reveals
         \centering
         \includegraphics[scale=0.42,trim={3mm 20mm 7mm 0},clip]{LLMeval_4way_raw_text_cm.pdf}
         \caption{4-way Raw Text}
-        \label{fig:sub_brt}
+        \label{fig:sub_br4w}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.497\textwidth}
         \centering
         \includegraphics[scale=0.42,trim={3mm 20mm 7mm 0},clip]{LLMeval_4way_topics_cm.pdf}
         \caption{4-way Topics}
-        \label{fig:sub_brt}
+        \label{fig:sub_bt4w}
     \end{subfigure}
     \caption{LLM Classification Confusion Matrices}
     % {\footnotesize Clockwise from bottom left: 4-class raw text, 3-class raw text, binary raw text, binary
@@ -459,25 +459,6 @@ The definitive comparison was conducted on the held-out test data from the PPM C
 \end{figure}
 
 Notably, the Support Vector Machine (SVM) model achieved both the highest mean \(F_1\)-score (\(\mu = 0.9762\)) and the lowest standard deviation (\(\sigma = 0.0091\)), indicating it is the most accurate and consistent performer. To determine if these observed differences were statistically significant, a one-way Welch's ANOVA was performed, which confirmed a significant difference among the classifiers (\(F(3, 171.4) = 5.0484, p = 0.0022\)). A subsequent Games-Howell post-hoc test, justified due to unequal variances confirmed by Levene's Test (\(p=0.0387\)), revealed that the SVM classifier performed statistically significantly better than both Random Forest (mean difference \(= 0.0057, p=0.0178\)) and XGBoost (mean difference \(= 0.0052, p=0.016\)). While all four are top-tier performers, the formal statistical analysis identifies SVM as the definitive winner in terms of raw accuracy. The full statistical results are presented in Tables~\ref{tbl:desc_stats_classifier} and~\ref{tbl:games_howell_classifier_full}.
-
-\begin{table}[tb]
-    \captionsetup{skip=5pt}
-    \caption{Classifier Descriptive Statistics on Test Data F1-Scores}
-    \label{tbl:desc_stats_classifier}
-    \centering
-    \resizebox{\columnwidth}{!}{
-        \begin{tabular}{lcccccccc}
-            \toprule                                                          
-            \textbf{Classifier} & \textbf{Count} & \textbf{Mean} & \textbf{Std} & \textbf{Min} & \textbf{25\%} & \textbf{50\%} & \textbf{75\%} & \textbf{Max} \\
-            \midrule
-            KNN & 80.0 & 0.971147 & 0.015208 & 0.900304 & 0.971809 & 0.977110 & 0.979110 & 0.982437 \\
-            RF & 80.0 & 0.970490 & 0.014473 & 0.938061 & 0.957396 & 0.978490 & 0.982073 & 0.984572 \\
-            SVM & 78.0 & 0.976210 & 0.009112 & 0.939885 & 0.970793 & 0.979567 & 0.982795 & 0.987702 \\
-            XGB & 80.0 & 0.971026 & 0.012316 & 0.942860 & 0.959382 & 0.977547 & 0.981376 & 0.984898 \\
-            \bottomrule
-        \end{tabular}
-    }
-\end{table}
 
 \begin{table}[tb]
     \captionsetup{skip=5pt}

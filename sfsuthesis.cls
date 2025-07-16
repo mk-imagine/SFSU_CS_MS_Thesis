@@ -540,7 +540,7 @@ Copyright by \par
 I certify that I have read \@approvaltitle\ by \@author\ and that in my opinion this work meets the criteria for approving a thesis submitted in partial fulfillment of the requirement for the degree \@degree\ at San Francisco State University.
 % \begin{SingleSpacing}
 
-\vspace*{50pt minus 4pt}
+\vspace*{46pt minus 4pt}
 
 \raggedleft
 \noindent\begin{tabular}{ll}
@@ -551,7 +551,7 @@ I certify that I have read \@approvaltitle\ by \@author\ and that in my opinion 
 \@chairrank\par
 Thesis Committee Chair
 
-\vspace{46pt minus 4pt}
+\vspace{44pt minus 8pt}
 
 \noindent\begin{tabular}{ll}
 \makebox[2.5in]{\hrulefill}\\
@@ -560,7 +560,7 @@ Thesis Committee Chair
 \@cochair, \@cochairdegree\par
 \@cochairrank\par
 
-\vspace{46pt minus 4pt}
+\vspace{44pt minus 8pt}
 
 \noindent\begin{tabular}{ll}
 \makebox[2.5in]{\hrulefill}\\
@@ -569,7 +569,7 @@ Thesis Committee Chair
 \@memberthree, \@memberthreedegree\par
 \@memberthreerank\par
 
-% \vspace{46pt minus 4pt}
+% \vspace{44pt minus 4pt}
 
 % \noindent\begin{tabular}{ll}
 % \makebox[2.5in]{\hrulefill}\\
