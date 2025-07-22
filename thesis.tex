@@ -47,6 +47,11 @@
 \usepackage{booktabs, multirow}
 \usepackage{caption}
 \usepackage{longtable}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\DisemulatePackage{setspace}
+\usepackage{setspace}
+% \usepackage[ruled,vlined,linesnumbered]{algorithm2e}
 
 % To compile this file from the command line, run "latex thesis", then "biber thesis"
 % (or "bibtex thesis", if the output from latex asks for that instead),
@@ -99,7 +104,7 @@
     keywordstyle=\color{codecyan},
     numberstyle=\tiny\color{codegray},
     stringstyle=\color{codepurple},
-    basicstyle=\ttfamily\footnotesize,
+    basicstyle=\linespread{1}\ttfamily\footnotesize,
     breakatwhitespace=false,
     breaklines=true,
     captionpos=b,
@@ -107,7 +112,7 @@
     numbers=left,
     numbersep=2pt,
     firstnumber=auto,
-    numberblanklines=false,
+    % numberblanklines=false,
     showspaces=false,
     showstringspaces=false,
     showtabs=false,

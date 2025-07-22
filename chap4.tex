@@ -11,7 +11,7 @@ The research presented in this thesis was conducted using a hybrid computational
 \subsection{Datasets}\label{ch:4.1.2}
 As detailed in Chapter~\ref{ch:3}, this research utilized two distinct datasets at different stages of the evaluation. A smaller \textbf{Initial Dataset}, manually curated from the ASSIST repository, was used for prototyping and the preliminary screening of models and classifiers. The definitive experiments were conducted on the larger \textbf{PPM Corpus}, provided by the Program Pathways Mapper (PPM). This corpus was used for the definitive fine-tuning and final pipeline evaluation, with its held-out test set reserved for an unbiased assessment of the optimized pipelines to ensure methodological rigor. Table~\ref{tbl:datasets} provides a summary of the key characteristics of both datasets.
 
-\begin{table}[tb]
+\begin{table}[!htbp]
     \captionsetup{skip=5pt}
     \centering
     \caption{Summary of Datasets Used in Evaluation}
@@ -29,7 +29,7 @@ As detailed in Chapter~\ref{ch:3}, this research utilized two distinct datasets 
             \addlinespace
             \textbf{Ground Truth}   & Established articulation agreements                                   & Course Identification Number (C-ID)                  \\
             \addlinespace
-            \textbf{Final Size}     & 400 course pairs (for evaluation set)                                 & 2,157 courses (across 157 classes)                   \\
+            \textbf{Final Size}     & 400 course pairs                                 &   9192 course pairs               \\
             \addlinespace
             \textbf{Partitioning}   & Stratified random sample                                              & Stratified 50/50 train/test split                    \\
             \bottomrule
@@ -44,7 +44,7 @@ To facilitate a multi-faceted analysis, a standard suite of metrics was used to 
 The initial phase of this research sought to establish a performance baseline by evaluating the feasibility of using a Large Language Model for end-to-end course equivalency classification, a methodology detailed in Section~\ref{ch:3.1}. The experiments were conducted on the Initial Dataset, leveraging Google's Gemini Pro v1.0 as the reasoning engine. The results were encouraging, with the model achieving a peak accuracy of 90.5\% when using full, unprocessed raw text as input. This approach consistently yielded superior results compared to using only extracted structured topics. This performance gap is likely attributable to the challenges inherent in the data extraction step itself, which proved to be difficult and highly sensitive to prompt wording---a finding that aligns with previous studies on prompt engineering~\cite{Sclar2023QuantifyingLM,Errica2024WhatDI,Chen2024LLMAA,Cheung2024ARC,Gerych2024WhoKT}.
 
 An analysis of the confusion matrices, presented in Figure~\ref{fig:cm}, reveals a consistent and telling behavioral pattern: the model exhibits a strong conservative bias. Across all scenarios, it was far more likely to misclassify a truly equivalent course pair as not equivalent (a false negative) than it was to incorrectly approve a non-equivalent pair (a false positive), suggesting the LLM operates with a high internal threshold for declaring equivalency. Furthermore, the experiments that introduced ``unsure'' and ``insufficient data'' categories demonstrated the model's ability to effectively isolate ambiguous cases that would require manual review. A comprehensive summary of the performance metrics is provided in Table~\ref{tbl:llm_results_summary}, and a comparative benchmark against other prominent LLMs is shown in Table~\ref{tbl:cls}.
-\begin{figure}[tb]
+\begin{figure}[!htbp]
     \captionsetup{skip=5pt}
     \centering
     \begin{subfigure}[b]{0.497\textwidth}
@@ -120,7 +120,7 @@ An analysis of the confusion matrices, presented in Figure~\ref{fig:cm}, reveals
     \end{tabular}
 \end{table}
 
-\begin{table}[tb]
+\begin{table}[!htbp]
     \captionsetup{skip=5pt}
     \caption{Model Specifications and Performance}
     \label{tbl:cls}
@@ -153,9 +153,9 @@ An analysis of the confusion matrices, presented in Figure~\ref{fig:cm}, reveals
 This initial study confirmed that while direct LLM classification can achieve high accuracy, it has fundamental limitations, including high computational cost, lack of a quantifiable similarity score, sensitivity to input quality, and an opaque, ``black box'' nature. These challenges validated the decision to pivot and motivated the development of the more robust, decoupled pipeline that is the primary focus of this thesis.
 
 \section{Core Component Validation: The Composite Distance Vector}\label{ch:4.3}
-A foundational contribution of this research is the composite distance vector, \(\Delta_c\), introduced in Section~\ref{ch:3.2.3.2}. This vector was designed to provide a richer feature set for downstream classifiers by combining granular, dimension-specific differences with a holistic, global cosine similarity metric. To validate this design, an ablation study was conducted to quantify the impact of the global cosine similarity term on classifier performance whose results are summarized in Figure~\ref{fig:ablation}. Classifiers were trained on both the complete vector (\(\Delta_c\)) and an ablated version containing only the local, element-wise differences (\(\Delta_l\)).
+A foundational contribution of this research is the composite distance vector, \(\Delta_c\), introduced in Section~\ref{ch:3.2.3.2}. This vector was designed to provide a richer feature set for downstream classifiers by combining granular, dimension-specific differences with a holistic, global cosine similarity metric. To validate this design, an ablation study was conducted to quantify the impact of the global cosine similarity term on classifier performance whose results are summarized in Figure~\ref{fig:ablation}. Classifiers were trained on embeddings from each of the finalist embedding models (as discussed in Section~\ref{ch:3.3.1}), using both the complete vector (\(\Delta_c\)) and an ablated version containing only the local, element-wise differences (\(\Delta_l\)).
 
-\begin{figure}[tb]
+\begin{figure}[!htbp]
     \captionsetup{skip=5pt}
     \centering
     \includegraphics[width=\textwidth,trim={0 0 0 0},clip]{allcompare.png}
@@ -175,7 +175,7 @@ To identify the optimal fine-tuning configuration, an evaluation was designed to
 
 \subsection{Empirical Results}\label{ch:4.4.2}
 The examination of the twelve fine-tuning configurations produced a rich set of performance data. Figure~\ref{fig:binaryf1} visualizes the validation \(F_1\)-score over the training process, providing a qualitative comparison of the learning dynamics for each configuration. For a more precise and formal comparison, the exact peak validation \(F_1\)-scores achieved by each configuration are summarized in Table~\ref{tab:finetune_f1_scores}.
-\begin{figure}[tb]
+\begin{figure}[!htbp]
     \captionsetup{skip=5pt}
     \centering
     \includegraphics[scale=0.15,trim={0 0 0 0},clip]{fine-tune_validation_f1_vs_step.png}
@@ -184,7 +184,7 @@ The examination of the twelve fine-tuning configurations produced a rich set of 
     %     structured topics, 3-class structured topics, and 4-class structured topics.\\\footnotemarkins: insufficient description}
     \label{fig:binaryf1}
 \end{figure}
-\begin{table}[tb]
+\begin{table}[!htbp]
     \captionsetup{skip=5pt}
     \centering
     \caption{Peak Validation F1-Score of Fine-Tuning Configurations on BGE Model}
@@ -218,11 +218,11 @@ The superior performance of the winning configuration arises from a synergistic 
 \toprule
 \textbf{Embedding Model} & \textbf{count} & \textbf{mean} & \textbf{std} & \textbf{min} & \textbf{25\%} & \textbf{50\%} & \textbf{75\%} & \textbf{max} \\
 \midrule
-BGE & 64.0 & 0.967681 & 0.015185 & 0.900304 & 0.957357 & 0.973832 & 0.978318 & 0.984612 \\
-BGE-ft & 63.0 & 0.978746 & 0.004320 & 0.968707 & 0.976240 & 0.979922 & 0.981683 & 0.987702 \\
-GIST & 63.0 & 0.971851 & 0.012516 & 0.913939 & 0.965367 & 0.977210 & 0.981077 & 0.984083 \\
-NVE & 64.0 & 0.970530 & 0.013705 & 0.937957 & 0.960745 & 0.975147 & 0.982084 & 0.985258 \\
-NVE & 64.0 & 0.972254 & 0.014617 & 0.922104 & 0.963553 & 0.978764 & 0.982926 & 0.986549 \\
+BGE & 64 & 0.967681 & 0.015185 & 0.900304 & 0.957357 & 0.973832 & 0.978318 & 0.984612 \\
+BGE-ft & 63 & 0.978746 & 0.004320 & 0.968707 & 0.976240 & 0.979922 & 0.981683 & 0.987702 \\
+GIST & 63 & 0.971851 & 0.012516 & 0.913939 & 0.965367 & 0.977210 & 0.981077 & 0.984083 \\
+NVE & 64 & 0.970530 & 0.013705 & 0.937957 & 0.960745 & 0.975147 & 0.982084 & 0.985258 \\
+SFR & 64 & 0.972254 & 0.014617 & 0.922104 & 0.963553 & 0.978764 & 0.982926 & 0.986549 \\
 \bottomrule
 \end{tabular}%
 }
@@ -230,7 +230,7 @@ NVE & 64.0 & 0.972254 & 0.014617 & 0.922104 & 0.963553 & 0.978764 & 0.982926 & 0
 
 To determine if these observed performance differences were statistically significant, a formal hypothesis testing procedure was conducted. First, Levene's test was performed to check the assumption of homogeneity of variances across the embedding model groups. As shown in Table~\ref{tbl:levene_embedding_model}, the result was statistically significant (\(p < 0.001\)), indicating that the variances were unequal and justifying the use of a Welch's ANOVA and the more robust Games-Howell post-hoc test. A one-way Welch's ANOVA subsequently confirmed that a statistically significant difference exists between the model groups (\(F(4, 141.9) = 15.9881, p < 0.001\)), as detailed in Table~\ref{tbl:anova_embedding_model}.
 
-\begin{table}[tb]
+\begin{table}[!htbp]
     \captionsetup{skip=5pt}
 \centering
 \caption{Statistical Tests for F1-Scores by Embedding Model (Test Data)}
@@ -239,11 +239,11 @@ To determine if these observed performance differences were statistically signif
 \centering
 \caption{Levene's Test for Homogeneity of Variances}
 \label{tbl:levene_embedding_model}
-\begin{tabular}{ccc}
+\begin{tabular}{cccc}
 \toprule
-\textbf{Statistic (W)} & \textbf{df} & \textbf{p-value} \\
+\textbf{Statistic (W)} & \textbf{df1} & \textbf{df2} & \textbf{p-value} \\
 \midrule
-7.0286 & (4, 313) & <0.001 \\
+7.0286 & 4 & 313 & \(<0.001\) \\
 \bottomrule
 \end{tabular}
 \end{subtable}%
@@ -256,7 +256,7 @@ To determine if these observed performance differences were statistically signif
 \toprule
 \textbf{F-statistic} & \textbf{df1} & \textbf{df2} & \textbf{p-value} \\
 \midrule
-15.9881 & 4 & 141.90 & <0.001 \\
+15.9881 & 4 & 141.90 & \(<0.001\) \\
 \bottomrule
 \end{tabular}
 \end{subtable}
@@ -264,15 +264,15 @@ To determine if these observed performance differences were statistically signif
 
 The Games-Howell post-hoc test (Table~\ref{tbl:games_howell_embedding_model}) provided detailed pairwise comparisons, revealing that the BGE-ft model demonstrated a statistically significant improvement over its base model, BGE, with a mean \(F_1\)-score increase of 0.0111 (\(p<0.001\)). Notably, BGE-ft outperformed all other evaluated models by a considerable amount, including those that were orders of magnitude larger, such as NVE and NVE. This rigorous evaluation leads to a clear and unambiguous conclusion. The single best model for this task is the \verb|BAAI/bge-small-en-v1.5| model fine-tuned using \verb|BatchSemiHardTripletLoss| and a \verb|CosineAnnealingWarmRestarts| learning rate schedule. This model, was proven to be statistically superior to all off-the-shelf models evaluated in this study and is carried forward as the primary fine-tuned embedding model for the comprehensive classifier evaluation detailed in the next section.{\setlength{\emergencystretch}{5em}\par}
 
-\begin{table}[tb]
+\begin{table}[!htbp]
     \captionsetup{skip=5pt}
 \centering
-\caption{Games-Howell Post-Hoc Test for Embedding Models (Test Data)}
+\caption{Games-Howell Post-Hoc Test for Classifiers\(^\dagger\)}
 \label{tbl:games_howell_embedding_model}
         \begin{tabular}{llrrrrr}
             \toprule
              &  & \textbf{Mean} &  & \textbf{95\% CI} & \textbf{95\% CI} & \\
-            \textbf{Group 1} & \textbf{Group 2} & \textbf{Diff.} & \textbf{p-adj} & \textbf{Lower} & \textbf{Upper} & \textbf{Reject}\\
+            \textbf{Group 1} & \textbf{Group 2} & \textbf{Diff.} & \textbf{p-val}\(^*\) & \textbf{Lower} & \textbf{Upper} & \textbf{Reject}\\
 \midrule
 KNN & RF & -0.0007 & 0.9923 & -0.0068 & 0.0054 & False \\
 KNN & SVM & 0.0051 & 0.0577 & -0.0001 & 0.0102 & False \\
@@ -281,6 +281,8 @@ RF & SVM & 0.0057 & 0.0178 & 0.0007 & 0.0107 & True \\
 RF & XGB & 0.0005 & 0.9944 & -0.0050 & 0.0061 & False \\
 SVM & XGB & -0.0052 & 0.0160 & -0.0097 & -0.0007 & True \\
 \bottomrule
+\multicolumn{7}{l}{\scriptsize\(^\dagger\) Across all embedding models and all tests}\\
+\multicolumn{7}{l}{\scriptsize\(^*\) Adjusted \(p\)-value using Tukey's method}
 \end{tabular}
 \end{table}
 
@@ -292,7 +294,7 @@ Before evaluating the final classifiers, it is crucial to analyze the impact of 
 
 The results, summarized in Tables~\ref{tbl:desc_stats_dim_reducer} through~\ref{tbl:games_howell_num_dim}, reveal a clear and pronounced finding: dimensionality reduction is not just a computational optimization but a key step for improving classification accuracy. The PaCMAP reducer, in particular, stands out, achieving a statistically significant improvement over all other methods, including using no reduction at all (\(p<0.05\) for all comparisons).Nevetheless, a particular item of note is that BGE-ft performed the best while using PCA.  Similarly, when analyzing the target number of dimensions, reducing the feature space to a size that explains 70\% or 80\% of the original variance yields a statistically significant performance boost over using the original embeddings or reducing to a very small, fixed number of dimensions like 5. These results strongly suggest that dimensionality reduction techniques, particularly PaCMAP and PCA, effectively filter noise and distill the most discriminative signals from the high-dimensional embeddings, leading to a more robust feature set for the downstream classifiers. All subsequent classifier evaluations, therefore, incorporate these optimized, dimensionally-reduced feature vectors.
 
-\begin{table}[!ht]
+\begin{table}[!htbp]
     \captionsetup{skip=5pt}
 \centering
 \caption{Descriptive Statistics for F1-Scores by Dimensionality Reducer (Test Data)}
@@ -302,16 +304,16 @@ The results, summarized in Tables~\ref{tbl:desc_stats_dim_reducer} through~\ref{
 \toprule
 \textbf{Dim. Reducer} & \textbf{count} & \textbf{mean} & \textbf{std} & \textbf{min} & \textbf{25\%} & \textbf{50\%} & \textbf{75\%} & \textbf{max} \\
 \midrule
-None & 20.0 & 0.962981 & 0.024292 & 0.900304 & 0.961691 & 0.972235 & 0.976458 & 0.983663 \\
-pacmap & 98.0 & 0.981104 & 0.001835 & 0.977172 & 0.979452 & 0.981442 & 0.982431 & 0.984393 \\
-pca & 100.0 & 0.971991 & 0.012743 & 0.937957 & 0.962466 & 0.977626 & 0.982058 & 0.987702 \\
-umap & 100.0 & 0.965505 & 0.011596 & 0.938061 & 0.956572 & 0.968961 & 0.974924 & 0.982183 \\
+None & 20 & 0.962981 & 0.024292 & 0.900304 & 0.961691 & 0.972235 & 0.976458 & 0.983663 \\
+PaCMAP & 98 & 0.981104 & 0.001835 & 0.977172 & 0.979452 & 0.981442 & 0.982431 & 0.984393 \\
+PCA & 100 & 0.971991 & 0.012743 & 0.937957 & 0.962466 & 0.977626 & 0.982058 & 0.987702 \\
+UMAP & 100 & 0.965505 & 0.011596 & 0.938061 & 0.956572 & 0.968961 & 0.974924 & 0.982183 \\
 \bottomrule
 \end{tabular}%
 }
 \end{table}
 
-\begin{table}[!ht]
+\begin{table}[!htbp]
     \captionsetup{skip=5pt}
 \centering
 \caption{Games-Howell Post-Hoc Test for Dimensionality Reducers (Test Data)}
@@ -331,7 +333,7 @@ PCA & UMAP & -0.0065 & 0.0013 & -0.0110 & -0.0020 & True \\
 \end{tabular}
 \end{table}
 
-\begin{table}[!ht]
+\begin{table}[!htbp]
     \captionsetup{skip=5pt}
 \centering
 \caption{Descriptive Statistics for F1-Scores by Number of Dimensions (Test Data)}
@@ -341,18 +343,18 @@ PCA & UMAP & -0.0065 & 0.0013 & -0.0110 & -0.0020 & True \\
 \toprule
 \textbf{\# Dimensions} & \textbf{count} & \textbf{mean} & \textbf{std} & \textbf{min} & \textbf{25\%} & \textbf{50\%} & \textbf{75\%} & \textbf{max} \\
 \midrule
-5 & 60.0 & 0.966575 & 0.014254 & 0.937957 & 0.955814 & 0.969970 & 0.980417 & 0.983850 \\
-7 & 59.0 & 0.970692 & 0.009840 & 0.950073 & 0.962735 & 0.972467 & 0.980017 & 0.983124 \\
-70\% & 60.0 & 0.975803 & 0.009528 & 0.944029 & 0.973550 & 0.979290 & 0.982021 & 0.985604 \\
-80\% & 60.0 & 0.976336 & 0.009952 & 0.938061 & 0.975156 & 0.979441 & 0.982494 & 0.986549 \\
-90\% & 59.0 & 0.974646 & 0.012442 & 0.939868 & 0.974690 & 0.979041 & 0.982269 & 0.987702 \\
-Original & 20.0 & 0.962981 & 0.024292 & 0.900304 & 0.961691 & 0.972235 & 0.976458 & 0.983663 \\
+5 & 60 & 0.966575 & 0.014254 & 0.937957 & 0.955814 & 0.969970 & 0.980417 & 0.983850 \\
+7 & 59 & 0.970692 & 0.009840 & 0.950073 & 0.962735 & 0.972467 & 0.980017 & 0.983124 \\
+70\% & 60 & 0.975803 & 0.009528 & 0.944029 & 0.973550 & 0.979290 & 0.982021 & 0.985604 \\
+80\% & 60 & 0.976336 & 0.009952 & 0.938061 & 0.975156 & 0.979441 & 0.982494 & 0.986549 \\
+90\% & 59 & 0.974646 & 0.012442 & 0.939868 & 0.974690 & 0.979041 & 0.982269 & 0.987702 \\
+Original & 20 & 0.962981 & 0.024292 & 0.900304 & 0.961691 & 0.972235 & 0.976458 & 0.983663 \\
 \bottomrule
 \end{tabular}%
 }
 \end{table}
 
-\begin{table}[!ht]
+\begin{table}[!htbp]
     \captionsetup{skip=5pt}
 \centering
 \caption{Games-Howell Post-Hoc Test for Number of Dimensions (Test Data)}
@@ -383,7 +385,7 @@ Original & 20.0 & 0.962981 & 0.024292 & 0.900304 & 0.961691 & 0.972235 & 0.97645
 
 \subsection{Efficacy vs. Efficiency Analysis}\label{ch:4.5.2}
 With the feature set optimized, the analysis next investigated the trade-off between model efficacy and computational efficiency for the four finalist classifiers: K-Nearest Neighbors (KNN), Support Vector Machine (SVM), Random Forest (RF), and XGBoost. Figure~\ref{fig:f1time} visualizes the median \(F_1\)-scores from the cross-validation grid search against both training and inference times.  While all four models demonstrate the ability to achieve high accuracy, Random Forest and XGBoost emerge as the clear winners with respect to inference time.  Their inference times are tightly clustered under 0.1 seconds---an order of magnitude faster and more predictable than the wider, more variable times of KNN and SVM.  This reliability makes RF and XGBoost inherently more robust choices for a scalable, low-latency production system.
-\begin{figure}[tb]
+\begin{figure}[!htbp]
     \captionsetup{skip=5pt}
     \centering
     \includegraphics[scale=0.85,trim={0 5mm 0 18mm},clip]{cv_f1 vs time.pdf}
@@ -392,17 +394,17 @@ With the feature set optimized, the analysis next investigated the trade-off bet
 \end{figure}
 
 \subsection{Statistical Analysis of Classifier Performance on Test Data}\label{ch:4.5.3}
-The definitive comparison was conducted on the held-out test data from the PPM Corpus. As shown in the score distributions (Figure~\ref{fig:clscoredist}) and descriptive statistics (Table~\ref{tbl:desc_stats_classifier}), all four classifiers demonstrate exceptionally high and stable performance. To provide a more comprehensive view of classifier performance beyond the \(F_1\)-score, Receiver Operating Characteristic (ROC) curves were generated, as shown in Figure~\ref{fig:roc_unzoomed}. The Area Under the Curve (AUC) scores for all models are exceptionally high (all \(>0.98\)), indicating excellent discrimination capability across all classification thresholds. The zoomed-in Figure~\ref{fig:roc_zoomed} highlights the subtle but consistent superiority of the SVM model. Further visualization through confusion matrices (Figure~\ref{fig:classifier_cms}) for the best-performing hyperparameter configuration of each classifier paired with BGE-ft confirms their strong performance, with very few misclassifications overall. For more detailed ROC curves and confusion matrices for every embedding model, see Appendix~\ref{app:roc_cm}.
+The definitive comparison was conducted on the held-out test data from the PPM Corpus. As shown in the score distributions (Figure~\ref{fig:clscoredist}) and descriptive statistics (Table~\ref{tbl:desc_stats_classifier}), all four classifiers demonstrate exceptionally high and stable performance across all embedding models. To provide a more comprehensive view of classifier performance beyond the \(F_1\)-score, Receiver Operating Characteristic (ROC) curves were generated, as shown in Figure~\ref{fig:roc_unzoomed}. The Area Under the Curve (AUC) scores for all models are exceptionally high (all \(>0.98\)), indicating excellent discrimination capability across all classification thresholds. The zoomed-in Figure~\ref{fig:roc_zoomed} highlights the subtle but consistent superiority of the SVM model. Further visualization through confusion matrices (Figure~\ref{fig:classifier_cms}) for the best-performing hyperparameter configuration of each classifier paired with BGE-ft confirms their strong performance, with very few misclassifications overall. For more detailed ROC curves and confusion matrices for every embedding model, see Appendix~\ref{app:roc_cm}.
 
-\begin{figure}[tb]
+\begin{figure}[!htbp]
     \captionsetup{skip=5pt}
     \centering
     \includegraphics[scale=0.75,trim={0 5mm 0 18mm},clip]{classifier_f1score_boxplot_test.pdf}
-    \caption{\(F_1\)-Score Distribution of Finalist Classifiers}
+    \caption{\(F_1\)-Score Distribution of Finalist Classifiers Across All Embedding Models}
     \label{fig:clscoredist}
 \end{figure}
 
-\begin{table}[tb]
+\begin{table}[!htbp]
     \captionsetup{skip=5pt}
     \caption{Classifier Descriptive Statistics on Test Data F1-Scores}
     \label{tbl:desc_stats_classifier}
@@ -412,16 +414,16 @@ The definitive comparison was conducted on the held-out test data from the PPM C
             \toprule                                                          
             \textbf{Classifier} & \textbf{Count} & \textbf{Mean} & \textbf{Std} & \textbf{Min} & \textbf{25\%} & \textbf{50\%} & \textbf{75\%} & \textbf{Max} \\
             \midrule
-            KNN & 80.0 & 0.971147 & 0.015208 & 0.900304 & 0.971809 & 0.977110 & 0.979110 & 0.982437 \\
-            RF & 80.0 & 0.970490 & 0.014473 & 0.938061 & 0.957396 & 0.978490 & 0.982073 & 0.984572 \\
-            SVM & 78.0 & 0.976210 & 0.009112 & 0.939885 & 0.970793 & 0.979567 & 0.982795 & 0.987702 \\
-            XGB & 80.0 & 0.971026 & 0.012316 & 0.942860 & 0.959382 & 0.977547 & 0.981376 & 0.984898 \\
+            KNN & 80 & 0.971147 & 0.015208 & 0.900304 & 0.971809 & 0.977110 & 0.979110 & 0.982437 \\
+            RF & 80 & 0.970490 & 0.014473 & 0.938061 & 0.957396 & 0.978490 & 0.982073 & 0.984572 \\
+            SVM & 78 & 0.976210 & 0.009112 & 0.939885 & 0.970793 & 0.979567 & 0.982795 & 0.987702 \\
+            XGB & 80 & 0.971026 & 0.012316 & 0.942860 & 0.959382 & 0.977547 & 0.981376 & 0.984898 \\
             \bottomrule
         \end{tabular}
     }
 \end{table}
 
-\begin{figure}[tb]
+\begin{figure}[!htbp]
     \captionsetup{skip=5pt}
     \centering
     \captionsetup[subfigure]{oneside,margin={1cm,0cm}}
@@ -435,7 +437,7 @@ The definitive comparison was conducted on the held-out test data from the PPM C
     \caption{BGE-ft ROC Curves for Finalist Classifiers with Test Data}
 \end{figure}
 
-\begin{figure}[tb]
+\begin{figure}[!htbp]
     \captionsetup{skip=5pt}
     \centering
     \captionsetup[subfigure]{oneside,margin={1.3cm,0cm}}
@@ -460,7 +462,7 @@ The definitive comparison was conducted on the held-out test data from the PPM C
 
 Notably, the Support Vector Machine (SVM) model achieved both the highest mean \(F_1\)-score (\(\mu = 0.9762\)) and the lowest standard deviation (\(\sigma = 0.0091\)), indicating it is the most accurate and consistent performer. To determine if these observed differences were statistically significant, a one-way Welch's ANOVA was performed, which confirmed a significant difference among the classifiers (\(F(3, 171.4) = 5.0484, p = 0.0022\)). A subsequent Games-Howell post-hoc test, justified due to unequal variances confirmed by Levene's Test (\(p=0.0387\)), revealed that the SVM classifier performed statistically significantly better than both Random Forest (mean difference \(= 0.0057, p=0.0178\)) and XGBoost (mean difference \(= 0.0052, p=0.016\)). While all four are top-tier performers, the formal statistical analysis identifies SVM as the definitive winner in terms of raw accuracy. The full statistical results are presented in Tables~\ref{tbl:desc_stats_classifier} and~\ref{tbl:games_howell_classifier_full}.
 
-\begin{table}[tb]
+\begin{table}[!htbp]
     \captionsetup{skip=5pt}
 \centering
 \caption{Games-Howell Post-Hoc Test for Classifiers (Test Data)}
@@ -494,25 +496,25 @@ While quantitative metrics are essential for benchmarking and model selection, t
 To diagnose the source of model errors, it is first necessary to determine whether they are idiosyncratic to individual models or if they represent a common pattern of failure. A noteworthy overlap in misclassified pairs across multiple, diverse models would suggest the presence of errors that stem not from the models but from the data itself, such as inherent ambiguity or annotation artifacts.  Individual course description texts that were most often misclassified are located in Appendix~\ref{app:mostmiscls}.
 
 The analysis of misclassifications on the held-out test data reveals a high degree of overlap, providing strong evidence for the prevalence of a recurring issue found across multiple models. As illustrated in Figure~\ref{fig:venn_misclassified}, a total of 211 distinct course pairs were misclassified by every single embedding model evaluated, from the large, general-purpose models to the small, domain-specific BGE-ft. The intersection bar charts in Figure~\ref{fig:intersection_barchart} reinforce this finding, showing high counts of shared errors across all model combinations. The interpretation is clear: a substantial portion of the model failures are not random but are a widespread problem affecting the course catalog corpus. These ``hard'' examples consistently challenge a range of semantic embedding models and may define the performance ceiling of any approach relying solely on course descriptions.
-\begin{figure}[tb]
+\begin{figure}[!htbp]
     \captionsetup{skip=5pt}
 \centering
 \includegraphics[width=0.8\textwidth]{venn_with_totals_evaldata.png}
-\caption[Venn Diagram of Misclassified Pairs]{Venn diagram illustrating the overlap of misclassified pairs on the test dataset between all five embedding models. The central intersection shows 211 pairs were misclassified by all models, indicating shared data challenges.}
+\caption[Venn Diagram of Misclassified Pairs]{Venn diagram illustrating the overlap of misclassified pairs on the test dataset between all five embedding models and the four finalist classifiers. The central intersection shows 211 pairs were misclassified by all models, indicating shared data challenges.}
 \label{fig:venn_misclassified}
 \end{figure}
-\begin{figure}[tb]
+\begin{figure}[!htbp]
     \captionsetup{skip=5pt}
 \centering
 \includegraphics[width=0.8\textwidth,trim={15mm 5mm 65mm 78mm},clip]{intersection_barchart_eval.pdf}
-\caption[Model Overlap for Misclassified Pairs]{Number of common misclassified pairs between all model combinations on the test dataset. The high counts of common errors across different models point to similar challenges inherent in the data.}
+\caption[Model Overlap for Misclassified Pairs]{Number of common misclassified pairs on the test dataset between all five embedding models and the four finalist classifiers. The high counts of common errors across different models point to similar challenges inherent in the data.}
 \label{fig:intersection_barchart}
 \end{figure}
 
 \subsection{Qualitative Analysis of False Positives}\label{ch:4.6.2}
 A False Positive (FP) occurs when two non-equivalent courses are incorrectly classified as equivalent. This type of error carries meaningful real-world consequences, as it could lead a student to waste time and tuition on a non-transferable course. The analysis identified two primary causes:
 \begin{itemize}
-    \item \textbf{Topical Overlap without True Equivalence:} This error arises when courses cover the same broad subject but differ in scope such as academic level or their position in a curricular sequence. The model correctly identifies high semantic similarity but fails to capture the nuanced distinctions that make the courses non-equivalent. An example is the pair of PHYS-4D and PHYS-4A from Foothill College, which are sequential calculus-based physics courses covering modern and classical mechanics, respectively. Their shared title and subject matter create high semantic overlap, but they are not equivalent for transfer purposes (Appendix~\ref{app:topicoverlap}).
+    \item \textbf{Topical Overlap without True Equivalence:} This error arises when courses cover the same broad subject but differ in scope such as academic level or their position in a curricular sequence. The model correctly identifies high semantic similarity but fails to capture the nuanced distinctions that make the courses non-equivalent. An example is the pair of PHYS-4D and PHYS-4A from Foothill College, which are sequential calculus-based physics courses covering modern and classical mechanics, respectively. Their shared title and subject matter create high semantic overlap, but they are not equivalent for transfer purposes (Appendix~\ref{app:topicoverlap}).  It is worth noting that such an intra-institutional comparison is an unlikely scenario for a framework designed primarily for inter-institutional articulation.
     \item \textbf{Ambiguous or Vague Course Descriptions:} This occurs when descriptions are too brief or use generic language, lacking the specific detail needed for differentiation. This is a known challenge in the field of short-text semantic similarity, where a lack of rich context inherently increases ambiguity~\cite{app13063911}. For example, the description for COMM-1 at Saddleback College uses abstract language like ``processes of communication'' and ``development of ideas,'' which could be semantically close to a wide range of introductory courses in public speaking, rhetoric, or even philosophy (Appendix~\ref{app:fpvague}).
 \end{itemize}
 
