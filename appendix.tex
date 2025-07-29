@@ -525,9 +525,13 @@ Principles and procedures of measurement, data analysis, probability, sampling t
 \bottomrule\toprule
 \end{longtable}}
 
-\chapter{Code Base and Documentation}\label{app:code}
+\chapter{Codebase and Documentation}\label{app:codebase}
+
+This appendix provides supplemental materials for the verification of the research presented in this thesis. The fine-tuning algorithm is detailed below, followed by information on accessing the project repository.
 
 \section{Fine-tuning Algorithm}\label{app:finetune}
+The following algorithm outlines the complete fine-tuning, evaluation, and checkpointing process described in Section~\ref{ch:3.3.1}.
+
 \begingroup % Keep caption formatting local
 \captionsetup{type=algorithm} % Tell the caption package this is an algorithm
 \captionof{algorithm}{Simplified Fine-Tuning Process\\\hfill\\}\label{alg:finetune}
@@ -587,3 +591,18 @@ Principles and procedures of measurement, data analysis, probability, sampling t
 \EndProcedure
 \end{algorithmic}
 \endgroup
+
+\section{Repository for Committee Review}\label{app:repository}
+To facilitate a comprehensive review and verification of the experimental results, a repository containing the source code, datasets, and final trained models has been made available exclusively to the thesis committee. Due to the proprietary nature of the underlying data, this repository is not intended for public distribution.
+
+The repository can be accessed at the following link:
+\begin{itemize}
+    \item \textbf{Secure Repository Link:} \url{https://sfsu.box.com/s/uu4jxk04t47l4d7wy6lbq2y00k5c0gyj}
+\end{itemize}
+
+The repository is organized into the following directories for ease of review:
+\begin{itemize}
+    \item \textbf{src:} Contains all Python scripts used for data preparation, model fine-tuning, and analysis.
+    \item \textbf{data:} Includes the raw and processed datasets used for training and evaluation.
+    \item \textbf{models:} Contains the final, fine-tuned BGE-ft model artifact.
+\end{itemize}
