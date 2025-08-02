@@ -155,7 +155,7 @@ To ensure the integrity of the evaluation and prevent any form of data leakage, 
 
 \subsubsection{Composite Distance Vector}\label{ch:3.2.3.2}
 The ultimate goal of this research is to classify pairs of courses, which requires input features that represent the relationship between them. To provide a richer, more discriminative representation than a single metric alone, we designed a composite feature vector, \(\Delta_c\). The vector is constructed by concatenating the element-wise difference of the two course embedding vectors (\(\mathbf{A}\) and \(\mathbf{B}\)) with their cosine similarity:
-\[ \Delta_c = \left(a_1 - b_1, \dots, a_k - b_k, \frac{\mathbf{A}\cdot\mathbf{B}}{\parallel \mathbf{A} \parallel \parallel \mathbf{B} \parallel } \right) \]
+\[ \Delta_c = \left( \lvert a_1 - b_1\rvert, \dots, \lvert a_k - b_k\rvert, \frac{\mathbf{A}\cdot\mathbf{B}}{\parallel \mathbf{A} \parallel \parallel \mathbf{B} \parallel } \right) \]
 where \(\mathbf{A} = (a_1, \dots, a_k) \) and \(\mathbf{B} = (b_1, \dots, b_k) \) are the \(k\)-dimensional embedding vectors for the two courses. This design is powerful because it provides the subsequent classifier with two distinct types of information simultaneously. The element-wise difference captures granular, dimension-specific (local) disparities between the two semantic representations, while the cosine similarity provides a single, normalized measure of their overall (global) alignment in the vector space. A custom \verb|CoursePairGenerator| class, found in the project's codebase, was implemented to generate these feature vectors for all positive and negative pairs across all embedding and reduction variations.
 
 \subsection{Overview of the Classification Stage}\label{ch:3.2.4} 

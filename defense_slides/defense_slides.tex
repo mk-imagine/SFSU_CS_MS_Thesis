@@ -3,7 +3,7 @@
 \usecolortheme{default}
 
 % \setbeameroption{hide notes} % Only slides
-%\setbeameroption{show only notes} % Only notes
+% \setbeameroption{show only notes} % Only notes
 \setbeameroption{show notes on second screen=right} % Both
 
 %------------------------------------------------------------
@@ -67,18 +67,17 @@
 
 % The Transfer Maze (Slide 1.2)
 \begin{frame}
-    \frametitle{The Problem:}
-    \framesubtitle{The Transfer Maze}
+    \frametitle{The Problem: The Transfer Maze}
     
     \begin{columns}[T] % Splits the frame into columns
         
         \begin{column}{0.6\textwidth} % Left column for text
             \begin{itemize}
-                \item The process for determining course equivalency, or \textbf{articulation}, is a formidable, largely manual process that creates significant barriers for students~\cite{pardos2019}.
+                \item The process for determining course equivalency, or \textbf{articulation}, is a formidable, largely manual process that creates significant barriers for students~\cite{pardos10.1145/3330430.3333622}.
                 
                 \item In California's public system alone, articulation officers at \textbf{149 individual campuses} manually negotiate and update agreements~\cite{assistfaq, ppic, calstate, cccco}.
                 
-                \item This task of ``bleak combinatorics'' is inefficient, slow, and inherently intractable, struggling to keep pace with the needs of a vast and mobile student body~\cite{pardos2019}.
+                \item This task of ``bleak combinatorics'' is inefficient, slow, and inherently intractable, struggling to keep pace with the needs of a vast and mobile student body~\cite{pardos10.1145/3330430.3333622}.
                 
                 \item This is not a niche issue; transferring between institutions has become a normative part of the modern student's academic journey~\cite{publicagenda2025}.
             \end{itemize}
@@ -178,7 +177,7 @@
                 The resulting system must be:
                 \begin{itemize}
                     \item<2-> Accurate \& Scalable
-                    \item<3-> Computationally Efficient
+                    \item<4-> Computationally Efficient
                     \item<4-> Inherently Privacy-Preserving
                 \end{itemize}
             \end{block}
@@ -191,12 +190,12 @@
         \end{column}
         
         \begin{column}{0.47\textwidth}
-            \begin{block}{Primary Contributions}
+            \begin{block}{Primary Contributions}<3->
                 \hfill
                 \begin{enumerate}
-                    \item<2-> \textbf{A Highly Accurate Framework:} Developed a complete pipeline achieving state-of-the-art accuracy on real-world data.\vspace{0.5em}
+                    \item<3-> \textbf{A Highly Accurate Framework:} Developed a complete pipeline achieving state-of-the-art accuracy on real-world data.\vspace{0.5em}
                     \item<3-> \textbf{An Innovative Feature Vector:} Designed a novel composite vector combining local and global semantics to improve classification.\vspace{0.5em}
-                    \item<4-> \textbf{An Efficient \& Private Approach:} Created a decoupled solution that avoids the high costs and privacy concerns of prior methods.\vspace{1em}
+                    \item<5-> \textbf{An Efficient \& Private Approach:} Created a decoupled solution that avoids the high costs and privacy concerns of prior methods.\vspace{1em}
                 \end{enumerate}
             \end{block}
         \end{column}
@@ -251,12 +250,13 @@
     
     Direct LLM Classification
     & Use a large language model as an end-to-end classifier.
-    & High computational cost, opaque "black box" reasoning, and sensitive to prompt phrasing~\cite{Errica2024WhatDI}. \\
+    & High computational cost, opaque "black box" reasoning, and sensitive to prompt phrasing~\cite{Errica2024WhatDI}.  Also empirically illustrated in our preliminary work (Phase I) \\
     
     \bottomrule
     \end{tabularx}
     
-    \note{This slide provides the full context for our work. The key takeaway is that each prior method had a significant drawback, whether it was a lack of semantic understanding, a reliance on private data, or operational complexity. This creates a clear research gap that our framework is designed to fill.}
+    \note[item]{This slide provides the full context for our work. The key takeaway is that each prior method had a significant drawback, whether it was a lack of semantic understanding, a reliance on private data, or operational complexity. This creates a clear research gap that our framework is designed to fill.}
+    \note[item]{Did Direct LLM Classification in Phase I}
 
 \end{frame}
 
@@ -269,7 +269,7 @@
     \begin{columns}[T]
         \begin{column}{0.4\textwidth}
             \begin{alertblock}{The Opportunity}
-                The limitations of direct LLM classification (cost, opacity) and enrollment-based methods (privacy, limited access) point toward a gap in the existing research for a new paradigm~\cite{pardos-articulation-2019, slade10.1177/0002764213479366}.
+                The limitations of direct LLM classification (cost, opacity) and enrollment-based methods (privacy, limited access) point toward a gap in the existing research for a new paradigm~\cite{pardos10.1145/3330430.3333622, slade10.1177/0002764213479366}.
                 \vspace{1em}
                 
                 \textbf{An effective solution must harness the semantic power of large models without inheriting their operational burdens.}
@@ -289,7 +289,7 @@
                 % Place method nodes
                 \node[method] at (-1.75, -1.25) {Keyword \& Statistical (TF-IDF)};
                 
-                \node[method] at (1.75, 1.25) {Enrollment-Based \\ Direct LLM};
+                \node[method] at (1.75, 1.25) {Enrollment-Based/ \\ Direct LLM};
 
                 % Place the goal node
                 \node[goal] at (-1.75, 1.25) {The Research Gap \\ (Our Goal)};
@@ -297,7 +297,7 @@
         \end{column}
     \end{columns}
 
-    \note{This diagram clearly shows the trade-offs. In the bottom-left, we have simple methods with low semantic power. In the top-right, we have powerful methods that are either expensive or raise privacy concerns. The top-left quadrant is where we want to be: high semantic power, but with low cost and no privacy risk. This is the gap our research addresses.}
+    \note{This diagram clearly shows the trade-offs. In the bottom-left, we have simple methods with low semantic power. In the top-right, we have powerful methods that are either expensive or raise privacy concerns. The top-left quadrant is where we want to be: high semantic power, but with low cost and low/no privacy risk. This is the gap our research addresses.}
 
 \end{frame}
 
@@ -318,6 +318,12 @@
         \centering
         \includegraphics[width=0.95\textwidth]{methods_flowchart.pdf}
     \end{figure}
+
+    \note[item]{Take course description text}
+    \note[item]{Deep embedding models -> document embeddings}
+    \note[item]{Reduce dimensions}
+    \note[item]{Construct Composite Distance Vectors}
+    \note[item]{Binary classification with traditional ML classifiers}
     
 \end{frame}
 
@@ -349,7 +355,7 @@
             \textbf{Stage 1: Semantic Representation} \\
             \textit{(Heavy, Offline Task)}
             \\[2ex]
-            A deep embedding model converts raw course text into structured, reusable semantic vectors.
+            A deep embedding model converts raw course texts into structured, reusable semantic vectors. A single course embedding is a relatively light task.
         };
         
         \node (stage2) [stage, right=of stage1] {
@@ -364,26 +370,7 @@
         
     \end{tikzpicture}
     
-    \vfill
-    
-    \note{This is the most important concept in the framework. We do the heavy lifting of understanding language only once, offline. This lets us do the actual classification of pairs incredibly quickly and efficiently. This two-stage process is what gives us the best of both worlds: the semantic power of deep learning without the high operational costs for every comparison, which is what makes the system so scalable and practical.}
-\end{frame}
-
-% Step 1: Deep Contextual Embeddings (Slide 3.3)
-\begin{frame}
-    \frametitle{Step 1: Deep Contextual Embeddings}
-
-    The first step is to convert unstructured course catalog text into a structured, semantically rich vector using a pre-trained transformer model~\cite{devlin2019bertpretrainingdeepbidirectional, reimers-2019-sentence-bert}.
-    
-    \vfill
-
-    \begin{figure}
-        \centering
-        \includegraphics[width=\textwidth]{text_to_vector.pdf}
-    \end{figure}
-
-    \note{The key here is that we're turning unstructured text into a structured, mathematical object—a vector. We use a pre-trained transformer model for this, specifically models from the Sentence-BERT family~\cite{devlin2019bertpretrainingdeepbidirectional, reimers-2019-sentence-bert}. The resulting vector captures the actual meaning of the course, so similar courses will have vectors that are closer together in this high-dimensional space.}
-
+    \note{This is one of the most important concepts in the framework. We do the heavy lifting of understanding language only once, offline. This lets us do the actual classification of pairs incredibly quickly and efficiently. This two-stage process is what gives us the best of both worlds: the semantic power of deep learning without the high operational costs for every comparison, which is what makes the system so scalable and practical.}
 \end{frame}
 
 \begin{frame}
@@ -409,6 +396,23 @@
 \end{columns}
 \end{frame}
 
+% Step 1: Deep Contextual Embeddings (Slide 3.3)
+\begin{frame}
+    \frametitle{Step 1: Deep Contextual Embeddings}
+
+    The first step is to convert unstructured course catalog text into a structured, semantically rich vector using a pre-trained transformer model~\cite{devlin2019bertpretrainingdeepbidirectional, reimers-2019-sentence-bert}.
+    
+    \vfill
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{text_to_vector.pdf}
+    \end{figure}
+
+    \note{The key here is that we're turning unstructured text into a structured, mathematical object—a vector. We use a pre-trained transformer model for this, specifically models from the Sentence-BERT family~\cite{devlin2019bertpretrainingdeepbidirectional, reimers-2019-sentence-bert}. The resulting vector captures the actual meaning of the course, so similar courses will have vectors that are closer together in this high-dimensional space.}
+
+\end{frame}
+
 % Step 2: The Composite Distance Vector (Slide 3.4)
 \begin{frame}
     \fontsize{9}{9}\selectfont
@@ -429,7 +433,7 @@
             
             \begin{alertblock}{The Formula}
                 For two \(k\)-dimensional course vectors, \(A\) and \(B\), the composite vector \(\Delta_c\) is constructed by concatenating their element-wise difference with their cosine similarity:
-                \[ \Delta_{c} = \left( a_{1}-b_{1}, \dots, a_{k}-b_{k}, \frac{A \cdot B}{\parallel A \parallel\parallel B\parallel} \right) \]
+                \[ \Delta_{c} = \left( |a_{1}-b_{1}|, \dots, |a_{k}-b_{k}|, \frac{A \cdot B}{\parallel A \parallel\parallel B\parallel} \right) \]
             \end{alertblock}
         \end{column}
 
@@ -451,7 +455,7 @@
     \begin{columns}[T]
         \begin{column}{0.55\textwidth}
             \begin{alertblock}{Learning Objective: The Triplet Loss}
-                We train the model using a \textbf{Triplet Loss} function, which teaches the model to understand nuanced similarity by operating on triplets of courses~\cite{Schroff_2015_CVPR, hermans2017defensetripletlossperson}:
+                We train the model using a \textbf{Triplet Loss} function, which teaches the model to understand nuanced similarity by operating on triplets of courses~\cite{Schroff_2015, hermans2017defensetripletlossperson}:
                 \begin{itemize}
                     \item An \textbf{Anchor} course (\(A\))
                     \item A \textbf{Positive}, equivalent course (\(P\))
@@ -487,8 +491,8 @@
                     \item Linear Models (e.g., Logistic Regression)
                     \item Kernel-Based Models (e.g., SVM)
                     \item Instance-Based Models (e.g., KNN)
-                    \item Ensemble Models (e.g., Random Forest)
-                    \item Gradient Boosting (e.g., XGBoost)
+                    \item Ensemble Tree Models (e.g., Random Forest)
+                    \item Gradient Boosting Models (e.g., XGBoost)
                 \end{itemize}
             \end{block}
         \end{column}
@@ -528,29 +532,19 @@
             \end{itemize}
         \end{column}
 
-        \begin{column}{0.25\textwidth}
+        \begin{column}{0.38\textwidth}
             \centering
-            \includegraphics[width=\textwidth]{GoogToSFSU.png}
+            \includegraphics[width=0.7\textwidth]{GoogToSFSU.png}
         \end{column}
     \end{columns}
 
+    \note[item]{Before we dive into results, let's take a look at the environment we used\ldots}
     \note[item]{Mention that the initial feasibility study used a cloud-based service (Gemini) to quickly establish a performance baseline, but this approach was not viable for a scalable production system due to cost and latency.}
     \note[item]{Bulk of research including fine-tuning and model evaluations on the on-premise SFSU POLARIS cluster.}
     \note[item]{Embedding \& Fine-tuning were important for deep learning tasks, but scikit-learn is CPU bound}
     \note[item]{PyTorch -> Huggingface Transformers -> Sentence-Transformers dependency for embedding/fine-tuning; is the current standard for deep learning from Meta (the older being Tensorflow/Keras from Google)}
     \note[item]{scikit-learn the (current) gold standard in traditional machine learning (and XGBoost -- not part of scikit, but integrates well with it)}
 \end{frame}
-
-\begin{comment}
-    \textbf{Notes for the presenter:}
-    \begin{enumerate}
-        \item Start by setting the stage: "Before we dive into the results, let's briefly cover the tools we used." This transitions smoothly from the previous slides.
-        \item Emphasize the "hybrid approach." Explain that using Gemini was a pragmatic first step to set a baseline and understand the problem's scope, but the real work required a different, more powerful setup.
-        \item When talking about the hardware, mention that this distinction allowed for efficient use of resources—GPUs for the deep learning fine-tuning and CPUs for the exhaustive searches required by classical ML models. This shows a thoughtful and efficient experimental design.
-        \item For the software, briefly touch on why these libraries were chosen (e.g., "PyTorch and Hugging Face are the standard for modern deep learning, and scikit-learn is the go-to for classical machine learning"). This adds credibility and context.
-        \item Use the proposed graphic to guide the audience through the two different computational pathways, making a potentially dry topic more engaging.
-    \end{enumerate}
-\end{comment}
 
 % Data & Evaluation (Slide 4.1)
 \begin{frame}
@@ -578,6 +572,11 @@
         \bottomrule
     \end{tabularx}
 
+    \note[item]{Pipeline required several training and inference steps.}
+    \note[item]{All training/fitting occurred on training set, including fine-tuning, dimension reducers, and classifiers}
+    \note[item]{Fine-tuning (all done on train set): training on batch triplets, evaluation on constructed binary pairs (equiv/non-equiv)}
+    \note[item]{Dim Reducers: fit on train, transform only on test}
+    \note[item]{ZERO data leakage into final test set}
 \end{frame}
 
 % Finding 1: The Process & Rationale (Slide 4.2.1)
@@ -608,6 +607,7 @@
     \note[item]{General-purpose models often miss the subtle but critical differences in academic language, so we needed to create a specialist.}
     \note[item]{We used a Triplet Loss objective, which teaches the model to produce more discriminative embeddings for our specific task.}
     \note[item]{The graph on the left shows the F1-score on a validation set improving as the model learns. The graph on the right shows the Cosine Annealing learning rate schedule we used, which helps the optimizer settle into a high-quality solution.}
+    \note[item]{Adam vs AdamW: Adam has its weight decay added to loss, affecting adaptive learning rates; AdamW decouples this weight decay (applied to parameter update rather than to the loss)}
 
 \end{frame}
 
@@ -798,7 +798,7 @@
     
     \note[item]{This slide digs deeper into the "why" behind the errors. The key takeaway is that the models are largely agreeing with each other about which course pairs are difficult to classify.}
     \note[item]{The bar chart on the right reinforces this, showing high counts of shared misclassified pairs between all combinations of the models we tested.}
-    \note[item]{This is strong evidence that the problem isn't the model's fault. In many cases, the models are correctly reporting that two course descriptions are not semantically similar. The issue is that the ground-truth label says they *should* be equivalent, pointing to an inconsistency in the source data itself.}
+    \note[item]{This is strong evidence that the problem isn't the model's fault. In many cases, the models are correctly reporting that two course descriptions are not semantically similar. The issue is that the ground-truth label says they *should* be equivalent, pointing to an inconsistency in the source data itself. On the flip side, we may find two course descriptions that are indeed semantically similar, but are labeled as non-equivalent.}
 
 \end{frame}
 
@@ -940,7 +940,7 @@
             \hfill
             \begin{column}{0.3\textwidth}
                 \textbf{Handling of Complex Articulation Rules:}\\\vspace{1mm}
-                The framework simplifies articulation into a binary classification of course pairs and does not natively handle complex one-to-many or many-to-many agreements, a challenge that persists for many automated systems~\cite{pardos-articulation-2019}.
+                The framework simplifies articulation into a binary classification of course pairs and does not natively handle complex one-to-many or many-to-many agreements, a challenge that persists for many automated systems~\cite{pardos10.1145/3330430.3333622}.
             \end{column}
         \end{columns}
     \end{block}
@@ -974,7 +974,7 @@
     
     \note[item]{Given that data quality is the primary bottleneck , the most critical future work involves an interactive, human-in-the-loop system where an expert can review ambiguous pairs flagged by the model. We could also explore automatically requesting a more detailed syllabus if confidence is low.}
     \note[item]{Active development is already underway to expand the framework into a full-scale course recommendation engine , which will eventually have a conversational interface. To handle complex one-to-many rules, another path is to model curricula as graphs and apply graph neural networks.}
-    \note[item]{Finally, there are opportunities to refine the core pipeline by investigating alternative composite distance measures , extending the model to analyze not just catalog descriptions but also the full text of syllabi or textbook lists , and exploring more sophisticated training methods like instruction-tuning.}
+    \note[item]{Finally, there are opportunities to refine the core pipeline by investigating alternative composite distance measures, extending the model to analyze not just catalog descriptions but also the full text of syllabi or textbook lists, and exploring more sophisticated training methods like instruction-tuning.  Graph neural networks could capture a greater breadth of semantic meaning not only from the text, but from the types of connections they have to other courses.}
     
 \end{frame}
 
@@ -1034,6 +1034,7 @@
                     \item Professor \textbf{Tao He}, for the crucial suggestion to incorporate a global similarity metric into the feature vector.
                     \item The \textbf{Program Pathways Mapper (PPM)} team for providing the foundational data for this work.
                     \item The \textbf{SFSU Academic Technology Systems Team} for their support and the use of the POLARIS High-Performance Computing cluster.
+                    \item My colleagues: \textbf{Shreyas Raghuraman} for data preparation; \textbf{Jay Lodha} for insightful questions and comments; and \textbf{Natalie Yam}, \textbf{Parth Panchal}, and \textbf{Joanne Park} for early assistance with preliminary analysis.
                 \end{itemize}
             \end{block}
         \end{column}
