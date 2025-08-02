@@ -67,7 +67,8 @@
 
 % The Transfer Maze (Slide 1.2)
 \begin{frame}
-    \frametitle{The Problem: The Transfer Maze}
+    \frametitle{The Problem:}
+    \framesubtitle{The Transfer Maze}
     
     \begin{columns}[T] % Splits the frame into columns
         
@@ -164,9 +165,9 @@
     
 \end{frame}
 
-% The Goal & My Contribution (Slide 1.5)
+% The Goal & Our Contribution (Slide 1.5)
 \begin{frame}
-    \frametitle{The Goal \& My Contribution}
+    \frametitle{The Goal \& Our Contribution}
     \vspace{-0.5em}
     \begin{columns}[T]
         \begin{column}{0.47\textwidth}
@@ -385,6 +386,29 @@
 
 \end{frame}
 
+\begin{frame}
+\frametitle{Prompting Methods: From Verbose to Normalized}
+\framesubtitle{The distinction between two approaches}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+    \textbf{Phase 1: Direct LLM Classification}
+    \begin{itemize}
+        \item \textbf{Method:} End-to-end classification using a large language model.
+        \item \textbf{Input:} A single, lengthy prompt containing verbose instructions, few-shot examples, and the raw course descriptions.
+        \item \textbf{Challenge:} Performance was highly sensitive to prompt phrasing and formatting, aligning with known limitations of LLMs. This method was not robust for a production system.
+    \end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}
+    \textbf{Phase 2: Decoupled Framework}
+    \begin{itemize}
+        \item \textbf{Method:} Generate embeddings from text, then classify.
+        \item \textbf{Input:} Normalized course text (e.g., ``CSC-220 Data Structures\ldots''), with no external instructions.
+        \item \textbf{Benefit:} The model learns semantic meaning directly from the text itself, making it robust to formatting changes and eliminating the need for complex prompt engineering. This is more suitable for a scalable system.
+    \end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
 % Step 2: The Composite Distance Vector (Slide 3.4)
 \begin{frame}
     \fontsize{9}{9}\selectfont
@@ -487,6 +511,47 @@
     \tableofcontents[currentsection]
 \end{frame}
 
+% Data & Evaluation (Slide 4.0.1)
+\begin{frame}
+\frametitle{The Experimental Environment}
+    \begin{columns}[T]
+        \begin{column}{0.57\textwidth}
+            \begin{itemize}
+                \item \textbf{Hybrid Computing Approach:} Utilized both a cloud-based LLM and a local High-Performance Computing (HPC) cluster.
+                \item \textbf{Cloud for Baseline:} Google's Gemini v1.0 was used for the initial, exploratory direct LLM classification.
+                \item \textbf{Local HPC for Core Work:} The SFSU POLARIS HPC cluster was used for all primary, computationally intensive experiments.
+                \begin{itemize}
+                    \item \textbf{Embedding \& Fine-Tuning:} GPU tasks on 4x NVIDIA A100s
+                    \item \textbf{Classifiers:} CPU-bound tasks on AMD EPYC 9534 CPUs
+                \end{itemize}
+                \item \textbf{Software:} The pipeline was built with Python, PyTorch, Hugging Face, scikit-learn, and XGBoost.
+            \end{itemize}
+        \end{column}
+
+        \begin{column}{0.25\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{GoogToSFSU.png}
+        \end{column}
+    \end{columns}
+
+    \note[item]{Mention that the initial feasibility study used a cloud-based service (Gemini) to quickly establish a performance baseline, but this approach was not viable for a scalable production system due to cost and latency.}
+    \note[item]{Bulk of research including fine-tuning and model evaluations on the on-premise SFSU POLARIS cluster.}
+    \note[item]{Embedding \& Fine-tuning were important for deep learning tasks, but scikit-learn is CPU bound}
+    \note[item]{PyTorch -> Huggingface Transformers -> Sentence-Transformers dependency for embedding/fine-tuning; is the current standard for deep learning from Meta (the older being Tensorflow/Keras from Google)}
+    \note[item]{scikit-learn the (current) gold standard in traditional machine learning (and XGBoost -- not part of scikit, but integrates well with it)}
+\end{frame}
+
+\begin{comment}
+    \textbf{Notes for the presenter:}
+    \begin{enumerate}
+        \item Start by setting the stage: "Before we dive into the results, let's briefly cover the tools we used." This transitions smoothly from the previous slides.
+        \item Emphasize the "hybrid approach." Explain that using Gemini was a pragmatic first step to set a baseline and understand the problem's scope, but the real work required a different, more powerful setup.
+        \item When talking about the hardware, mention that this distinction allowed for efficient use of resources—GPUs for the deep learning fine-tuning and CPUs for the exhaustive searches required by classical ML models. This shows a thoughtful and efficient experimental design.
+        \item For the software, briefly touch on why these libraries were chosen (e.g., "PyTorch and Hugging Face are the standard for modern deep learning, and scikit-learn is the go-to for classical machine learning"). This adds credibility and context.
+        \item Use the proposed graphic to guide the audience through the two different computational pathways, making a potentially dry topic more engaging.
+    \end{enumerate}
+\end{comment}
+
 % Data & Evaluation (Slide 4.1)
 \begin{frame}
     \frametitle{Datasets \& Evaluation}
@@ -507,7 +572,7 @@
         \addlinespace
         \textbf{Ground Truth}   & Established articulation agreements                                   & Course Identification Number (C-ID)                  \\
         \addlinespace
-        \textbf{Final Size}     & 400 course pairs (for evaluation set)                                 & 2,157 courses (across 157 classes)                   \\
+        \textbf{Final Size}     & 400 course pairs                                 & 9192 course pairs (test set)                  \\
         \addlinespace
         \textbf{Partitioning}   & Stratified random sample                                              & Stratified 50/50 train/test split                    \\
         \bottomrule
@@ -635,9 +700,9 @@
         \begin{column}{0.35\textwidth}
             \begin{alertblock}{Key Finding}
                 \begin{itemize}
-                    \item \textbf{For Maximum Accuracy:} The \textbf{Support Vector Machine (SVM)} was the statistical winner, proving to be the most accurate and consistent classifier.
-                    
                     \item \textbf{For Optimal Efficiency:} \textbf{Random Forest (RF) and XGBoost} were nearly as accurate but an order of magnitude faster and more predictable at inference time.
+                    
+                    \item \textbf{For Maximum Accuracy:} The \textbf{Support Vector Machine (SVM)} was the statistical winner, proving to be the most accurate and consistent classifier.
                 \end{itemize}
             \end{alertblock}
         \end{column}
