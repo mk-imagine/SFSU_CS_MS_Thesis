@@ -50,9 +50,9 @@
 %------------------------------------------------------------
 \title[Automating Course Articulation]{Automating Course Articulation:\\A Deep Metric Learning Framework Using Public Data}
 \author{Mark S. Kim}
-\institute[SFSU]{San Francisco State University \\ Department of Data Science and Artificial Intelligence}
-\date{\today}
-% First draft started 7-8-2025
+\institute[SFSU]{San Francisco State University \\ Department of Computer Science}
+\date{August 6, 2025}
+
 
 %------------------------------------------------------------
 % Presentation slides
@@ -63,6 +63,45 @@
 % The Title Slide (Slide 1.1)
 \begin{frame}
     \titlepage
+    \scriptsize
+    Thesis Committee:\\\vspace{1mm}
+    \begin{tabular}{ l l }
+        & Professor Hui Yang\\
+        & Professor Arno Puder\\
+        & Professor Anagha Kulkarni
+    \end{tabular}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Special Thanks To\ldots}
+    \begin{columns}[T] % Splits the frame into columns
+        
+        \begin{column}{0.4\textwidth}
+            \includegraphics[width=0.4\textwidth]{ppm.pdf}\\
+            \vspace*{0.5cm}
+            \includegraphics[width=\textwidth]{foundation_logo_notag_color.pdf}\\
+            \vspace*{0.5cm}
+            \includegraphics[width=0.45\textwidth]{ccc-logo-vfull-3c.png}
+        \end{column}
+        
+        \begin{column}{0.4\textwidth} % Left column for text
+            \begin{itemize}
+                \item Dr. Craig Hayward
+                \item The PPM Team
+                \item The Foundation for California Community Colleges
+                \item California Community Colleges Chancellor's Office
+            \end{itemize}
+        \end{column}
+        
+    \end{columns}
+    % Add PPM Team, FCCC, CCC Chancellor's Office
+    % For their ongoing support.
+\end{frame}
+
+% Agenda (Slide 1.11)
+\begin{frame}
+    \frametitle{Agenda}
+    \tableofcontents
 \end{frame}
 
 % The Transfer Maze (Slide 1.2)
@@ -174,11 +213,11 @@
                 To develop and validate a novel framework that automates course articulation using only publicly available data.
                 
                 \vspace{0.5em}
-                The resulting system must be:
+                The resulting system should be:
                 \begin{itemize}
-                    \item<2-> Accurate \& Scalable
-                    \item<4-> Computationally Efficient
-                    \item<4-> Inherently Privacy-Preserving
+                    \item Accurate \& Scalable
+                    \item Computationally Efficient
+                    \item Inherently Privacy-Preserving
                 \end{itemize}
             \end{block}
 
@@ -190,12 +229,12 @@
         \end{column}
         
         \begin{column}{0.47\textwidth}
-            \begin{block}{Primary Contributions}<3->
+            \begin{block}{Primary Contributions}
                 \hfill
                 \begin{enumerate}
-                    \item<3-> \textbf{A Highly Accurate Framework:} Developed a complete pipeline achieving state-of-the-art accuracy on real-world data.\vspace{0.5em}
-                    \item<3-> \textbf{An Innovative Feature Vector:} Designed a novel composite vector combining local and global semantics to improve classification.\vspace{0.5em}
-                    \item<5-> \textbf{An Efficient \& Private Approach:} Created a decoupled solution that avoids the high costs and privacy concerns of prior methods.\vspace{1em}
+                    \item \textbf{A Highly Accurate Framework:} Developed a complete pipeline achieving state-of-the-art accuracy on real-world data.\vspace{0.5em}
+                    \item \textbf{An Innovative Feature Vector:} Designed a novel composite vector combining local and global semantics to improve classification.\vspace{0.5em}
+                    \item \textbf{An Efficient \& Private Approach:} Created a decoupled solution that avoids the high costs and privacy concerns of prior methods.\vspace{1em}
                 \end{enumerate}
             \end{block}
         \end{column}
@@ -207,75 +246,21 @@
     
 \end{frame}
 
-% Agenda (Slide 1.6)
-\begin{frame}
-    \frametitle{Agenda}
-    \tableofcontents
-\end{frame}
-
 \section{Background \& Related Work}
 
-% The Landscape of Automation (Slide 2.1)
+% Agenda (Slide 2.0)
 \begin{frame}
-    \frametitle{The Landscape of Automation}
-    
-    Prior attempts at automation have evolved, with each generation introducing new capabilities while also exposing new limitations.
-    
-    \vspace{1em}
-
-    \footnotesize
-    \renewcommand{\arraystretch}{1.5} % Add vertical space to rows for readability
-    \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.7cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
-    \toprule
-    \textbf{Approach} & \textbf{Key Characteristic} & \textbf{Core Limitation} \\
-    \midrule
-    
-    Keyword \& Statistical (TF-IDF)
-    & Weight terms based on statistical importance~\cite{AIZAWA200345}.
-    & No semantic understanding; cannot grasp synonyms or context. \\
-    
-    \addlinespace % Add a little extra space between rows
-    
-    Static Embeddings (word2vec, GloVe)
-    & Represent words as averaged, pre-trained vectors.
-    & Context-insensitive, and averaging vectors loses critical semantic information. \\
-    
-    \addlinespace
-    
-    Enrollment-Based (course2vec)
-    & Learn similarity from student co-enrollment patterns~\cite{PardosCourse2Vec2019}.
-    & Requires sensitive student data, raising major privacy and generalizability issues~\cite{slade10.1177/0002764213479366}. \\
-    
-    \addlinespace
-    
-    Direct LLM Classification
-    & Use a large language model as an end-to-end classifier.
-    & High computational cost, opaque "black box" reasoning, and sensitive to prompt phrasing~\cite{Errica2024WhatDI}.  Also empirically illustrated in our preliminary work (Phase I) \\
-    
-    \bottomrule
-    \end{tabularx}
-    
-    \note[item]{This slide provides the full context for our work. The key takeaway is that each prior method had a significant drawback, whether it was a lack of semantic understanding, a reliance on private data, or operational complexity. This creates a clear research gap that our framework is designed to fill.}
-    \note[item]{Did Direct LLM Classification in Phase I}
-
+    \frametitle{Agenda}
+    \tableofcontents[currentsection]
 \end{frame}
 
 % The Research Gap (Slide 2.2)
 \begin{frame}
-    \frametitle{The Research Gap}
+    \frametitle{Related Work \& The Research Gap}
     
     A review of prior work reveals a fundamental trade-off: as models gain semantic power, they tend to become more computationally intensive, less interpretable, or more demanding of specialized or private data.
     
     \begin{columns}[T]
-        \begin{column}{0.4\textwidth}
-            \begin{alertblock}{The Opportunity}
-                The limitations of direct LLM classification (cost, opacity) and enrollment-based methods (privacy, limited access) point toward a gap in the existing research for a new paradigm~\cite{pardos10.1145/3330430.3333622, slade10.1177/0002764213479366}.
-                \vspace{1em}
-                
-                \textbf{An effective solution must harness the semantic power of large models without inheriting their operational burdens.}
-            \end{alertblock}
-        \end{column}
-
         \begin{column}{0.55\textwidth}
             \begin{tikzpicture}[scale=0.9, every node/.style={transform shape}, xshift=1em]
                 % Define styles for the boxes
@@ -295,9 +280,20 @@
                 \node[goal] at (-1.75, 1.25) {The Research Gap \\ (Our Goal)};
             \end{tikzpicture}
         \end{column}
+
+        \begin{column}{0.4\textwidth}
+            \begin{alertblock}{The Opportunity}
+                The limitations of direct LLM classification (cost, opacity) and enrollment-based methods (privacy, limited access) point toward a gap in the existing research for a new paradigm~\cite{pardos10.1145/3330430.3333622, slade10.1177/0002764213479366}.
+                \vspace{1em}
+                
+                \textbf{An effective solution needs to harness the semantic power of large models without inheriting their operational burdens.}
+            \end{alertblock}
+        \end{column}
+
     \end{columns}
 
-    \note{This diagram clearly shows the trade-offs. In the bottom-left, we have simple methods with low semantic power. In the top-right, we have powerful methods that are either expensive or raise privacy concerns. The top-left quadrant is where we want to be: high semantic power, but with low cost and low/no privacy risk. This is the gap our research addresses.}
+    \note[item]{This diagram clearly shows the trade-offs. In the bottom-left, we have simple methods with low semantic power. In the top-right, we have powerful methods that are either expensive or raise privacy concerns. The top-left quadrant is where we want to be: high semantic power, but with low cost and low/no privacy risk. This is the gap our research addresses.}
+    \note[item]{mention Phase I (direct LLM classification)}
 
 \end{frame}
 
@@ -329,7 +325,7 @@
 
 % Core Principle: Decoupling Representation from Classification (Slide 3.2)
 \begin{frame}
-    \frametitle{Core Principle: Decoupling Representation from Classification}
+    \frametitle{Core Principle: Decoupling Data Representation from Classification}
 
     By separating the process into two stages, we gain the semantic power of deep learning while avoiding the high operational costs of end-to-end LLM classification~\cite{Errica2024WhatDI} and the privacy risks of enrollment-based methods~\cite{slade10.1177/0002764213479366}.
     
@@ -416,26 +412,26 @@
 % Step 2: The Composite Distance Vector (Slide 3.4)
 \begin{frame}
     \fontsize{9}{9}\selectfont
-    \frametitle{Step 2: Our Novel Feature Vector (\(\Delta_c\))}
+    \frametitle{Step 2a: Our Novel Feature Vector (\(\Delta_c\))}
 
     To classify course pairs, we need features that represent the \textit{relationship} between them. We designed a novel \textbf{composite distance vector (\(\Delta_c\))} to provide the classifier with a richer, more discriminative feature set.
 
     \fontsize{9}{9}\selectfont
     \begin{columns}[T]
-        \begin{column}{0.55\textwidth}
-            \begin{block}{Combining Local \& Global Information}
-                The vector combines two distinct types of information:
-                \begin{itemize}
-                    \item \textbf{Local Disparities:} The granular, element-wise difference between the two course vectors.
-                    \item \textbf{Global Alignment:} A single, holistic score of their overall similarity in the semantic space.
-                \end{itemize}
-            \end{block}
+        % \begin{column}{0.55\textwidth}
+        %     \begin{block}{Combining Local \& Global Information}
+        %         The vector combines two distinct types of information:
+        %         \begin{itemize}
+        %             \item \textbf{Local Disparities:} The granular, element-wise difference between the two course vectors.
+        %             \item \textbf{Global Alignment:} A single, holistic score of their overall similarity in the semantic space.
+        %         \end{itemize}
+        %     \end{block}
             
-            \begin{alertblock}{The Formula}
-                For two \(k\)-dimensional course vectors, \(A\) and \(B\), the composite vector \(\Delta_c\) is constructed by concatenating their element-wise difference with their cosine similarity:
-                \[ \Delta_{c} = \left( |a_{1}-b_{1}|, \dots, |a_{k}-b_{k}|, \frac{A \cdot B}{\parallel A \parallel\parallel B\parallel} \right) \]
-            \end{alertblock}
-        \end{column}
+        %     \begin{alertblock}{The Formula}
+        %         For two \(k\)-dimensional course vectors, \(A\) and \(B\), the composite vector \(\Delta_c\) is constructed by concatenating their element-wise difference with their cosine similarity:
+        %         \[ \Delta_{c} = \left( |a_{1}-b_{1}|, \dots, |a_{k}-b_{k}|, \frac{A \cdot B}{\parallel A \parallel\parallel B\parallel} \right) \]
+        %     \end{alertblock}
+        % \end{column}
 
         \begin{column}{0.4\textwidth}
             \hfill\\\vspace{0.5em}
@@ -443,11 +439,13 @@
             \includegraphics[width=0.9\textwidth]{composite_distance_vector_generation.pdf} % Placeholder for the graphic
         \end{column}
     \end{columns}
+
+    \note[item]{These can be from pretrained "off the shelf" embedding models or a fine-tuned one.}
 \end{frame}
 
 % Step 3: Domain-Specific Fine-Tuning (Slide 3.5)
 \begin{frame}
-    \frametitle{Step 3: Domain-Specific Fine-Tuning}
+    \frametitle{Step 2b: Domain-Specific Fine-Tuning}
     
     General-purpose models lack the specialized ``vocabulary'' for academic text. To create a more discriminative embedding space, we fine-tune a pre-trained model on our course data using \textbf{deep metric learning}.
     
@@ -478,15 +476,14 @@
 
 % Step 4: Downstream Classification (Slide 3.6)
 \begin{frame}
-    \frametitle{Step 4: Downstream Classification}
+    \frametitle{Step 3: Downstream Classification}
     
     The final step is to feed the engineered composite distance vectors (\(\Delta_c\)) into a traditional machine learning model to produce the final equivalency prediction.
     
     \begin{columns}[T]
         \begin{column}{0.57\textwidth}
             \hfill\vspace{3mm}
-            \begin{block}{Systematic Model Evaluation}
-                To identify the most effective algorithm for this task, we systematically evaluated a comprehensive suite of models, including representatives from major algorithmic families:
+            \begin{block}{Classifier Model Evaluation}
                 \begin{itemize}
                     \item Linear Models (e.g., Logistic Regression)
                     \item Kernel-Based Models (e.g., SVM)
@@ -611,57 +608,9 @@
 
 \end{frame}
 
-% Finding 1: The Result (The Punchline) (Slide 4.2.2)
+% Finding 1: All Finalists Perform Exceptionally Well (Slide 4.3.1)
 \begin{frame}
-    \frametitle{Finding 1: Fine-Tuned Model is Statistically Superior}
-    
-    The result of the fine-tuning process is a model that is demonstrably more accurate and consistent on the held-out test data.
-    
-    \begin{columns}[T]
-        \begin{column}{0.35\textwidth}
-            \begin{block}{Key Results}
-                \begin{itemize}
-                    \item Our fine-tuned model (\textbf{bge-ft}) had the highest mean \(F_1\)-score (\(\mu=0.9786\)) and the lowest variance.
-                    \item A one-way ANOVA and Games-Howell post-hoc test confirmed that the performance gap is statistically significant against \emph{all} other models.
-                    \item This includes models that were orders of magnitude larger.
-                \end{itemize}
-            \end{block}
-        \end{column}
-        
-        \begin{column}{0.55\textwidth}
-            \centering
-            \includegraphics[width=\textwidth]{embeddingmodel_f1score_boxplot_test.pdf}
-        \end{column}
-    \end{columns}
-    
-    \note[item]{This bar chart is the punchline. It compares the final F1 scores of our fine-tuned model, `bge-ft`, against its base version and other, much larger off-the-shelf models.}
-    \note[item]{As you can see, our model is the clear winner in terms of performance and consistency.}
-    \note[item]{This isn't just a small improvement; formal statistical tests (a one-way ANOVA and a Games-Howell post-hoc test) confirmed that this performance gap is statistically significant.}
-\end{frame}
-
-% Finding 1: The Insight (The "So What?") (Slide 4.2.3)
-\begin{frame}
-    \frametitle{Key Insight: Adaptation Outperforms Scale}
-    
-    \begin{alertblock}{But ``So What?''}
-        For specialized domains like academic text, creating a bespoke embedding space through targeted fine-tuning is more effective than relying on sheer model scale.
-        \vspace{1em}
-        
-        The fine-tuning process retrained the model's attention mechanism, teaching it the specific semantics required to make fine-grained distinctions that larger, general-purpose models may miss.
-    \end{alertblock}
-
-    \vfill
-    \centering
-    \includegraphics[width=0.75\textwidth]{tuned_is_better.pdf}
-    
-    \note[item]{This is the main takeaway from this finding. It answers the "so what?" question.}
-    \note[item]{A general-purpose model, even a huge one, might not understand the subtle but critical difference between a "survey" course, an "introductory" course, and a "foundations" course. Our model does.}
-    \note[item]{This is a key insight not just for this project, but for anyone working on NLP problems in specialized domains: targeted adaptation is crucial.}
-\end{frame}
-
-% Finding 2: All Finalists Perform Exceptionally Well (Slide 4.3.1)
-\begin{frame}
-    \frametitle{Finding 2: All Finalists Perform Exceptionally Well}
+    \frametitle{Finding 1: All Finalist Classifiers Perform Exceptionally Well}
     
     The first key result from the classifier evaluation is that our feature engineering and fine-tuning were highly effective, leading to exceptional performance across all finalist models.
     
@@ -690,7 +639,56 @@
     
 \end{frame}
 
-% Finding 2: The Accuracy vs. Efficiency Trade-Off (Slide 4.3.2)
+% Finding 2: The Result (The Punchline) (Slide 4.2.2)
+\begin{frame}
+    \frametitle{Finding 2: Fine-Tuned Embedding Model is Statistically Superior}
+    
+    The result of the fine-tuning process is a model that is demonstrably more accurate and consistent on the held-out test data.
+    
+    \begin{columns}[T]
+        \begin{column}{0.35\textwidth}
+            \begin{block}{Key Results}
+                \begin{itemize}
+                    \item Our fine-tuned model (\textbf{bge-ft}) had the highest mean \(F_1\)-score (\(\mu=0.9786\)) and the lowest variance.
+                    \item A one-way ANOVA and Games-Howell post-hoc test confirmed that the performance gap is statistically significant against \emph{all} other models.
+                    \item This includes models that were orders of magnitude larger.
+                \end{itemize}
+            \end{block}
+        \end{column}
+        
+        \begin{column}{0.55\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{embeddingmodel_f1score_boxplot_test.pdf}
+        \end{column}
+    \end{columns}
+    
+    \note[item]{This bar chart is the punchline. It compares the final F1 scores of our fine-tuned model, `bge-ft`, against its base version and other, much larger off-the-shelf models.}
+    \note[item]{As you can see, our model is the clear winner in terms of performance and consistency.}
+    \note[item]{This isn't just a small improvement; formal statistical tests (a one-way ANOVA and a Games-Howell post-hoc test) confirmed that this performance gap is statistically significant.}
+\end{frame}
+
+% Finding 2: The Insight (The "So What?") (Slide 4.2.3)
+\begin{frame}
+    \frametitle{Key Insight: Adaptation Outperforms Scale}
+    
+    \begin{alertblock}{But ``So What?''}
+        For specialized domains like academic text, creating a bespoke embedding space through targeted fine-tuning is more effective than relying on sheer model scale.
+        \vspace{1em}
+        
+        The fine-tuning process retrained the model's attention mechanism, teaching it the specific semantics required to make fine-grained distinctions that larger, general-purpose models may miss.
+    \end{alertblock}
+
+    \vfill
+    \centering
+    \includegraphics[width=0.75\textwidth]{tuned_is_better.pdf}
+    %%%%%%%%%%%%%%%%%%%%%%% ADD model size to graphic %%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+    \note[item]{This is the main takeaway from this finding. It answers the "so what?" question.}
+    \note[item]{A general-purpose model, even a huge one, might not understand the subtle but critical difference between a "survey" course, an "introductory" course, and a "foundations" course. Our model does.}
+    \note[item]{This is a key insight not just for this project, but for anyone working on NLP problems in specialized domains: targeted adaptation is crucial.}
+\end{frame}
+
+% Finding : The Accuracy vs. Efficiency Trade-Off (Slide 4.3.2)
 \begin{frame}
     \frametitle{The Trade-Off: Peak Accuracy vs. Operational Efficiency}
     
@@ -736,7 +734,7 @@
     \begin{columns}[T]
         \begin{column}{0.5\textwidth}
             \begin{alertblock}{Finding: The Bottleneck is Data, Not the Model}
-                Our analysis revealed that most errors are not random, but are systematic issues rooted in the source data itself.
+                Our analysis revealed that most errors are not random, but are systemic issues rooted in the source data itself.
                 \begin{itemize}
                     \item A core set of \textbf{211 "hard" pairs} were misclassified by \textit{every single model} we evaluated.
                     \vspace{1em}
@@ -756,50 +754,8 @@
     \note[item]{The high degree of error overlap shown in the Venn diagram is critical. It shows that diverse models—from small specialists to large generalists—all failed on the exact same set of "hard" examples.}
     \note[item]{This tells us the problem isn't idiosyncratic model weaknesses. The errors are systematic, pointing to inherent challenges in the source data itself.}
     \note[item]{Therefore, the limiting factor is no longer model sophistication. The model often fails because the source data is ambiguous, inconsistent, or lacks a clear textual signal to support the ground-truth label.}
+    \note[item]{This becomes a Data-Centric Problem}
     
-\end{frame}
-
-% Shared Misclassifications (Slide 5.2)
-\begin{frame}
-    \frametitle{Shared Misclassifications: A Data-Centric Problem}
-    
-    To diagnose the source of errors, we analyzed their overlap across all models. The results provide strong evidence that the errors are systematic.
-
-    \begin{columns}[T]
-        \begin{column}{0.5\textwidth}
-            \begin{block}{Failures are Systematic, Not Random}
-                The analysis of misclassifications reveals a high degree of overlap across all evaluated models.
-                \begin{itemize}
-                    \item A significant portion of failures are systematic products of the source data itself.
-                    
-                    \item These "hard" examples consistently challenge a wide range of semantic models, from small specialists to large generalists.
-                    
-                    \item This indicates errors stem from inherent data challenges—like ambiguity or annotation artifacts—not model weaknesses.
-                \end{itemize}
-            \end{block}
-        \end{column}
-        
-        \begin{column}{0.45\textwidth}
-            % --- SUGGESTED GRAPHIC ---
-            % The intersection bar chart from Figure 4.6 of the thesis
-            % would be the perfect graphic for this slide.
-            %
-            % It shows the high counts of shared errors across all
-            % model combinations, reinforcing the message that the
-            % failures are systematic.
-            %
-            % Title: "Number of Common Misclassified Pairs"
-            
-            \centering
-            \includegraphics[width=\textwidth]{intersection_barchart_evaldata.png} % Placeholder for Figure 4.6
-            
-        \end{column}
-    \end{columns}
-    
-    \note[item]{This slide digs deeper into the "why" behind the errors. The key takeaway is that the models are largely agreeing with each other about which course pairs are difficult to classify.}
-    \note[item]{The bar chart on the right reinforces this, showing high counts of shared misclassified pairs between all combinations of the models we tested.}
-    \note[item]{This is strong evidence that the problem isn't the model's fault. In many cases, the models are correctly reporting that two course descriptions are not semantically similar. The issue is that the ground-truth label says they *should* be equivalent, pointing to an inconsistency in the source data itself. On the flip side, we may find two course descriptions that are indeed semantically similar, but are labeled as non-equivalent.}
-
 \end{frame}
 
 % Root Cause Analysis: False Negatives (Slide 5.3.1)
@@ -954,22 +910,27 @@
     The findings and limitations of this study give rise to several promising avenues for future research.
     
     \begin{columns}[T]
-        \begin{column}{0.45\textwidth}
-            \begin{block}{Key Research Directions}
-                \begin{itemize}
-                    \item \textbf{Data-Centric AI Strategies:}  Focus on data quality via human-in-the-loop systems  and dynamic data augmentation.
-                    \item \textbf{Expanding Capabilities:}  Evolve the framework into a full course recommendation engine  and use graph-based methods for complex articulation rules.
-                    \item \textbf{Refinement of Current Work:}  Refine the core ML pipeline by exploring new feature combinations , multi-modal learning , and task-optimized loss functions.
-                \end{itemize}
-            \end{block}
-        \end{column}
         
         \begin{column}{0.5\textwidth}
-            
             \centering
             \includegraphics[width=0.75\textwidth]{future_directions.pdf}
-            
         \end{column}
+
+        \begin{column}{0.45\textwidth}
+            \begin{block}{Current Ongoing Work}
+                Currently integrating into a production-ready student-facing system. 
+            \end{block}
+        \end{column}
+
+        % \begin{column}{0.45\textwidth}
+        %     \begin{block}{Key Research Directions}
+        %         \begin{itemize}
+        %             \item \textbf{Data-Centric AI Strategies:}  Focus on data quality via human-in-the-loop systems  and dynamic data augmentation.
+        %             \item \textbf{Expanding Capabilities:}  Evolve the framework into a full course recommendation engine  and use graph-based methods for complex articulation rules.
+        %             \item \textbf{Refinement of Current Work:}  Refine the core ML pipeline by exploring new feature combinations , multi-modal learning , and task-optimized loss functions.
+        %         \end{itemize}
+        %     \end{block}
+        % \end{column}
     \end{columns}
     
     \note[item]{Given that data quality is the primary bottleneck , the most critical future work involves an interactive, human-in-the-loop system where an expert can review ambiguous pairs flagged by the model. We could also explore automatically requesting a more detailed syllabus if confidence is low.}
@@ -998,34 +959,12 @@
 
 \section{Wrap Up}
 
-% Thank You & Questions (Slide 7.1)
-\begin{frame}
-    \frametitle{} % No title for a clean look
-    \vfill % Vertically center the content
-    \centering
-    {\Huge \textbf{Thank You!!!}}\\
-    \vspace{5em}
-    {\Huge \textbf{Questions?}}
-    \vfill
-\end{frame}
-
 % Contact & Acknowledgments (Slide 7.2)
 \begin{frame}
-    \frametitle{Contact \& Acknowledgments}
+    \frametitle{Acknowledgments}
     \fontsize{9}{9}\selectfont
     
     \begin{columns}[T]
-        \begin{column}{0.25\textwidth}
-            \begin{block}{Contact Information}
-                \textbf{Mark S. Kim}
-                \begin{itemize}
-                    \item \href{mailto:mkim22@mail.sfsu.edu}{mkim22@mail.sfsu.edu}
-                    % \item \href{https://www.linkedin.com/in/your-profile}{linkedin.com/in/your-profile}
-                    % \item \href{https://github.com/your-repo/project-name}{github.com/your-repo/project-name}
-                \end{itemize}
-            \end{block}
-        \end{column}
-        
         \begin{column}{0.6\textwidth}
             \begin{block}{Acknowledgments}
                 I would like to express my deepest appreciation to:
@@ -1038,7 +977,118 @@
                 \end{itemize}
             \end{block}
         \end{column}
+
+        \begin{column}{0.25\textwidth}
+            \begin{block}{Contact Information}
+                \textbf{Mark S. Kim}
+                \begin{itemize}
+                    \item \href{mailto:mkim22@mail.sfsu.edu}{mkim22@mail.sfsu.edu}
+                    % \item \href{https://www.linkedin.com/in/your-profile}{linkedin.com/in/your-profile}
+                    % \item \href{https://github.com/your-repo/project-name}{github.com/your-repo/project-name}
+                \end{itemize}
+            \end{block}
+        \end{column}
     \end{columns}
+\end{frame}
+
+% Thank You & Questions (Slide 7.1)
+\begin{frame}
+    \frametitle{} % No title for a clean look
+    \vfill % Vertically center the content
+    \centering
+    {\Huge \textbf{Thank You!!!}}\\
+    \vspace{5em}
+    {\Huge \textbf{Questions?}}
+    \vfill
+\end{frame}
+
+\section{Additional Details}
+% The Landscape of Automation (Slide 2.1)
+\begin{frame}
+    \frametitle{The Landscape of Automation}
+    
+    Prior attempts at automation have evolved, with each generation introducing new capabilities while also exposing new limitations.
+    
+    \vspace{1em}
+
+    \footnotesize
+    \renewcommand{\arraystretch}{1.5} % Add vertical space to rows for readability
+    \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.7cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+    \toprule
+    \textbf{Approach} & \textbf{Key Characteristic} & \textbf{Core Limitation} \\
+    \midrule
+    
+    Keyword \& Statistical (TF-IDF)
+    & Weight terms based on statistical importance~\cite{AIZAWA200345}.
+    & No semantic understanding; cannot grasp synonyms or context. \\
+    
+    \addlinespace % Add a little extra space between rows
+    
+    Static Embeddings (word2vec, GloVe)
+    & Represent words as averaged, pre-trained vectors.
+    & Context-insensitive, and averaging vectors loses critical semantic information. \\
+    
+    \addlinespace
+    
+    Enrollment-Based (course2vec)
+    & Learn similarity from student co-enrollment patterns~\cite{PardosCourse2Vec2019}.
+    & Requires sensitive student data, raising major privacy and generalizability issues~\cite{slade10.1177/0002764213479366}. \\
+    
+    \addlinespace
+    
+    Direct LLM Classification
+    & Use a large language model as an end-to-end classifier.
+    & High computational cost, opaque "black box" reasoning, and sensitive to prompt phrasing~\cite{Errica2024WhatDI}.  Also empirically illustrated in our preliminary work (Phase I) \\
+    
+    \bottomrule
+    \end{tabularx}
+    
+    \note[item]{This slide provides the full context for our work. The key takeaway is that each prior method had a significant drawback, whether it was a lack of semantic understanding, a reliance on private data, or operational complexity. This creates a clear research gap that our framework is designed to fill.}
+    \note[item]{Did Direct LLM Classification in Phase I}
+
+\end{frame}
+
+% Shared Misclassifications (Slide 5.2)
+\begin{frame}
+    \frametitle{Shared Misclassifications: A Data-Centric Problem}
+    
+    To diagnose the source of errors, we analyzed their overlap across all models. The results provide strong evidence that the errors are systematic.
+
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Failures are Systematic, Not Random}
+                The analysis of misclassifications reveals a high degree of overlap across all evaluated models.
+                \begin{itemize}
+                    \item A significant portion of failures are systematic products of the source data itself.
+                    
+                    \item These "hard" examples consistently challenge a wide range of semantic models, from small specialists to large generalists.
+                    
+                    \item This indicates errors stem from inherent data challenges—like ambiguity or annotation artifacts—not model weaknesses.
+                \end{itemize}
+            \end{block}
+        \end{column}
+        
+        \begin{column}{0.45\textwidth}
+            % --- SUGGESTED GRAPHIC ---
+            % The intersection bar chart from Figure 4.6 of the thesis
+            % would be the perfect graphic for this slide.
+            %
+            % It shows the high counts of shared errors across all
+            % model combinations, reinforcing the message that the
+            % failures are systematic.
+            %
+            % Title: "Number of Common Misclassified Pairs"
+            
+            \centering
+            \includegraphics[width=\textwidth]{intersection_barchart_evaldata.png} % Placeholder for Figure 4.6
+            
+        \end{column}
+    \end{columns}
+    
+    \note[item]{This slide digs deeper into the "why" behind the errors. The key takeaway is that the models are largely agreeing with each other about which course pairs are difficult to classify.}
+    \note[item]{The bar chart on the right reinforces this, showing high counts of shared misclassified pairs between all combinations of the models we tested.}
+    \note[item]{This is strong evidence that the problem isn't the model's fault. In many cases, the models are correctly reporting that two course descriptions are not semantically similar. The issue is that the ground-truth label says they *should* be equivalent, pointing to an inconsistency in the source data itself. On the flip side, we may find two course descriptions that are indeed semantically similar, but are labeled as non-equivalent.}
+
 \end{frame}
 
 % This frame generates the bibliography at the end of the presentation.
