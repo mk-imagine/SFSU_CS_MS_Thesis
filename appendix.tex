@@ -123,6 +123,39 @@ Below is a template for the entire prompt used for topic extraction. ``$\langle$
    Response: 0
 \end{lstlisting}
 
+\newpage
+\section{Example: Prompt Phrasing Sensitivity}\label{app:promptphrasing}
+Early experiments revealed that the reliability of data extraction from raw course text is highly dependent on the prompt template used (Table~\ref{tbl:sensitiveprompts}). For instance, Template A consistently yielded complete course titles, demonstrating its effectiveness. Conversely, the output from Template B proved to be inconsistent, producing a mixture of unpredictable formats. These results could range from full course names or complete course codes (e.g., CSC 220) to fragmented components, such as only the departmental prefix (e.g., CSC) or only the course number (e.g., 220).
+\begin{table}[!hbt]
+    \captionsetup{skip=5pt}
+    \caption{Early Prompt Templates Illustrating Prompt Sensitivity}
+    \centering
+    \begin{tabular}{p{19em}p{19em}}
+        \toprule
+        Template A & Template B \\
+        \midrule
+        \begin{minipage}{0.48\textwidth}
+            Extract the detailed \textbf{\emph{title}}\, for each course below and determine whether the two following courses are equivalent. For course equivalency, respond with `true', `false', or `unsure'.\\
+            \{format\_instructions\}\\
+            Course 1:\\
+            \{course1\_desc\}\\
+		    Course 2:\\
+            \{course2\_desc\}
+        \end{minipage} &
+        \begin{minipage}{0.48\textwidth}
+            Extract the detailed \textbf{\emph{name}} for each course below and determine whether the two following courses are equivalent. For course equivalency, respond with `true', `false', or `unsure'.\\
+            \{format\_instructions\}\\
+            Course 1:\\
+            \{course1\_desc\}\\
+		    Course 2:\\
+            \{course2\_desc\}
+        \end{minipage}\\
+        \bottomrule
+    \end{tabular}
+    \label{tbl:sensitiveprompts}
+\end{table}
+
+
 \chapter{ROC/AUC Curves and Confusion Matrices}\label{app:roc_cm}
 
 \clearpage

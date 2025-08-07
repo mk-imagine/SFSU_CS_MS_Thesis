@@ -326,8 +326,8 @@ UMAP & 100 & 0.965505 & 0.011596 & 0.938061 & 0.956572 & 0.968961 & 0.974924 & 0
 None & PaCMAP & 0.0181 & 0.0167 & 0.0028 & 0.0334 & True \\
 None & PCA & 0.0090 & 0.3920 & -0.0065 & 0.0246 & False \\
 None & UMAP & 0.0025 & 0.9680 & -0.0130 & 0.0180 & False \\
-PaCMAP & PCA & -0.0091 & <0.001 & -0.0125 & -0.0058 & True \\
-PaCMAP & UMAP & -0.0156 & <0.001 & -0.0187 & -0.0125 & True \\
+PaCMAP & PCA & -0.0091 & \(<0.001\) & -0.0125 & -0.0058 & True \\
+PaCMAP & UMAP & -0.0156 & \(<0.001\) & -0.0187 & -0.0125 & True \\
 PCA & UMAP & -0.0065 & 0.0013 & -0.0110 & -0.0020 & True \\
 \bottomrule
 \end{tabular}
@@ -514,7 +514,7 @@ The analysis of misclassifications on the held-out test data reveals a high degr
 \subsection{Qualitative Analysis of False Positives}\label{ch:4.6.2}
 A False Positive (FP) occurs when two non-equivalent courses are incorrectly classified as equivalent. This type of error carries meaningful real-world consequences, as it could lead a student to waste time and tuition on a non-transferable course. The analysis identified two primary causes:
 \begin{itemize}
-    \item \textbf{Topical Overlap without True Equivalence:} This error arises when courses cover the same broad subject but differ in scope such as academic level or their position in a curricular sequence. The model correctly identifies high semantic similarity but fails to capture the nuanced distinctions that make the courses non-equivalent. An example is the pair of PHYS-4D and PHYS-4A from Foothill College, which are sequential calculus-based physics courses covering modern and classical mechanics, respectively. Their shared title and subject matter create high semantic overlap, but they are not equivalent for transfer purposes (Appendix~\ref{app:topicoverlap}).  It is worth noting that such an intra-institutional comparison is an unlikely scenario for a framework designed primarily for inter-institutional articulation.
+    \item \textbf{Topical Overlap without True Equivalence:} This error arises when courses cover the same broad subject but differ in scope such as academic level or their position in a curricular sequence. The model correctly identifies high semantic similarity but fails to capture the nuanced distinctions that make the courses non-equivalent. An example is the pair of PHYS-4D and PHYS-4A from Foothill College, which are sequential calculus-based physics courses covering modern and classical mechanics, respectively. Their shared title and subject matter create high semantic overlap, but they are not equivalent for transfer purposes (Appendix~\ref{app:topicoverlap}).  It is worth noting that the fine-tuned model may not sufficiently learn from course sequence metadata (e.g., prerequisites) present in the texts to distinguish between courses in a series.  However, such metadata is likely more suited to be utilized more explicitly as a set of features rather than relying on an embedding model to implicitly learn these relationships purely from the text.  In any case, such an intra-institutional comparison is an unlikely scenario for a framework designed primarily for inter-institutional articulation.
     \item \textbf{Ambiguous or Vague Course Descriptions:} This occurs when descriptions are too brief or use generic language, lacking the specific detail needed for differentiation. This is a known challenge in the field of short-text semantic similarity, where a lack of rich context inherently increases ambiguity~\cite{app13063911}. For example, the description for COMM-1 at Saddleback College uses abstract language like ``processes of communication'' and ``development of ideas,'' which could be semantically close to a wide range of introductory courses in public speaking, rhetoric, or even philosophy (Appendix~\ref{app:fpvague}).
 \end{itemize}
 
