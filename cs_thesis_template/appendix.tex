@@ -1,0 +1,95 @@
+\appendix
+\addappheadtotoc
+
+\chapter{Appendix Ch 1}\label{appx:ch1}
+\lipsum[1-2]
+
+\section{Appendix Ch 1 Section 1}\label{appx:c1s1}
+Some code:
+\begin{lstlisting}
+def main():
+    # This is the main code
+\end{lstlisting}
+
+\chapter{Codebase and Documentation}\label{app:codebase}
+
+\lipsum[1]
+
+\section{Fine-tuning Algorithm}\label{app:finetune}
+The following algorithm outlines the complete fine-tuning, evaluation, and checkpointing process described in Section~\ref{ch:3.3.1}.
+
+\begingroup % Keep caption formatting local
+\captionsetup{type=algorithm} % Tell the caption package this is an algorithm
+\captionof{algorithm}{Simplified Fine-Tuning Process\\\hfill\\}\label{alg:finetune}
+\begin{algorithmic}[1]
+\scriptsize
+\onehalfspacing
+\Procedure{Finetune\_Model}{$base\_model\_name, train\_path, eval\_path, config$}
+    \State \Comment{1. Initialization}
+    \State $train\_data \gets \text{LOAD\_DATA}(train\_path)$
+    \State $eval\_data \gets \text{LOAD\_DATA}(eval\_path)$
+    \State
+    \State $model \gets \text{GET\_MODEL}(base\_model\_name)$
+    \State $loss\_function \gets \text{INITIALIZE\_LOSS}(config.loss\_type)$
+    \State
+    \State \Comment{Data Handling}
+    \State $sampler \gets \text{INITIALIZE\_SAMPLER}(\text{GroupByLabelBatchSampler}, train\_data)$
+    \State $train\_dataloader \gets \text{INITIALIZE\_DATALOADER}(train\_data, sampler)$
+    \State $evaluator \gets \text{INITIALIZE\_EVALUATOR}(\text{BinaryClassificationEvaluator}, eval\_data)$
+    \State
+    \State \Comment{Optimizer and Scheduler}
+    \State $optimizer \gets \text{INITIALIZE\_OPTIMIZER}(\text{AdamW}, model.parameters, config.learning\_rate)$
+    \State $scheduler \gets \text{INITIALIZE\_SCHEDULER}(config.scheduler\_type, optimizer)$
+    \State
+    \State $best\_score \gets -\infty$
+    \State
+    \State \Comment{2. Training Loop}
+    \For{$epoch \in 1 \dots \text{config.NUM\_EPOCHS}$}
+        \For{$batch \in train\_dataloader$}
+            \State \Comment{Forward Pass}
+            \State $embeddings \gets model.\text{forward}(batch.inputs)$
+            \State
+            \State \Comment{Loss Calculation}
+            \State $loss \gets loss\_function.\text{calculate}(embeddings, batch.labels)$
+            \State
+            \State \Comment{Backpropagation}
+            \State $optimizer.\text{zero\_grad}()$
+            \State $loss.\text{backward}()$
+            \State $optimizer.\text{step}()$
+        \EndFor
+        \State
+        \State \Comment{3. Evaluation at Epoch End}
+        \State $current\_score \gets evaluator.\text{evaluate}(model)$
+        \State
+        \State \Comment{Checkpoint Best Model}
+        \If{$current\_score > best\_score$}
+            \State $best\_score \gets current\_score$
+            \State $\text{SAVE\_CHECKPOINT}(model)$
+        \EndIf
+        \State
+        \State \Comment{Update Learning Rate}
+        \State $scheduler.\text{step}()$
+    \EndFor
+    \State
+    \State \Comment{4. Post-Training}
+    \State $final\_model \gets \text{LOAD\_BEST\_CHECKPOINT}()$
+    \State \Return{$final\_model$}
+\EndProcedure
+\end{algorithmic}
+\endgroup
+
+\section{Repository for Committee Review}\label{app:repository}
+To facilitate a comprehensive review and verification of the experimental results, a repository containing the source code, datasets, and final trained models has been made available exclusively to the thesis committee. Due to the proprietary nature of the underlying data, this repository is not intended for public distribution.
+
+The repository can be accessed at the following link:
+\begin{itemize}
+    \item \textbf{Secure Repository Link:}\\
+    \url{https://sfsu.box.com/s/uu4jxk04t47l4d7wy6lbq2y00k5c0gyj}
+\end{itemize}
+
+The repository is organized into the following directories for ease of review:
+\begin{itemize}
+    \item \textbf{src:} Contains all Python scripts used for data preparation, model fine-tuning, and analysis.
+    \item \textbf{data:} Includes the raw and processed datasets used for training and evaluation.
+    \item \textbf{models:} Contains the final, fine-tuned BGE-ft model artifact.
+\end{itemize}

@@ -1,0 +1,46 @@
+\chapter{Background and Related Work}\label{ch:2}
+\lipsum[1-2]
+
+\section{A section}
+\lipsum[1-2]
+
+Here is Table~\ref{tbl:taxonomy}
+\begin{table}[tb]
+    \captionsetup{skip=5pt}
+    \centering
+    \setlength{\tabcolsep}{10pt} % Default value: 6pt
+    \renewcommand{\arraystretch}{1.5}
+    \caption{Comparative Taxonomy of Course Equivalency Determination Methods}\label{tbl:taxonomy}
+    \resizebox{\columnwidth}{!}{
+        \begin{tabular}{>{\raggedright\arraybackslash}p{2.25cm}>{\raggedright\arraybackslash}p{3cm}>{\raggedright\arraybackslash}p{1.75cm}>{\raggedright\arraybackslash}p{1.9cm}>{\raggedright\arraybackslash}p{3.75cm}>{\raggedright\arraybackslash}p{3.75cm}}
+            \toprule
+            Approach              
+                         & Key Characteristics                                                   & Data Source(s)              & Semantic Capability & Strengths  
+                                                                                   & Limitations                
+   \\
+            \midrule
+            Manual Review                                  & Human experts (advisors, faculty) compare syllabi descriptions.
+& Course Catalogs, Syllabi    & High (Human-level)  & Nuanced, context-aware, trusted by faculty.
+& Extremely slow, not scalable, subjective, prone to inconsistency. \\
+            Keyword/ TF-IDF~\cite{JiangPardosMulti2VecEDM2020}                                & Bag-of-words representation, statistical term weighting.
+& Course Catalogs             & None to Low         & Simple, computationally cheap, easy to implement.
+& Fails to capture synonyms, context, or true semantic meaning \\
+            Static\hspace{3em}Embeddings (Word2Vec/ GloVe)~\cite{pardos10.1145/3330430.3333622} & Pre-trained word vectors, often averaged for document representation.
+& Course Catalogs             & Medium              & Captures word-level semantics, better than TF-IDF.
+& Context-insensitive, averaging vectors loses information. \\
+            Enrollment-Based (e.g., course2vec)~\cite{PardosCourse2Vec2019}            & Embeddings learned from student co-enrollment patterns.
+& Proprietary Student Records & High (Behavioral)   & Captures functional relationships between courses, highly predictive.
+& Requires access to sensitive private data, not generalizable, privacy concerns.
+\\
+            Direct LLM Classification                      & End-to-end classification using prompt engineering.
+& Course Catalogs             & Very High           & High accuracy potential, understands complex language.
+& Computationally expensive, ``black box'' opacity, prompt sensitive, no quantifiable similarity score, risk of hallucinations.
+\\
+            Proposed Method (Embeddings + ML)              & Deep contextual embeddings as features for traditional classifiers.
+& Course Catalogs             & Very High           & State-of-the-art accuracy, computationally efficient, quantifiable, uses public data only.
+& Relies on the quality of the pre-trained embedding model.
+\\
+            \bottomrule
+        \end{tabular}
+    }
+\end{table}
